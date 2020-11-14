@@ -1,0 +1,1401 @@
+ 
+****************************************
+Report : compile_options
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:56:44 2020
+****************************************
+
+Design                                   Compile Option         Value
+--------------------------------------------------------------------------------
+khu_sensor_pad                           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+                                         fix_multiple_port_nets feedthroughs
+                                                                constants
+                                                                outputs
+                                                                buffer_constants
+                                         isolate_port           disabled
+
+khu_sensor_top                           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+async_rstn_glitch_synchronizer           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+divider_by_2                             flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+uart_controller                          flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+uart_tx                                  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+uart_tx_DW01_inc_0                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_uart_tx_0           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_uart_tx_1           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+uart_rx                                  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+uart_rx_DW01_inc_0                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_uart_rx_0           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_uart_controller_0   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_uart_controller_1   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_uart_controller_2   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_uart_controller_3   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+sensor_core                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_1       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_2       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_3       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_4       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_5       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_6       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_7       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_8       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_9       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_10      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_11      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_12      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_13      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_14      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_15      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_16      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_17      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_19      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_22      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_sensor_core_23      flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+mpr121_controller                        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+i2c_master                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+i2c_master_DW01_dec_0                    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_i2c_master_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_i2c_master_1        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_i2c_master_4        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+mpr121_controller_DW01_inc_0             flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_mpr121_controller_0 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_mpr121_controller_1 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_mpr121_controller_2 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_mpr121_controller_3 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_mpr121_controller_4 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+ads1292_filter                           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_i2f                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_i2f_DW01_sub_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_i2f_DP_OP_47_122_1108_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_converter_i2f_0     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_converter_i2f_1     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_converter_i2f_2     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_converter_i2f_3     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_converter_i2f_4     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_i2f_DW01_inc_3                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+iir_lpf                                  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DW01_inc_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_127_147_6903_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_128_148_4319_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_124_150_2670_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_125_151_7074_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_139_221_5626_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_46_236_7011_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DW_cmp_6                   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_3_0     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_3_1     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_3_2     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_3_3     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_3_4     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_3_5     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_3_6     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_3_7     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_3_10    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5_DP_OP_105_203_3597_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5_DP_OP_102_206_7830_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5_DP_OP_119_208_9725_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_5_0 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_5_1 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_5_2 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_5_3 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_5_4 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_5_5 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_5_6 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_5_7 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_5_10 flatten              false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4_DP_OP_105_193_3549_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4_DP_OP_119_198_9179_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_4_0 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_4_1 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_4_2 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_4_3 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_4_4 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_4_5 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_4_6 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_4_7 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_4_10 flatten              false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_lpf_0           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_lpf_1           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_lpf_2           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_lpf_3           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_lpf_4           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+iir_notch                                flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DW01_inc_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_127_141_5618_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_128_142_1832_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_124_144_2886_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_125_145_130_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_139_218_18_0         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_46_232_75_0          flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DW_cmp_6                   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_2_0     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_2_1     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_2_2     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_2_3     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_2_4     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_2_5     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_2_6     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_2_7     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_2_10    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DW01_inc_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_127_135_5666_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_128_136_9478_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_124_138_2934_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_125_139_7776_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_139_215_3862_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_46_228_9786_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DW_cmp_6                   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_1_0     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_1_1     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_1_2     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_1_3     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_1_4     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_1_5     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_1_6     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_1_7     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_1_10    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3_DP_OP_105_183_6207_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3_DP_OP_102_186_8939_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3_DP_OP_119_188_7833_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_3_0 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_3_1 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_3_2 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_3_3 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_3_4 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_3_5 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_3_6 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_3_7 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_3_10 flatten              false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2_DP_OP_105_173_6191_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2_DP_OP_119_178_9062_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_2_0 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_2_1 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_2_2 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_2_3 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_2_4 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_2_5 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_2_6 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_2_7 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_2_10 flatten              false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1_DP_OP_105_163_6175_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1_DP_OP_102_166_8907_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1_DP_OP_119_168_3191_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_1_0 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_1_1 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_1_2 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_1_3 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_1_4 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_1_5 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_1_6 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_1_7 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_1_10 flatten              false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_notch_0         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_notch_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_notch_2         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_notch_3         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_notch_4         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_notch_5         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_notch_6         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_notch_7         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_notch_8         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+iir_hpf                                  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+async_rst_synchronizer                   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DW01_inc_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_127_129_7863_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_128_130_6503_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_124_132_3630_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_125_133_9258_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_139_212_6578_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_46_224_9810_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DW_cmp_6                   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_0_0     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_0_1     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_0_2     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_0_3     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_0_4     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_0_5     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_0_6     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_0_7     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_adder_0_10    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0_DP_OP_105_153_1967_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0_DP_OP_119_158_3501_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_0_0 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_0_1 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_0_2 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_0_3 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_0_4 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_0_5 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_0_6 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_0_7 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_float_multiplier_0_10 flatten              false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_hpf_0           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_hpf_1           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_hpf_2           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_iir_hpf_3           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_f2i                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_f2i_DP_OP_16_126_4860_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_f2i_DP_OP_17_127_5628_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_converter_f2i_0     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_converter_f2i_1     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_converter_f2i_2     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_converter_f2i_3     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_converter_f2i_4     flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_f2i_DW01_sub_3                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+ads1292_filter_DW01_inc_0                flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_filter_0    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_filter_1    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_filter_2    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_filter_3    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_filter_4    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_filter_5    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_filter_6    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_filter_7    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+ads1292_controller                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+spi_master                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+async_rstn_synchronizer                  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+spi_master_DW01_inc_0                    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_spi_master_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_spi_master_1        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_spi_master_2        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_spi_master_3        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_controller_0 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_controller_1 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_controller_2 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_controller_3 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_controller_4 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_controller_5 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_controller_6 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_controller_7 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+SNPS_CLOCK_GATE_HIGH_ads1292_controller_8 flatten               false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+ads1292_controller_DW01_inc_3            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+--------------------------------------------------------------------------------
+1

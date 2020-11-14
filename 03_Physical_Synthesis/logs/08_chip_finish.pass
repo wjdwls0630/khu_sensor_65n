@@ -1,0 +1,3037 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+                 Version N-2017.09 for linux64 - Aug 17, 2017 
+
+                    Copyright (c) 1988 - 2017 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+***********************************************************************
+                                                                       
+                     synopsys_dc_setup.tcl                             
+                                                                       
+***********************************************************************
+***********************************************************************
+       NOTE>>> You MUST fix the design which have multiple ports
+               Use the following command
+               set_fix_multiple_port_nets -all -buffer_constants
+************************************************************************
+***********************************************************************
+       NOTE>>> Use the old compile_fix_multiple_port_nets
+               because reoptimize_design does not honor
+               the set_fix_multiple_port_nets command
+************************************************************************
+Initializing gui preferences from file  /home/graduation_project3/2015103977/.synopsys_icc_prefs.tcl
+#******************************************************************************
+#**                            08_chip_finish                                **
+#**                       additional decap/filler                            **
+#**                            DRC & LVS                                     **
+#**            Extract Delay(.sdf) & Parasitic Output(.dspf)                 **
+#**                      Extract Netlist(.v) & GDSII                         **
+#******************************************************************************
+echo "***********************************************************************"
+***********************************************************************
+echo "                                                                       "
+                                                                       
+echo "                       08_chip_finish.tcl                              "
+                       08_chip_finish.tcl                              
+echo "                                                                       "
+                                                                       
+echo "***********************************************************************"
+***********************************************************************
+# Set Step
+set step "08_chip_finish"
+08_chip_finish
+# source the user_design_setup & common_lib_setup
+source ./icc_scripts/user_scripts/user_design_setup.tcl
+***********************************************************************
+                                                                       
+                      user_design_setup.tcl                            
+                                                                       
+***********************************************************************
+1
+source ./icc_scripts/common_lib_setup.tcl
+***********************************************************************
+                                                                       
+                       common_lib_setup.tcl                            
+                                                                       
+***********************************************************************
+# Clear existing mw library and re-make dir
+set _mw_lib ./mw_db/${TOP_MODULE}_${step}
+./mw_db/khu_sensor_pad_08_chip_finish
+if {[file exist $_mw_lib]} {
+	sh mv $_mw_lib ./mw_db/old/${TOP_MODULE}_${step}_${back}
+}
+copy_mw_lib -from ./mw_db/${TOP_MODULE}_07_route_opt -to $_mw_lib
+Warning: Top library path '/home/graduation_project3/2015103977/03_Physical_Synthesis/khu_sensor_pad_08_chip_finish' in reference library control file is inconsistent with current library path '/home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish'. (MW-212)
+
+------------------- Internal Reference Library Settings -----------------
+
+Library    /home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011
+
+
+------------------- Control File Reference Library Settings -----------
+Warning: Top library path '/home/graduation_project3/2015103977/03_Physical_Synthesis/khu_sensor_pad_08_chip_finish' in reference library control file is inconsistent with current library path '/home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish'. (MW-212)
+
+Library    /home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011
+-------------------------------------------------------------------------
+
+Successfully updated library ./mw_db/khu_sensor_pad_08_chip_finish ref-control-file
+1
+# Open Library and Cell
+set_mw_technology_file -technology $TECH_FILE $_mw_lib
+Warning: Top library path '/home/graduation_project3/2015103977/03_Physical_Synthesis/khu_sensor_pad_08_chip_finish' in reference library control file is inconsistent with current library path '/home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish'. (MW-212)
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+	6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+	Main Library (khu_sensor_pad_08_chip_finish)|	Reference Library (std150e_prim_050504)
+	Upper Layer     MET6 (130, 130)   |	MET6 (10, 40)	 (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+	Main Library (khu_sensor_pad_08_chip_finish)|	Reference Library (std150e_prim_050504)
+	Upper Layer     MET6 (130, 130)   |	MET6 (10, 40)	 (MWLIBP-324)
+Technology data dumped to ./mw_db/khu_sensor_pad_08_chip_finish.tf_replaced completely.
+Start to load technology file ./TECH/std150e_prim_6m.techgen.tf.
+Warning: Layer 'ACT' is missing the attribute 'minSpacing'. (line 173) (TFCHK-014)
+Warning: Layer 'ACT' is missing the attribute 'minWidth'. (line 173) (TFCHK-014)
+Warning: Layer 'LDIO' is missing the attribute 'minSpacing'. (line 236) (TFCHK-014)
+Warning: Layer 'LDIO' is missing the attribute 'minWidth'. (line 236) (TFCHK-014)
+Warning: Layer 'CHBD' is missing the attribute 'minSpacing'. (line 246) (TFCHK-014)
+Warning: Layer 'CHBD' is missing the attribute 'minWidth'. (line 246) (TFCHK-014)
+Warning: Layer 'NPLUS' is missing the attribute 'minSpacing'. (line 287) (TFCHK-014)
+Warning: Layer 'NPLUS' is missing the attribute 'minWidth'. (line 287) (TFCHK-014)
+Warning: Layer 'PPLUS' is missing the attribute 'minSpacing'. (line 297) (TFCHK-014)
+Warning: Layer 'PPLUS' is missing the attribute 'minWidth'. (line 297) (TFCHK-014)
+Warning: Layer 'PAD' is missing the attribute 'minSpacing'. (line 687) (TFCHK-014)
+Warning: Layer 'PAD' is missing the attribute 'minWidth'. (line 687) (TFCHK-014)
+Warning: Layer 'STEXT' is missing the attribute 'minSpacing'. (line 697) (TFCHK-014)
+Warning: Layer 'STEXT' is missing the attribute 'minWidth'. (line 697) (TFCHK-014)
+Warning: Layer 'PTEXT' is missing the attribute 'minSpacing'. (line 707) (TFCHK-014)
+Warning: Layer 'PTEXT' is missing the attribute 'minWidth'. (line 707) (TFCHK-014)
+Warning: Layer 'M1TEXT' is missing the attribute 'minSpacing'. (line 717) (TFCHK-014)
+Warning: Layer 'M1TEXT' is missing the attribute 'minWidth'. (line 717) (TFCHK-014)
+Warning: Layer 'M2TEXT' is missing the attribute 'minSpacing'. (line 727) (TFCHK-014)
+Warning: Layer 'M2TEXT' is missing the attribute 'minWidth'. (line 727) (TFCHK-014)
+Warning: Layer 'M3TEXT' is missing the attribute 'minSpacing'. (line 737) (TFCHK-014)
+Warning: Layer 'M3TEXT' is missing the attribute 'minWidth'. (line 737) (TFCHK-014)
+Warning: Layer 'M4TEXT' is missing the attribute 'minSpacing'. (line 747) (TFCHK-014)
+Warning: Layer 'M4TEXT' is missing the attribute 'minWidth'. (line 747) (TFCHK-014)
+Warning: Layer 'M5TEXT' is missing the attribute 'minSpacing'. (line 757) (TFCHK-014)
+Warning: Layer 'M5TEXT' is missing the attribute 'minWidth'. (line 757) (TFCHK-014)
+Warning: Layer 'M6TEXT' is missing the attribute 'minSpacing'. (line 767) (TFCHK-014)
+Warning: Layer 'M6TEXT' is missing the attribute 'minWidth'. (line 767) (TFCHK-014)
+Warning: Layer 'BOUND' is missing the attribute 'minSpacing'. (line 777) (TFCHK-014)
+Warning: Layer 'BOUND' is missing the attribute 'minWidth'. (line 777) (TFCHK-014)
+Warning: FringeCap 1 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 992) (TFCHK-067)
+Warning: FringeCap 3 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1010) (TFCHK-067)
+Warning: FringeCap 6 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1037) (TFCHK-067)
+Warning: FringeCap 10 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1073) (TFCHK-067)
+Warning: FringeCap 15 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1118) (TFCHK-067)
+Warning: FringeCap 21 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1171) (TFCHK-067)
+Warning: Layer 'MET1' has a pitch 0.4 that does not match the recommended wire-to-via pitch 0.34. (TFCHK-049)
+Warning: Layer 'MET2' has a pitch 0.44 that does not match the recommended wire-to-via pitch 0.4. (TFCHK-049)
+Warning: Layer 'MET4' has a pitch 0.44 that does not match the recommended wire-to-via pitch 0.4. (TFCHK-049)
+Warning: Layer 'MET3' has a pitch 0.4 that does not match the doubled pitch 0.8 or tripled pitch 1.2. (TFCHK-050)
+Warning: Layer 'MET4' has a pitch 0.44 that does not match the doubled pitch 0.88 or tripled pitch 1.32. (TFCHK-050)
+Warning: Layer 'MET5' has a pitch 0.4 that does not match the doubled pitch 0.8 or tripled pitch 1.2. (TFCHK-050)
+Technology file ./TECH/std150e_prim_6m.techgen.tf has been loaded successfully.
+1
+set_mw_lib_reference $_mw_lib -mw_reference_library $MW_REF_LIB_DIRS
+
+------------------- Internal Reference Library Settings -----------------
+
+Library    /home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011
+
+
+------------------- Control File Reference Library Settings -----------
+
+Library    /home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420
+  Reference    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011
+-------------------------------------------------------------------------
+
+1
+open_mw_lib $_mw_lib
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+	6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+	Main Library (khu_sensor_pad_08_chip_finish)|	Reference Library (std150e_prim_050504)
+	Upper Layer     MET6 (130, 130)   |	MET6 (10, 40)	 (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+	Main Library (khu_sensor_pad_08_chip_finish)|	Reference Library (std150e_prim_050504)
+	Upper Layer     MET6 (130, 130)   |	MET6 (10, 40)	 (MWLIBP-324)
+{khu_sensor_pad_08_chip_finish}
+remove_mw_cel 	[remove_from_collection [get_mw_cel *] [get_mw_cel $TOP_MODULE]] 	-all_versions -all_view -verbose
+Information: Removed design 01_before_shield.CEL. (MWUI-068)
+1
+open_mw_cel $TOP_MODULE
+Information: Opened "khu_sensor_pad.CEL;1" from "/home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish" library. (MWUI-068)
+{khu_sensor_pad}
+link
+1
+current_design $TOP_MODULE
+khu_sensor_pad
+# Read scenario file
+remove_sdc
+Loading db file '/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db'
+Loading db file '/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_bst_135_n040.db'
+Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/dw_foundation.sldb'
+Loading db file '/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011/LM/std150e_wst_105_p125_astro.db'
+Loading db file '/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011/LM/std150e_bst_135_n040_astro.db'
+Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/gtech.db'
+Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/standard.sldb'
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Warning: 'VDD15FIN' pin on 'pvpp15hf_p' cell in the 'std150e_wst_105_p125' technology 
+	library is missing in the '/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420' physical library. (PSYN-200)
+Warning: 'VDD15FIN' pin on 'pvpp15hf_p' cell in the 'std150e_bst_135_n040' technology 
+	library is missing in the '/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420' physical library. (PSYN-200)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Warning: The 'cgnd1_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd1_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd2_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd2_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd3_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd3_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd4_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd4_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd6_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd6_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Note - message 'PSYN-039' limit (5) exceeded.  Remainder will be suppressed.
+Note - message 'PSYN-024' limit (5) exceeded.  Remainder will be suppressed.
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+Current scenario is func1_wst.
+Information: Loading local_link_library attribute {std150e_wst_105_p125.db, std150e_bst_135_n040.db}. (MWDC-290)
+
+  Linking design 'khu_sensor_pad'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (233 designs)             khu_sensor_pad.CEL, etc
+  std150e_wst_105_p125 (library) /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db
+  std150e_bst_135_n040 (library) /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_bst_135_n040.db
+  dw_foundation.sldb (library) /Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/dw_foundation.sldb
+  std150e_wst_105_p125 (library) /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011/LM/std150e_wst_105_p125_astro.db
+  std150e_bst_135_n040 (library) /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011/LM/std150e_bst_135_n040_astro.db
+
+Information: scenario: func1_wst
+1
+remove_scenario -all
+Information: Removed scenario func1_wst from memory. (UID-1024)
+Information: Removed scenario funccts_wst from memory. (UID-1024)
+1
+sh sed -i 's/ ${STD_WST}/ ${STD_WST}.db:${STD_WST}/' $FUNC1_SDC
+#sh sed -i '/set_max_fanout/d' $FUNC1_SDC
+source $ICC_MCMM_SCENARIOS_FILE
+Warning: Discarding all scenario specific information previously defined in this session. (UID-1008)
+Current scenario is: func1_wst
+Information: Setting sdc_version outside of an SDC file has no effect (SDC-1)
+Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
+Floorplan loading succeeded.
+***********************************************************************
+                                                                       
+    Check consistency between the Milkyway library and the TLUPlus     
+                                                                       
+***********************************************************************
+
+Sanity check for TLU+ vs MW-Tech files:
+ mapping_file: /home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/MAP/L13_CELL_6LM.map
+ number of unique tlu+ files in mcmm mode: 1
+  /home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/TLUP/L13_CELL_WST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+Using operating conditions 'V105WTP1250' found in library 'std150e_wst_105_p125'.
+Using operating conditions 'V105WTP1250' found in library 'std150e_wst_105_p125'.
+Warning: You have provided ambiguous libraries:
+    /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db:std150e_wst_105_p125
+    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011/LM/std150e_wst_105_p125_astro.db:std150e_wst_105_p125
+  Both are characterized for voltage 1.050000V, process 1.000000, temperature 125.000000
+  and contain the same lib_cell names (e.g. ivd4_hd).
+  The latter library will be ignored. (MV-086)
+  Ambiguity is evident at icc_place9 in scenario func1_wst
+Information: Updating graph... (UID-83)
+
+************************************************************
+SI options:
+Delta Delay Computation:           true
+Static Noise Computation:          true
+Timing window analysis for SI:     false
+Min Delta Delay for SI:            true
+Analysis Effort:                   medium
+Max Transition Mode:               normal_slew
+Static Noise Thresholds:           0.35 (0.37V) above low
+                                   0.35 (0.37V) below high
+Route xtalk prevention:            true
+Route xtalk prevention threshold:  0.25
+************************************************************
+
+Warning: Some objects from '_sel351' were of the incorrect class. (SEL-010)
+
+Warning: Pin PAD of reference cell phis_p has no physical location. (APL-028)
+Warning: Pin PAD of reference cell phbct12_p has no physical location. (APL-028)
+Warning: Pin PAD of reference cell phic_p has no physical location. (APL-028)
+Warning: Pin PAD of reference cell phob12_p has no physical location. (APL-028)
+Warning: Pin PAD of reference cell phbct24_p has no physical location. (APL-028)
+  Loading design 'khu_sensor_pad'
+
+
+Information: Setting a dont_touch attribute on net 'ADS1292_DRDY' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_MISO' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'UART_RXD' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'i_RSTN' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'async_rstn_glitch_synchronizer/async_rstn_synchronizer/i_CLK' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'i_CLK' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'async_rstn_glitch_synchronizer/i_CLK' because it is connected to a pad cell. (PSYN-088)
+Warning: Net 'i_CLK' is connected to a pad cell and other cells. (PSYN-086)
+Information: Setting a dont_touch attribute on net 'MPR121_SDA' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'MPR121_SCL' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_CSN' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_START' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_RESET' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_MOSI' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_SCLK' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'UART_TXD' because it is connected to a pad cell. (PSYN-088)
+
+
+Information: Library Manufacturing Grid(GridResolution) : 10
+Information: Time Unit from Milkyway design library: 'ns' 
+Information: Design Library and main library timing units are matched - 1.000 ns. 
+Information: Resistance Unit from Milkyway design library: 'kohm' 
+Information: Design Library and main library resistance units are matched - 1.000 kohm. 
+Information: Capacitance Unit from Milkyway design library: 'pf' 
+Information: Design Library and main library capacitance units are matched - 1.000 pf. 
+Warning: Inconsistent library data found for layer GPOLY. (RCEX-018)
+Information: Layer MET5 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer MET6 is ignored for resistance and capacitance computation. (RCEX-019)
+
+TLU+ File = /home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/TLUP/L13_CELL_WST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is detail route TLU+. (RCEX-015)
+Information: Start mixed mode parasitic extraction. (RCEX-023)
+Information: Start rc extraction...
+EKL_MT: total threadable CPU 7.38 seconds
+EKL_MT: elapsed time 8 seconds
+Information: Parasitic source is LPE. (RCEX-040)
+Information: Parasitic mode is RealRC. (RCEX-041)
+Information: Extraction derate is 125/125(from scenario func1_wst). (RCEX-043)
+Information: Coupling capacitances are explicitly created. (RCEX-044)
+Information: Start back annotation for parasitic extraction. (RCEX-023)
+Information: End back annotation for parasitic extraction. (RCEX-023)
+Information: Start timing update for parasitic extraction. (RCEX-023)
+Information: End timing update for parasitic extraction. (RCEX-023)
+Information: End parasitic extraction. (RCEX-023)
+Information: Updating graph... (UID-83)
+
+************************************************************
+SI options:
+Delta Delay Computation:           true
+Static Noise Computation:          true
+Timing window analysis for SI:     false
+Min Delta Delay for SI:            true
+Analysis Effort:                   medium
+Max Transition Mode:               normal_slew
+Static Noise Thresholds:           0.35 (0.37V) above low
+                                   0.35 (0.37V) below high
+Route xtalk prevention:            true
+Route xtalk prevention threshold:  0.25
+************************************************************
+
+ 
+****************************************
+Report : clocks
+Design : khu_sensor_pad
+Scenario(s): func1_wst
+Version: N-2017.09
+Date   : Sat Sep 12 02:55:37 2020
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources   Scenario
+--------------------------------------------------------------------------------
+clk             12.00   {0 6}                         {i_CLK}   func1_wst
+clk_half        24.00   {0 12}              G         {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
+                                                                func1_wst
+--------------------------------------------------------------------------------
+
+Generated     Master         Generated      Master         Waveform
+Clock         Source         Source         Clock          Modification
+                                                                     Scenario
+--------------------------------------------------------------------------------
+clk_half      i_CLK          {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
+                                            clk            divide_by(2)
+                                                                     func1_wst
+--------------------------------------------------------------------------------
+Current scenario is: funccts_wst
+Information: Setting sdc_version outside of an SDC file has no effect (SDC-1)
+***********************************************************************
+                                                                       
+    Check consistency between the Milkyway library and the TLUPlus     
+                                                                       
+***********************************************************************
+
+Sanity check for TLU+ vs MW-Tech files:
+ mapping_file: /home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/MAP/L13_CELL_6LM.map
+ number of unique tlu+ files in mcmm mode: 1
+  /home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/TLUP/L13_CELL_WST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+Using operating conditions 'V105WTP1250' found in library 'std150e_wst_105_p125'.
+Using operating conditions 'V105WTP1250' found in library 'std150e_wst_105_p125'.
+Warning: Some objects from '_sel710' were of the incorrect class. (SEL-010)
+Warning: You have provided ambiguous libraries:
+    /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db:std150e_wst_105_p125
+    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011/LM/std150e_wst_105_p125_astro.db:std150e_wst_105_p125
+  Both are characterized for voltage 1.050000V, process 1.000000, temperature 125.000000
+  and contain the same lib_cell names (e.g. ivd4_hd).
+  The latter library will be ignored. (MV-086)
+  Ambiguity is evident at icc_place9 in scenario func1_wst
+Information: Start timing update for routes parasitic extraction. (RCEX-023)
+Information: End timing update for routes parasitic extraction. (RCEX-023)
+Information: All the nets in the design are routed. Extraction of all the nets has been performed. (RCEX-201)
+ 
+****************************************
+Report : clocks
+Design : khu_sensor_pad
+Scenario(s): funccts_wst
+Version: N-2017.09
+Date   : Sat Sep 12 02:55:39 2020
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources   Scenario
+--------------------------------------------------------------------------------
+clk             12.00   {0 6}                         {i_CLK}   funccts_wst
+clk_half        24.00   {0 12}              G         {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
+                                                                funccts_wst
+--------------------------------------------------------------------------------
+
+Generated     Master         Generated      Master         Waveform
+Clock         Source         Source         Clock          Modification
+                                                                     Scenario
+--------------------------------------------------------------------------------
+clk_half      i_CLK          {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
+                                            clk            divide_by(2)
+                                                                     funccts_wst
+--------------------------------------------------------------------------------
+set_active_scenario $CHIP_FINISH_SCN
+Information: Scenario funccts_wst is no longer active. (UID-1022)
+Warning: Current scenario changed to 'func1_wst'. (UID-1009)
+1
+# Optimization Common Session Options - set in all sessions
+source ./icc_scripts/common_route_opt_env.tcl
+***********************************************************************
+                                                                       
+                      common_route_opt_env.tcl                         
+                                                                       
+***********************************************************************
+Information: Existing back annotation will be deleted.   (UID-1006)
+Warning: The design has already been assigned layer constraints and we will overwrite the constraints. (RT-064)
+***********************************************************************
+                                                                       
+                   130nm_ocv_margin.pnr.tcl                            
+                                                                       
+***********************************************************************
+Current scenario is: func1_wst
+Current design is 'khu_sensor_pad'.
+Information: Updating graph... (UID-83)
+
+************************************************************
+SI options:
+Delta Delay Computation:           true
+Static Noise Computation:          true
+Timing window analysis for SI:     false
+Min Delta Delay for SI:            true
+Analysis Effort:                   medium
+Max Transition Mode:               normal_slew
+Static Noise Thresholds:           0.35 (0.37V) above low
+                                   0.35 (0.37V) below high
+Route xtalk prevention:            true
+Route xtalk prevention threshold:  0.25
+************************************************************
+
+Current design is 'khu_sensor_pad'.
+#Source antenna rule
+source $ANTENNA_RULE
+1
+report_antenna_rules
+## 
+## define_antenna_rule mw_lib -mode mode \
+##   -diode_mode diode_mode [-metal_ratio metal_ratio]\
+##   [-cut_ratio cut_ratio] [-metal_pratio metal_pratio]\
+##   [-metal_nratio metal_nratio] [-cut_pratio cut_pratio]\
+##   [-cut_nratio cut_nratio] [-protected_metal_scale metal_scale]\
+##   [-cut_area_to_gate_diffusion_length_ratio cut_gate_diffusion_length_ratio] [-metal_area_to_pgate_diffusion_length_ratio metal_pgate_diffusion_length_ratio]\
+##   [-metal_area_to_ngate_diffusion_length_ratio metal_ngate_diffusion_length_ratio] [-cut_area_to_pgate_diffusion_length_ratio cut_pgate_diffusion_length_ratio]\
+##   [-cut_area_to_ngate_diffusion_length_ratio cut_ngate_diffusion_length_ratio] [-metal_area_to_gate_diffusion_length_ratio metal_gate_diffusion_length_ratio]\
+##   [-protected_cut_scale cut_scale]\
+##   [-name rule_name]
+## mode
+##  1, 4 : ignore all lower-layer segments
+##  2, 5 : include lower-layer segments to the input pins
+##  3, 6 : include all lower-layer segments
+##  1, 2, 3 : polygon area
+##  4, 5, 6 : sidewall area
+## diode_mode (output pin)
+##  0 : output pin cannot protect antenna.
+##  1 : output pin can provide unlimited protection.
+##  2 : limited diode protection; the diode ratio is defined
+##     by define_antenna_layer_rule & dbDefineDiodeProtection (CLF)
+##     If antenna has multiple diode pins, the max antenna ratio
+##     is the one with the largest diode ratio.
+##  3 : limited diode protection. If antenna has multiple diode pins, 
+##     the max antenna ratio is sum of all diode ratios.
+##  4 : limited diode protection. The max antenna ratio is calculated
+##     from the total diode protection on the antenna, which is the
+##     sum of the diode protection of all diodes.
+##  5 : limited diode protection. The equivalent gate area is calculated
+##      from the maximum diode-protection value of all diodes.
+##  6 : limited diode protection. The equivalent gate area is calculated
+##      from the sum of the diode protection of all diodes.
+##  7 : limited diode protection. The equivalent metal area is calculated
+##      from the maximum diode-protection value of all diodes.
+##  8 : limited diode protection. The equivalent metal area is calculated
+##      from the sum of the diode protection of all diodes.
+## 
+## define_antenna_layer_rule mw_lib -mode mode \
+##   -layer layer_name -ratio ratio \
+##   -diode_ratio {v0 v1 v2 v3 [v4]}\
+##   -name rule_name
+## ratio
+##  max. antenna ratio with no diode protection
+##      MIN((dp > v0) ? ((dp + v1 ) * v2 + v3), v4) : ratio 
+##  max. antenna ratio with (diode protection == dp)
+ 
+ 
+
+set lib [current_mw_lib]
+remove_antenna_rules $lib
+define_antenna_rule $lib -mode 1 -diode_mode 2 -metal_ratio 100 -cut_ratio 20
+define_antenna_layer_rule $lib -mode 1 -layer "MET1" -ratio 100 -diode_ratio {0.203 0 400 3700}
+define_antenna_layer_rule $lib -mode 1 -layer "MET2" -ratio 100 -diode_ratio {0.203 0 400 3700}
+define_antenna_layer_rule $lib -mode 1 -layer "MET3" -ratio 100 -diode_ratio {0.203 0 400 3700}
+define_antenna_layer_rule $lib -mode 1 -layer "MET4" -ratio 100 -diode_ratio {0.203 0 8000 50000}
+define_antenna_layer_rule $lib -mode 1 -layer "VIA1" -ratio 5 -diode_ratio {0.203 0 83.33 75}
+define_antenna_layer_rule $lib -mode 1 -layer "VIA2" -ratio 5 -diode_ratio {0.203 0 83.33 75}
+define_antenna_layer_rule $lib -mode 1 -layer "VIA3" -ratio 5 -diode_ratio {0.203 0 83.33 75}
+
+1
+set_route_zrt_detail_options -antenna true
+1
+# Search & Repair
+verify_zrt_route
+Found antenna rule mode 1, diode mode 2:
+	metal ratio 100, cut ratio 20,metal gate diffusion length based ratio 0 cut gate length based ratio 0	metal pratio 0, cut pratio 0, metal gate diffusion length based pratio 0, cut gate diffusion length based pratio 0	metal nratio 0, cut nratio 0, metal nratio 0, cut nratio 0
+	layer MET1: max ratio 100 max pratio 2.14748e+09 max nratio 2.14748e+09	layer MET1: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 400 3700}
+	layer MET2: max ratio 100 max pratio 2.14748e+09 max nratio 2.14748e+09	layer MET2: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 400 3700}
+	layer MET3: max ratio 100 max pratio 2.14748e+09 max nratio 2.14748e+09	layer MET3: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 400 3700}
+	layer MET4: max ratio 100 max pratio 2.14748e+09 max nratio 2.14748e+09	layer MET4: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 8000 50000}
+	layer VIA1: max ratio 5 max pratio 2.14748e+09 max nratio 2.14748e+09	layer VIA1: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 83.33 75}
+	layer VIA2: max ratio 5 max pratio 2.14748e+09 max nratio 2.14748e+09	layer VIA2: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 83.33 75}
+	layer VIA3: max ratio 5 max pratio 2.14748e+09 max nratio 2.14748e+09	layer VIA3: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 83.33 75}
+Cell Min-Routing-Layer = MET1
+Cell Max-Routing-Layer = MET4
+
+
+Start checking for open nets ... 
+
+Total number of nets = 30092, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+
+Check 30092 nets, 0 have Errors
+
+[CHECK OPEN NETS] Elapsed real time: 0:00:00 
+[CHECK OPEN NETS] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[CHECK OPEN NETS] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[CHECK OPEN NETS] Total (MB): Used   71  Alloctr   72  Proc 2611 
+Printing options for 'set_route_zrt_common_options'
+-concurrent_redundant_via_mode                          :	 reserve_space       
+-connect_within_pins_by_layer_name                      :	 {{MET1 via_wire_standard_cell_pins} }
+-reshield_modified_nets                                 :	 reshield            
+-wide_macro_pin_as_fat_wire                             :	 true                
+
+Printing options for 'set_route_zrt_detail_options'
+-antenna                                                :	 true                
+-default_gate_size                                      :	 0.020000            
+-diode_libcell_names                                    :	 {{diode_cell_hd} }  
+-insert_diodes_during_routing                           :	 true                
+-repair_shorts_over_macros_effort_level                 :	 low                 
+-timing_driven                                          :	 true                
+-use_default_width_for_min_area_min_len_stub            :	 true                
+
+*****Start reporting antenna related parameters*****
+  Antenna/diode mode:
+    Antenna mode 1; diode mode 2
+      Metal lay (MET1)0; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 400.000 3700.000 0.000)
+      Cut lay (VIA1)1; maxRatio 5.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 83.330 75.000 0.000)
+      Metal lay (MET2)1; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 400.000 3700.000 0.000)
+      Cut lay (VIA2)2; maxRatio 5.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 83.330 75.000 0.000)
+      Metal lay (MET3)2; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 400.000 3700.000 0.000)
+      Cut lay (VIA3)3; maxRatio 5.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 83.330 75.000 0.000)
+      Metal lay (MET4)3; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 8000.000 50000.000 0.000)
+      Cut lay (VIA4)4; maxRatio 20.000 maxPRatio 2147483647.000 maxNRatio 2147483647.000
+      Metal lay (MET5)4; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000
+      Cut lay (VIA5)5; maxRatio 20.000 maxPRatio 2147483647.000 maxNRatio 2147483647.000
+      Metal lay (MET6)5; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000
+  Accumulate from metal to cut == false
+  Accumulate from cut to metal == false
+  Top lay antenna ratio fix threshold == -1
+  Antenna max pin count threshold == -1
+  Check PG net == false
+  MergeGate == true
+  Break antenna to port mode == float
+  Break antenna to macro pin mode == normal
+*****End reporting antenna related parameters*****
+Warning: Skipping antenna analysis for net i_CLK. The pin i_CLK on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net i_RSTN. The pin i_RSTN on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net MPR121_SDA. The pin MPR121_SDA on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net MPR121_SCL. The pin MPR121_SCL on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net UART_RXD. The pin UART_RXD on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net ADS1292_DRDY. The pin ADS1292_DRDY on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net ADS1292_MISO. The pin ADS1292_MISO on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Skipping antenna analysis for 7 nets as they don't have enough gate area info.
+
+Begin full DRC check ...
+
+Information: Using 1 threads for routing. (ZRT-444)
+Checked	2/81 Partitions, Violations =	0
+Checked	3/81 Partitions, Violations =	0
+Checked	6/81 Partitions, Violations =	0
+Checked	11/81 Partitions, Violations =	0
+Checked	12/81 Partitions, Violations =	0
+Checked	15/81 Partitions, Violations =	0
+Checked	20/81 Partitions, Violations =	0
+Checked	21/81 Partitions, Violations =	0
+Checked	24/81 Partitions, Violations =	0
+Checked	28/81 Partitions, Violations =	0
+Checked	30/81 Partitions, Violations =	0
+Checked	33/81 Partitions, Violations =	0
+Checked	37/81 Partitions, Violations =	0
+Checked	39/81 Partitions, Violations =	0
+Checked	42/81 Partitions, Violations =	0
+Checked	46/81 Partitions, Violations =	0
+Checked	48/81 Partitions, Violations =	0
+Checked	51/81 Partitions, Violations =	0
+Checked	55/81 Partitions, Violations =	3
+Checked	57/81 Partitions, Violations =	3
+Checked	60/81 Partitions, Violations =	3
+Checked	64/81 Partitions, Violations =	3
+Checked	66/81 Partitions, Violations =	3
+Checked	69/81 Partitions, Violations =	3
+[DRC CHECK] Elapsed real time: 0:00:12 
+[DRC CHECK] Elapsed cpu  time: sys=0:00:00 usr=0:00:12 total=0:00:12
+[DRC CHECK] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[DRC CHECK] Total (MB): Used   87  Alloctr   88  Proc 2611 
+Start net based rule analysis
+Found 0 antenna instance ports
+End net based rule analysis
+[Antenna analysis] Elapsed real time: 0:00:00 
+[Antenna analysis] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Antenna analysis] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Antenna analysis] Total (MB): Used   88  Alloctr   89  Proc 2611 
+Information: Merged away 1 aligned/redundant DRCs. (ZRT-305)
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	2
+	Min-max layer : 1
+	Short : 1
+
+
+Total Wire Length =                    1001397 micron
+Total Number of Contacts =             255112
+Total Number of Wires =                218104
+Total Number of PtConns =              789
+Total Number of Routed Wires =       218104
+Total Routed Wire Length =           1001193 micron
+Total Number of Routed Contacts =       255112
+	Layer           MET1 :      13750 micron
+	Layer           MET2 :     289274 micron
+	Layer           MET3 :     443666 micron
+	Layer           MET4 :     254700 micron
+	Layer           MET5 :          7 micron
+	Layer           MET6 :          0 micron
+	Via            VIA45 :          1
+	Via            VIA34 :        615
+	Via       VIA34(rot) :          1
+	Via        VIA34_2x1 :      27701
+	Via   VIA34(rot)_1x2 :         46
+	Via        VIA34_1x2 :       4758
+	Via            VIA23 :       3168
+	Via       VIA23(rot) :          5
+	Via        VIA23_1x2 :      71582
+	Via   VIA23(rot)_2x1 :         10
+	Via   VIA23(rot)_1x2 :        338
+	Via        VIA23_2x1 :      32504
+	Via            VIA12 :      78151
+	Via       VIA12(rot) :       2937
+	Via      FVIA12(rot) :          2
+	Via   VIA12(rot)_2x1 :       2764
+	Via        VIA12_1x2 :      16443
+	Via        VIA12_2x1 :       5634
+	Via   VIA12(rot)_1x2 :       8452
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate = 66.73% (170234 / 255112 vias)
+ 
+    Layer VIA1       = 29.11% (33295  / 114383  vias)
+        Weight 1     = 29.11% (33295   vias)
+        Un-optimized = 70.89% (81088   vias)
+    Layer VIA2       = 97.05% (104434 / 107607  vias)
+        Weight 1     = 97.05% (104434  vias)
+        Un-optimized =  2.95% (3173    vias)
+    Layer VIA3       = 98.14% (32505  / 33121   vias)
+        Weight 1     = 98.14% (32505   vias)
+        Un-optimized =  1.86% (616     vias)
+    Layer VIA4       =  0.00% (0      / 1       vias)
+        Un-optimized = 100.00% (1       vias)
+ 
+  Total double via conversion rate    = 66.73% (170232 / 255112 vias)
+ 
+    Layer VIA1       = 29.11% (33293  / 114383  vias)
+    Layer VIA2       = 97.05% (104434 / 107607  vias)
+    Layer VIA3       = 98.14% (32505  / 33121   vias)
+    Layer VIA4       =  0.00% (0      / 1       vias)
+ 
+  The optimized via conversion rate based on total routed via count = 66.73% (170234 / 255112 vias)
+ 
+    Layer VIA1       = 29.11% (33295  / 114383  vias)
+        Weight 1     = 29.11% (33295   vias)
+        Un-optimized = 70.89% (81088   vias)
+    Layer VIA2       = 97.05% (104434 / 107607  vias)
+        Weight 1     = 97.05% (104434  vias)
+        Un-optimized =  2.95% (3173    vias)
+    Layer VIA3       = 98.14% (32505  / 33121   vias)
+        Weight 1     = 98.14% (32505   vias)
+        Un-optimized =  1.86% (616     vias)
+    Layer VIA4       =  0.00% (0      / 1       vias)
+        Un-optimized = 100.00% (1       vias)
+ 
+
+
+Verify Summary:
+
+Total number of nets = 30092, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 2
+Total number of antenna violations = 0
+Total number of voltage-area violations = no voltage-areas defined
+Total number of tie to rail violations = not checked
+Total number of tie to rail directly violations = not checked
+
+1
+route_zrt_detail -inc true -initial_drc_from_input true
+Information: Updating design information... (UID-85)
+
+************************************************************
+SI options:
+Delta Delay Computation:           true
+Static Noise Computation:          true
+Timing window analysis for SI:     false
+Min Delta Delay for SI:            true
+Analysis Effort:                   medium
+Max Transition Mode:               normal_slew
+Static Noise Thresholds:           0.35 (0.37V) above low
+                                   0.35 (0.37V) below high
+Route xtalk prevention:            true
+Route xtalk prevention threshold:  0.25
+************************************************************
+
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : khu_sensor_pad
+Scenario(s): func1_wst
+Version: N-2017.09
+Date   : Sat Sep 12 02:56:07 2020
+****************************************
+
+ * Some/all delay information is back-annotated.
+	Scenario            : func1_wst
+	Parasitic source    : LPE
+	Parasitic mode      : RealRC
+	Extraction mode     : MIN_MAX
+	Extraction derating : 125/125
+
+Information: Percent of Arnoldi-based delays = 93.82% on scenario func1_wst
+
+  Startpoint: khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg_2_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_a_e_reg_0/latch
+            (gating element for clock clk)
+  Scenario: func1_wst
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00      
+  clock network delay (ideal)                             0.75       0.75      
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg_2_/CK (fds2eqd1_hd)
+                                                          0.00       0.75 r    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg_2_/Q (fds2eqd1_hd)
+                                                          0.70 @     1.45 r    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/U520/Y (ivd1_hd)
+                                                          0.26 @     1.71 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/U11/Y (nd2d1_hd)
+                                                          0.44 @     2.15 r    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/U510/Y (nr2d1_hd)
+                                                          0.30 @     2.46 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/U12/Y (nd2d1_hd)
+                                                          0.56 @     3.02 r    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/icc_place122/Y (ivd4_hd)
+                                                          0.59 @     3.61 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/U39/Y (scg2d2_hd)
+                                                          0.42 @     4.02 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/DP_OP_102_143_9311_U11/CO (fad1_hd)
+                                                          0.63 @     4.65 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/DP_OP_102_143_9311_U10/CO (fad1_hd)
+                                                          0.40 @     5.05 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/DP_OP_102_143_9311_U9/CO (fad1_hd)
+                                                          0.40 @     5.45 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/DP_OP_102_143_9311_U8/CO (fad1_hd)
+                                                          0.38 @     5.83 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/DP_OP_102_143_9311_U7/CO (fad1_hd)
+                                                          0.47 @     6.30 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/U48/Y (nd2d1_hd)
+                                                          0.18 @     6.47 r    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/U47/Y (clkxo2d2_hd)
+                                                          0.36 @     6.84 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/U301/Y (scg6d1_hd)
+                                                          0.35 @     7.19 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_a_e_reg_0/EN (SNPS_CLOCK_GATE_HIGH_float_multiplier_1_9_0)
+                                                          0.00       7.19 f    
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_a_e_reg_0/latch/EN (cglpd1_hd)
+                                                          0.00 @     7.19 f    1.05
+  data arrival time                                                  7.19      
+
+  clock clk (rise edge)                                  12.00      12.00      
+  clock network delay (ideal)                             0.75      12.75      
+  clock reconvergence pessimism                           0.00      12.75      
+  clock uncertainty                                      -0.19      12.56      
+  khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_a_e_reg_0/latch/CK (cglpd1_hd)
+                                                          0.00      12.56 r    
+  clock gating setup time                                -0.01      12.55      
+  data required time                                                12.55      
+  ------------------------------------------------------------------------------------
+  data required time                                                12.55      
+  data arrival time                                                 -7.19      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        5.36      
+
+
+  Startpoint: ADS1292_DRDY
+              (input port clocked by clk)
+  Endpoint: khu_sensor_top/ads1292_controller/r_pstate_reg_0_
+            (rising edge-triggered flip-flop clocked by clk)
+  Scenario: func1_wst
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00      
+  clock network delay (ideal)                             0.75       0.75      
+  input external delay                                    0.35       1.10 f    
+  ADS1292_DRDY (in)                                       0.00       1.10 f    
+  pad20/Y (phic_p)                                        1.56 @     2.66 f    1.05
+  khu_sensor_top/ADS1292_DRDY (khu_sensor_top)            0.00       2.66 f    
+  khu_sensor_top/ads1292_controller/i_ADS1292_DRDY (ads1292_controller)
+                                                          0.00       2.66 f    
+  khu_sensor_top/ads1292_controller/U412/Y (ao21d1_hd)
+                                                          0.33 @     2.98 r    1.05
+  khu_sensor_top/ads1292_controller/U402/Y (oa22d1_hd)
+                                                          0.24 @     3.23 f    1.05
+  khu_sensor_top/ads1292_controller/U401/Y (nr4d1_hd)     0.39 @     3.61 r    1.05
+  khu_sensor_top/ads1292_controller/U400/Y (oa211d1_hd)
+                                                          0.26 @     3.88 f    1.05
+  khu_sensor_top/ads1292_controller/r_pstate_reg_0_/D (fd4qd1_hd)
+                                                          0.00 @     3.88 f    1.05
+  data arrival time                                                  3.88      
+
+  clock clk (rise edge)                                  12.00      12.00      
+  clock network delay (ideal)                             0.75      12.75      
+  clock reconvergence pessimism                           0.00      12.75      
+  clock uncertainty                                      -0.19      12.56      
+  khu_sensor_top/ads1292_controller/r_pstate_reg_0_/CK (fd4qd1_hd)
+                                                          0.00      12.56 r    
+  library setup time                                     -0.01      12.55      
+  data required time                                                12.55      
+  ------------------------------------------------------------------------------------
+  data required time                                                12.55      
+  data arrival time                                                 -3.88      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        8.67      
+
+
+  Startpoint: khu_sensor_top/ads1292_controller/o_ADS1292_RESET_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: ADS1292_RESET
+            (output port clocked by clk)
+  Scenario: func1_wst
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00      
+  clock network delay (ideal)                             0.75       0.75      
+  khu_sensor_top/ads1292_controller/o_ADS1292_RESET_reg/CK (fd3qd1_hd)
+                                                          0.00       0.75 r    1.05
+  khu_sensor_top/ads1292_controller/o_ADS1292_RESET_reg/Q (fd3qd1_hd)
+                                                          0.57 @     1.32 r    1.05
+  khu_sensor_top/ads1292_controller/icc_place15/Y (ivd1_hd)
+                                                          0.08 @     1.39 f    1.05
+  khu_sensor_top/ads1292_controller/OUT0 (ads1292_controller)
+                                                          0.00       1.39 f    
+  khu_sensor_top/OUT1 (khu_sensor_top)                    0.00       1.39 f    
+  icc_place6/Y (ivd2_hd)                                  0.32 @     1.71 r    1.05
+  icc_place7/Y (ivd4_hd)                                  0.36 @     2.07 f    1.05
+  icc_place8/Y (ivd2_hd)                                  0.52 @     2.59 r    1.05
+  pad3/PAD (phob12_p)                                     2.91 @     5.50 r    1.05
+  ADS1292_RESET (out)                                     0.00       5.50 r    
+  data arrival time                                                  5.50      
+
+  clock clk (rise edge)                                  12.00      12.00      
+  clock network delay (ideal)                             0.75      12.75      
+  clock reconvergence pessimism                           0.00      12.75      
+  clock uncertainty                                      -0.19      12.56      
+  output external delay                                  -0.50      12.06      
+  data required time                                                12.06      
+  ------------------------------------------------------------------------------------
+  data required time                                                12.06      
+  data arrival time                                                 -5.50      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        6.56      
+
+
+  Startpoint: khu_sensor_top/ads1292_controller/r_clk_counter_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: khu_sensor_top/ads1292_controller/r_clk_counter_reg_31_
+            (rising edge-triggered flip-flop clocked by clk)
+  Scenario: func1_wst
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00      
+  clock network delay (ideal)                             0.75       0.75      
+  khu_sensor_top/ads1292_controller/r_clk_counter_reg_0_/CK (fd4qd1_hd)
+                                                          0.00       0.75 r    1.05
+  khu_sensor_top/ads1292_controller/r_clk_counter_reg_0_/Q (fd4qd1_hd)
+                                                          0.77 @     1.52 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/A[0] (ads1292_controller_DW01_inc_0)
+                                                          0.00       1.52 r    
+  khu_sensor_top/ads1292_controller/add_x_2/U31/CO (had1_hd)
+                                                          0.35 @     1.87 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U30/CO (had1_hd)
+                                                          0.31 @     2.18 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U29/CO (had1_hd)
+                                                          0.29 @     2.46 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U28/CO (had1_hd)
+                                                          0.27 @     2.73 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U27/CO (had1_hd)
+                                                          0.25 @     2.98 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U26/CO (had1_hd)
+                                                          0.25 @     3.23 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U25/CO (had1_hd)
+                                                          0.26 @     3.48 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U24/CO (had1_hd)
+                                                          0.24 @     3.72 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U23/CO (had1_hd)
+                                                          0.24 @     3.97 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U22/CO (had1_hd)
+                                                          0.24 @     4.21 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U21/CO (had1_hd)
+                                                          0.24 @     4.45 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U20/CO (had1_hd)
+                                                          0.26 @     4.71 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U19/CO (had1_hd)
+                                                          0.25 @     4.96 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U18/CO (had1_hd)
+                                                          0.24 @     5.21 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U17/CO (had1_hd)
+                                                          0.26 @     5.47 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U16/CO (had1_hd)
+                                                          0.25 @     5.71 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U15/CO (had1_hd)
+                                                          0.25 @     5.97 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U14/CO (had1_hd)
+                                                          0.25 @     6.22 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U13/CO (had1_hd)
+                                                          0.26 @     6.48 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U12/CO (had1_hd)
+                                                          0.26 @     6.74 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U11/CO (had1_hd)
+                                                          0.27 @     7.01 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U10/CO (had1_hd)
+                                                          0.27 @     7.28 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U9/CO (had1_hd)
+                                                          0.25 @     7.53 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U8/CO (had1_hd)
+                                                          0.28 @     7.81 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U7/CO (had1_hd)
+                                                          0.26 @     8.06 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U6/CO (had1_hd)
+                                                          0.24 @     8.31 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U5/CO (had1_hd)
+                                                          0.25 @     8.56 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U4/CO (had1_hd)
+                                                          0.25 @     8.81 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U3/CO (had1_hd)
+                                                          0.24 @     9.05 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U2/CO (had1_hd)
+                                                          0.23 @     9.27 r    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/U35/Y (clkxo2d2_hd)
+                                                          0.34 @     9.61 f    1.05
+  khu_sensor_top/ads1292_controller/add_x_2/SUM[31] (ads1292_controller_DW01_inc_0)
+                                                          0.00       9.61 f    
+  khu_sensor_top/ads1292_controller/U63/Y (scg2d2_hd)     0.31 @     9.92 f    1.05
+  khu_sensor_top/ads1292_controller/r_clk_counter_reg_31_/D (fd4qd1_hd)
+                                                          0.00 @     9.92 f    1.05
+  data arrival time                                                  9.92      
+
+  clock clk (rise edge)                                  12.00      12.00      
+  clock network delay (ideal)                             0.75      12.75      
+  clock reconvergence pessimism                           0.00      12.75      
+  clock uncertainty                                      -0.19      12.56      
+  khu_sensor_top/ads1292_controller/r_clk_counter_reg_31_/CK (fd4qd1_hd)
+                                                          0.00      12.56 r    
+  library setup time                                     -0.01      12.55      
+  data required time                                                12.55      
+  ------------------------------------------------------------------------------------
+  data required time                                                12.55      
+  data arrival time                                                 -9.92      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        2.63      
+
+
+  Startpoint: khu_sensor_top/ads1292_controller/o_ADS1292_BUSY_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: khu_sensor_top/sensor_core/r_ads_reg_data_reg_0_
+            (rising edge-triggered flip-flop clocked by clk_half)
+  Scenario: func1_wst
+  Path Group: clk_half
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                  12.00      12.00      
+  clock network delay (ideal)                             0.75      12.75      
+  khu_sensor_top/ads1292_controller/o_ADS1292_BUSY_reg/CK (fd4qd1_hd)
+                                                          0.00      12.75 r    1.05
+  khu_sensor_top/ads1292_controller/o_ADS1292_BUSY_reg/Q (fd4qd1_hd)
+                                                          0.89 @    13.64 r    1.05
+  khu_sensor_top/ads1292_controller/o_ADS1292_BUSY (ads1292_controller)
+                                                          0.00      13.64 r    
+  khu_sensor_top/sensor_core/i_ADS1292_BUSY (sensor_core)
+                                                          0.00      13.64 r    
+  khu_sensor_top/sensor_core/U470/Y (scg17d1_hd)          0.84 @    14.48 r    1.05
+  khu_sensor_top/sensor_core/U468/Y (nr2ad1_hd)           0.64 @    15.11 f    1.05
+  khu_sensor_top/sensor_core/U214/Y (scg2d2_hd)           0.42 @    15.53 f    1.05
+  khu_sensor_top/sensor_core/r_ads_reg_data_reg_0_/D (fd4qd1_hd)
+                                                          0.01 @    15.55 f    1.05
+  data arrival time                                                 15.55      
+
+  clock clk_half (rise edge)                             24.00      24.00      
+  clock network delay (ideal)                             0.75      24.75      
+  clock reconvergence pessimism                           0.00      24.75      
+  clock uncertainty                                      -0.38      24.37      
+  khu_sensor_top/sensor_core/r_ads_reg_data_reg_0_/CK (fd4qd1_hd)
+                                                          0.00      24.37 r    
+  library setup time                                     -0.01      24.36      
+  data required time                                                24.36      
+  ------------------------------------------------------------------------------------
+  data required time                                                24.36      
+  data arrival time                                                -15.55      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        8.81      
+
+
+  Startpoint: khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_reg_0/ENCLK
+              (internal path startpoint)
+  Endpoint: khu_sensor_top/ads1292_filter/iir_notch/add_2/b_reg_3_/CK
+            (internal path endpoint)
+  Scenario: func1_wst
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r    
+  khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_reg_0/ENCLK (SNPS_CLOCK_GATE_HIGH_float_adder_1_0_0)
+                                                          0.00       0.00 r    
+  khu_sensor_top/ads1292_filter/iir_notch/add_2/icc_place19/Y (ivd4_hd)
+                                                          0.19 @     0.19 f    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/add_2/icc_place20/Y (ivd4_hd)
+                                                          0.21 @     0.40 r    1.05
+  khu_sensor_top/ads1292_filter/iir_notch/add_2/b_reg_3_/CK (fd3qd1_hd)
+                                                          0.00 @     0.40 r    1.05
+  data arrival time                                                  0.40      
+
+  max_delay                                               0.00       0.00      
+  output external delay                                   0.00       0.00      
+  data required time                                                 0.00      
+  ------------------------------------------------------------------------------------
+  data required time                                                 0.00      
+  data arrival time                                                 -0.40      
+  ------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.40      
+
+
+GART: Updated design time.
+GART: Transferring timing data to the router....
+GART: Done transferring timing data to the router.
+Found antenna rule mode 1, diode mode 2:
+	metal ratio 100, cut ratio 20,metal gate diffusion length based ratio 0 cut gate length based ratio 0	metal pratio 0, cut pratio 0, metal gate diffusion length based pratio 0, cut gate diffusion length based pratio 0	metal nratio 0, cut nratio 0, metal nratio 0, cut nratio 0
+	layer MET1: max ratio 100 max pratio 2.14748e+09 max nratio 2.14748e+09	layer MET1: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 400 3700}
+	layer MET2: max ratio 100 max pratio 2.14748e+09 max nratio 2.14748e+09	layer MET2: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 400 3700}
+	layer MET3: max ratio 100 max pratio 2.14748e+09 max nratio 2.14748e+09	layer MET3: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 400 3700}
+	layer MET4: max ratio 100 max pratio 2.14748e+09 max nratio 2.14748e+09	layer MET4: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 8000 50000}
+	layer VIA1: max ratio 5 max pratio 2.14748e+09 max nratio 2.14748e+09	layer VIA1: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 83.33 75}
+	layer VIA2: max ratio 5 max pratio 2.14748e+09 max nratio 2.14748e+09	layer VIA2: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 83.33 75}
+	layer VIA3: max ratio 5 max pratio 2.14748e+09 max nratio 2.14748e+09	layer VIA3: max gate length based ratio 0 max gate length based pratio 0 max gate length based nratio 0, diode ratio {0.203 0 83.33 75}
+Cell Min-Routing-Layer = MET1
+Cell Max-Routing-Layer = MET4
+Printing options for 'set_route_zrt_common_options'
+-concurrent_redundant_via_mode                          :	 reserve_space       
+-connect_within_pins_by_layer_name                      :	 {{MET1 via_wire_standard_cell_pins} }
+-reshield_modified_nets                                 :	 reshield            
+-wide_macro_pin_as_fat_wire                             :	 true                
+
+Printing options for 'set_route_zrt_detail_options'
+-antenna                                                :	 true                
+-default_gate_size                                      :	 0.020000            
+-diode_libcell_names                                    :	 {{diode_cell_hd} }  
+-insert_diodes_during_routing                           :	 true                
+-repair_shorts_over_macros_effort_level                 :	 low                 
+-timing_driven                                          :	 true                
+-use_default_width_for_min_area_min_len_stub            :	 true                
+
+[Dr init] Elapsed real time: 0:00:03 
+[Dr init] Elapsed cpu  time: sys=0:00:00 usr=0:00:03 total=0:00:03
+[Dr init] Stage (MB): Used   82  Alloctr   83  Proc    0 
+[Dr init] Total (MB): Used   86  Alloctr   87  Proc 2595 
+Warning: No antenna diodes found, or could not link them. (ZRT-302)
+Warning: Antenna diode insertion will be off. (ZRT-301)
+Total number of nets = 30092, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Information: Using 1 threads for routing. (ZRT-444)
+Routing in incremental mode, starting from iteration 43
+
+*****Start reporting antenna related parameters*****
+  Antenna/diode mode:
+    Antenna mode 1; diode mode 2
+      Metal lay (MET1)0; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 400.000 3700.000 0.000)
+      Cut lay (VIA1)1; maxRatio 5.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 83.330 75.000 0.000)
+      Metal lay (MET2)1; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 400.000 3700.000 0.000)
+      Cut lay (VIA2)2; maxRatio 5.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 83.330 75.000 0.000)
+      Metal lay (MET3)2; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 400.000 3700.000 0.000)
+      Cut lay (VIA3)3; maxRatio 5.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 83.330 75.000 0.000)
+      Metal lay (MET4)3; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.203 0.000 8000.000 50000.000 0.000)
+      Cut lay (VIA4)4; maxRatio 20.000 maxPRatio 2147483647.000 maxNRatio 2147483647.000
+      Metal lay (MET5)4; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000
+      Cut lay (VIA5)5; maxRatio 20.000 maxPRatio 2147483647.000 maxNRatio 2147483647.000
+      Metal lay (MET6)5; maxRatio 100.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000
+  Accumulate from metal to cut == false
+  Accumulate from cut to metal == false
+  Top lay antenna ratio fix threshold == -1
+  Antenna max pin count threshold == -1
+  Check PG net == false
+  MergeGate == true
+  Break antenna to port mode == float
+  Break antenna to macro pin mode == normal
+*****End reporting antenna related parameters*****
+Warning: Skipping antenna analysis for net i_CLK. The pin i_CLK on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net i_RSTN. The pin i_RSTN on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net MPR121_SDA. The pin MPR121_SDA on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net MPR121_SCL. The pin MPR121_SCL on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net UART_RXD. The pin UART_RXD on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net ADS1292_DRDY. The pin ADS1292_DRDY on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net ADS1292_MISO. The pin ADS1292_MISO on cell khu_sensor_pad does not have enough gate area information. (ZRT-311)
+Skipping antenna analysis for 7 nets as they don't have enough gate area info.
+Start DR iteration 43: non-uniform partition
+Routed	1/1 Partitions, Violations =	3
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	3
+	@@@@ Total number of instance ports with antenna violations =	0
+
+	Min-max layer : 1
+	Short : 2
+
+[Iter 43] Elapsed real time: 0:00:04 
+[Iter 43] Elapsed cpu  time: sys=0:00:00 usr=0:00:04 total=0:00:04
+[Iter 43] Stage (MB): Used   90  Alloctr   90  Proc    0 
+[Iter 43] Total (MB): Used   94  Alloctr   95  Proc 2595 
+
+End DR iteration 43 with 1 parts
+
+Start DR iteration 44: non-uniform partition
+Routed	1/1 Partitions, Violations =	3
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	3
+	@@@@ Total number of instance ports with antenna violations =	0
+
+	Min-max layer : 1
+	Short : 2
+
+[Iter 44] Elapsed real time: 0:00:04 
+[Iter 44] Elapsed cpu  time: sys=0:00:00 usr=0:00:04 total=0:00:04
+[Iter 44] Stage (MB): Used   90  Alloctr   90  Proc    0 
+[Iter 44] Total (MB): Used   94  Alloctr   95  Proc 2595 
+
+End DR iteration 44 with 1 parts
+
+Start DR iteration 45: non-uniform partition
+Routed	1/1 Partitions, Violations =	3
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	3
+	@@@@ Total number of instance ports with antenna violations =	0
+
+	Min-max layer : 1
+	Short : 2
+
+[Iter 45] Elapsed real time: 0:00:04 
+[Iter 45] Elapsed cpu  time: sys=0:00:00 usr=0:00:04 total=0:00:04
+[Iter 45] Stage (MB): Used   90  Alloctr   90  Proc    0 
+[Iter 45] Total (MB): Used   94  Alloctr   95  Proc 2595 
+
+End DR iteration 45 with 1 parts
+
+Start DR iteration 46: non-uniform partition
+Routed	1/1 Partitions, Violations =	3
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	3
+	@@@@ Total number of instance ports with antenna violations =	0
+
+	Min-max layer : 1
+	Short : 2
+
+[Iter 46] Elapsed real time: 0:00:04 
+[Iter 46] Elapsed cpu  time: sys=0:00:00 usr=0:00:04 total=0:00:04
+[Iter 46] Stage (MB): Used   90  Alloctr   90  Proc    0 
+[Iter 46] Total (MB): Used   94  Alloctr   95  Proc 2595 
+
+End DR iteration 46 with 1 parts
+
+Start DR iteration 47: non-uniform partition
+Routed	1/1 Partitions, Violations =	3
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	3
+	@@@@ Total number of instance ports with antenna violations =	0
+
+	Min-max layer : 1
+	Short : 2
+
+[Iter 47] Elapsed real time: 0:00:05 
+[Iter 47] Elapsed cpu  time: sys=0:00:00 usr=0:00:04 total=0:00:05
+[Iter 47] Stage (MB): Used   90  Alloctr   90  Proc    0 
+[Iter 47] Total (MB): Used   94  Alloctr   95  Proc 2595 
+
+End DR iteration 47 with 1 parts
+
+	@@@@ Total nets not meeting constraints =	0
+
+Stop DR since not converging
+
+[DR] Elapsed real time: 0:00:05 
+[DR] Elapsed cpu  time: sys=0:00:00 usr=0:00:04 total=0:00:05
+[DR] Stage (MB): Used   78  Alloctr   78  Proc    0 
+[DR] Total (MB): Used   82  Alloctr   83  Proc 2595 
+[DR: Done] Elapsed real time: 0:00:05 
+[DR: Done] Elapsed cpu  time: sys=0:00:00 usr=0:00:04 total=0:00:05
+[DR: Done] Stage (MB): Used   78  Alloctr   78  Proc    0 
+[DR: Done] Total (MB): Used   82  Alloctr   83  Proc 2595 
+
+DR finished with 0 open nets, of which 0 are frozen
+Information: Merged away 1 aligned/redundant DRCs. (ZRT-305)
+
+DR finished with 2 violations and 0 instance ports antenna violations
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	2
+	Min-max layer : 1
+	Short : 1
+
+
+
+Total Wire Length =                    1001397 micron
+Total Number of Contacts =             255112
+Total Number of Wires =                217861
+Total Number of PtConns =              789
+Total Number of Routed Wires =       217861
+Total Routed Wire Length =           1001193 micron
+Total Number of Routed Contacts =       255112
+	Layer           MET1 :      13750 micron
+	Layer           MET2 :     289274 micron
+	Layer           MET3 :     443666 micron
+	Layer           MET4 :     254700 micron
+	Layer           MET5 :          7 micron
+	Layer           MET6 :          0 micron
+	Via            VIA45 :          1
+	Via            VIA34 :        615
+	Via       VIA34(rot) :          1
+	Via        VIA34_2x1 :      27701
+	Via   VIA34(rot)_1x2 :         46
+	Via        VIA34_1x2 :       4758
+	Via            VIA23 :       3168
+	Via       VIA23(rot) :          5
+	Via        VIA23_1x2 :      71582
+	Via   VIA23(rot)_2x1 :         10
+	Via   VIA23(rot)_1x2 :        338
+	Via        VIA23_2x1 :      32504
+	Via            VIA12 :      78151
+	Via       VIA12(rot) :       2937
+	Via      FVIA12(rot) :          2
+	Via   VIA12(rot)_2x1 :       2764
+	Via        VIA12_1x2 :      16443
+	Via        VIA12_2x1 :       5634
+	Via   VIA12(rot)_1x2 :       8452
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate = 66.73% (170234 / 255112 vias)
+ 
+    Layer VIA1       = 29.11% (33295  / 114383  vias)
+        Weight 1     = 29.11% (33295   vias)
+        Un-optimized = 70.89% (81088   vias)
+    Layer VIA2       = 97.05% (104434 / 107607  vias)
+        Weight 1     = 97.05% (104434  vias)
+        Un-optimized =  2.95% (3173    vias)
+    Layer VIA3       = 98.14% (32505  / 33121   vias)
+        Weight 1     = 98.14% (32505   vias)
+        Un-optimized =  1.86% (616     vias)
+    Layer VIA4       =  0.00% (0      / 1       vias)
+        Un-optimized = 100.00% (1       vias)
+ 
+  Total double via conversion rate    = 66.73% (170232 / 255112 vias)
+ 
+    Layer VIA1       = 29.11% (33293  / 114383  vias)
+    Layer VIA2       = 97.05% (104434 / 107607  vias)
+    Layer VIA3       = 98.14% (32505  / 33121   vias)
+    Layer VIA4       =  0.00% (0      / 1       vias)
+ 
+  The optimized via conversion rate based on total routed via count = 66.73% (170234 / 255112 vias)
+ 
+    Layer VIA1       = 29.11% (33295  / 114383  vias)
+        Weight 1     = 29.11% (33295   vias)
+        Un-optimized = 70.89% (81088   vias)
+    Layer VIA2       = 97.05% (104434 / 107607  vias)
+        Weight 1     = 97.05% (104434  vias)
+        Un-optimized =  2.95% (3173    vias)
+    Layer VIA3       = 98.14% (32505  / 33121   vias)
+        Weight 1     = 98.14% (32505   vias)
+        Un-optimized =  1.86% (616     vias)
+    Layer VIA4       =  0.00% (0      / 1       vias)
+        Un-optimized = 100.00% (1       vias)
+ 
+
+Total number of nets = 30092
+0 open nets, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 2
+Total number of antenna violations = 0
+Total number of voltage-area violations = no voltage-areas defined
+Special ECO iteration 1 ended with 0 qualifying violations.
+Topology ECO iteration 1 ended with 0 qualifying violations.
+Updating the database ...
+Information: RC extraction has been freed. (PSYN-503)
+1
+# Connect Power & Grounding in extraction and update timing
+derive_pg_connection -power_net  $MW_R_POWER_NET    -power_pin  $MW_POWER_PORT
+Information: connected 0 power ports and 0 ground ports
+1
+derive_pg_connection -ground_net $MW_R_GROUND_NET   -ground_pin $MW_GROUND_PORT
+Information: connected 0 power ports and 0 ground ports
+1
+derive_pg_connection -power_net  $MW_R_POWER_NET    -ground_net $MW_R_GROUND_NET -tie
+reconnected total 0 tie highs and 0 tie lows
+1
+# Intermediate Save
+# Use timing driven SnR.
+set_route_zrt_global_options -timing_driven true
+1
+set_route_zrt_track_options  -timing_driven true
+1
+set_route_zrt_detail_options -timing_driven true
+1
+save_mw_cel
+Information: Performing CEL netlist consistency check. (MWDC-118)
+Information: CEL consistency check PASSED. (MWDC-119)
+Information: Saved design named khu_sensor_pad. (UIG-5)
+1
+puts "SEC_INFO: CEL was saved. You can open CEL with read_only !!"
+SEC_INFO: CEL was saved. You can open CEL with read_only !!
+# Running extraction and updating the timing
+extract_rc -coupling_cap
+
+Warning: Pin PAD of reference cell phis_p has no physical location. (APL-028)
+Warning: Pin PAD of reference cell phbct12_p has no physical location. (APL-028)
+Warning: Pin PAD of reference cell phic_p has no physical location. (APL-028)
+Warning: Pin PAD of reference cell phob12_p has no physical location. (APL-028)
+Warning: Pin PAD of reference cell phbct24_p has no physical location. (APL-028)
+  Loading design 'khu_sensor_pad'
+
+
+Information: Setting a dont_touch attribute on net 'ADS1292_DRDY' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_MISO' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'UART_RXD' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'i_RSTN' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'async_rstn_glitch_synchronizer/async_rstn_synchronizer/i_CLK' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'i_CLK' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'async_rstn_glitch_synchronizer/i_CLK' because it is connected to a pad cell. (PSYN-088)
+Note - message 'PSYN-086' limit (1) exceeded.  Remainder will be suppressed.
+Information: Setting a dont_touch attribute on net 'MPR121_SDA' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'MPR121_SCL' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_CSN' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_START' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_RESET' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_MOSI' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'ADS1292_SCLK' because it is connected to a pad cell. (PSYN-088)
+Information: Setting a dont_touch attribute on net 'UART_TXD' because it is connected to a pad cell. (PSYN-088)
+
+
+Information: Library Manufacturing Grid(GridResolution) : 10
+Information: Time Unit from Milkyway design library: 'ns' 
+Information: Design Library and main library timing units are matched - 1.000 ns. 
+Information: Resistance Unit from Milkyway design library: 'kohm' 
+Information: Design Library and main library resistance units are matched - 1.000 kohm. 
+Information: Capacitance Unit from Milkyway design library: 'pf' 
+Information: Design Library and main library capacitance units are matched - 1.000 pf. 
+Warning: Inconsistent library data found for layer GPOLY. (RCEX-018)
+Information: Layer MET5 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer MET6 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is detail route TLU+. (RCEX-015)
+Information: Start mixed mode parasitic extraction. (RCEX-023)
+Information: Start rc extraction...
+EKL_MT: total threadable CPU 7.43 seconds
+EKL_MT: elapsed time 8 seconds
+Information: Parasitic source is LPE. (RCEX-040)
+Information: Parasitic mode is RealRC. (RCEX-041)
+Information: Extraction derate is 125/125(from scenario func1_wst). (RCEX-043)
+Information: Extraction derate is 125/125(from scenario funccts_wst). (RCEX-043)
+Information: Coupling capacitances are explicitly created. (RCEX-044)
+Information: Start back annotation for parasitic extraction. (RCEX-023)
+Information: End back annotation for parasitic extraction. (RCEX-023)
+Information: Start timing update for parasitic extraction. (RCEX-023)
+Information: End timing update for parasitic extraction. (RCEX-023)
+Information: End parasitic extraction. (RCEX-023)
+1
+update_timing
+	Scenario            : func1_wst
+	Parasitic source    : LPE
+	Parasitic mode      : RealRC
+	Extraction mode     : MIN_MAX
+	Extraction derating : 125/125
+Information: Updating design information... (UID-85)
+
+************************************************************
+SI options:
+Delta Delay Computation:           true
+Static Noise Computation:          true
+Timing window analysis for SI:     false
+Min Delta Delay for SI:            true
+Analysis Effort:                   medium
+Max Transition Mode:               normal_slew
+Static Noise Thresholds:           0.35 (0.37V) above low
+                                   0.35 (0.37V) below high
+Route xtalk prevention:            true
+Route xtalk prevention threshold:  0.25
+************************************************************
+
+1
+# Report
+set REPORTS_STEP_DIR $REPORTS_DIR/${step}
+./reports/08_chip_finish
+if {[file exist $REPORTS_STEP_DIR]} {
+	sh rm -rf $REPORTS_STEP_DIR
+}
+sh mkdir $REPORTS_STEP_DIR
+set legalize_support_phys_only_cell true
+true
+create_qor_snapshot -show_all -significant_digits 4 -name $step
+Current scenario is: func1_wst
+Information: Timer is not in zero interconnect delay mode. (TIM-176)
+***********************************************
+Report          : create_qor_snapshot (08_chip_finish)
+Design          : khu_sensor_pad
+Version         : N-2017.09
+Date            : Sat Sep 12 02:56:46 2020
+Time unit       : 1.0e-09 Second(ns)
+Capacitance unit: 1.0e-12 Farad(pF)
+Voltage unit    : 1 Volt
+Power unit      : 1.0e-03 Watt(mW)
+Location        : /home/graduation_project3/2015103977/03_Physical_Synthesis/snapshot
+***********************************************
+No. of scenario = 1
+s1 = func1_wst
+--------------------------------------------------
+WNS of each timing group:                       s1 
+--------------------------------------------------
+clk_half                                    8.8082 
+**clock_gating_default**                    5.3574 
+REGIN                                       8.6719 
+default                                    -0.4041 
+REGOUT                                      6.5557 
+clk                                         2.6253 
+--------------------------------------------------
+Setup WNS:                                 -0.4041 
+Setup TNS:                               -639.0113
+Number of setup violations:                   2969  
+Hold WNS:                                   0.0000  
+Hold TNS:                                   0.0000  
+Number of hold violations:                       0  
+Number of max trans violations:                  0  
+Number of max cap violations:                    0  
+Number of min pulse width violations:            0  
+Route drc violations:                            2
+--------------------------------------------------
+Area:                                        88190
+Cell count:                                  28171
+Buf/inv cell count:                           4514
+Std cell utilization:                       62.49%
+CPU/ELAPSE(hr):                          0.03/0.05
+Mem(Mb):                                      1028
+Host name:                               vlsi-dist.khu.ac.kr
+--------------------------------------------------
+Histogram:             s1 
+--------------------------------------------------
+Max violations:      2968 
+   above ~ -0.7  ---    0 
+    -0.6 ~ -0.7  ---    0 
+    -0.5 ~ -0.6  ---    0 
+    -0.4 ~ -0.5  ---   22 
+    -0.3 ~ -0.4  ---  643 
+    -0.2 ~ -0.3  --- 1546 
+    -0.1 ~ -0.2  ---   20 
+       0 ~ -0.1  ---  737 
+--------------------------------------------------
+Min violations:         0 
+  -0.06 ~ above  ---    0 
+  -0.05 ~ -0.06  ---    0 
+  -0.04 ~ -0.05  ---    0 
+  -0.03 ~ -0.04  ---    0 
+  -0.02 ~ -0.03  ---    0 
+  -0.01 ~ -0.02  ---    0 
+      0 ~ -0.01  ---    0 
+--------------------------------------------------
+Current scenario is: func1_wst
+Snapshot (08_chip_finish) is created and stored under "/home/graduation_project3/2015103977/03_Physical_Synthesis/snapshot" directory
+1
+redirect -file $REPORTS_STEP_DIR/snap.rpt 	{ report_qor_snapshot -name $step -save_as snap.rpt }
+redirect -file $REPORTS_STEP_DIR/hfn.rpt { report_net_fanout -threshold 100 }
+redirect -file $REPORTS_STEP_DIR/qor.rpt -tee 	{ report_qor -scenario [all_scenarios] -significant_digits 4 }
+Information: Scenario funccts_wst either not exists or is inactive. report_qor will skip it. (UID-1059)
+ 
+****************************************
+Report : qor
+Design : khu_sensor_pad
+Scenario(s): func1_wst funccts_wst
+Version: N-2017.09
+Date   : Sat Sep 12 02:56:47 2020
+****************************************
+
+
+  Scenario 'func1_wst'
+  Timing Path Group '**clock_gating_default**'
+  -----------------------------------
+  Levels of Logic:            14.0000
+  Critical Path Length:        6.4406
+  Critical Path Slack:         5.3574
+  Critical Path Clk Period:   12.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_wst'
+  Timing Path Group 'REGIN'
+  -----------------------------------
+  Levels of Logic:             5.0000
+  Critical Path Length:        2.7761
+  Critical Path Slack:         8.6719
+  Critical Path Clk Period:   12.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_wst'
+  Timing Path Group 'REGOUT'
+  -----------------------------------
+  Levels of Logic:             5.0000
+  Critical Path Length:        4.7523
+  Critical Path Slack:         6.5557
+  Critical Path Clk Period:   12.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_wst'
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:            32.0000
+  Critical Path Length:        9.1727
+  Critical Path Slack:         2.6253
+  Critical Path Clk Period:   12.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_wst'
+  Timing Path Group 'clk_half'
+  -----------------------------------
+  Levels of Logic:             3.0000
+  Critical Path Length:        2.7978
+  Critical Path Slack:         8.8082
+  Critical Path Clk Period:   24.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_wst'
+  Timing Path Group 'default'
+  -----------------------------------
+  Levels of Logic:             2.0000
+  Critical Path Length:        0.4041
+  Critical Path Slack:        -0.4041
+  Critical Path Clk Period:       n/a
+  Total Negative Slack:     -639.0113
+  No. of Violating Paths:   2969.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:        232
+  Hierarchical Port Count:       6201
+  Leaf Cell Count:              28171
+  Buf/Inv Cell Count:            4514
+  Buf Cell Count:                 162
+  Inv Cell Count:                4352
+  CT Buf/Inv Cell Count:          132
+  Combinational Cell Count:     22836
+  Sequential Cell Count:         5335
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:      52175.6969
+  Noncombinational Area:   36013.9983
+  Buf/Inv Area:             4228.0095
+  Total Buffer Area:         230.9995
+  Total Inverter Area:      3997.0100
+  Macro/Black Box Area:        0.0000
+  Net Area:                  892.2321
+  Net XLength        :    484160.4375
+  Net YLength        :    540963.9375
+  -----------------------------------
+  Cell Area:               88189.6952
+  Design Area:             89081.9272
+  Net Length        :    1025124.3750
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         30316
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: vlsi-dist.khu.ac.kr
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                  0.0000
+  Logic Optimization:                0.0000
+  Mapping Optimization:            117.0402
+  -----------------------------------------
+  Overall Compile Time:            118.5290
+  Overall Compile Wall Clock Time: 118.8432
+
+  --------------------------------------------------------------------
+
+  Scenario: func1_wst   WNS: 0.4041  TNS: 639.0113  Number of Violating Paths: 2969  (with Crosstalk delta delays)
+  Design  WNS: 0.4041  TNS: 639.0113  Number of Violating Paths: 2969  (with Crosstalk delta delays)
+
+
+  Scenario: func1_wst  (Hold)  WNS: 0.0000  TNS: 0.0000  Number of Violating Paths: 0  (with Crosstalk delta delays)
+  Design (Hold)  WNS: 0.0000  TNS: 0.0000  Number of Violating Paths: 0  (with Crosstalk delta delays)
+
+  --------------------------------------------------------------------
+
+
+1
+redirect -file $REPORTS_STEP_DIR/physical.sum -tee { report_design -physical -nosplit }
+ 
+****************************************
+Report : design
+        -physical
+Design : khu_sensor_pad
+Version: N-2017.09
+Date   : Sat Sep 12 02:56:47 2020
+****************************************
+
+	Scenario            : func1_wst
+	Parasitic source    : LPE
+	Parasitic mode      : RealRC
+	Extraction mode     : MIN_MAX
+	Extraction derating : 125/125
+****************************** P&R Summary ********************************
+Date : Sat Sep 12 02:56:47 2020
+Machine Host Name: vlsi-dist.khu.ac.kr
+Working Directory: /home/graduation_project3/2015103977/03_Physical_Synthesis
+Library Name:      khu_sensor_pad_08_chip_finish
+Cell Name:         khu_sensor_pad.CEL;1
+Design Statistics:
+    Number of Module Cells:        28127
+    Number of Pins:                164799
+    Number of IO Pad Cells:        44
+    Number of IO Pins:             13
+    Number of Nets:                30092
+    Average Pins Per Net (Signal): 3.41654
+
+Chip Utilization:
+    Total Std Cell Area:           419077.30
+    Total Pad Cell Area:           363316.80
+    Core Size:     width 820.60, height 817.20; area 670594.32
+    Pad Core Size: width 920.76, height 920.76; area 847798.98
+    Chip Size:     width 1196.00, height 1196.00; area 1430416.00
+    Std cells utilization:         62.49% 
+    Cell/Core Ratio:               62.49%
+    Cell/Chip Ratio:               54.70%
+    Number of Cell Rows:            227
+
+Master Instantiation:
+	MasterName	Type	InstCount
+	=================================
+	ivd1_hd		STD	3151
+	oa21d1_hd	STD	2077
+	fd4qd1_hd	STD	2066
+	nd2d1_hd	STD	1963
+	fd1qd1_hd	STD	1734
+	clkxo2d2_hd	STD	1703
+	fad1_hd		STD	1322
+	nr2d1_hd	STD	1287
+	ao22d1_hd	STD	1243
+	scg2d2_hd	STD	1232
+	fd3qd1_hd	STD	1216
+	ao222d1_hd	STD	1056
+	ao21d1_hd	STD	636
+	had1_hd		STD	618
+	ivd2_hd		STD	481
+	scg10d1_hd	STD	420
+	ivd4_hd		STD	412
+	ad2d1_hd	STD	341
+	scg4d1_hd	STD	335
+	nd3d1_hd	STD	299
+	oa22d1_hd	STD	298
+	oa211d1_hd	STD	290
+	nr4d1_hd	STD	278
+	xn2d1_hd	STD	241
+	or2d1_hd	STD	223
+	nr3d1_hd	STD	216
+	scg14d1_hd	STD	188
+	ivd12_hd	STD	179
+	nd4d1_hd	STD	146
+	nd2bd1_hd	STD	144
+	scg17d1_hd	STD	130
+	cglpd1_hd	STD	122
+	nr2bd1_hd	STD	120
+	fds2eqd1_hd	STD	119
+	ao211d1_hd	STD	116
+	nid1_hd		STD	116
+	scg22d1_hd	STD	110
+	scg6d1_hd	STD	110
+	scg16d1_hd	STD	85
+	nr2d4_hd	STD	76
+	oa22ad1_hd	STD	63
+	ad2bd2_hd	STD	56
+	nr2ad1_hd	STD	54
+	scg5d1_hd	STD	51
+	scg2d1_hd	STD	45
+	ad4d1_hd	STD	45
+	ivd8_hd		STD	43
+	ad3d2_hd	STD	42
+	or2bd4_hd	STD	41
+	ivd16_hd	STD	37
+	nid2_hd		STD	35
+	xn2d2_hd	STD	32
+	mx2d1_hd	STD	30
+	scg12d1_hd	STD	30
+	scg20d1_hd	STD	29
+	or2d2_hd	STD	28
+	or4d1_hd	STD	28
+	oa21d2_hd	STD	24
+	ivd24_hd	STD	24
+	scg13d1_hd	STD	23
+	ivd6_hd		STD	23
+	clknd2d2_hd	STD	22
+	xo3d1_hd	STD	22
+	fds2d1_hd	STD	20
+	scg18d1_hd	STD	19
+	or2d4_hd	STD	18
+	fd1qd2_hd	STD	17
+	ad2d2_hd	STD	17
+	scg9d1_hd	STD	16
+	scg15d1_hd	STD	16
+	fd4qd2_hd	STD	15
+	scg21d1_hd	STD	12
+	fd2qd4_hd	STD	11
+	ao22d2_hd	STD	11
+	clknd2d4_hd	STD	11
+	nr4d4_hd	STD	11
+	clkxo2d1_hd	STD	11
+	nd3bd1_hd	STD	10
+	ao21d2_hd	STD	10
+	or3d1_hd	STD	10
+	ad2d4_hd	STD	9
+	fd2qd1_hd	STD	9
+	scg9d2_hd	STD	8
+	xo2d1_hd	STD	7
+	nd2d2_hd	STD	7
+	nr4d2_hd	STD	6
+	ad3d1_hd	STD	6
+	scg1d1_hd	STD	6
+	mx2id1_hd	STD	6
+	ad3d4_hd	STD	6
+	nr2d6_hd	STD	6
+	scg8d1_hd	STD	5
+	nr2d2_hd	STD	5
+	scg20d4_hd	STD	5
+	nid6_hd		STD	5
+	mx4d1_hd	STD	4
+	scg7d1_hd	STD	4
+	ao22ad1_hd	STD	4
+	nid4_hd		STD	4
+	nd3d2_hd	STD	4
+	oa21d4_hd	STD	3
+	ao211d2_hd	STD	3
+	or2bd2_hd	STD	2
+	or2d8_hd	STD	2
+	oa211d2_hd	STD	2
+	scg6d2_hd	STD	2
+	ad2bd4_hd	STD	2
+	or3d2_hd	STD	2
+	scg10d2_hd	STD	2
+	ivd20_hd	STD	2
+	fds2eqd2_hd	STD	2
+	fd2qd2_hd	STD	2
+	clkad2d1_hd	STD	2
+	clknd2d1_hd	STD	1
+	scg11d1_hd	STD	1
+	clknd2d3_hd	STD	1
+	scg12d2_hd	STD	1
+	nr3ad1_hd	STD	1
+	scg20d2_hd	STD	1
+	fd2d1_hd	STD	1
+	clkad2d3_hd	STD	1
+	ao21d4_hd	STD	1
+	nr4d6_hd	STD	1
+	scg12d4_hd	STD	1
+	ao22d4_hd	STD	1
+	nd3bd4_hd	STD	1
+	scg16d2_hd	STD	1
+	scg20d8_hd	STD	1
+	nr3d2_hd	STD	1
+	ft2d4_hd	STD	1
+	nid24_hd	STD	1
+	nid16_hd	STD	1
+	nr3d4_hd	STD	1
+	oa22d2_hd	STD	1
+	scg10d4_hd	STD	1
+	iofillerh10_p	IO	44
+	iofillerh5_p	IO	17
+	vssiph_p	IO	11
+	vssoh_p		IO	9
+	phob12_p	IO	6
+	vdd33oph_p	IO	4
+	vdd12ih_p	IO	4
+	phic_p		IO	3
+	vdd12ih_core_p	IO	3
+	phbct12_p	IO	2
+	phbct24_p	IO	1
+	phis_p		IO	1
+	iofillerh30_p	IO	1
+	=================================
+
+Timing/Optimization Information:
+
+Global Routing Information:
+    layer MET1, dir Hor, min width = 0.16, min space = 0.16 pitch = 0.40
+    layer MET2, dir Ver, min width = 0.20, min space = 0.20 pitch = 0.44
+    layer MET3, dir Hor, min width = 0.20, min space = 0.20 pitch = 0.40
+    layer MET4, dir Ver, min width = 0.20, min space = 0.20 pitch = 0.44
+    layer MET5, dir Hor, min width = 0.20, min space = 0.20 pitch = 0.40
+    layer MET6, dir Ver, min width = 0.44, min space = 0.44 pitch = 0.88
+     
+    Average gCell capacity  2.86	 on layer (1)	 MET1
+    Average gCell capacity  5.21	 on layer (2)	 MET2
+    Average gCell capacity  6.02	 on layer (3)	 MET3
+    Average gCell capacity  5.60	 on layer (4)	 MET4
+    Average gCell capacity  5.55	 on layer (5)	 MET5
+    Average gCell capacity  0.00	 on layer (6)	 MET6
+     
+    Initial. Both Dirs: Overflow =  1910 Max = 11 GRCs =   911 (0.41%)
+    Initial. H routing: Overflow =    66 Max =  3 (GRCs =  1) GRCs =    62 (0.06%)
+    Initial. V routing: Overflow =  1844 Max = 11 (GRCs =  2) GRCs =   849 (0.77%)
+     
+    phase1. Both Dirs: Overflow =  1910 Max = 11 GRCs =   911 (0.41%)
+    phase1. H routing: Overflow =    66 Max =  3 (GRCs =  1) GRCs =    62 (0.06%)
+    phase1. V routing: Overflow =  1844 Max = 11 (GRCs =  2) GRCs =   849 (0.77%)
+     
+    phase2. Both Dirs: Overflow =  1910 Max = 11 GRCs =   911 (0.41%)
+    phase2. H routing: Overflow =    66 Max =  3 (GRCs =  1) GRCs =    62 (0.06%)
+    phase2. V routing: Overflow =  1844 Max = 11 (GRCs =  2) GRCs =   849 (0.77%)
+     
+    Total Wire Length = 116.48
+    Layer MET1 wire length = 0.00
+    Layer MET2 wire length = 76.93
+    Layer MET3 wire length = 39.55
+    Layer MET4 wire length = 0.00
+    Layer MET5 wire length = 0.00
+    Layer MET6 wire length = 0.00
+    Total Number of Contacts = 83
+    Via VIA12 count = 53
+    Via VIA23 count = 28
+    Via VIA34 count = 2
+    Via VIA45 count = 0
+    Via VIA56 count = 0
+     
+    Elapsed real time: 0:00:01
+    Elapsed cpu time: sys = 0:00:00 usr = 0:00:01 total = 0:00:01
+    Total Proc Memory(MB): 2600
+
+Track Assignment Information:
+    Number of wires with overlap after iteration 0 = 219 of 344
+
+    Number of wires with overlap after iteration 1 = 131 of 255
+
+    Total MET1 wire length: 14.5
+    Total MET2 wire length: 113.7
+    Total MET3 wire length: 112.5
+    Total MET4 wire length: 19.4
+    Total MET5 wire length: 0.0
+    Total MET6 wire length: 0.0
+    Total wire length: 260.1
+
+    Elapsed real time: 0:00:02
+    Elapsed cpu time: sys = 0:00:00 usr = 0:00:02 total = 0:00:02
+    Total Proc Memory(MB): 2600
+
+Detailed Routing Information:
+    
+
+    ---------- Detail route ----------
+
+     
+    Iteration 43: DRC-SUMMARY:
+    	@@@@@@@ TOTAL VIOLATIONS =	3
+    	@@@@ Total number of instance ports with antenna violations =	0
+     
+    Iteration 44: DRC-SUMMARY:
+    	@@@@@@@ TOTAL VIOLATIONS =	3
+    	@@@@ Total number of instance ports with antenna violations =	0
+     
+    Iteration 45: DRC-SUMMARY:
+    	@@@@@@@ TOTAL VIOLATIONS =	3
+    	@@@@ Total number of instance ports with antenna violations =	0
+     
+    Iteration 46: DRC-SUMMARY:
+    	@@@@@@@ TOTAL VIOLATIONS =	3
+    	@@@@ Total number of instance ports with antenna violations =	0
+     
+    Iteration 47: DRC-SUMMARY:
+    	@@@@@@@ TOTAL VIOLATIONS =	3
+    	@@@@ Total number of instance ports with antenna violations =	0
+     
+    Elapsed real time: 0:00:05
+    Elapsed cpu time: sys = 0:00:00 usr = 0:00:04 total = 0:00:05
+    Total Proc Memory(MB): 2595
+     
+    Cumulative run time upto current stage: Elapsed = 0:00:05 CPU = 0:00:05
+     
+    DR finished with 0 open nets, of which 0 are frozen
+    DR finished with 2 violations
+     
+    DRC-SUMMARY:
+    	@@@@@@@ TOTAL VIOLATIONS =	2
+    	Min-max layer : 1
+    	Short : 1
+    Total number of nets = 30092
+    0 open nets, of which 0 are frozen
+    Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                     0 ports without pins of 0 cells connected to 0 nets
+                                     0 ports of 0 cover cells connected to 0 non-pg nets
+    Total number of DRCs = 2
+    Total number of antenna violations = 0
+    Total number of voltage-area violations = no voltage-areas defined
+    
+
+     
+    Elapsed real time: 0:00:01
+    Elapsed cpu time: sys = 0:00:00 usr = 0:00:01 total = 0:00:01
+    Total Proc Memory(MB): 2595
+     
+    Cumulative run time upto current stage: Elapsed = 0:00:06 CPU = 0:00:06
+     
+    Total Wire Length =                    1001397 micron
+    Total Number of Contacts =             255112
+    Total Number of Wires =                217861
+    Total Number of PtConns =              789
+    Total Number of Routed Wires =       217861
+    Total Routed Wire Length =           1001193 micron
+    Total Number of Routed Contacts =       255112
+    	Layer           MET1 :      13750 micron
+    	Layer           MET2 :     289274 micron
+    	Layer           MET3 :     443666 micron
+    	Layer           MET4 :     254700 micron
+    	Layer           MET5 :          7 micron
+    	Layer           MET6 :          0 micron
+    	Via            VIA45 :          1
+    	Via            VIA34 :        615
+    	Via       VIA34(rot) :          1
+    	Via        VIA34_2x1 :      27701
+    	Via   VIA34(rot)_1x2 :         46
+    	Via        VIA34_1x2 :       4758
+    	Via            VIA23 :       3168
+    	Via       VIA23(rot) :          5
+    	Via        VIA23_1x2 :      71582
+    	Via   VIA23(rot)_2x1 :         10
+    	Via   VIA23(rot)_1x2 :        338
+    	Via        VIA23_2x1 :      32504
+    	Via            VIA12 :      78151
+    	Via       VIA12(rot) :       2937
+    	Via      FVIA12(rot) :          2
+    	Via   VIA12(rot)_2x1 :       2764
+    	Via        VIA12_1x2 :      16443
+    	Via        VIA12_2x1 :       5634
+    	Via   VIA12(rot)_1x2 :       8452
+     
+    Redundant via conversion report:
+    --------------------------------
+
+      Total optimized via conversion rate = 66.73% (170234 / 255112 vias)
+     
+        Layer VIA1       = 29.11% (33295  / 114383  vias)
+            Weight 1     = 29.11% (33295   vias)
+            Un-optimized = 70.89% (81088   vias)
+        Layer VIA2       = 97.05% (104434 / 107607  vias)
+            Weight 1     = 97.05% (104434  vias)
+            Un-optimized =  2.95% (3173    vias)
+        Layer VIA3       = 98.14% (32505  / 33121   vias)
+            Weight 1     = 98.14% (32505   vias)
+            Un-optimized =  1.86% (616     vias)
+        Layer VIA4       =  0.00% (0      / 1       vias)
+            Un-optimized = 100.00% (1       vias)
+     
+      Total double via conversion rate    = 66.73% (170232 / 255112 vias)
+     
+        Layer VIA1       = 29.11% (33293  / 114383  vias)
+        Layer VIA2       = 97.05% (104434 / 107607  vias)
+        Layer VIA3       = 98.14% (32505  / 33121   vias)
+        Layer VIA4       =  0.00% (0      / 1       vias)
+     
+      The optimized via conversion rate based on total routed via count = 66.73% (170234 / 255112 vias)
+     
+        Layer VIA1       = 29.11% (33295  / 114383  vias)
+            Weight 1     = 29.11% (33295   vias)
+            Un-optimized = 70.89% (81088   vias)
+        Layer VIA2       = 97.05% (104434 / 107607  vias)
+            Weight 1     = 97.05% (104434  vias)
+            Un-optimized =  2.95% (3173    vias)
+        Layer VIA3       = 98.14% (32505  / 33121   vias)
+            Weight 1     = 98.14% (32505   vias)
+            Un-optimized =  1.86% (616     vias)
+        Layer VIA4       =  0.00% (0      / 1       vias)
+            Un-optimized = 100.00% (1       vias)
+     
+
+DRC information: 
+      Min-max layer: 1 
+      Short: 1 
+      Total error number: 2
+
+Ring Wiring Statistics:
+    metal3 Wire Length(count):               3374.96(4)
+    metal4 Wire Length(count):               3425.32(4)
+    metal5 Wire Length(count):               1810.42(2)
+    metal6 Wire Length(count):               1805.08(2)
+  ==============================================
+    Total Wire Length(count):               10415.78(12)
+    Number of via3 Contacts:              8
+    Number of via5 Contacts:              4
+  ==============================================
+    Total Number of Contacts:       12
+
+Stripe Wiring Statistics:
+    metal5 Wire Length(count):              40558.08(48)
+    metal6 Wire Length(count):              41157.60(48)
+  ==============================================
+    Total Wire Length(count):               81715.68(96)
+    Number of via3 Contacts:             96
+    Number of via4 Contacts:            192
+    Number of via5 Contacts:           1248
+  ==============================================
+    Total Number of Contacts:     1536
+
+User Wiring Statistics:
+
+PG follow-pin Wiring Statistics:
+    metal1 Wire Length(count):             202250.42(292)
+    metal5 Wire Length(count):                244.90(209)
+  ==============================================
+    Total Wire Length(count):              202495.32(501)
+    Number of via1 Contacts:           5420
+    Number of via2 Contacts:           5367
+    Number of via3 Contacts:           5365
+    Number of via4 Contacts:           5031
+    Number of via5 Contacts:           4560
+  ==============================================
+    Total Number of Contacts:    25743
+
+Signal Wiring Statistics:
+    metal1 Wire Length(count):              13751.26(1498)
+    metal2 Wire Length(count):             289430.12(117992)
+    metal3 Wire Length(count):             443672.26(79168)
+    metal4 Wire Length(count):             254699.95(20394)
+    metal5 Wire Length(count):                  6.60(1)
+  ==============================================
+    Total Wire Length(count):             1001560.19(219053)
+
+      Mask Name      Contact Code    Number Of Contacts    Percentage
+        via1           VIA12(2)             81088	       70.9
+        via1          FVIA12(3)                 2	    0.00175
+        via1_2x1       VIA12(2)             14086	       12.3
+        via1_1x2       VIA12(2)             19207	       16.8
+ Default via for layer via1:                   70.9%
+ Yield-optmized via for layer via1:            29.1%
+
+        via2           VIA23(4)              3173	       2.95
+        via2_2x1       VIA23(4)             32842	       30.5
+        via2_1x2       VIA23(4)             71592	       66.5
+ Default via for layer via2:                   2.95%
+ Yield-optmized via for layer via2:            97.1%
+
+        via3           VIA34(6)               616	       1.86
+        via3_1x2       VIA34(6)              4758	       14.4
+        via3_2x1       VIA34(6)             27747	       83.8
+ Default via for layer via3:                   1.86%
+ Yield-optmized via for layer via3:            98.1%
+
+        via4           VIA45(8)                 1	        100
+
+ Double Via rate for all layers:           66.7%
+  ==============================================
+    Total Number of Contacts:    255112
+
+  Horizontal/Vertical Wire Distribution:
+    Layer      Hor. Wire (% of Hor.)     Ver. Wire (% of Ver.)
+    metal1         13718.12 ( 2.91%)            33.14 ( 0.01%)
+    metal2         14813.37 ( 3.14%)        274616.75 (51.86%)
+    metal3        441339.85 (93.50%)          2332.41 ( 0.44%)
+    metal4          2162.17 ( 0.46%)        252537.78 (47.69%)
+    metal5             6.60 ( 0.00%)             0.00 ( 0.00%)
+  ==============================================================
+    Total         472040.11                 529520.08
+1
+redirect -file $REPORTS_STEP_DIR/vth_use.rpt -tee { report_threshold_voltage_group }
+********************************************************************************
+                        Threshold Voltage Group Report                         
+
+Vth Group                All                Blackbox           Non-blackbox
+Name                    cells                cells                cells
+********************************************************************************
+undefined           28171 (100.00%)         31 (100.00%)      28140 (100.00%)   
+********************************************************************************
+
+Vth Group                All                Blackbox           Non-blackbox
+Name                  cell area            cell area            cell area
+********************************************************************************
+undefined        88189.70 (100.00%)       0.00   (0.00%)   88189.70 (100.00%)   
+********************************************************************************
+1
+redirect -file $REPORTS_STEP_DIR/check_legality { check_legality -verbose }
+redirect -file $REPORTS_STEP_DIR/constraints.rpt { report_constraint 	-scenario [all_scenarios] -all_violators -nosplit -significant_digits 4 }
+redirect -file $REPORTS_STEP_DIR/max_timing.rpt {
+	report_timing -significant_digits 4 	-delay max -transition_time  -capacitance 	-max_paths 100 -nets -input_pins -slack_greater_than 0.0 	-physical -attributes -nosplit -derate -crosstalk_delta -derate -path full_clock_expanded
+}
+redirect -file $REPORTS_STEP_DIR/min_timing.rpt {
+	report_timing -significant_digits 4 	-delay min -transition_time  -capacitance 	-max_paths 100 -nets -input_pins 	-physical -attributes -nosplit -crosstalk_delta -derate -path full_clock_expanded
+}
+# To verify CRPR
+#redirect -file $REPORTS_DIR/${step}/crpr.rpt { report_crpr }
+# delete "snapshot" directory called by create_qor_snapshot command
+sh rm -rf snapshot/
+# Save
+change_names -rule verilog -hier
+Information: Updating database...
+Information: Updating top database 'khu_sensor_pad.CEL;1'. (MWDC-255)
+1
+set verilogout_no_tri true
+true
+save_mw_cel -as ${TOP_MODULE}
+Information: Performing CEL netlist consistency check. (MWDC-118)
+Information: CEL consistency check PASSED. (MWDC-119)
+Information: Saved design named khu_sensor_pad. (UIG-5)
+1
+# Check LVS
+verify_lvs -max_error 500
+Create error cell khu_sensor_pad_lvs.err ...
+
+-- LVS START : --
+Total area error in layer 0 is 0.  Elapsed =    0:00:01, CPU =    0:00:00
+Total area error in layer 1 is 0.  Elapsed =    0:00:01, CPU =    0:00:01
+ERROR : area  [(411.560,137.420), (411.820,137.620)]	0.0520 um sqr.
+ERROR : area  [(787.560,137.420), (787.820,137.620)]	0.0520 um sqr.
+ERROR : area  [(1058.380,615.560), (1058.580,615.820)]	0.0520 um sqr.
+ERROR : area  [(137.420,1000.180), (137.620,1000.440)]	0.0520 um sqr.
+ERROR : area  [(544.180,1058.380), (544.440,1058.580)]	0.0520 um sqr.
+ERROR : area  [(760.180,1058.380), (760.440,1058.580)]	0.0520 um sqr.
+ERROR : area  [(1000.180,1058.380), (1000.440,1058.580)]	0.0520 um sqr.
+Total area error in layer 2 is 7.  Elapsed =    0:00:02, CPU =    0:00:01
+Total area error in layer 3 is 0.  Elapsed =    0:00:02, CPU =    0:00:01
+Total area error in layer 4 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 5 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 6 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 7 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 8 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 9 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 10 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 11 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 12 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 13 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 14 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+Total area error in layer 15 is 0.  Elapsed =    0:00:02, CPU =    0:00:02
+ERROR : OUTPUT PortInst khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/divider_by_2/o_CLK_DIV_2_reg QN doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/mpr121_controller/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/ads1292_filter/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/sensor_core/async_rst_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/ads1292_filter/async_rst_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/ads1292_controller/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/uart_controller/async_rst_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/uart_controller/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst async_rstn_glitch_synchronizer/async_rstn_synchronizer/I_0 Y doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad15 PO doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad20 PO doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad29 PO doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad1 PO doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad40 PO doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad37 PO doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad34 PO doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad44 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad23 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad21 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad10 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad13 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad11 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad4 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad43 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad39 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad36 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad33 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad26 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad24 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad22 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad16 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad42 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad32 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad19 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad8 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad2 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad41 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad38 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad35 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad31 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad28 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad17 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad14 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad9 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad30 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad25 CDL doesn't connect to any net.
+
+ERROR : OUTPUT PortInst pad6 CDL doesn't connect to any net.
+
+** Total Floating ports are 58.
+** Total Floating Nets are 0.
+** Total SHORT Nets are 0.
+** Total OPEN Nets are 0.
+** Total Electrical Equivalent Error are 0.
+** Total Must Joint Error are 0.
+
+-- LVS END : --
+Elapsed =    0:00:02, CPU =    0:00:02
+Update error cell ...
+1
+# Write outputs
+write_verilog ./outputs/${TOP_MODULE}.vg 	-no_corner_pad_cells -no_pad_filler_cells -diode_ports 	-no_core_filler_cells -no_flip_chip_bump_cells -wire_declaration
+Generating description for top level cell.
+Processing module SNPS_CLOCK_GATE_HIGH_ads1292_controller_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_ads1292_controller_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_ads1292_controller_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_ads1292_controller_3_0
+Processing module ads1292_controller_DW01_inc_0
+Processing module spi_master_DW01_inc_0
+Processing module async_rstn_synchronizer_0
+Processing module spi_master
+Processing module async_rstn_synchronizer_1
+Processing module ads1292_controller
+Processing module ads1292_filter_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_f2i_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_f2i_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_f2i_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_f2i_3_0
+Processing module converter_f2i_DP_OP_16_126_7129_0
+Processing module converter_f2i_DP_OP_15_125_6361_0
+Processing module converter_f2i_DW01_sub_0
+Processing module converter_f2i
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_10_0
+Processing module float_multiplier_0_DW_mult_uns_2
+Processing module float_multiplier_0_DP_OP_114_133_1607_0
+Processing module float_multiplier_0_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_7_0
+Processing module float_multiplier_0
+Processing module float_adder_0_DP_OP_129_139_7556_0
+Processing module float_adder_0_DP_OP_128_138_898_0
+Processing module float_adder_0_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_8_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_12_0
+Processing module float_adder_0_DW_cmp_6
+Processing module float_adder_0_DP_OP_43_235_1646_0
+Processing module float_adder_0_DP_OP_143_211_8882_0
+Processing module float_adder_0_DP_OP_132_142_8221_0
+Processing module float_adder_0_DP_OP_131_141_2669_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_7_0
+Processing module float_adder_0
+Processing module async_rst_synchronizer_0
+Processing module async_rstn_synchronizer_2
+Processing module iir_hpf
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_10_0
+Processing module float_multiplier_1_DW_mult_uns_2
+Processing module float_multiplier_1_DP_OP_114_149_2707_0
+Processing module float_multiplier_1_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_7_0
+Processing module float_multiplier_1
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_10_0
+Processing module float_multiplier_2_DW_mult_uns_2
+Processing module float_multiplier_2_DP_OP_114_159_8578_0
+Processing module float_multiplier_2_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_7_0
+Processing module float_multiplier_2
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_9_0
+Processing module float_multiplier_3_DW_mult_uns_2
+Processing module float_multiplier_3_DP_OP_114_169_7349_0
+Processing module float_multiplier_3_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_7_0
+Processing module float_multiplier_3
+Processing module float_adder_1_DP_OP_129_175_564_0
+Processing module float_adder_1_DP_OP_128_174_8668_0
+Processing module float_adder_1_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_8_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_12_0
+Processing module float_adder_1_DW_cmp_6
+Processing module float_adder_1_DP_OP_43_239_1622_0
+Processing module float_adder_1_DP_OP_143_214_9477_0
+Processing module float_adder_1_DP_OP_132_178_6707_0
+Processing module float_adder_1_DP_OP_131_177_7858_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_7_0
+Processing module float_adder_1
+Processing module float_adder_2_DP_OP_129_181_2885_0
+Processing module float_adder_2_DP_OP_128_180_8620_0
+Processing module float_adder_2_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_8_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_12_0
+Processing module float_adder_2_DW_cmp_6
+Processing module float_adder_2_DP_OP_43_243_1878_0
+Processing module float_adder_2_DP_OP_143_217_5633_0
+Processing module float_adder_2_DP_OP_132_184_9028_0
+Processing module float_adder_2_DP_OP_131_183_7810_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_7_0
+Processing module float_adder_2
+Processing module async_rst_synchronizer_1
+Processing module async_rstn_synchronizer_3
+Processing module iir_notch
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_10_0
+Processing module float_multiplier_4_DW_mult_uns_2
+Processing module float_multiplier_4_DP_OP_114_191_6440_0
+Processing module float_multiplier_4_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_7_0
+Processing module float_multiplier_4
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_10_0
+Processing module float_multiplier_5_DW_mult_uns_2
+Processing module float_multiplier_5_DP_OP_114_201_6986_0
+Processing module float_multiplier_5_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_7_0
+Processing module float_multiplier_5
+Processing module float_adder_3_DP_OP_129_207_5372_0
+Processing module float_adder_3_DP_OP_128_206_9905_0
+Processing module float_adder_3_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_8_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_12_0
+Processing module float_adder_3_DW_cmp_6
+Processing module float_adder_3_DP_OP_43_247_8814_0
+Processing module float_adder_3_DP_OP_143_220_7930_0
+Processing module float_adder_3_DP_OP_132_210_6037_0
+Processing module float_adder_3_DP_OP_131_209_1709_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_7_0
+Processing module float_adder_3
+Processing module async_rst_synchronizer_2
+Processing module async_rstn_synchronizer_4
+Processing module iir_lpf
+Processing module SNPS_CLOCK_GATE_HIGH_converter_i2f_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_i2f_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_i2f_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_i2f_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_i2f_4_0
+Processing module converter_i2f_DW01_sub_0
+Processing module converter_i2f_DW01_inc_1
+Processing module converter_i2f_DW01_inc_0
+Processing module converter_i2f
+Processing module async_rst_synchronizer_3
+Processing module async_rstn_synchronizer_5
+Processing module ads1292_filter
+Processing module SNPS_CLOCK_GATE_HIGH_mpr121_controller_0_0
+Processing module mpr121_controller_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_i2c_master_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_i2c_master_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_i2c_master_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_i2c_master_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_i2c_master_5_0
+Processing module i2c_master_DW01_dec_0
+Processing module async_rstn_synchronizer_6
+Processing module i2c_master
+Processing module async_rstn_synchronizer_7
+Processing module mpr121_controller
+Processing module async_rst_synchronizer_4
+Processing module sensor_core
+Processing module uart_rx_DW01_inc_0
+Processing module async_rst_synchronizer_5
+Processing module uart_rx
+Processing module uart_tx_DW01_inc_0
+Processing module async_rst_synchronizer_6
+Processing module uart_tx
+Processing module async_rstn_synchronizer_8
+Processing module async_rst_synchronizer
+Processing module uart_controller
+Processing module divider_by_2
+Processing module async_rstn_synchronizer_9
+Processing module async_rstn_glitch_synchronizer_0
+Processing module khu_sensor_top
+Processing module async_rstn_synchronizer
+Processing module async_rstn_glitch_synchronizer
+Processing module khu_sensor_pad
+Elapsed =    0:00:01, CPU =    0:00:00
+Write verilog completed successfully.
+1
+write_verilog ./outputs/${TOP_MODULE}.sim.v 	-no_corner_pad_cells -no_pad_filler_cells -diode_ports 	-no_core_filler_cells -no_flip_chip_bump_cells -wire_declaration 	-no_tap_cells -no_unconnected_cells
+Generating description for top level cell.
+Processing module SNPS_CLOCK_GATE_HIGH_ads1292_controller_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_ads1292_controller_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_ads1292_controller_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_ads1292_controller_3_0
+Processing module ads1292_controller_DW01_inc_0
+Processing module spi_master_DW01_inc_0
+Processing module async_rstn_synchronizer_0
+Processing module spi_master
+Processing module async_rstn_synchronizer_1
+Processing module ads1292_controller
+Processing module ads1292_filter_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_f2i_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_f2i_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_f2i_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_f2i_3_0
+Processing module converter_f2i_DP_OP_16_126_7129_0
+Processing module converter_f2i_DP_OP_15_125_6361_0
+Processing module converter_f2i_DW01_sub_0
+Processing module converter_f2i
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_10_0
+Processing module float_multiplier_0_DW_mult_uns_2
+Processing module float_multiplier_0_DP_OP_114_133_1607_0
+Processing module float_multiplier_0_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_0_7_0
+Processing module float_multiplier_0
+Processing module float_adder_0_DP_OP_129_139_7556_0
+Processing module float_adder_0_DP_OP_128_138_898_0
+Processing module float_adder_0_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_8_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_12_0
+Processing module float_adder_0_DW_cmp_6
+Processing module float_adder_0_DP_OP_43_235_1646_0
+Processing module float_adder_0_DP_OP_143_211_8882_0
+Processing module float_adder_0_DP_OP_132_142_8221_0
+Processing module float_adder_0_DP_OP_131_141_2669_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_0_7_0
+Processing module float_adder_0
+Processing module async_rst_synchronizer_0
+Processing module async_rstn_synchronizer_2
+Processing module iir_hpf
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_10_0
+Processing module float_multiplier_1_DW_mult_uns_2
+Processing module float_multiplier_1_DP_OP_114_149_2707_0
+Processing module float_multiplier_1_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_1_7_0
+Processing module float_multiplier_1
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_10_0
+Processing module float_multiplier_2_DW_mult_uns_2
+Processing module float_multiplier_2_DP_OP_114_159_8578_0
+Processing module float_multiplier_2_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_2_7_0
+Processing module float_multiplier_2
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_9_0
+Processing module float_multiplier_3_DW_mult_uns_2
+Processing module float_multiplier_3_DP_OP_114_169_7349_0
+Processing module float_multiplier_3_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_3_7_0
+Processing module float_multiplier_3
+Processing module float_adder_1_DP_OP_129_175_564_0
+Processing module float_adder_1_DP_OP_128_174_8668_0
+Processing module float_adder_1_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_8_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_12_0
+Processing module float_adder_1_DW_cmp_6
+Processing module float_adder_1_DP_OP_43_239_1622_0
+Processing module float_adder_1_DP_OP_143_214_9477_0
+Processing module float_adder_1_DP_OP_132_178_6707_0
+Processing module float_adder_1_DP_OP_131_177_7858_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_1_7_0
+Processing module float_adder_1
+Processing module float_adder_2_DP_OP_129_181_2885_0
+Processing module float_adder_2_DP_OP_128_180_8620_0
+Processing module float_adder_2_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_8_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_12_0
+Processing module float_adder_2_DW_cmp_6
+Processing module float_adder_2_DP_OP_43_243_1878_0
+Processing module float_adder_2_DP_OP_143_217_5633_0
+Processing module float_adder_2_DP_OP_132_184_9028_0
+Processing module float_adder_2_DP_OP_131_183_7810_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_2_7_0
+Processing module float_adder_2
+Processing module async_rst_synchronizer_1
+Processing module async_rstn_synchronizer_3
+Processing module iir_notch
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_10_0
+Processing module float_multiplier_4_DW_mult_uns_2
+Processing module float_multiplier_4_DP_OP_114_191_6440_0
+Processing module float_multiplier_4_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_4_7_0
+Processing module float_multiplier_4
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_10_0
+Processing module float_multiplier_5_DW_mult_uns_2
+Processing module float_multiplier_5_DP_OP_114_201_6986_0
+Processing module float_multiplier_5_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_multiplier_5_7_0
+Processing module float_multiplier_5
+Processing module float_adder_3_DP_OP_129_207_5372_0
+Processing module float_adder_3_DP_OP_128_206_9905_0
+Processing module float_adder_3_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_8_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_9_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_12_0
+Processing module float_adder_3_DW_cmp_6
+Processing module float_adder_3_DP_OP_43_247_8814_0
+Processing module float_adder_3_DP_OP_143_220_7930_0
+Processing module float_adder_3_DP_OP_132_210_6037_0
+Processing module float_adder_3_DP_OP_131_209_1709_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_4_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_5_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_6_0
+Processing module SNPS_CLOCK_GATE_HIGH_float_adder_3_7_0
+Processing module float_adder_3
+Processing module async_rst_synchronizer_2
+Processing module async_rstn_synchronizer_4
+Processing module iir_lpf
+Processing module SNPS_CLOCK_GATE_HIGH_converter_i2f_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_i2f_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_i2f_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_i2f_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_converter_i2f_4_0
+Processing module converter_i2f_DW01_sub_0
+Processing module converter_i2f_DW01_inc_1
+Processing module converter_i2f_DW01_inc_0
+Processing module converter_i2f
+Processing module async_rst_synchronizer_3
+Processing module async_rstn_synchronizer_5
+Processing module ads1292_filter
+Processing module SNPS_CLOCK_GATE_HIGH_mpr121_controller_0_0
+Processing module mpr121_controller_DW01_inc_0
+Processing module SNPS_CLOCK_GATE_HIGH_i2c_master_0_0
+Processing module SNPS_CLOCK_GATE_HIGH_i2c_master_1_0
+Processing module SNPS_CLOCK_GATE_HIGH_i2c_master_2_0
+Processing module SNPS_CLOCK_GATE_HIGH_i2c_master_3_0
+Processing module SNPS_CLOCK_GATE_HIGH_i2c_master_5_0
+Processing module i2c_master_DW01_dec_0
+Processing module async_rstn_synchronizer_6
+Processing module i2c_master
+Processing module async_rstn_synchronizer_7
+Processing module mpr121_controller
+Processing module async_rst_synchronizer_4
+Processing module sensor_core
+Processing module uart_rx_DW01_inc_0
+Processing module async_rst_synchronizer_5
+Processing module uart_rx
+Processing module uart_tx_DW01_inc_0
+Processing module async_rst_synchronizer_6
+Processing module uart_tx
+Processing module async_rstn_synchronizer_8
+Processing module async_rst_synchronizer
+Processing module uart_controller
+Processing module divider_by_2
+Processing module async_rstn_synchronizer_9
+Processing module async_rstn_glitch_synchronizer_0
+Processing module khu_sensor_top
+Processing module async_rstn_synchronizer
+Processing module async_rstn_glitch_synchronizer
+Processing module khu_sensor_pad
+Elapsed =    0:00:00, CPU =    0:00:00
+Write verilog completed successfully.
+1
+# It is impossible because layer.map file is damaged!
+set_write_stream_options -child_depth 0 -map_layer $STREAM_OUT_MAP 	-output_pin {geometry text} 	-keep_data_type -max_name_length 128
+1
+write_stream -lib_name ./mw_db/${TOP_MODULE}_${step} -format gds -cells $TOP_MODULE 	./outputs/${TOP_MODULE}.gds_depth0
+Warning: No Fill/Notch/Gap cell would be output! (MWSTRM-082)
+Error: only one library can be opened as main library. (MWUI-209)
+0
+set_write_stream_options -child_depth 30 -map_layer $STREAM_OUT_MAP 	-output_pin {geometry text} 	-keep_data_type -max_name_length 128
+1
+write_stream -lib_name ./mw_db/${TOP_MODULE}_${step} -format gds -cells $TOP_MODULE 	./outputs/${TOP_MODULE}.${step}.gds_depth30
+Warning: No Fill/Notch/Gap cell would be output! (MWSTRM-082)
+Error: only one library can be opened as main library. (MWUI-209)
+0
+write_def -nondefault_rule -rows_tracks_gcells -vias -all_vias -components -pins -blockages 	-regions_groups -specialnets -nets -diode_pins -output ./outputs/${TOP_MODULE}.def
+Output DEF file
+Information: Writing ROWS statement (DDEFW-014)
+Information: Completed ROWS statement  (DDEFW-016)
+Information: Writing TRACKS statement (DDEFW-014)
+Information: Completed TRACKS statement  (DDEFW-016)
+Information: Writing GCELLGRID statement (DDEFW-014)
+Information: Completed GCELLGRID statement  (DDEFW-016)
+Information: Writing VIAS section (DDEFW-014)
+Information: Completed VIAS section  (DDEFW-016)
+Information: Writing NONDEFAULTRULES statement (DDEFW-014)
+Information: Completed NONDEFAULTRULES statement  (DDEFW-016)
+Information: Writing COMPONENTS section (DDEFW-014)
+Information: Completed COMPONENTS 1000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 2000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 3000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 4000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 5000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 6000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 7000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 8000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 9000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 10000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 11000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 12000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 13000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 14000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 15000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 16000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 17000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 18000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 19000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 20000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 21000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 22000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 23000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 24000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 25000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 26000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 27000/28233 (DDEFW-015)
+Information: Completed COMPONENTS 28000/28233 (DDEFW-015)
+Information: Completed COMPONENTS section  (DDEFW-016)
+Information: Writing PINS section (DDEFW-014)
+Information: Completed PINS section  (DDEFW-016)
+Information: Writing SPECIALNETS section (DDEFW-014)
+Information: Completed SPECIALNETS section  (DDEFW-016)
+Information: Writing NETS section (DDEFW-014)
+Information: Completed NETS 1000/30091 (DDEFW-015)
+Information: Completed NETS 2000/30091 (DDEFW-015)
+Information: Completed NETS 3000/30091 (DDEFW-015)
+Information: Completed NETS 4000/30091 (DDEFW-015)
+Information: Completed NETS 5000/30091 (DDEFW-015)
+Information: Completed NETS 6000/30091 (DDEFW-015)
+Information: Completed NETS 7000/30091 (DDEFW-015)
+Information: Completed NETS 8000/30091 (DDEFW-015)
+Information: Completed NETS 9000/30091 (DDEFW-015)
+Information: Completed NETS 10000/30091 (DDEFW-015)
+Information: Completed NETS 11000/30091 (DDEFW-015)
+Information: Completed NETS 12000/30091 (DDEFW-015)
+Information: Completed NETS 13000/30091 (DDEFW-015)
+Information: Completed NETS 14000/30091 (DDEFW-015)
+Information: Completed NETS 15000/30091 (DDEFW-015)
+Information: Completed NETS 16000/30091 (DDEFW-015)
+Information: Completed NETS 17000/30091 (DDEFW-015)
+Information: Completed NETS 18000/30091 (DDEFW-015)
+Information: Completed NETS 19000/30091 (DDEFW-015)
+Information: Completed NETS 20000/30091 (DDEFW-015)
+Information: Completed NETS 21000/30091 (DDEFW-015)
+Information: Completed NETS 22000/30091 (DDEFW-015)
+Information: Completed NETS 23000/30091 (DDEFW-015)
+Information: Completed NETS 24000/30091 (DDEFW-015)
+Information: Completed NETS 25000/30091 (DDEFW-015)
+Information: Completed NETS 26000/30091 (DDEFW-015)
+Information: Completed NETS 27000/30091 (DDEFW-015)
+Information: Completed NETS 28000/30091 (DDEFW-015)
+Information: Completed NETS 29000/30091 (DDEFW-015)
+Information: Completed NETS 30000/30091 (DDEFW-015)
+Information: Completed NETS section  (DDEFW-016)
+DEF output completed
+1
+write_sdf ./outputs/$TOP_MODULE.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/graduation_project3/2015103977/03_Physical_Synthesis/outputs/khu_sensor_pad.sdf'. (WT-3)
+1
+write_sdc ./outputs/$TOP_MODULE.sdc
+1
+write_parasitics -format SPEF -output ./outputs/${TOP_MODULE}.spef
+Information: design is either fully routed or in placement stage.
+Writing SPEF to ./outputs/L13_CELL_WST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup_125.khu_sensor_pad.spef ...
+1
+remove_power_domain -all
+Warning: Nothing implicitly matched '*' (SEL-003)
+0
+ungroup -all -flatten -force
+Please be aware that the group/ungroup commands in ICC only work
+on the netlist view of a design and do not handle any physical information.
+Information: Updating database...
+Information: Updating top database 'khu_sensor_pad.CEL;1'. (MWDC-255)
+1
+set_app_var verilogout_no_tri true
+true
+write_verilog -no_corner_pad_cells -no_pad_filler_cells -no_core_filler_cells 	-no_flip_chip_bump_cells -no_cover_cells -diode_ports -output_net_name_for_tie 	-pg_ports -no_tap_cells -no_chip_cells 	-split_bus ./outputs/${TOP_MODULE}.lvs.v
+Generating description for top level cell.
+Processing module khu_sensor_pad
+Elapsed =    0:00:01, CPU =    0:00:00
+Write verilog completed successfully.
+1
+#start_gui
+exit
+
+Thank you...
+Exit IC Compiler!

@@ -1,0 +1,754 @@
+ 
+**************************************************
+Report : dont_touch
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:56:44 2020
+**************************************************
+
+Description for Cell dont_touch Types:
+  idn              -  Cell in ideal network set by set_ideal_network command
+  inh_ref          -  Cell inherits dont_touch from reference design or library cell
+  inh_parent       -  Cell inherits dont_touch from hierarchical parent
+Description for Net dont_touch Types:
+  user             -  Net has explicit dont_touch attribute
+  inh_parent       -  Net inherits dont_touch from parent
+  idn              -  Net in ideal network set by set_ideal_network command
+
+
+Object                                           Class       Types
+--------------------------------------------------------------------------------
+pad1                                             cell        inh_ref
+pad2                                             cell        inh_ref
+pad3                                             cell        inh_ref
+pad4                                             cell        inh_ref
+pad5                                             cell        inh_ref
+pad6                                             cell        inh_ref
+pad7                                             cell        inh_ref
+pad9                                             cell        inh_ref
+pad8                                             cell        inh_ref
+pad10                                            cell        inh_ref
+pad11                                            cell        inh_ref
+pad12                                            cell        inh_ref
+pad13                                            cell        inh_ref
+pad14                                            cell        inh_ref
+pad15                                            cell        inh_ref
+pad16                                            cell        inh_ref
+pad17                                            cell        inh_ref
+pad18                                            cell        inh_ref
+pad19                                            cell        inh_ref
+pad20                                            cell        inh_ref
+pad21                                            cell        inh_ref
+pad22                                            cell        inh_ref
+pad23                                            cell        inh_ref
+pad24                                            cell        inh_ref
+pad25                                            cell        inh_ref
+pad26                                            cell        inh_ref
+pad27                                            cell        inh_ref
+pad28                                            cell        inh_ref
+pad29                                            cell        inh_ref
+pad30                                            cell        inh_ref
+pad31                                            cell        inh_ref
+pad32                                            cell        inh_ref
+pad33                                            cell        inh_ref
+pad34                                            cell        inh_ref
+pad35                                            cell        inh_ref
+pad36                                            cell        inh_ref
+pad37                                            cell        inh_ref
+pad38                                            cell        inh_ref
+pad39                                            cell        inh_ref
+pad40                                            cell        inh_ref
+pad41                                            cell        inh_ref
+pad42                                            cell        inh_ref
+pad43                                            cell        inh_ref
+async_rstn_glitch_synchronizer                   cell        inh_ref
+async_rstn_glitch_synchronizer/async_rstn_synchronizer
+                                                 cell        inh_parent, inh_ref
+async_rstn_glitch_synchronizer/eco_cell          cell        inh_parent, inh_ref
+async_rstn_glitch_synchronizer/eco_cell_1        cell        inh_parent, inh_ref
+async_rstn_glitch_synchronizer/eco_cell_2        cell        inh_parent, inh_ref
+async_rstn_glitch_synchronizer/eco_cell_3        cell        inh_parent, inh_ref
+async_rstn_glitch_synchronizer/__tmp100          cell        inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer    cell        inh_ref
+async_rstn_glitch_synchronizer/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+async_rstn_glitch_synchronizer/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer
+                                                 cell        inh_parent, inh_ref
+khu_sensor_top/async_rstn_glitch_synchronizer/eco_cell
+                                                 cell        idn, inh_parent, inh_ref
+khu_sensor_top/async_rstn_glitch_synchronizer/eco_cell_1
+                                                 cell        idn, inh_parent, inh_ref
+khu_sensor_top/async_rstn_glitch_synchronizer/eco_cell_2
+                                                 cell        idn, inh_parent, inh_ref
+khu_sensor_top/async_rstn_glitch_synchronizer/eco_cell_3
+                                                 cell        idn, inh_parent, inh_ref
+khu_sensor_top/async_rstn_glitch_synchronizer/__tmp100
+                                                 cell        idn, inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+khu_sensor_top/divider_by_2/U3                   cell        idn
+khu_sensor_top/uart_controller/async_rst_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/uart_controller/async_rstn_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/uart_controller/U211              cell        idn
+khu_sensor_top/sensor_core/async_rst_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/sensor_core/U648                  cell        idn
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/mpr121_controller/U182            cell        idn
+khu_sensor_top/mpr121_controller/U155            cell        idn
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/ads1292_filter/async_rst_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/ads1292_controller/U353           cell        idn
+khu_sensor_top/ads1292_controller/U456           cell        idn
+khu_sensor_top/uart_controller/async_rst_synchronizer/U2
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/async_rst_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/async_rst_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/async_rst_synchronizer/o_RST_reg
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/uart_controller/uart_tx/U3        cell        idn
+khu_sensor_top/uart_controller/uart_tx/U4        cell        idn
+khu_sensor_top/uart_controller/uart_tx/U5        cell        idn
+khu_sensor_top/uart_controller/uart_tx/U6        cell        idn
+khu_sensor_top/uart_controller/uart_tx/U7        cell        idn
+khu_sensor_top/uart_controller/uart_tx/U8        cell        idn
+khu_sensor_top/uart_controller/uart_tx/U9        cell        idn
+khu_sensor_top/uart_controller/uart_tx/U10       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U11       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U12       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U13       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U14       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U15       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U16       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U17       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U18       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U19       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U20       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U21       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U22       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U23       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U24       cell        idn
+khu_sensor_top/uart_controller/uart_tx/U25       cell        idn
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/uart_controller/uart_rx/U3        cell        idn
+khu_sensor_top/sensor_core/async_rst_synchronizer/U2
+                                                 cell        inh_parent
+khu_sensor_top/sensor_core/async_rst_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/sensor_core/async_rst_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/sensor_core/async_rst_synchronizer/o_RST_reg
+                                                 cell        inh_parent
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/mpr121_controller/i2c_master/U165 cell        idn
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/async_rst_synchronizer/U2
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/async_rst_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/async_rst_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/async_rst_synchronizer/o_RST_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/converter_i2f/U4   cell        idn
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/ads1292_filter/iir_notch/U1177    cell        idn
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/ads1292_filter/converter_f2i/U33  cell        idn
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer
+                                                 cell        inh_ref
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/U2
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/o_RST_reg
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/U2
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/o_RST_reg
+                                                 cell        inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/U2
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/o_RST_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/add/U5     cell        idn
+khu_sensor_top/ads1292_filter/iir_lpf/mult_1/U8  cell        idn
+khu_sensor_top/ads1292_filter/iir_lpf/mult_2/U8  cell        idn
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/U2
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/o_RST_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/add_1/U5 cell        idn
+khu_sensor_top/ads1292_filter/iir_notch/add_2/U5 cell        idn
+khu_sensor_top/ads1292_filter/iir_notch/mult_1/U8
+                                                 cell        idn
+khu_sensor_top/ads1292_filter/iir_notch/mult_2/U8
+                                                 cell        idn
+khu_sensor_top/ads1292_filter/iir_notch/mult_3/U8
+                                                 cell        idn
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/U2
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/o_RST_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/add/U5     cell        idn
+khu_sensor_top/ads1292_filter/iir_hpf/mult/U8    cell        idn
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/U1
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/I_0
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/r_ff_reg
+                                                 cell        inh_parent
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/o_RSTN_reg
+                                                 cell        inh_parent
+i_CLK                                            net         user
+i_RSTN                                           net         user
+UART_RXD                                         net         user
+UART_TXD                                         net         user
+MPR121_SCL                                       net         user
+MPR121_SDA                                       net         user
+ADS1292_SCLK                                     net         user
+ADS1292_MISO                                     net         user
+ADS1292_MOSI                                     net         user
+ADS1292_DRDY                                     net         user
+ADS1292_RESET                                    net         user
+ADS1292_START                                    net         user
+ADS1292_CSN                                      net         user
+w_rstn                                           net         idn
+async_rstn_glitch_synchronizer/i_CLK             net         inh_parent
+async_rstn_glitch_synchronizer/i_RSTN            net         inh_parent
+async_rstn_glitch_synchronizer/o_RSTN            net         idn, inh_parent
+async_rstn_glitch_synchronizer/w_or_1            net         inh_parent
+async_rstn_glitch_synchronizer/eco_net           net         inh_parent
+async_rstn_glitch_synchronizer/eco_net_1         net         inh_parent
+async_rstn_glitch_synchronizer/eco_net_2         net         inh_parent
+async_rstn_glitch_synchronizer/eco_net_3         net         inh_parent
+khu_sensor_top/i_RSTN                            net         idn
+khu_sensor_top/w_rstn                            net         idn
+khu_sensor_top/w_CLOCK_HALF                      net         idn
+async_rstn_glitch_synchronizer/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+async_rstn_glitch_synchronizer/async_rstn_synchronizer/i_CLK
+                                                 net         inh_parent
+async_rstn_glitch_synchronizer/async_rstn_synchronizer/i_RSTN
+                                                 net         inh_parent
+async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/w_or_1
+                                                 net         idn, inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/eco_net
+                                                 net         idn, inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/eco_net_1
+                                                 net         idn, inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/eco_net_2
+                                                 net         idn, inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/eco_net_3
+                                                 net         idn, inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/n21
+                                                 net         inh_parent
+khu_sensor_top/divider_by_2/i_RSTN               net         idn
+khu_sensor_top/divider_by_2/o_CLK_DIV_2          net         idn
+khu_sensor_top/divider_by_2/N1                   net         idn
+khu_sensor_top/uart_controller/i_CLK             net         idn
+khu_sensor_top/uart_controller/i_RSTN            net         idn
+khu_sensor_top/uart_controller/w_rst             net         idn
+khu_sensor_top/uart_controller/w_rstn            net         idn
+khu_sensor_top/uart_controller/N21               net         idn
+khu_sensor_top/sensor_core/i_CLK                 net         idn
+khu_sensor_top/sensor_core/i_RSTN                net         idn
+khu_sensor_top/sensor_core/w_rst                 net         idn
+khu_sensor_top/sensor_core/N116                  net         idn
+khu_sensor_top/mpr121_controller/i_RSTN          net         idn
+khu_sensor_top/mpr121_controller/N25             net         idn
+khu_sensor_top/mpr121_controller/N26             net         idn
+khu_sensor_top/mpr121_controller/n92             net         idn
+khu_sensor_top/ads1292_filter/i_RSTN             net         idn
+khu_sensor_top/ads1292_filter/w_rst              net         idn
+khu_sensor_top/ads1292_filter/N17                net         idn
+khu_sensor_top/ads1292_controller/i_RSTN         net         idn
+khu_sensor_top/ads1292_controller/N79            net         idn
+khu_sensor_top/ads1292_controller/n51            net         idn
+khu_sensor_top/ads1292_controller/n83            net         idn
+khu_sensor_top/uart_controller/async_rst_synchronizer/*Logic0*
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/async_rst_synchronizer/i_CLK
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/async_rst_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/async_rst_synchronizer/o_RST
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/async_rst_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/async_rst_synchronizer/n15
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/async_rstn_synchronizer/i_CLK
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/async_rstn_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/async_rstn_synchronizer/n22
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/uart_tx/i_CLK     net         idn
+khu_sensor_top/uart_controller/uart_tx/i_RSTN    net         idn
+khu_sensor_top/uart_controller/uart_tx/w_rst     net         idn
+khu_sensor_top/uart_controller/uart_tx/n1        net         idn
+khu_sensor_top/uart_controller/uart_tx/n2        net         idn
+khu_sensor_top/uart_controller/uart_tx/n3        net         idn
+khu_sensor_top/uart_controller/uart_tx/n4        net         idn
+khu_sensor_top/uart_controller/uart_tx/n5        net         idn
+khu_sensor_top/uart_controller/uart_tx/n6        net         idn
+khu_sensor_top/uart_controller/uart_tx/n7        net         idn
+khu_sensor_top/uart_controller/uart_tx/n8        net         idn
+khu_sensor_top/uart_controller/uart_tx/n9        net         idn
+khu_sensor_top/uart_controller/uart_tx/n10       net         idn
+khu_sensor_top/uart_controller/uart_tx/n11       net         idn
+khu_sensor_top/uart_controller/uart_tx/n12       net         idn
+khu_sensor_top/uart_controller/uart_tx/n13       net         idn
+khu_sensor_top/uart_controller/uart_tx/n14       net         idn
+khu_sensor_top/uart_controller/uart_tx/n15       net         idn
+khu_sensor_top/uart_controller/uart_tx/n16       net         idn
+khu_sensor_top/uart_controller/uart_tx/n17       net         idn
+khu_sensor_top/uart_controller/uart_tx/n18       net         idn
+khu_sensor_top/uart_controller/uart_tx/n19       net         idn
+khu_sensor_top/uart_controller/uart_tx/n20       net         idn
+khu_sensor_top/uart_controller/uart_tx/n21       net         idn
+khu_sensor_top/uart_controller/uart_tx/n22       net         idn
+khu_sensor_top/uart_controller/uart_tx/n23       net         idn
+khu_sensor_top/uart_controller/uart_rx/i_CLK     net         idn
+khu_sensor_top/uart_controller/uart_rx/i_RSTN    net         idn
+khu_sensor_top/uart_controller/uart_rx/w_rst     net         idn
+khu_sensor_top/uart_controller/uart_rx/n1        net         idn
+khu_sensor_top/uart_controller/clk_gate_r_uart_data_tx_shift_reg_0/n2
+                                                 net         idn
+khu_sensor_top/uart_controller/clk_gate_r_uart_data_tx_reg_0/n2
+                                                 net         idn
+khu_sensor_top/uart_controller/clk_gate_o_UART_DATA_RX_reg_2/n2
+                                                 net         idn
+khu_sensor_top/uart_controller/clk_gate_o_UART_DATA_RX_reg_1/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/async_rst_synchronizer/*Logic0*
+                                                 net         inh_parent
+khu_sensor_top/sensor_core/async_rst_synchronizer/i_CLK
+                                                 net         idn, inh_parent
+khu_sensor_top/sensor_core/async_rst_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/sensor_core/async_rst_synchronizer/o_RST
+                                                 net         idn, inh_parent
+khu_sensor_top/sensor_core/async_rst_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/sensor_core/async_rst_synchronizer/n16
+                                                 net         inh_parent
+khu_sensor_top/sensor_core/clk_gate_o_UART_DATA_TX_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_ads_ch2_data_out_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_uart_clk_counter_reg/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_ads_second_param_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_mpr_reg_data_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_ads_read_reg_done_reg/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_0_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_mpr_reg_addr_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_mpr_first_param_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_ads_reg_addr_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_o_MPR121_REG_ADDR_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_o_ADS1292_REG_ADDR_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_o_ADS1292_DATA_IN_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_mpr_second_param_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_o_MPR121_DATA_IN_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_1_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_mpr_lstate_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_ads_run_set_done_reg/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_ads_lstate_reg_0/n2
+                                                 net         idn
+khu_sensor_top/sensor_core/clk_gate_r_mpr_chip_set_done_reg/n2
+                                                 net         idn
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/mpr121_controller/async_rstn_synchronizer/n23
+                                                 net         inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/i_RSTN
+                                                 net         idn
+khu_sensor_top/mpr121_controller/i2c_master/w_rstn
+                                                 net         idn
+khu_sensor_top/mpr121_controller/i2c_master/N533 net         idn
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/async_rstn_synchronizer/n24
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/async_rst_synchronizer/*Logic0*
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/async_rst_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/async_rst_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/async_rst_synchronizer/o_RST
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/async_rst_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/async_rst_synchronizer/n17
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/converter_i2f/i_RST
+                                                 net         idn
+khu_sensor_top/ads1292_filter/converter_i2f/n2   net         idn
+khu_sensor_top/ads1292_filter/iir_lpf/i_RSTN     net         idn
+khu_sensor_top/ads1292_filter/iir_lpf/w_rstn     net         idn
+khu_sensor_top/ads1292_filter/iir_lpf/w_rst      net         idn
+khu_sensor_top/ads1292_filter/iir_notch/i_RSTN   net         idn
+khu_sensor_top/ads1292_filter/iir_notch/w_rstn   net         idn
+khu_sensor_top/ads1292_filter/iir_notch/w_rst    net         idn
+khu_sensor_top/ads1292_filter/iir_notch/n522     net         idn
+khu_sensor_top/ads1292_filter/iir_hpf/i_RSTN     net         idn
+khu_sensor_top/ads1292_filter/iir_hpf/w_rstn     net         idn
+khu_sensor_top/ads1292_filter/iir_hpf/w_rst      net         idn
+khu_sensor_top/ads1292_filter/converter_f2i/i_RST
+                                                 net         idn
+khu_sensor_top/ads1292_filter/converter_f2i/n31  net         idn
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/ads1292_controller/async_rstn_synchronizer/n25
+                                                 net         inh_parent
+khu_sensor_top/ads1292_controller/spi_master/i_RSTN
+                                                 net         idn
+khu_sensor_top/ads1292_controller/spi_master/w_rstn
+                                                 net         idn
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/*Logic0*
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/i_CLK
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/o_RST
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/n18
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/uart_tx/clk_gate_r_Tx_Data_reg_0/n2
+                                                 net         idn
+khu_sensor_top/uart_controller/uart_tx/clk_gate_o_Tx_Serial_reg/n2
+                                                 net         idn
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/*Logic0*
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/i_CLK
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/o_RST
+                                                 net         idn, inh_parent
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/n19
+                                                 net         inh_parent
+khu_sensor_top/uart_controller/uart_rx/clk_gate_r_Bit_Index_reg/n2
+                                                 net         idn
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/n26
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/n27
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/*Logic0*
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/o_RST
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/n20
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_lpf/add/i_RST  net         idn
+khu_sensor_top/ads1292_filter/iir_lpf/add/n3     net         idn
+khu_sensor_top/ads1292_filter/iir_lpf/mult_1/i_RST
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_lpf/mult_1/n4  net         idn
+khu_sensor_top/ads1292_filter/iir_lpf/mult_2/i_RST
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_lpf/mult_2/n913
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/n28
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/*Logic0*
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/o_RST
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/n21
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_notch/add_1/i_RST
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_notch/add_1/n3 net         idn
+khu_sensor_top/ads1292_filter/iir_notch/add_2/i_RST
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_notch/add_2/n3 net         idn
+khu_sensor_top/ads1292_filter/iir_notch/mult_1/i_RST
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_notch/mult_1/n922
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_notch/mult_2/i_RST
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_notch/mult_2/n912
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_notch/mult_3/i_RST
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_notch/mult_3/n920
+                                                 net         idn
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/n29
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/*Logic0*
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/o_RST
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/n22
+                                                 net         inh_parent
+khu_sensor_top/ads1292_filter/iir_hpf/add/i_RST  net         idn
+khu_sensor_top/ads1292_filter/iir_hpf/add/n3     net         idn
+khu_sensor_top/ads1292_filter/iir_hpf/mult/i_RST net         idn
+khu_sensor_top/ads1292_filter/iir_hpf/mult/n899  net         idn
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/*Logic1*
+                                                 net         inh_parent
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/i_CLK
+                                                 net         inh_parent
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/i_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/o_RSTN
+                                                 net         idn, inh_parent
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/r_ff
+                                                 net         inh_parent
+khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/n30
+                                                 net         inh_parent
+--------------------------------------------------------------------------------
+Total 195 dont_touch cells
+Total 266 dont_touch nets
+1

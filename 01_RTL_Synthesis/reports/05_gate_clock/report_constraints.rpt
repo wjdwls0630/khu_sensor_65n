@@ -1,0 +1,1529 @@
+ 
+****************************************
+Report : constraint
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:56:44 2020
+****************************************
+
+
+                                                   Weighted
+    Group (max_delay/setup)      Cost     Weight     Cost
+    -----------------------------------------------------
+    FEEDTHROUGH                  0.00      1.00      0.00
+    REGIN                        0.00      1.00      0.00
+    REGOUT                       0.00      1.00      0.00
+    clk                          0.00      1.00      0.00
+    clk_half                     0.00      1.00      0.00
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    max_delay/setup                                  0.00
+
+                              Total Neg  Critical
+    Group (critical_range)      Slack    Endpoints   Cost
+    -----------------------------------------------------
+    FEEDTHROUGH                  0.00         0      0.00
+    REGIN                        0.00         0      0.00
+    REGOUT                       0.00         0      0.00
+    clk                          0.00         0      0.00
+    clk_half                     0.00         0      0.00
+    default                      0.00         0      0.00
+    -----------------------------------------------------
+    critical_range                                   0.00
+
+                                                   Weighted
+    Group (min_delay/hold)       Cost     Weight     Cost
+    -----------------------------------------------------
+    FEEDTHROUGH                  0.00      1.00      0.00
+    REGIN                        0.00      1.00      0.00
+    REGOUT                       0.00      1.00      0.00
+    clk                          0.00      1.00      0.00
+    clk_half                     0.00      1.00      0.00
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    min_delay/hold                                   0.00
+    Constraint                                     Slack
+    ----------------------------------------------------
+    max_leakage_power                              -0.04  (VIOLATED)
+
+
+    Constraint                                       Cost
+    -----------------------------------------------------
+    multiport_net                                    0.00 (MET)
+    max_transition                                   1.59 (VIOLATED)
+    max_capacitance                                  0.00 (MET)
+    max_delay/setup                                  0.00 (MET)
+    sequential_clock_pulse_width                     0.00 (MET)
+    critical_range                                   0.00 (MET)
+    min_delay/hold                                   0.00 (MET)
+    max_leakage_power                                0.04 (VIOLATED)
+    max_area                                     102892.48
+                                                          (VIOLATED)
+
+
+1
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -verbose
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:56:45 2020
+****************************************
+
+
+    Net: khu_sensor_top/ads1292_filter/iir_notch/n2073
+
+    max_transition         1.20
+  - Transition Time        1.47
+  ------------------------------
+    Slack                 -0.27  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_notch/n2073" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[26]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[12]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[15]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[8]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[0]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[17]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_A_reg[12]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[28]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[30]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[29]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[27]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[26]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[25]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[24]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[22]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[21]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[20]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[19]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[16]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[15]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[14]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[13]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[12]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[11]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[10]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[9]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[8]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[6]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[5]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[4]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[2]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[1]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[27]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[12]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_A_reg[26]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[23]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[18]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[3]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[14]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[30]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[20]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[16]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[9]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[6]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[1]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[31]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[0]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[23]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[19]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[13]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[5]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_A_reg[24]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_A_reg[19]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_A_reg[5]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_A_reg[21]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[18]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[11]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[10]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[4]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[2]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[29]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[28]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[26]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[25]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[24]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[22]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[21]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[7]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[3]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[31]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[30]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[22]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[21]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[20]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[19]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[18]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[17]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[15]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[13]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[11]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[10]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[9]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[8]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[7]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[6]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[5]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[4]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[3]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[2]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[1]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[29]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[28]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[27]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[25]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[24]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[23]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[7]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_B_reg[31]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[14]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_A_reg[17]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[16]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_B_reg[0]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_A_reg[4]/CK
+                                1.20           1.47          -0.27  (VIOLATED)
+
+    Net: khu_sensor_top/ads1292_filter/iir_hpf/add/n1158
+
+    max_transition         0.75
+  - Transition Time        1.00
+  ------------------------------
+    Slack                 -0.25  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_hpf/add/n1158" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[21]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[12]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[13]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[19]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[2]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[0]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[25]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[24]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[16]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[11]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[17]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[5]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[9]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[1]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[7]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[3]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[10]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[8]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[4]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[6]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[22]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[18]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[20]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[23]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[15]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_m_reg[14]/CK
+                                0.75           1.00          -0.25  (VIOLATED)
+
+    Net: khu_sensor_top/ads1292_filter/iir_lpf/add/n1147
+
+    max_transition         0.75
+  - Transition Time        0.94
+  ------------------------------
+    Slack                 -0.19  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_lpf/add/n1147" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[16]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[12]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[6]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[15]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[5]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[14]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[22]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[18]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[3]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[19]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[7]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[2]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[0]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[25]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[24]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[1]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[21]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[13]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[9]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[23]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[11]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[4]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[8]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[10]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[20]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_m_reg[17]/CK
+                                0.75           0.94          -0.19  (VIOLATED)
+
+    Net: khu_sensor_top/ads1292_filter/iir_hpf/n348
+
+    max_transition         1.20
+  - Transition Time        1.39
+  ------------------------------
+    Slack                 -0.19  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_hpf/n348" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[27]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[9]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[53]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[36]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[18]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[1]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[63]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[10]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[25]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[40]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[55]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[0]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[31]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[32]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[5]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[21]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[39]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[56]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[5]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[14]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[23]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[31]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[0]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[2]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[3]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[4]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[6]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[7]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[8]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[9]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[10]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[11]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[12]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[13]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[15]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[16]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[17]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[19]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[20]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[21]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[22]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[24]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[25]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[26]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[27]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[28]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[29]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_y_data_reg[30]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[33]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[34]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[35]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[37]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[38]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[41]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[42]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[43]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[44]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[45]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[46]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[47]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[48]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[49]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[50]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[51]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[52]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[54]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[57]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[58]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[59]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[60]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[61]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[62]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[1]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[2]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[3]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[4]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[6]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[7]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[8]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[11]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[12]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[13]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[14]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[15]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[16]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[17]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[18]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[19]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[20]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[22]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[23]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[24]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[26]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[28]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[29]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/r_x_data_reg[30]/CK
+                                1.20           1.39          -0.19  (VIOLATED)
+
+    Net: khu_sensor_top/ads1292_filter/iir_notch/n1970
+
+    max_transition         1.20
+  - Transition Time        1.38
+  ------------------------------
+    Slack                 -0.18  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_notch/n1970" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[45]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[29]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[5]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[147]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[130]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[3]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[18]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[33]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[48]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[63]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[78]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[93]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[108]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[123]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[138]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[153]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[3]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[6]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[9]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[12]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[15]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[18]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[21]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[24]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[27]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[62]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[129]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[131]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[132]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[133]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[134]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[135]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[136]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[137]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[139]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[140]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[141]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[142]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[143]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[145]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[146]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[148]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[149]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[150]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[151]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[152]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[154]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[155]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[156]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[157]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[158]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[159]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[1]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[2]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[4]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[7]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[8]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[10]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[11]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[13]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[14]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[16]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[17]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[19]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[20]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[23]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[25]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[26]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[28]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[30]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[0]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[63]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[33]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[34]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[35]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[36]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[37]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[38]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[40]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[41]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[42]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[43]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[44]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[46]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[47]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[48]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[49]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[50]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[51]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[52]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[53]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[55]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[56]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[57]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[58]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[59]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+
+    Net: khu_sensor_top/ads1292_filter/iir_notch/n1972
+
+    max_transition         1.20
+  - Transition Time        1.38
+  ------------------------------
+    Slack                 -0.18  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_notch/n1972" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[88]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[72]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[121]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[105]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[23]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[12]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[13]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[14]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[15]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[16]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[17]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[19]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[20]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[21]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[22]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[25]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[26]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[27]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[28]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[29]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[30]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[31]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[103]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[79]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[118]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[126]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[128]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[144]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[31]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[22]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[39]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[54]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[38]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[54]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[70]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[86]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[102]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[118]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[8]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[24]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[127]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[97]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[98]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[99]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[100]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[101]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[102]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[104]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[106]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[107]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[108]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[109]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[110]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[111]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[112]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[113]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[114]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[115]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[116]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[117]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[119]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[120]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[122]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[123]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[125]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[96]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[124]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[92]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[65]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[66]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[67]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[68]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[69]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[70]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[71]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[73]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[74]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[75]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[76]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[77]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[78]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[80]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[81]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[82]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[83]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[84]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[85]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[86]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[87]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[89]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[90]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[91]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[93]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[94]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[64]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[95]/CK
+                                1.20           1.38          -0.18  (VIOLATED)
+
+    Net: khu_sensor_top/ads1292_filter/iir_notch/n1968
+
+    max_transition         1.20
+  - Transition Time        1.37
+  ------------------------------
+    Slack                 -0.17  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_notch/n1968" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[6]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[115]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[98]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[81]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[64]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[46]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[61]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[60]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_y_data_reg[32]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[127]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[32]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[34]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[35]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[36]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[37]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[39]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[40]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[41]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[42]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[43]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[44]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[45]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[47]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[49]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[50]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[51]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[52]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[53]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[55]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[56]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[57]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[58]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[59]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[60]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[61]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[62]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[65]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[66]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[67]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[68]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[69]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[71]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[72]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[73]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[74]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[75]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[76]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[77]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[79]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[80]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[82]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[83]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[84]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[85]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[87]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[88]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[89]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[90]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[91]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[92]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[94]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[95]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[96]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[97]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[99]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[100]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[101]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[103]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[104]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[105]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[106]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[107]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[109]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[110]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[111]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[112]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[113]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[114]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[116]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[117]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[119]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[120]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[121]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[122]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[124]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[125]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[126]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[0]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[1]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[2]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[4]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[5]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[7]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[9]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[10]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/r_x_data_reg[11]/CK
+                                1.20           1.37          -0.17  (VIOLATED)
+
+    Net: khu_sensor_top/ads1292_filter/iir_notch/add_1/n1152
+
+    max_transition         0.75
+  - Transition Time        0.82
+  ------------------------------
+    Slack                 -0.07  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_notch/add_1/n1152" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[17]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[4]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[12]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[1]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[5]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[16]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[18]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[14]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[20]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[7]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[19]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[2]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[0]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[25]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[24]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[11]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[9]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[8]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[10]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[22]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[15]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[23]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[6]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[3]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[13]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_1/b_m_reg[21]/CK
+                                0.75           0.82          -0.07  (VIOLATED)
+
+    Net: khu_sensor_top/ads1292_filter/iir_hpf/add/n1131
+
+    max_transition         0.75
+  - Transition Time        0.81
+  ------------------------------
+    Slack                 -0.06  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_hpf/add/n1131" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/b_s_reg/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_s_reg/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[12]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[7]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[5]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[11]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[10]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[3]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[13]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[19]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[18]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[23]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[2]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[4]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[0]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[17]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[6]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[9]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[20]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[14]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[22]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[15]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[16]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[8]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[21]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[25]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[24]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_hpf/add/a_m_reg[1]/CK
+                                0.75           0.81          -0.06  (VIOLATED)
+
+    Net: khu_sensor_top/ads1292_filter/iir_lpf/add/n1120
+
+    max_transition         0.75
+  - Transition Time        0.78
+  ------------------------------
+    Slack                 -0.03  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_lpf/add/n1120" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[14]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[12]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[11]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[7]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[22]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/b_s_reg/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_s_reg/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[19]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[3]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[16]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[21]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[15]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[8]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[20]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[2]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[5]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[0]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[13]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[23]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[17]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[9]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[18]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[4]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[6]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[10]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[1]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[25]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_lpf/add/a_m_reg[24]/CK
+                                0.75           0.78          -0.03  (VIOLATED)
+
+    Net: khu_sensor_top/ads1292_filter/iir_notch/add_2/n1158
+
+    max_transition         0.75
+  - Transition Time        0.76
+  ------------------------------
+    Slack                 -0.01  (VIOLATED)
+
+    List of pins on net "khu_sensor_top/ads1292_filter/iir_notch/add_2/n1158" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[13]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[11]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[8]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[20]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[22]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[1]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[10]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[9]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[7]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[18]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[17]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[23]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[2]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[0]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[25]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[24]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[16]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[12]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[4]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[5]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[15]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[6]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[14]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[21]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[3]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+       PIN :   khu_sensor_top/ads1292_filter/iir_notch/add_2/b_m_reg[19]/CK
+                                0.75           0.76          -0.01  (VIOLATED)
+
+    Design: khu_sensor_pad
+
+    max_area               0.00
+  - Current Area       102892.48
+  ------------------------------
+    Slack              -102892.48  (VIOLATED)
+
+
+    Design: khu_sensor_pad
+
+    max_leakage_power          0.00
+  - Current Leakage Power      0.04
+  ----------------------------------
+    Slack                     -0.04  (VIOLATED)
+
+
+1

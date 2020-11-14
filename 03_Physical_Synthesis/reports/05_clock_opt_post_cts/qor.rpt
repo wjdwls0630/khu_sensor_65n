@@ -1,0 +1,162 @@
+Information: Scenario funccts_wst either not exists or is inactive. report_qor will skip it. (UID-1059)
+ 
+****************************************
+Report : qor
+Design : khu_sensor_pad
+Scenario(s): funccts_wst func1_wst
+Version: N-2017.09
+Date   : Sat Sep 12 02:37:31 2020
+****************************************
+
+
+  Scenario 'func1_wst'
+  Timing Path Group '**clock_gating_default**'
+  -----------------------------------
+  Levels of Logic:             9.0000
+  Critical Path Length:        6.3374
+  Critical Path Slack:         4.9551
+  Critical Path Clk Period:   12.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_wst'
+  Timing Path Group 'REGIN'
+  -----------------------------------
+  Levels of Logic:             1.0000
+  Critical Path Length:        1.6219
+  Critical Path Slack:         9.9504
+  Critical Path Clk Period:   24.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_wst'
+  Timing Path Group 'REGOUT'
+  -----------------------------------
+  Levels of Logic:             3.0000
+  Critical Path Length:        6.1136
+  Critical Path Slack:         2.3443
+  Critical Path Clk Period:   12.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_wst'
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:            32.0000
+  Critical Path Length:        8.8368
+  Critical Path Slack:         2.9314
+  Critical Path Clk Period:   12.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_wst'
+  Timing Path Group 'clk_half'
+  -----------------------------------
+  Levels of Logic:             3.0000
+  Critical Path Length:        3.3504
+  Critical Path Slack:         6.0249
+  Critical Path Clk Period:   24.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_wst'
+  Timing Path Group 'default'
+  -----------------------------------
+  Levels of Logic:             2.0000
+  Critical Path Length:        1.6336
+  Critical Path Slack:        -1.6336
+  Critical Path Clk Period:       n/a
+  Total Negative Slack:    -1316.5103
+  No. of Violating Paths:   2986.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:        232
+  Hierarchical Port Count:       6201
+  Leaf Cell Count:              28161
+  Buf/Inv Cell Count:            4504
+  Buf Cell Count:                 152
+  Inv Cell Count:                4352
+  CT Buf/Inv Cell Count:          132
+  Combinational Cell Count:     22826
+  Sequential Cell Count:         5335
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:      52141.0303
+  Noncombinational Area:   36013.9983
+  Buf/Inv Area:             4207.3430
+  Total Buffer Area:         217.6662
+  Total Inverter Area:      3989.6768
+  Macro/Black Box Area:        0.0000
+  Net Area:                  892.1166
+  Net XLength        :  13411266.0000
+  Net YLength        :  20795326.0000
+  -----------------------------------
+  Cell Area:               88155.0286
+  Design Area:             89047.1452
+  Net Length        :   34206592.0000
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         30306
+  Nets With Violations:         17655
+  Max Trans Violations:          1141
+  Max Cap Violations:             364
+  Max Net Length Violations:    17301
+  -----------------------------------
+
+
+  Hostname: vlsi-dist.khu.ac.kr
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                  0.0000
+  Logic Optimization:                0.0000
+  Mapping Optimization:             95.6575
+  -----------------------------------------
+  Overall Compile Time:             96.6093
+  Overall Compile Wall Clock Time:  96.8688
+
+  --------------------------------------------------------------------
+
+  Scenario: func1_wst   WNS: 1.6336  TNS: 1316.5103  Number of Violating Paths: 2986
+  Design  WNS: 1.6336  TNS: 1316.5103  Number of Violating Paths: 2986
+
+
+  Scenario: func1_wst  (Hold)  WNS: 0.0000  TNS: 0.0000  Number of Violating Paths: 0
+  Design (Hold)  WNS: 0.0000  TNS: 0.0000  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

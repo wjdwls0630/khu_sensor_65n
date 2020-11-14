@@ -1,0 +1,84 @@
+# The benefit .svf file is that it allows the implementation tool to automatically
+# provide setup information to Formality.
+# It helps Formality understand and process design changes caused by other tools
+# that were used in the design flow.
+# Formality uses this information to assist compare point matching and correctly set up
+# verification without your intervention. It eliminates the need to enter setup information
+# manually, a task that is time consuming and error prone.
+
+
+# Design Requirement
+# Design files must contain Verilog construrcts synthesizable by Synopsys HDL Compiler
+# or Synopsys internal database format
+#
+# Design should not contain combinational feedback loops. -> cause problems in verification
+# You must make the loops cut with the report_loops command and create_cutpoint_blackbox commands
+# in Formality after verifying the design first and then proceed verification again
+#
+# Top-Level I/O ports, sequential components, and black-box components in both the ref design and imp
+# l design must be aligned structurally. -> cause problems which is not correct verification if its
+# compare points are not aligned structurally.
+# For performing the correct equivalence matching, both the ref and impl design must have the same
+# compare points
+#
+# For all missing designs that cannot be found during link command, you should make black-box model
+# that define the directions of pins in those missing designs. Use udc2bb
+# If your designs have complex datapath cells such as ALUs multipliers, make them as black-boxes and
+# proceed verification. You should use event-driven simulation(vcs) to verify the sub-module that
+# contains complex datapath cells.
+
+# All the names of module and library cell(designID) must be different case-insensitively in the same container.
+# Though Formality operates cas-sensitively in verification, it operates case-insensitively in
+# linking the design
+
+
+# Reading Designs
+# Already set up in ./tcl/synopsys_fm_setup.tcl
+# Before using Formality, you should set SEC_SYNOPSYS env(synopsys_fm_setup.tcl).
+# SEC_SYNOPSYS is set to the path of the directory in which SEC Synopsys design-kit is installed.
+# SEC_SYNOPSYS directory includes Synopsys library in db format, symbol db, and several
+# useful utilities for Synopsys product including Formality.
+
+
+#After you set the top-level design, you cannot change it
+#whereas you can change the reference or implementation design to be verified
+#with the set_reference_design or set_implementation_design
+# The verify command performs comparing between set_reference_design and set_implementation_design
+
+
+# When you read designs in the Verilog structural netlist format into a container,
+# use the -netlist option in read_verilog command. As a rule of thumb,  This option achieves
+# approximately 5~10 times speed-up, compared to reading designs without -netlist option.
+
+# Furthermore, Without the -netlist option, Formality ignores the characters after double underscore
+# (__). This cause Formality not to link some module completely,
+# -> remain as black-box. -> error occur
+
+
+# Applying compare rules
+# If you synthesize RTL designs with default Synopsys library(GTECH)
+# and write implementation into Synopsys .ddc or .db format without proceeding change_names in DC
+# you may not need any compare rules for verification
+#
+# However, we use SEC library, and SEC requires sec_verilog naming rule
+# when writing gate-level netlist after synthesis using DC
+
+# Generate the compare rules for post-synthesis verification
+
+
+# Try not to rely on signature analysis during first verification with Formality.
+# In most cases, the compare rules that are introduced above are sufficient to match
+# compare points between ref and imple design. Even if you do not know the naming scheme
+# of your designs, you run verify command first without signature analysis.
+# And you make sure you have any rules necessary to match all the compare points up.
+# Sometimes you may need to use signature analysis, if the compare points follow no easy
+# regex rule to make them match
+#
+# when verification fails, first do report_failing_points 0unmatched command and look for unmatched
+# points in the ref and impl. You may need a naming rule to make some of the compare points match.
+# If all the compare points are matched and the design verification still fails, try diagnosing
+# a single failing compare point pair. It is easy to look for differences in sub-module logic cone
+# if you cannot find a difference between ref and impl in top module logic cone flattened.
+# Verify again the sub-module(not top-module) that contains faliling compare point since the name
+# of failing compare point contains long hierarchical path and instance name, it is hard to find
+# the name of module which contains failing compare point.

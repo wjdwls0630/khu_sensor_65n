@@ -1,0 +1,111 @@
+ 
+****************************************
+Report : clock tree
+Design : khu_sensor_pad
+Scenario(s): funccts_wst
+Version: N-2017.09
+Date   : Sat Sep 12 02:33:34 2020
+****************************************
+
+=============================Report for scenario (funccts_wst)=============================
+Information: Float pin scale factor for the 'max' operating condition of scenario 'funccts_wst' is set to 1.000 (CTS-375)
+
+============= Clock Tree Exception Pins =============
+
+Clock Tree Exceptions Summary
+=============================
+
+  1. Clock: clk
+     Clock root: i_CLK
+     Scenario name: funccts_wst
+     Clock net: i_CLK
+     Total sinks: 2226
+     Explicit ignore pins: 0
+     Explicit sync pins: 0
+     Implicit ignore pins: 3
+     Default sink pins: 2226
+     Explicit nonstop pins: 0
+     Implicit nonstop pins: 1
+     Dont touch subtree pins: 0
+     Dont buffer nets: 0
+     Dont size cells: 0
+     Size only cells: 0
+
+  2. Clock: clk_half
+     Clock root: khu_sensor_top/divider_by_2/o_CLK_DIV_2
+     Scenario name: funccts_wst
+     Clock net: khu_sensor_top/w_CLOCK_HALF
+     Total sinks: 421
+     Explicit ignore pins: 0
+     Explicit sync pins: 0
+     Implicit ignore pins: 0
+     Default sink pins: 421
+     Explicit nonstop pins: 0
+     Implicit nonstop pins: 0
+     Dont touch subtree pins: 0
+     Dont buffer nets: 0
+     Dont size cells: 0
+     Size only cells: 0
+
+
+=============================
+
+
+Clock Tree Exceptions 
+=====================
+
+
+Legends Used
+------------
+
+(P) = Default sink pin
+(F) = Explicit stop/float pin
+(I) = Implicit ignore pin
+(E) = Explicit ignore pin
+(J) = Implicit nonstop pin
+(T) = Explicit nonstop pin
+(D) = Dont touch subtree pin
+(B) = Dont buffer net
+(S) = Dont size cell
+
+(O) = Size only cell
+
+  1. Clock: clk
+     Clock root: i_CLK
+     Scenario name: funccts_wst
+     Clock net: i_CLK
+     Total sinks: 2226
+     Explicit ignore pins: 0
+     Explicit sync pins: 0
+     Implicit ignore pins: 3
+         (I) pad1/PO
+         (I) khu_sensor_top/CTS_funccts_wst_nid1_hd_G2IP/A
+         (I) khu_sensor_top/divider_by_2/o_CLK_DIV_2_reg/QN
+     Default sink pins: 2226
+     Explicit nonstop pins: 0
+     Implicit nonstop pins: 1
+         (J) khu_sensor_top/divider_by_2/o_CLK_DIV_2_reg/CK
+     Dont touch subtree pins: 0
+     Dont buffer nets: 0
+     Dont size cells: 0
+     Size only cells: 0
+
+  2. Clock: clk_half
+     Clock root: khu_sensor_top/divider_by_2/o_CLK_DIV_2
+     Scenario name: funccts_wst
+     Clock net: khu_sensor_top/w_CLOCK_HALF
+     Total sinks: 421
+     Explicit ignore pins: 0
+     Explicit sync pins: 0
+     Implicit ignore pins: 0
+     Default sink pins: 421
+     Explicit nonstop pins: 0
+     Implicit nonstop pins: 0
+     Dont touch subtree pins: 0
+     Dont buffer nets: 0
+     Dont size cells: 0
+     Size only cells: 0
+
+
+=====================================================
+1

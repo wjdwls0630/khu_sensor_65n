@@ -1,0 +1,60 @@
+***********************************************
+Report          : create_qor_snapshot (04_clock_opt_cts)
+Design          : khu_sensor_pad
+Version         : N-2017.09
+Date            : Sat Sep 12 02:33:42 2020
+Time unit       : 1.0e-09 Second(ns)
+Capacitance unit: 1.0e-12 Farad(pF)
+Voltage unit    : 1 Volt
+Power unit      : 1.0e-03 Watt(mW)
+Location        : /home/graduation_project3/2015103977/03_Physical_Synthesis/snapshot
+***********************************************
+No. of scenario = 1
+s1 = funccts_wst
+--------------------------------------------------
+WNS of each timing group:                       s1 
+--------------------------------------------------
+default                                    -1.6577 
+--------------------------------------------------
+Setup WNS:                                 -1.6577 
+Setup TNS:                               -1333.0946
+Number of setup violations:                   2986  
+Hold WNS:                                  -0.2722  
+Hold TNS:                                  -3.7038  
+Number of hold violations:                     129  
+Number of max trans violations:               1156  
+Number of max cap violations:                  371  
+Number of min pulse width violations:            0  
+Route drc violations:                            0
+--------------------------------------------------
+Area:                                        87529
+Cell count:                                  27778
+Buf/inv cell count:                           4121
+Std cell utilization:                       62.03%
+CPU/ELAPSE(hr):                          0.03/0.05
+Mem(Mb):                                      1033
+Host name:                               vlsi-dist.khu.ac.kr
+--------------------------------------------------
+Histogram:             s1 
+--------------------------------------------------
+Max violations:      2344 
+   above ~ -0.7  ---  445 
+    -0.6 ~ -0.7  ---  354 
+    -0.5 ~ -0.6  ---  173 
+    -0.4 ~ -0.5  ---  642 
+    -0.3 ~ -0.4  ---  615 
+    -0.2 ~ -0.3  ---    0 
+    -0.1 ~ -0.2  ---    0 
+       0 ~ -0.1  ---  115 
+--------------------------------------------------
+Min violations:       129 
+  -0.06 ~ above  ---   15 
+  -0.05 ~ -0.06  ---    6 
+  -0.04 ~ -0.05  ---    7 
+  -0.03 ~ -0.04  ---   12 
+  -0.02 ~ -0.03  ---   21 
+  -0.01 ~ -0.02  ---   32 
+      0 ~ -0.01  ---   36 
+--------------------------------------------------
+Snapshot report (snap.rpt) is created and can be viewed using file "/home/graduation_project3/2015103977/03_Physical_Synthesis/snapshot/snap.rpt.html"
+1

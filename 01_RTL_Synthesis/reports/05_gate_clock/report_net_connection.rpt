@@ -1,0 +1,2400 @@
+ 
+****************************************
+Report : net
+        -connections
+        -verbose
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:56:44 2020
+****************************************
+
+
+net 'net2114':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01348    max:0.01348
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01348    max:0.01348
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2114':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C12/**logic_0**     Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad3/CLTCH          Input Pin (pvhbcudtart)
+                                            0.01348
+
+net 'net2113':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2113':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C11/**logic_0**     Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad7/CLTCH          Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2112':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2112':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C10/**logic_0**     Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad9/CLTCH          Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2111':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2111':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C9/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad11/CLTCH         Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2110':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2110':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C8/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad13/CLTCH         Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2109':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2109':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C7/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad15/CLTCH         Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2108':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2108':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C6/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad18/CLTCH         Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2107':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2107':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C5/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad21/CLTCH         Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2106':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2106':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C4/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad26/CLTCH         Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2105':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2105':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C3/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad29/CLTCH         Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2104':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2104':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C2/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad34/CLTCH         Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2103':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2103':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C1/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad36/CLTCH         Input Pin (pvhbcudtbrt)
+                                            0.01347
+
+net 'net2102':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.01347    max:0.01347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.01347    max:0.01347
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     1
+
+Connections for net 'net2102':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    C0/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad39/CLTCH         Input Pin (pvhbsudtart)
+                                            0.01347
+
+net 'w_rstn':
+    dont_touch:         TRUE                
+    pin capacitance:    min:0    max:0
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0    max:0
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     3
+
+Connections for net 'w_rstn':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg/Q
+                        Output Pin (DFFRHQX8MTR)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/async_rstn_glitch_synchronizer/__tmp100/B
+                        Input Pin (OR2X12MTR)
+                                            0.0035946
+    khu_sensor_top/async_rstn_glitch_synchronizer/eco_cell_3/A
+                        Input Pin (DLY4X1MTH)
+                                            0.0007372
+
+net 'w_rstn_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00429475    max:0.0043201
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00429475    max:0.0043201
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     3
+
+Connections for net 'w_rstn_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad39/Y             Output Pin (pvhbsudtart)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    async_rstn_glitch_synchronizer/__tmp100/B
+                        Input Pin (OR2X12MTR)
+                                            0.0035946
+    async_rstn_glitch_synchronizer/eco_cell_3/A
+                        Input Pin (DLY4X1MTH)
+                                            0.0007372
+
+net 'w_mpr121_sda_in_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00054245    max:0.0005453
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00054245    max:0.0005453
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     2
+
+Connections for net 'w_mpr121_sda_in_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad36/Y             Output Pin (pvhbcudtbrt)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/mpr121_controller/i2c_master/sda_i_reg_reg/RN
+                        Input Pin (DFFTRX1MTH)
+                                            0.0005453
+
+net 'w_mpr121_sda_out_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.0175393    max:0.0175478
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.0175393    max:0.0175478
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    5
+    number of pins:     6
+
+Connections for net 'w_mpr121_sda_out_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/mpr121_controller/i2c_master/sda_o_reg_reg/Q
+                        Output Pin (DFFQX2MTR)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/mpr121_controller/i2c_master/U38/B1
+                        Input Pin (AO22X1MTH)
+                                            0.0005643
+    khu_sensor_top/mpr121_controller/i2c_master/U217/A
+                        Input Pin (INVX1MTH)
+                                            0.0008208
+    khu_sensor_top/mpr121_controller/i2c_master/U245/B1
+                        Input Pin (AOI221X1MTH)
+                                            0.00081985
+    pad36/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad36/A             Input Pin (pvhbcudtbrt)
+                                            0.00744
+
+net 'w_mpr121_sda_en_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00811695    max:0.0081274
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00811695    max:0.0081274
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     3
+
+Connections for net 'w_mpr121_sda_en_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/mpr121_controller/i2c_master/U217/Y
+                        Output Pin (INVX1MTH)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/mpr121_controller/i2c_master/U256/A1
+                        Input Pin (OAI211X1MTH)
+                                            0.0008474
+    pad36/CI            Input Pin (pvhbcudtbrt)
+                                            0.00728
+
+net 'w_mpr121_scl_in_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00054245    max:0.0005453
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00054245    max:0.0005453
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     2
+
+Connections for net 'w_mpr121_scl_in_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad34/Y             Output Pin (pvhbcudtbrt)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/mpr121_controller/i2c_master/scl_i_reg_reg/RN
+                        Input Pin (DFFTRX1MTH)
+                                            0.0005453
+
+net 'w_mpr121_scl_out_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.0101301    max:0.0102163
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.0101301    max:0.0102163
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    5
+    number of pins:     6
+
+Connections for net 'w_mpr121_scl_out_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/mpr121_controller/i2c_master/scl_o_reg_reg/Q
+                        Output Pin (DFFQX4MTR)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/mpr121_controller/i2c_master/U14/A
+                        Input Pin (BUFX2MTR)
+                                            0.0007623
+    khu_sensor_top/mpr121_controller/i2c_master/U337/B1
+                        Input Pin (AO22X1MTH)
+                                            0.0005643
+    khu_sensor_top/mpr121_controller/i2c_master/U242/A1
+                        Input Pin (AOI21BX1MTH)
+                                            0.0006289
+    khu_sensor_top/mpr121_controller/i2c_master/U371/A
+                        Input Pin (INVX1MTH)
+                                            0.0008208
+    pad34/A             Input Pin (pvhbcudtbrt)
+                                            0.00744
+
+net '_78_net_':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00792    max:0.00792
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00792    max:0.00792
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     2
+
+Connections for net '_78_net_':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    I_0/Y               Output Pin (INVX4MTR)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad34/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+
+net 'w_mpr121_scl_en_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.0092258    max:0.0093113
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.0092258    max:0.0093113
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     3
+
+Connections for net 'w_mpr121_scl_en_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/mpr121_controller/i2c_master/U14/Y
+                        Output Pin (BUFX2MTR)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    I_0/A               Input Pin (INVX4MTR)
+                                            0.0020313
+    pad34/CI            Input Pin (pvhbcudtbrt)
+                                            0.00728
+
+net 'w_uart_rx_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.0006042    max:0.0006137
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.0006042    max:0.0006137
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     2
+
+Connections for net 'w_uart_rx_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad29/Y             Output Pin (pvhbcudtbrt)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/uart_controller/uart_rx/r_Rx_Data_R_reg/D
+                        Input Pin (DFFSQX1MTH)
+                                            0.0006137
+
+net 'w_uart_tx_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00822185    max:0.00824275
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00822185    max:0.00824275
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     3
+
+Connections for net 'w_uart_tx_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/uart_controller/uart_tx/o_Tx_Serial_reg/Q
+                        Output Pin (DFFQX1MTH)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/uart_controller/uart_tx/U27/B0
+                        Input Pin (OAI21X1MTH)
+                                            0.00080275
+    pad26/A             Input Pin (pvhbcudtbrt)
+                                            0.00744
+
+net 'w_ads1292_drdy_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00403845    max:0.00420205
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00403845    max:0.00420205
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    5
+    number of pins:     6
+
+Connections for net 'w_ads1292_drdy_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad21/Y             Output Pin (pvhbcudtbrt)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/U47/AN
+                        Input Pin (NAND2BX1MTH)
+                                            0.00072105
+    khu_sensor_top/ads1292_controller/r_ldrdy_reg/D
+                        Input Pin (DFFRQX1MTH)
+                                            0.000475
+    khu_sensor_top/ads1292_controller/U44/A0
+                        Input Pin (AOI211X2MTR)
+                                            0.0009819
+    khu_sensor_top/ads1292_controller/U70/A2
+                        Input Pin (AOI31X2MTR)
+                                            0.0009936
+    khu_sensor_top/ads1292_controller/U88/A
+                        Input Pin (NOR2X2MTR)
+                                            0.0010809
+
+net 'w_ads1292_mosi_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00799575    max:0.00803565
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00799575    max:0.00803565
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     3
+
+Connections for net 'w_ads1292_mosi_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/spi_master/o_SPI_MOSI_reg/Q
+                        Output Pin (DFFRQX1MTH)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/spi_master/U35/A0
+                        Input Pin (AO2B2X1MTH)
+                                            0.00059565
+    pad18/A             Input Pin (pvhbcudtbrt)
+                                            0.00744
+
+net 'w_ads1292_miso_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00146855    max:0.0014796
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00146855    max:0.0014796
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     3
+
+Connections for net 'w_ads1292_miso_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad15/Y             Output Pin (pvhbcudtbrt)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/spi_master/U28/A
+                        Input Pin (INVX1MTH)
+                                            0.0008208
+    khu_sensor_top/ads1292_controller/spi_master/U30/B1
+                        Input Pin (AO2B2X2MTR)
+                                            0.0006588
+
+net 'w_ads1292_sclk_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00744    max:0.00744
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00744    max:0.00744
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    1
+    number of pins:     2
+
+Connections for net 'w_ads1292_sclk_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/spi_master/o_SPI_Clk_reg/Q
+                        Output Pin (DFFRQX1MTH)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad13/A             Input Pin (pvhbcudtbrt)
+                                            0.00744
+
+net 'w_ads1292_csn_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00812685    max:0.00812875
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00812685    max:0.00812875
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     3
+
+Connections for net 'w_ads1292_csn_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/o_SPI_CSN_reg/Q
+                        Output Pin (DFFSQX2MTH)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/U4/A1N
+                        Input Pin (OAI2BB2X1MTH)
+                                            0.00068875
+    pad11/A             Input Pin (pvhbcudtbrt)
+                                            0.00744
+
+net 'w_ads1292_start_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.0082456    max:0.0082608
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.0082456    max:0.0082608
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     3
+
+Connections for net 'w_ads1292_start_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/o_ADS1292_START_reg/Q
+                        Output Pin (DFFRQX4MTH)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/U314/B
+                        Input Pin (NAND2X1MTH)
+                                            0.0008208
+    pad9/A              Input Pin (pvhbcudtbrt)
+                                            0.00744
+
+net 'w_ads1292_reset_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.00809645    max:0.0081164
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.00809645    max:0.0081164
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     3
+
+Connections for net 'w_ads1292_reset_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/o_ADS1292_RESET_reg/Q
+                        Output Pin (DFFSQX2MTH)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_controller/U3/A0N
+                        Input Pin (OAI2BB2X1MTH)
+                                            0.0006764
+    pad7/A              Input Pin (pvhbcudtbrt)
+                                            0.00744
+
+net 'w_clk_p':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.499162    max:0.507678
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.499162    max:0.507678
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    363
+    number of pins:     364
+
+Connections for net 'w_clk_p':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad3/Y              Output Pin (pvhbcudtart)
+                                            0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_a_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_z_e_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_sticky_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_a_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_b_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_product_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_b_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_a_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_z_e_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_round_bit_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_a_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_b_m_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_z_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_b_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_a_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_z_e_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_sticky_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_product_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_a_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_z_e_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_sticky_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_product_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_a_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_z_e_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_sticky_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_a_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_product_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_e_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_guard_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_b_m_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_b_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_a_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_e_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_guard_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_a_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_b_m_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_b_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_a_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_z_e_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_sticky_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_a_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_b_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_product_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_a_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_a_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_e_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_sticky_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_a_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_b_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_product_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_a_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_a_e_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_e_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_guard_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_a_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_b_m_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_s_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_b_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_SPI_Clk_Edges_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_o_RX_Byte_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_SPI_Clk_Count_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_TX_Byte_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/o_RSTN_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_m_reg_1/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_m_reg_2/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_o_Y_DATA_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_mult_A_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_add_A_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_x_data_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/round_bit_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/o_AB_ACK_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/guard_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/state_reg[1]/CK
+                        Input Pin (DFFQX2MTH)
+                                            0.0008113
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/state_reg[2]/CK
+                        Input Pin (DFFQX1MTR)
+                                            0.0008055
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/state_reg[3]/CK
+                        Input Pin (DFFTRX1MTR)
+                                            0.0009036
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/state_reg[0]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_hpf/add/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/add/o_AB_ACK_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/add/state_reg[3]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/add/state_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/add/state_reg[2]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_hpf/add/state_reg[0]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_hpf/add/a_e_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/o_RST_reg/CK
+                        Input Pin (DFFSHQX1MTR)
+                                            0.001278
+    khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFSHQX1MTR)
+                                            0.001278
+    khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/o_RSTN_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_3_AB_STB_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_o_Y_DATA_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_3_B_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_add_1_A_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_add_2_B_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_y_data_reg_1/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_x_data_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_x_data_reg_1/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_2_B_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg[2]/CK
+                        Input Pin (DFFQX1MTR)
+                                            0.0008055
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/o_AB_ACK_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/round_bit_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/guard_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg[1]/CK
+                        Input Pin (DFFQX2MTH)
+                                            0.0008113
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg[0]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg[3]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/round_bit_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/guard_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/state_reg[1]/CK
+                        Input Pin (DFFQX2MTR)
+                                            0.000819
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/state_reg[2]/CK
+                        Input Pin (DFFHQX2MTR)
+                                            0.0011232
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/state_reg[0]/CK
+                        Input Pin (DFFTRX1MTR)
+                                            0.0009036
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/o_AB_ACK_reg/CK
+                        Input Pin (DFFQX4MTH)
+                                            0.0008094
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/state_reg[3]/CK
+                        Input Pin (DFFTRX1MTR)
+                                            0.0009036
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/state_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/round_bit_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/guard_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/state_reg[2]/CK
+                        Input Pin (DFFQX2MTH)
+                                            0.0008113
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/o_AB_ACK_reg/CK
+                        Input Pin (DFFQX4MTH)
+                                            0.0008094
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/state_reg[3]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/state_reg[0]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/o_AB_ACK_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/state_reg[3]/CK
+                        Input Pin (DFFQX2MTR)
+                                            0.000819
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/state_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/state_reg[0]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/a_e_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/state_reg[2]/CK
+                        Input Pin (DFFTRX1MTR)
+                                            0.0009036
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/state_reg[3]/CK
+                        Input Pin (DFFQX1MTR)
+                                            0.0008055
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/o_AB_ACK_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/state_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/state_reg[0]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/a_e_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/state_reg[2]/CK
+                        Input Pin (DFFTRX1MTR)
+                                            0.0009036
+    khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/o_RST_reg/CK
+                        Input Pin (DFFSHQX1MTR)
+                                            0.001278
+    khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFSHQX1MTR)
+                                            0.001278
+    khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/o_RSTN_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_o_Y_DATA_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_add_B_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_y_data_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_x_data_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_mult_1_A_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/state_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/o_AB_ACK_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/round_bit_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/guard_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/state_reg[2]/CK
+                        Input Pin (DFFQX2MTH)
+                                            0.0008113
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/state_reg[3]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/state_reg[0]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/state_reg[1]/CK
+                        Input Pin (DFFQX1MTR)
+                                            0.0008055
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/round_bit_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/guard_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/state_reg[2]/CK
+                        Input Pin (DFFQX2MTR)
+                                            0.000819
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/o_AB_ACK_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/state_reg[0]/CK
+                        Input Pin (DFFTRX1MTR)
+                                            0.0009036
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/state_reg[3]/CK
+                        Input Pin (DFFTRX1MTR)
+                                            0.0009036
+    khu_sensor_top/ads1292_filter/iir_lpf/add/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/add/o_AB_ACK_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/add/state_reg[3]/CK
+                        Input Pin (DFFQX2MTH)
+                                            0.0008113
+    khu_sensor_top/ads1292_filter/iir_lpf/add/state_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/add/state_reg[0]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_lpf/add/state_reg[2]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/ads1292_filter/iir_lpf/add/a_e_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/o_RST_reg/CK
+                        Input Pin (DFFSHQX1MTR)
+                                            0.001278
+    khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFSHQX1MTR)
+                                            0.001278
+    khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/o_RSTN_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_a_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_value_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_z_m_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_o_Z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_z_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_phy_rx_data_reg_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_data_out_reg_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_last_reg_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/o_RSTN_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_BUSY_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/clk_gate_r_lstate_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_REG_DATA_OUT_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/clk_gate_r_ads_command_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/clk_gate_r_spi_data_in_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/clk_gate_r_ads_data_in_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_DATA_OUT_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/clk_gate_r_ads_data_out_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/clk_gate_r_clk_counter_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_controller/spi_master/o_SPI_MOSI_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_controller/spi_master/r_TX_Bit_Count_reg[2]/CK
+                        Input Pin (DFFSQX1MTH)
+                                            0.0010089
+    khu_sensor_top/ads1292_controller/spi_master/r_TX_Bit_Count_reg[1]/CK
+                        Input Pin (DFFSQX1MTH)
+                                            0.0010089
+    khu_sensor_top/ads1292_controller/spi_master/r_TX_Bit_Count_reg[0]/CK
+                        Input Pin (DFFSQX1MTH)
+                                            0.0010089
+    khu_sensor_top/ads1292_controller/spi_master/o_SPI_Clk_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_controller/spi_master/r_Trailing_Edge_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_controller/spi_master/o_TX_Ready_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_controller/spi_master/o_RX_DV_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_controller/spi_master/r_Leading_Edge_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_controller/async_rstn_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_controller/async_rstn_synchronizer/o_RSTN_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/clk_gate_r_converter_f2i_a_stb_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/clk_gate_r_counter_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/clk_gate_o_ADS1292_FILTERED_DATA_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/clk_gate_r_converter_i2f_a_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/clk_gate_r_converter_f2i_a_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/clk_gate_r_iir_hpf_x_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/clk_gate_r_iir_lpf_x_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/clk_gate_r_iir_notch_x_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/ads1292_filter/converter_f2i/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_f2i/o_A_ACK_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_f2i/a_e_reg[7]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_f2i/a_e_reg[3]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_f2i/a_e_reg[6]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_f2i/a_e_reg[5]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_f2i/a_e_reg[8]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_f2i/state_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_f2i/state_reg[0]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_f2i/state_reg[2]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/o_X_DATA_READY_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_hpf/r_mult_Z_ACK_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[0]/CK
+                        Input Pin (DFFRHQX4MTR)
+                                            0.0013806
+    khu_sensor_top/ads1292_filter/iir_hpf/r_counter_reg[1]/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_hpf/r_add_Z_ACK_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_hpf/r_mult_AB_STB_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_filter/iir_hpf/r_add_AB_STB_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_filter/iir_hpf/r_counter_reg[0]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/iir_hpf/o_Y_DATA_VALID_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_filter/iir_notch/o_X_DATA_READY_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/o_Y_DATA_VALID_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_notch/r_mult_3_Z_ACK_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_Z_ACK_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_Z_ACK_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_notch/r_add_2_Z_ACK_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_notch/r_pstate_reg[1]/CK
+                        Input Pin (DFFRHQX2MTH)
+                                            0.00127395
+    khu_sensor_top/ads1292_filter/iir_notch/r_counter_reg[2]/CK
+                        Input Pin (DFFRHQX2MTR)
+                                            0.0012681
+    khu_sensor_top/ads1292_filter/iir_notch/r_pstate_reg[0]/CK
+                        Input Pin (DFFRQX4MTR)
+                                            0.0006795
+    khu_sensor_top/ads1292_filter/iir_notch/r_add_1_Z_ACK_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_filter/iir_notch/r_counter_reg[1]/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/iir_notch/r_counter_reg[0]/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/iir_lpf/o_Y_DATA_VALID_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_lpf/r_mult_AB_STB_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_lpf/r_mult_Z_ACK_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_lpf/r_pstate_reg[1]/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_lpf/r_counter_reg[0]/CK
+                        Input Pin (DFFRQX4MTR)
+                                            0.0006795
+    khu_sensor_top/ads1292_filter/iir_lpf/r_add_AB_STB_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_lpf/r_add_Z_ACK_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_lpf/r_counter_reg[1]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_filter/iir_lpf/r_pstate_reg[0]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_filter/iir_lpf/o_X_DATA_READY_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_i2f/state_reg[2]/CK
+                        Input Pin (DFFHQX1MTH)
+                                            0.00111625
+    khu_sensor_top/ads1292_filter/converter_i2f/o_A_ACK_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_i2f/o_Z_STB_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_i2f/z_m_reg[23]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_i2f/z_s_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_i2f/state_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/converter_i2f/state_reg[0]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/ads1292_filter/async_rst_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFSHQX1MTR)
+                                            0.001278
+    khu_sensor_top/ads1292_filter/async_rst_synchronizer/o_RST_reg/CK
+                        Input Pin (DFFSHQX1MTR)
+                                            0.001278
+    khu_sensor_top/ads1292_filter/async_rstn_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/async_rstn_synchronizer/o_RSTN_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_write_multiple_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_DATA_OUT_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_data_in_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_INIT_SET_reg/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_reg_addr_reg_0/latch/CK
+                        Input Pin (TLATNTSCAX2MTH)
+                                            0.00202
+    khu_sensor_top/mpr121_controller/i2c_master/data_out_valid_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/mode_read_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/delay_reg_reg[10]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/delay_reg_reg[9]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/bus_active_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/mode_stop_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/bit_count_reg_reg[0]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/bit_count_reg_reg[2]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/bit_count_reg_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/state_reg_reg[3]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/mode_write_multiple_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/delay_scl_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/bit_count_reg_reg[3]/CK
+                        Input Pin (DFFQNX1MTH)
+                                            0.00082555
+    khu_sensor_top/mpr121_controller/i2c_master/scl_i_reg_reg/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/mpr121_controller/i2c_master/last_sda_i_reg_reg/CK
+                        Input Pin (DFFSQX1MTH)
+                                            0.0010089
+    khu_sensor_top/mpr121_controller/i2c_master/sda_i_reg_reg/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
+    khu_sensor_top/mpr121_controller/i2c_master/missed_ack_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/data_in_ready_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/state_reg_reg[1]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/state_reg_reg[2]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/cmd_ready_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/state_reg_reg[0]/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/async_rstn_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/mpr121_controller/async_rstn_synchronizer/o_RSTN_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_controller/r_sdatac_mode_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_controller/r_idle_mode_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_controller/r_rdatac_mode_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_controller/r_syscmd_mode_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_controller/r_rreg_mode_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_controller/r_wreg_mode_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_controller/r_pstate_reg[1]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_controller/r_ldrdy_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_controller/r_pstate_reg[2]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_controller/r_pstate_reg[0]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_controller/r_pstate_reg[4]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_filter/r_iir_hpf_y_ack_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/r_iir_notch_y_ack_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/r_converter_f2i_z_ack_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/o_ADS1292_FILTERED_DATA_VALID_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/r_converter_i2f_z_ack_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/r_pstate_reg[1]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_filter/r_iir_lpf_y_ack_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/ads1292_filter/r_pstate_reg[0]/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/r_i2c_data_in_last_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/r_i2c_data_out_ready_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/o_MPR121_BUSY_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/r_i2c_data_in_valid_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/r_lstate_reg[1]/CK
+                        Input Pin (DFFRQX2MTH)
+                                            0.0006745
+    khu_sensor_top/mpr121_controller/r_pstate_reg[5]/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/r_pstate_reg[0]/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/r_pstate_reg[1]/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/r_pstate_reg[3]/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/r_i2c_stop_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/r_i2c_cmd_valid_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/mpr121_controller/r_lstate_reg[0]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/mpr121_controller/r_pstate_reg[2]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/mpr121_controller/r_pstate_reg[4]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
+    khu_sensor_top/divider_by_2/o_CLK_DIV_2_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+
+net 'ADS1292_CSN':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1516    max:2.1516
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1516    max:2.1516
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     2
+
+Connections for net 'ADS1292_CSN':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad11/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    ADS1292_CSN         Output Port         0.025
+    pad11/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'ADS1292_START':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1516    max:2.1516
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1516    max:2.1516
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     2
+
+Connections for net 'ADS1292_START':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad9/PAD            Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    ADS1292_START       Output Port         0.025
+    pad9/PAD            Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'ADS1292_RESET':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1516    max:2.1516
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1516    max:2.1516
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     2
+
+Connections for net 'ADS1292_RESET':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad7/PAD            Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    ADS1292_RESET       Output Port         0.025
+    pad7/PAD            Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'ADS1292_DRDY':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1266    max:2.1266
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1266    max:2.1266
+    wire resistance:    NA
+    number of drivers:  2
+    number of loads:    1
+    number of pins:     2
+
+Connections for net 'ADS1292_DRDY':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    ADS1292_DRDY        Input Port          0
+    pad21/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad21/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'ADS1292_MOSI':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1516    max:2.1516
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1516    max:2.1516
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     2
+
+Connections for net 'ADS1292_MOSI':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad18/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    ADS1292_MOSI        Output Port         0.025
+    pad18/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'ADS1292_MISO':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1266    max:2.1266
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1266    max:2.1266
+    wire resistance:    NA
+    number of drivers:  2
+    number of loads:    1
+    number of pins:     2
+
+Connections for net 'ADS1292_MISO':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    ADS1292_MISO        Input Port          0
+    pad15/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad15/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'ADS1292_SCLK':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1516    max:2.1516
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1516    max:2.1516
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     2
+
+Connections for net 'ADS1292_SCLK':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad13/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    ADS1292_SCLK        Output Port         0.025
+    pad13/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'MPR121_SDA':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1516    max:2.1516
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1516    max:2.1516
+    wire resistance:    NA
+    number of drivers:  2
+    number of loads:    2
+    number of pins:     2
+
+Connections for net 'MPR121_SDA':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    MPR121_SDA          Inout Port          0.025
+    pad36/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    MPR121_SDA          Inout Port          0.025
+    pad36/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'MPR121_SCL':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1516    max:2.1516
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1516    max:2.1516
+    wire resistance:    NA
+    number of drivers:  2
+    number of loads:    2
+    number of pins:     2
+
+Connections for net 'MPR121_SCL':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    MPR121_SCL          Inout Port          0.025
+    pad34/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    MPR121_SCL          Inout Port          0.025
+    pad34/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'UART_TXD':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1516    max:2.1516
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1516    max:2.1516
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    2
+    number of pins:     2
+
+Connections for net 'UART_TXD':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    pad26/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    UART_TXD            Output Port         0.025
+    pad26/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'UART_RXD':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1266    max:2.1266
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1266    max:2.1266
+    wire resistance:    NA
+    number of drivers:  2
+    number of loads:    1
+    number of pins:     2
+
+Connections for net 'UART_RXD':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    UART_RXD            Input Port          0
+    pad29/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad29/PAD           Inout Pin (pvhbcudtbrt)
+                                            2.1266
+
+net 'i_RSTN':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.1493    max:2.1493
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.1493    max:2.1493
+    wire resistance:    NA
+    number of drivers:  2
+    number of loads:    1
+    number of pins:     2
+
+Connections for net 'i_RSTN':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    i_RSTN              Input Port          0
+    pad39/PAD           Inout Pin (pvhbsudtart)
+                                            2.1493
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad39/PAD           Inout Pin (pvhbsudtart)
+                                            2.1493
+
+net 'i_CLK':
+    dont_touch:         TRUE                
+    pin capacitance:    min:2.13309    max:2.13347
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:2.13309    max:2.13347
+    wire resistance:    NA
+    number of drivers:  2
+    number of loads:    3
+    number of pins:     4
+
+Connections for net 'i_CLK':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    i_CLK               Input Port          0
+    pad3/PAD            Inout Pin (pvhbcudtart)
+                                            2.1285
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    pad3/PAD            Inout Pin (pvhbcudtart)
+                                            2.1285
+
+net '*Logic0*':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.51801    max:0.51801
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.51801    max:0.51801
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    69
+    number of pins:     69
+
+Connections for net '*Logic0*':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    U2/**logic_0**      Logic Zero          0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad39/CPU           Input Pin (pvhbsudtart)
+                                            0.00714
+    pad39/CPD           Input Pin (pvhbsudtart)
+                                            0.0072
+    pad39/CD0           Input Pin (pvhbsudtart)
+                                            0.0073
+    pad39/CD1           Input Pin (pvhbsudtart)
+                                            0.00733
+    pad39/CE            Input Pin (pvhbsudtart)
+                                            0.00791
+    pad39/A             Input Pin (pvhbsudtart)
+                                            0.00744
+    pad39/PI            Input Pin (pvhbsudtart)
+                                            0.00835
+    pad36/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad36/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad36/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad36/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad36/PI            Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad34/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad34/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad34/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad34/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad34/PI            Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad29/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad29/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad29/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad29/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad29/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad29/A             Input Pin (pvhbcudtbrt)
+                                            0.00744
+    pad29/PI            Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad26/CI            Input Pin (pvhbcudtbrt)
+                                            0.00728
+    pad26/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad26/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad26/PI            Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad21/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad21/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad21/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad21/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad21/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad21/A             Input Pin (pvhbcudtbrt)
+                                            0.00744
+    pad21/PI            Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad18/CI            Input Pin (pvhbcudtbrt)
+                                            0.00728
+    pad18/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad18/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad18/PI            Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad15/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad15/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad15/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad15/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad15/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad15/A             Input Pin (pvhbcudtbrt)
+                                            0.00744
+    pad15/PI            Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad13/CI            Input Pin (pvhbcudtbrt)
+                                            0.00728
+    pad13/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad13/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad13/PI            Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad11/CI            Input Pin (pvhbcudtbrt)
+                                            0.00728
+    pad11/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad11/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad11/PI            Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad9/CI             Input Pin (pvhbcudtbrt)
+                                            0.00728
+    pad9/CPU            Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad9/CPD            Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad9/PI             Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad7/CI             Input Pin (pvhbcudtbrt)
+                                            0.00728
+    pad7/CPU            Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad7/CPD            Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad7/PI             Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad3/CPU            Input Pin (pvhbcudtart)
+                                            0.00714
+    pad3/CPD            Input Pin (pvhbcudtart)
+                                            0.0072
+    pad3/CD0            Input Pin (pvhbcudtart)
+                                            0.0073
+    pad3/CD1            Input Pin (pvhbcudtart)
+                                            0.00734
+    pad3/CE             Input Pin (pvhbcudtart)
+                                            0.00791
+    pad3/A              Input Pin (pvhbcudtart)
+                                            0.00744
+    pad3/PI             Input Pin (pvhbcudtart)
+                                            0.00835
+
+net '*Logic1*':
+    dont_touch:         FALSE               
+    pin capacitance:    min:0.17176    max:0.17176
+    wire capacitance:   min:0    max:0
+    total capacitance:  min:0.17176    max:0.17176
+    wire resistance:    NA
+    number of drivers:  1
+    number of loads:    23
+    number of pins:     23
+
+Connections for net '*Logic1*':
+
+    Driver Pins         Type                Pin Cap
+    ------------        ----------------    --------
+    U1/**logic_1**      Logic One           0
+
+    Load Pins           Type                Pin Cap
+    ------------        ----------------    --------
+    pad39/CI            Input Pin (pvhbsudtart)
+                                            0.00728
+    pad29/CI            Input Pin (pvhbcudtbrt)
+                                            0.00728
+    pad26/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad26/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad26/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad21/CI            Input Pin (pvhbcudtbrt)
+                                            0.00728
+    pad18/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad18/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad18/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad15/CI            Input Pin (pvhbcudtbrt)
+                                            0.00728
+    pad13/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad13/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad13/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad11/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad11/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad11/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad9/CD0            Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad9/CD1            Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad9/CE             Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad7/CD0            Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad7/CD1            Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad7/CE             Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad3/CI             Input Pin (pvhbcudtart)
+                                            0.00728
+1

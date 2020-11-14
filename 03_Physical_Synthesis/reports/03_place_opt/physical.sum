@@ -1,0 +1,237 @@
+ 
+****************************************
+Report : design
+        -physical
+Design : khu_sensor_pad
+Version: N-2017.09
+Date   : Sat Sep 12 02:30:18 2020
+****************************************
+
+	Scenario            : func1_wst
+	Parasitic source    : LPE
+	Parasitic mode      : RealRVirtualC
+	Extraction mode     : MIN_MAX
+	Extraction derating : 125/125
+****************************** P&R Summary ********************************
+Date : Sat Sep 12 02:30:18 2020
+Machine Host Name: vlsi-dist.khu.ac.kr
+Working Directory: /home/graduation_project3/2015103977/03_Physical_Synthesis
+Library Name:      khu_sensor_pad_03_place_opt
+Cell Name:         khu_sensor_pad.CEL;1
+Design Statistics:
+    Number of Module Cells:        27602
+    Number of Pins:                162699
+    Number of IO Pad Cells:        44
+    Number of IO Pins:             13
+    Number of Nets:                29567
+    Average Pins Per Net (Signal): 3.51461
+
+Chip Utilization:
+    Total Std Cell Area:           413916.62
+    Total Pad Cell Area:           363316.80
+    Core Size:     width 820.60, height 817.20; area 670594.32
+    Pad Core Size: width 920.76, height 920.76; area 847798.98
+    Chip Size:     width 1196.00, height 1196.00; area 1430416.00
+    Std cells utilization:         61.72% 
+    Cell/Core Ratio:               61.72%
+    Cell/Chip Ratio:               54.34%
+    Number of Cell Rows:            227
+
+Master Instantiation:
+	MasterName	Type	InstCount
+	=================================
+	ivd1_hd		STD	3016
+	oa21d1_hd	STD	2079
+	fd4qd1_hd	STD	2066
+	nd2d1_hd	STD	1964
+	fd1qd1_hd	STD	1737
+	clkxo2d2_hd	STD	1702
+	fad1_hd		STD	1322
+	nr2d1_hd	STD	1288
+	ao22d1_hd	STD	1244
+	scg2d2_hd	STD	1229
+	fd3qd1_hd	STD	1216
+	ao222d1_hd	STD	1056
+	ao21d1_hd	STD	636
+	had1_hd		STD	618
+	ivd2_hd		STD	466
+	scg10d1_hd	STD	419
+	ivd4_hd		STD	405
+	ad2d1_hd	STD	341
+	scg4d1_hd	STD	335
+	oa22d1_hd	STD	302
+	nd3d1_hd	STD	299
+	oa211d1_hd	STD	290
+	nr4d1_hd	STD	281
+	xn2d1_hd	STD	241
+	or2d1_hd	STD	223
+	nr3d1_hd	STD	217
+	scg14d1_hd	STD	188
+	nd4d1_hd	STD	146
+	nd2bd1_hd	STD	145
+	scg17d1_hd	STD	130
+	cglpd1_hd	STD	122
+	nr2bd1_hd	STD	120
+	fds2eqd1_hd	STD	119
+	ao211d1_hd	STD	117
+	scg22d1_hd	STD	110
+	scg6d1_hd	STD	110
+	scg16d1_hd	STD	85
+	nr2d4_hd	STD	76
+	oa22ad1_hd	STD	63
+	nid1_hd		STD	63
+	nr2ad1_hd	STD	59
+	ad2bd2_hd	STD	55
+	scg5d1_hd	STD	51
+	scg2d1_hd	STD	48
+	ad4d1_hd	STD	45
+	ad3d2_hd	STD	41
+	or2bd4_hd	STD	40
+	xn2d2_hd	STD	32
+	mx2d1_hd	STD	30
+	scg20d1_hd	STD	30
+	scg12d1_hd	STD	30
+	or2d2_hd	STD	28
+	or4d1_hd	STD	28
+	scg13d1_hd	STD	23
+	clknd2d2_hd	STD	23
+	oa21d2_hd	STD	22
+	xo3d1_hd	STD	22
+	ivd8_hd		STD	20
+	fds2d1_hd	STD	20
+	scg18d1_hd	STD	19
+	or2d4_hd	STD	18
+	ad2d2_hd	STD	17
+	scg9d1_hd	STD	16
+	scg15d1_hd	STD	16
+	fd4qd2_hd	STD	15
+	fd1qd2_hd	STD	14
+	scg21d1_hd	STD	12
+	fd2qd4_hd	STD	11
+	xo2d1_hd	STD	11
+	clknd2d4_hd	STD	11
+	nd3bd1_hd	STD	10
+	ao21d2_hd	STD	10
+	or3d1_hd	STD	10
+	ao22d2_hd	STD	10
+	ad2d4_hd	STD	9
+	fd2qd1_hd	STD	9
+	scg9d2_hd	STD	8
+	nr4d4_hd	STD	8
+	clkxo2d1_hd	STD	8
+	nid2_hd		STD	7
+	ad3d4_hd	STD	7
+	nr4d2_hd	STD	6
+	ad3d1_hd	STD	6
+	scg1d1_hd	STD	6
+	mx2id1_hd	STD	6
+	scg20d4_hd	STD	6
+	scg8d1_hd	STD	5
+	nr2d6_hd	STD	5
+	nid6_hd		STD	5
+	mx4d1_hd	STD	4
+	scg7d1_hd	STD	4
+	ao22ad1_hd	STD	4
+	nd2d2_hd	STD	4
+	nid4_hd		STD	4
+	nd3d2_hd	STD	4
+	ivd6_hd		STD	3
+	oa21d4_hd	STD	3
+	ad2bd4_hd	STD	3
+	or2bd2_hd	STD	2
+	clknd2d3_hd	STD	2
+	or2d8_hd	STD	2
+	oa211d2_hd	STD	2
+	scg6d2_hd	STD	2
+	ao211d2_hd	STD	2
+	or3d2_hd	STD	2
+	fds2eqd2_hd	STD	2
+	fd2qd2_hd	STD	2
+	clkad2d1_hd	STD	2
+	clknd2d1_hd	STD	1
+	scg11d1_hd	STD	1
+	scg12d2_hd	STD	1
+	nr3ad1_hd	STD	1
+	ft2d1_hd	STD	1
+	fd2d1_hd	STD	1
+	clkad2d3_hd	STD	1
+	ao21d4_hd	STD	1
+	nr4d6_hd	STD	1
+	scg12d4_hd	STD	1
+	ao22d4_hd	STD	1
+	nd3bd4_hd	STD	1
+	scg16d2_hd	STD	1
+	nr3d4_hd	STD	1
+	scg10d4_hd	STD	1
+	iofillerh10_p	IO	44
+	iofillerh5_p	IO	17
+	vssiph_p	IO	11
+	vssoh_p		IO	9
+	phob12_p	IO	6
+	vdd33oph_p	IO	4
+	vdd12ih_p	IO	4
+	phic_p		IO	3
+	vdd12ih_core_p	IO	3
+	phbct12_p	IO	2
+	phbct24_p	IO	1
+	phis_p		IO	1
+	iofillerh30_p	IO	1
+	=================================
+
+Timing/Optimization Information:
+
+Global Routing Information:
+
+Track Assignment Information:
+
+Detailed Routing Information:
+
+DRC information: 
+      Total error number: 0
+
+Ring Wiring Statistics:
+    metal3 Wire Length(count):               3374.96(4)
+    metal4 Wire Length(count):               3425.32(4)
+    metal5 Wire Length(count):               1810.42(2)
+    metal6 Wire Length(count):               1805.08(2)
+  ==============================================
+    Total Wire Length(count):               10415.78(12)
+    Number of via3 Contacts:              8
+    Number of via5 Contacts:              4
+  ==============================================
+    Total Number of Contacts:       12
+
+Stripe Wiring Statistics:
+    metal5 Wire Length(count):              40558.08(48)
+    metal6 Wire Length(count):              41157.60(48)
+  ==============================================
+    Total Wire Length(count):               81715.68(96)
+    Number of via3 Contacts:             96
+    Number of via4 Contacts:            192
+    Number of via5 Contacts:           1248
+  ==============================================
+    Total Number of Contacts:     1536
+
+User Wiring Statistics:
+
+PG follow-pin Wiring Statistics:
+    metal1 Wire Length(count):             202250.42(292)
+    metal5 Wire Length(count):                244.90(209)
+  ==============================================
+    Total Wire Length(count):              202495.32(501)
+    Number of via1 Contacts:           5420
+    Number of via2 Contacts:           5367
+    Number of via3 Contacts:           5365
+    Number of via4 Contacts:           5031
+    Number of via5 Contacts:           4560
+  ==============================================
+    Total Number of Contacts:    25743
+
+Signal Wiring Statistics:
+      Mask Name      Contact Code    Number Of Contacts    Percentage
+
+  Horizontal/Vertical Wire Distribution:
+    Layer      Hor. Wire (% of Hor.)     Ver. Wire (% of Ver.)
+  ==============================================================
+    Total              0.00                      0.00
+1

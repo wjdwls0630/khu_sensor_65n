@@ -1,0 +1,55 @@
+ 
+****************************************
+Report : clocks
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:54:22 2020
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+clk              4.20   {0 2.1}             f         {i_CLK}
+clk_half         8.40   {0 4.2}             G f       {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
+--------------------------------------------------------------------------------
+
+Generated     Master         Generated      Master         Waveform
+Clock         Source         Source         Clock          Modification
+--------------------------------------------------------------------------------
+clk_half      i_CLK          {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
+                                            clk            divide_by(2)
+--------------------------------------------------------------------------------
+1
+ 
+****************************************
+Report : clock_skew
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:54:22 2020
+****************************************
+
+                 Rise      Fall  Min Rise  Min fall        Uncertainty
+Object          Delay     Delay     Delay     Delay     Plus      Minus
+--------------------------------------------------------------------------------
+clk              0.05      0.05      0.05      0.05         -      0.29
+clk_half         0.05      0.05      0.05      0.05         -      0.59
+
+                 Max Source Latency                  Min Source Latency
+            Early    Early    Late    Late      Early    Early    Late    Late
+Object      Rise     Fall     Rise    Fall      Rise     Fall     Rise    Fall
+--------------------------------------------------------------------------------
+clk_half    0.70     0.70     0.70    0.70      0.70     0.70     0.70    0.70
+clk         0.70     0.70     0.70    0.70      0.70     0.70     0.70    0.70
+
+                 Max Transition      Min Transition
+Object           Rise      Fall      Rise      Fall
+-------------------------------------------------------
+clk              0.50      0.50      0.50      0.50
+clk_half         0.50      0.50      0.50      0.50
+1

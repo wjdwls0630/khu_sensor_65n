@@ -1,0 +1,4 @@
+LIBRARY    ./mw_db/khu_sensor_pad_03_place_opt
+  REFERENCE    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504
+  REFERENCE    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420
+  REFERENCE    /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011

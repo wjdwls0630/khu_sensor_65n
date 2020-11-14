@@ -1,0 +1,116 @@
+ 
+****************************************
+Report : port
+        -verbose
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:54:22 2020
+****************************************
+
+
+
+Attributes:
+    i - ideal_network
+
+                       Pin      Wire     Max     Max     Connection
+Port           Dir     Load     Load     Trans   Cap     Class      Attrs
+--------------------------------------------------------------------------------
+ADS1292_DRDY   in      0.0000   0.0000   --      --      --         
+ADS1292_MISO   in      0.0000   0.0000   --      --      --         
+UART_RXD       in      0.0000   0.0000   --      --      --         
+i_CLK          in      0.0000   0.0000   --      --      --         i
+i_RSTN         in      0.0000   0.0000   --      --      --         i
+ADS1292_CSN    out     0.0250   0.0000   --      --      --         
+ADS1292_MOSI   out     0.0250   0.0000   --      --      --         
+ADS1292_RESET  out     0.0250   0.0000   --      --      --         
+ADS1292_SCLK   out     0.0250   0.0000   --      --      --         
+ADS1292_START  out     0.0250   0.0000   --      --      --         
+UART_TXD       out     0.0250   0.0000   --      --      --         
+MPR121_SCL     inout   0.0250   0.0000   --      --      --         
+MPR121_SDA     inout   0.0250   0.0000   --      --      --         
+
+
+              External  Max             Min                Min       Min
+              Number    Wireload        Wireload           Pin       Wire
+Port          Points    Model           Model              Load      Load
+--------------------------------------------------------------------------------
+ADS1292_DRDY       1      --              --              --        -- 
+ADS1292_MISO       1      --              --              --        -- 
+UART_RXD           1      --              --              --        -- 
+i_CLK              1      --              --              --        -- 
+i_RSTN             1      --              --              --        -- 
+ADS1292_CSN        1      --              --              --        -- 
+ADS1292_MOSI       1      --              --              --        -- 
+ADS1292_RESET      1      --              --              --        -- 
+ADS1292_SCLK       1      --              --              --        -- 
+ADS1292_START      1      --              --              --        -- 
+UART_TXD           1      --              --              --        -- 
+MPR121_SCL         1      --              --              --        -- 
+MPR121_SDA         1      --              --              --        -- 
+
+                    Input Delay
+                  Min             Max       Related   Max
+Input Port    Rise    Fall    Rise    Fall   Clock  Fanout
+--------------------------------------------------------------------------------
+ADS1292_DRDY
+              --      --      0.35    0.35  clk       --    
+ADS1292_MISO
+              --      --      0.35    0.35  clk       --    
+UART_RXD      --      --      0.35    0.35  clk       --    
+i_CLK         --      --      --      --      --      -- 
+i_RSTN        --      --      --      --      --      -- 
+MPR121_SCL    --      --      0.35    0.35  clk       --    
+MPR121_SDA    --      --      0.35    0.35  clk       --    
+
+
+               Max Drive      Min Drive      Resistance    Min    Min       Cell
+Input Port    Rise    Fall   Rise    Fall   Max     Min    Cap    Fanout    Deg
+--------------------------------------------------------------------------------
+ADS1292_DRDY
+              --      --     --      --     --      --     --     --        -- 
+ADS1292_MISO
+              --      --     --      --     --      --     --     --        -- 
+UART_RXD      --      --     --      --     --      --     --     --        -- 
+i_CLK         --      --     --      --     --      --     --     --        -- 
+i_RSTN        --      --     --      --     --      --     --     --        -- 
+MPR121_SCL    --      --     --      --     --      --     --     --        -- 
+MPR121_SDA    --      --     --      --     --      --     --     --        -- 
+
+
+               Max Tran        Min Tran
+Input Port    Rise    Fall    Rise    Fall
+--------------------------------------------------------------------------------
+ADS1292_DRDY
+              0.12    0.12    0.12    0.12
+ADS1292_MISO
+              0.12    0.12    0.12    0.12
+UART_RXD      0.12    0.12    0.12    0.12
+i_CLK         --      --      --      -- 
+i_RSTN        --      --      --      -- 
+
+
+                    Output Delay
+                  Min             Max      Related  Fanout
+Output Port   Rise    Fall    Rise    Fall  Clock     Load
+--------------------------------------------------------------------------------
+ADS1292_CSN   --      --      0.50    0.50  clk       0.00  
+ADS1292_MOSI
+              --      --      0.50    0.50  clk       0.00  
+ADS1292_RESET
+              --      --      0.50    0.50  clk       0.00  
+ADS1292_SCLK
+              --      --      0.50    0.50  clk       0.00  
+ADS1292_START
+              --      --      0.50    0.50  clk       0.00  
+UART_TXD      --      --      0.50    0.50  clk       0.00  
+MPR121_SCL    --      --      0.50    0.50  clk       0.00  
+MPR121_SDA    --      --      0.50    0.50  clk       0.00  
+
+
+               Max Tran        Min Tran
+Inout Port    Rise    Fall    Rise    Fall
+--------------------------------------------------------------------------------
+MPR121_SCL    0.12    0.12    0.12    0.12
+MPR121_SDA    0.12    0.12    0.12    0.12
+
+1

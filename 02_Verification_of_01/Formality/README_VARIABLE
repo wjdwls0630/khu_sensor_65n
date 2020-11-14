@@ -1,0 +1,5 @@
+Equivalence checking for RTL Clock gating
+
+You must set the variable below!
+
+set verification_clock_gate_hold_mode true

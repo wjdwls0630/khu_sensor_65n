@@ -1,0 +1,90 @@
+ 
+****************************************
+Report : design
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:52:59 2020
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (File: /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db)
+    scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm (File: /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db)
+    ss65lp3p3v_wst_108_300_p125 (File: /Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db)
+
+Local Link Library:
+
+    {scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db, scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db, scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db, scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db, ss65lp3p3v_wst_108_300_p125.db}
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : ss_1p08v_125c
+    Library : scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+    Process :   1.00
+    Temperature : 125.00
+    Voltage :   1.08
+    Interconnect Model : balanced_tree
+
+Wire Loading Model:
+
+    No wire loading specified.
+
+
+Wire Loading Model Mode: top.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    Object         Name                From Pin       To Pin
+    ----------------------------------------------------------
+    Cell           async_rstn_glitch_synchronizer/async_rstn_synchronizer
+    Cell           khu_sensor_top/async_rstn_glitch_synchronizer
+    Cell           khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer
+    Cell           khu_sensor_top/uart_controller/async_rst_synchronizer
+    Cell           khu_sensor_top/uart_controller/async_rstn_synchronizer
+    Cell           khu_sensor_top/sensor_core/async_rst_synchronizer
+    Cell           khu_sensor_top/mpr121_controller/async_rstn_synchronizer
+    Cell           khu_sensor_top/ads1292_filter/async_rstn_synchronizer
+    Cell           khu_sensor_top/ads1292_filter/async_rst_synchronizer
+    Cell           khu_sensor_top/ads1292_controller/async_rstn_synchronizer
+    Cell           khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer
+    Cell           khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer
+    Cell           khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer
+    Cell           khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer
+    Cell           khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer
+    Cell           khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer
+    Cell           khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer
+    Cell           khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer
+    Cell           khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer
+    Cell           khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer
+
+Required Licenses:
+
+    None Required
+
+Design Parameters:
+
+    None specified.
+1

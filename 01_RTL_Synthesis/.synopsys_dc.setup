@@ -1,0 +1,132 @@
+echo "***********************************************************************"
+echo "                                                                       "
+echo "                     synopsys_dc_setup.tcl                             "
+echo "                                                                       "
+echo "***********************************************************************"
+# To remove libraries from dc shell memory
+remove_design -all
+#******************************************************************************
+#                       set basic parameter                                  **
+#******************************************************************************
+set designer "Man"
+set company "KHU Room327"
+
+# ?
+set verilog_write_unmapped_design true
+set change_name_use_ultanaative false
+
+#******************************************************************************
+#**                Set Naming Rule                                           **
+#******************************************************************************
+#******************************************************************************
+#** NAMING RULE FOR Verilog HDL:                                             **
+#** If you have a plan to layout your chip with Apollo,                      **
+#** you MUST use this naming rule.                                           **
+#**  [1] max_length was removed                                              **
+#**  [2] '!' character was allowed for CTS-ed netlist.                       **
+#******************************************************************************
+define_name_rules sec_verilog -type port \
+                              -equal_ports_nets  \
+                              -allowed {A-Z a-z 0-9 _ [] !} \
+                              -first_restricted {0-9 _ !}   \
+                              -last_restricted {_ !}
+
+define_name_rules sec_verilog -type cell \
+                              -allowed {A-Z a-z 0-9 _ !} \
+                              -first_restricted {0-9 _ !} \
+                              -last_restricted {_ !} \
+                              -map {{{"*cell*", "U"}, {"*-return", "RET"}}}
+
+define_name_rules sec_verilog -type net \
+                              -equal_ports_nets \
+                              -allowed {A-Z a-z 0-9 _ !} \
+                              -first_restricted {0-9 _ !} \
+                              -last_restricted {_ !} \
+                              -map {{{"*cell*", "U"}, {"*-return", "RET"}}}
+
+#******************************************************************************
+#** NAMING RULE FOR VHDL:                                                    **
+#** If you are VHDL user, you MUST use this naming rule.                     **
+#******************************************************************************
+define_name_rules sec_vss -type port \
+                          -equal_ports_nets \
+                          -allowed {A-Z a-z 0-9 _ } \
+                          -first_restricted {0-9 _ } \
+                          -last_restricted _ \
+                          -case_insensitive
+
+define_name_rules sec_vss -type cell \
+                          -allowed {A-Z a-z 0-9 _ } \
+                          -last_restricted _ \
+                          -map {{{"_$",""},{"\*cell\*","U"},{"*-return","RET"}}} \
+                          -case_insensitive
+
+define_name_rules sec_vss -type net \
+                          -equal_ports_nets \
+                          -allowed {A-Z a-z 0-9 _ } \
+                          -first_restricted {0-9 _ } \
+                          -last_restricted _ \
+                          -map {{{"_$",""},{"\*cell\*","U"},{"*-return","RET"}}} \
+                          -case_insensitive
+
+#******************************************************************************
+#**                 MISC                                                     **
+#******************************************************************************
+
+# These variables affects compile, report_timing and report_constraints commands.
+set enable_recovery_removal_arcs true
+
+# To get non-functional Verilog-HDL Netlist
+set verilogout_no_tri true
+
+# To allow infer latches which have async. reset/set pin
+# hdlin_latch_always_async_set_reset true
+
+
+if {  $compatibility_version < 1999.10 } {
+  echo "**********************************************************"
+  echo "    NOTE>>> SEC does NOT support  $compatibility_version"
+  echo "**********************************************************"
+} else {
+  echo "***********************************************************************"
+  echo "       NOTE>>> You MUST fix the design which have multiple ports"
+  echo "               Use the following command"
+  echo "               set_fix_multiple_port_nets -all -buffer_constants"
+  echo "************************************************************************"
+  echo "***********************************************************************"
+  echo "       NOTE>>> Use the old compile_fix_multiple_port_nets"
+  echo "               because reoptimize_design does not honor"
+  echo "               the set_fix_multiple_port_nets command"
+  echo "************************************************************************"
+}
+#******************************************************************************
+
+#******************************************************************************
+#**                 Link-to-Layout Flow, Resynthesis                         **
+#******************************************************************************
+set compile_create_wire_load_table true
+set lbo_lfo_enable_at_pin_count 3
+set lbo_cells_in_regions false
+set pdefin_use_nameprefix false
+set enable_slew_degradation true
+
+#******************************************************************************
+#**                 For VHDL User                                            **
+#******************************************************************************
+# "use" clause is written into the VHDL file automatically
+set vhdlout_use_packages [list IEEE.std_logic_1164]
+
+# VHDLout writes a configuration statement if necessary
+set vhdlout_write_top_configuration TRUE
+
+# VHDLout writes a architecture_name as SCHEMATIC
+set vhdlout_architecture_name SCHEMATIC
+
+# All ports on lower-level designs are written with their original data types.
+# This value affects only designs that are read in VHDL format.
+set vhdlout_preserve_hierarchical_types USER
+
+#******************************************************************************
+#  If you want to get more information about the interface between EDA tools **
+#  then  refer the SYNOPSYS' Reference Manuals                               **
+#******************************************************************************

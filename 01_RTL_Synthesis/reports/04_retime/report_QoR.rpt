@@ -1,0 +1,122 @@
+ 
+****************************************
+Report : qor
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:54:24 2020
+****************************************
+
+
+  Timing Path Group 'REGIN'
+  -----------------------------------
+  Levels of Logic:               5.00
+  Critical Path Length:          1.10
+  Critical Path Slack:           2.31
+  Critical Path Clk Period:      4.20
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'REGOUT'
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          3.40
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:      4.20
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              64.00
+  Critical Path Length:          3.89
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:      4.20
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'clk_half'
+  -----------------------------------
+  Levels of Logic:               4.00
+  Critical Path Length:          2.18
+  Critical Path Slack:           1.41
+  Critical Path Clk Period:      8.40
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:        119
+  Hierarchical Port Count:       4843
+  Leaf Cell Count:              29182
+  Buf/Inv Cell Count:            3283
+  Buf Cell Count:                 118
+  Inv Cell Count:                3165
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     23833
+  Sequential Cell Count:         5349
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    64518.080410
+  Noncombinational Area: 44605.440097
+  Buf/Inv Area:           3367.999934
+  Total Buffer Area:           214.08
+  Total Inverter Area:        3153.92
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:            109123.520507
+  Design Area:          109123.520507
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         31652
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: vlsi-dist.khu.ac.kr
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    2.94
+  Logic Optimization:                  1.64
+  Mapping Optimization:               22.02
+  -----------------------------------------
+  Overall Compile Time:               77.62
+  Overall Compile Wall Clock Time:    78.27
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

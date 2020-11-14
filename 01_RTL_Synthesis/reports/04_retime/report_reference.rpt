@@ -1,0 +1,46 @@
+ 
+****************************************
+Report : reference
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:54:22 2020
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+INVX4MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.280000       1      1.280000  
+async_rstn_glitch_synchronizer
+                                 69.120000       1     69.120000  d, h, n
+ec_breakv          ss65lp3p3v_wst_108_300_p125
+                                  0.000000       4      0.000000  d
+khu_sensor_top                109053.120507
+                                                 1  109053.120507 h, n
+pvhbcudtart        ss65lp3p3v_wst_108_300_p125
+                                  0.000000       1      0.000000  d, n
+pvhbcudtbrt        ss65lp3p3v_wst_108_300_p125
+                                  0.000000      11      0.000000  d, n
+pvhbsudtart        ss65lp3p3v_wst_108_300_p125
+                                  0.000000       1      0.000000  d, n
+vddivh             ss65lp3p3v_wst_108_300_p125
+                                  0.000000       6      0.000000  b, d
+vddtvh             ss65lp3p3v_wst_108_300_p125
+                                  0.000000       7      0.000000  b, d
+vssipvh            ss65lp3p3v_wst_108_300_p125
+                                  0.000000       6      0.000000  b, d
+vsstvh             ss65lp3p3v_wst_108_300_p125
+                                  0.000000       7      0.000000  b, d
+-----------------------------------------------------------------------------
+Total 11 references                                 109123.520507
+1

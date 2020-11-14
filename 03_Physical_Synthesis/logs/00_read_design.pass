@@ -1,0 +1,662 @@
+
+                                IC Compiler (TM)
+                              IC Compiler-PC (TM)
+                              IC Compiler-XP (TM)
+                              IC Compiler-DP (TM)
+                              IC Compiler-AG (TM)
+
+                 Version N-2017.09 for linux64 - Aug 17, 2017 
+
+                    Copyright (c) 1988 - 2017 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+***********************************************************************
+                                                                       
+                     synopsys_dc_setup.tcl                             
+                                                                       
+***********************************************************************
+***********************************************************************
+       NOTE>>> You MUST fix the design which have multiple ports
+               Use the following command
+               set_fix_multiple_port_nets -all -buffer_constants
+************************************************************************
+***********************************************************************
+       NOTE>>> Use the old compile_fix_multiple_port_nets
+               because reoptimize_design does not honor
+               the set_fix_multiple_port_nets command
+************************************************************************
+Initializing gui preferences from file  /home/graduation_project3/2015103977/.synopsys_icc_prefs.tcl
+#******************************************************************************
+#**                         00_read_design                                   **
+#**               create mw library and read verilog netlist                 **
+#******************************************************************************
+echo "***********************************************************************"
+***********************************************************************
+echo "                                                                       "
+                                                                       
+echo "                         00_read_design.tcl                            "
+                         00_read_design.tcl                            
+echo "                                                                       "
+                                                                       
+echo "***********************************************************************"
+***********************************************************************
+# Set Step
+set step "00_read_design"
+00_read_design
+# source the user_design_setup & common_lib_setup
+source -echo -v ./icc_scripts/user_scripts/user_design_setup.tcl
+#******************************************************************************
+#**                          user design settings                           **
+#******************************************************************************
+echo "***********************************************************************"
+***********************************************************************
+echo "                                                                       "
+                                                                       
+echo "                      user_design_setup.tcl                            "
+                      user_design_setup.tcl                            
+echo "                                                                       "
+                                                                       
+echo "***********************************************************************"
+***********************************************************************
+#******************************************************************************
+#**                         General ICC Varialbes                            **
+#******************************************************************************
+set TOP_MODULE                     "khu_sensor_pad"    ;# set design top module name
+khu_sensor_pad
+set ICC_STRATEGY                   "qor"              ;# ttr | qor
+qor
+set LEAKAGE_POWER_PLACE            true              ;# set to true when enabling leakage Flow in place_opt step.
+true
+set LEAKAGE_POWER_POST_CTS             true              ;# set to true when enabling leakage Flow in clock_opt_post_cts step. runtime will be effected.
+true
+set ICC_NUM_CPUS                   "1"                ;# used during placement & routing
+1
+set qor_effort                     "high"           ;# low | medium | high. place optimization effort, default is medium.
+high
+set INOUT_OPT                      true               ;# set to true when optimizing i2r and r2o paths
+true
+set GL_BASED_PLACE                 true              ;# set to true when using high congested design
+true
+set GEN_GL_CONG_MAP                true              ;# set to true, to see global route based congestion map
+true
+set INTER_CLK_GROUPS               "clk clk_half"    ;# Define to balance clocks during CTS. "clkA clkB"
+clk clk_half
+set TIECELL_INSERT                 true              ;# true | false, if true, ICC will insert TIE cells.
+true
+set SPARE_INSERT                   false              ;# true | false, if true, the followings must be defined.
+false
+set SPARE_PREFIX                   spares             ;# default is spares
+spares
+set SPARE_CELL_n_NUM               ""                 ;# example) "BUF_X1M_A9TH 100 AOI22_X1M_A9TH 100 INV_X1M_A9TH 200"
+set USER_DIE_SIZE                  false              ;# true | false, if you know chip size, define true.
+false
+;# Then write bellow variables.
+set DIE_WIDTH                      ""                 ;# If USER_DIE_SIZW is true, define this variable.
+set DIE_HEIGHT                     ""                 ;# If USER_DIE_SIZW is true, define this variable.
+set ICC_IN_IO_CONST_FILE           "./TECH/padplace_ICC_khu_sensor_L13_68um.tdf"  ;# This is tdf format.
+./TECH/padplace_ICC_khu_sensor_L13_68um.tdf
+# This is a tcl file that changes pad names in logic library to in physical library.
+# The tcl file functions appending "_p" to a last character of the pad names.
+# (e.g. vssoh -> vssoh_p)
+set ICC_IO_NAMING_FILE             "./icc_scripts/rules/pad_naming_rule.tcl"
+./icc_scripts/rules/pad_naming_rule.tcl
+set CLOCK_MAX_TRAN    0.3; # clock path max transtion time.
+0.3
+set MAX_ROUTING_LAYER              "MET4"
+MET4
+set MIN_ROUTING_LAYER              ""
+set CLK_MAX_ROUTING_LAYER          "MET4"
+MET4
+set CLK_MIN_ROUTING_LAYER          "MET3"
+MET3
+#######################################################
+## For Power Definition
+#######################################################
+set MW_R_POWER_NET         "VDD"                 ;# This is real power net name.
+VDD
+set MW_R_GROUND_NET        "VSS"                 ;# This is real ground net name.
+VSS
+set mw_logic1_net          $MW_R_POWER_NET       ;# Default
+VDD
+set mw_logic0_net          $MW_R_GROUND_NET      ;# Default
+VSS
+set MW_POWER_PORT          "VDD"                 ;# This is standard cell power pin name.
+VDD
+set MW_GROUND_PORT         "VSS"                 ;# This is standard cell ground pin name.
+VSS
+#######################################################
+## Input Files
+#######################################################
+set ICC_IN_VERILOG_NETLIST_FILE "../01_RTL_Synthesis/outputs/khu_sensor_pad.vg"
+../01_RTL_Synthesis/outputs/khu_sensor_pad.vg
+#######################################################
+## Define Init Utilization
+#######################################################
+set CORE_UTIL                      "0.6"              ;# Define initial core utilization.
+0.6
+;# example) 0.6 means 60% utilization.
+set IO2L                           "50"               ;# This means space from IO to core boundary in left side.
+50
+set IO2B                           "50"               ;# This means space from IO to core boundary in bottom side.
+50
+set IO2R                           "50"               ;# This means space from IO to core boundary in right side.
+50
+set IO2T                           "50"               ;# This means space from IO to core boundary in top side.
+50
+#####################################################################################################
+##
+#
+# scenario naming convention :  mode_corner
+# - mode   : func1,func2,scan1,scan2,bist1,bist2,jtag
+#            funccts,scancts,bistcts,jtagcts
+# - corner : wst, wstti, bst, bstti
+#
+# (scenario example)
+#  func1_wst func1_wstti func1_bst func1_bstti
+#  func2_wst func2_wstti func2_bst func2_bstti
+#  scan1_wst scan1_wstti scan1_bst scan1_bstti
+#  scan2_wst scan2_wstti scan2_bst scan2_bstti
+#  bist1_wst bist1_wstti bist1_bst bist1_bstti
+#  bist2_wst bist2_wstti bist2_bst bist2_bstti
+#  jtag_wst  jtag_wstti  jtag_bst  jtag_bstti
+#  funccts_wstti scancts_wstti bistcts_wstti jtagcts_wstti
+#
+#####################################################################################################
+set ICC_MCMM_SCENARIOS_FILE        "./icc_scripts/mcmm_scenario/scenarios.tcl"
+./icc_scripts/mcmm_scenario/scenarios.tcl
+####### Define scenarios
+## This is example, modify this according to your scenarios.
+##
+## Generally, FP_SCN, PLACE_OPT_SNC and ROUTE_SCN uses worst function mode scenario such as func1_wstti.
+## CLOCK_OPT_CTS_SCN uses all cts scenario such as funccts_wstti,scantcts_wstti,bistcts_wstti,jtagcts_wstti.
+## CLOCK_OPT_PSYN_SCN, ROUTE_OPT_SCN and CHIP_FINISH_SCN uses all scenarios except for CLOCK_OPT_CTS_SCN.
+## HOLD_ONLY_SCN optimizes only hold time and mttv.
+## So, you uses best corner scenarios such as func1_bst,scan1_bst,bist1_bst and jtag_bst.
+##
+# Since the samsung013 Library is damaged, the worst operating condition is only applied.
+#set scenarios                      "func1_wst func1_bst"
+set scenarios                      "func1_wst funccts_wst"
+func1_wst funccts_wst
+set FP_SCN                         "func1_wst"
+func1_wst
+set PLACE_OPT_SCN                  "func1_wst"
+func1_wst
+set CLOCK_OPT_CTS_SCN              "funccts_wst"
+funccts_wst
+#set CLOCK_OPT_PSYN_SCN             "func1_bst"
+set CLOCK_OPT_PSYN_SCN             "func1_wst"
+func1_wst
+set ROUTE_SCN                      "func1_wst"
+func1_wst
+#set ROUTE_OPT_SCN                  "func1_bst"
+set ROUTE_OPT_SCN                  "func1_wst"
+func1_wst
+#set CHIP_FINISH_SCN                "func1_bst"
+set CHIP_FINISH_SCN                "func1_wst"
+func1_wst
+set CLOCK_OPT_CTS_SCN_READ_AGAIN   true              ;# If true, ICC will create scenario again.
+true
+set CLOCK_OPT_PSYN_SCN_READ_AGAIN  false              ;# If true, ICC will create scenario again.
+false
+set ROUTE_SCN_READ_AGAIN           false              ;# If true, ICC will create scenario again.
+false
+set ROUTE_OPT_SCN_READ_AGAIN       false              ;# If true, ICC will create scenario again.
+false
+set HOLD_FIX                       true		      ;# If you want to fix hold violation then set true.
+true
+####### Define SDC Files
+## If you have only FUNC1_SDC, Write the sdc file in FUNC1_SDC field.
+## If FUNC1_SDC and FUNCTS_SDC is same, Write the sdc file in FUNC1_SDC and FUNCCTS_SDC field.
+## If you don't have BIST1_SDC, Remain with blank.
+set FUNC1_SDC          "../01_RTL_Synthesis/outputs/khu_sensor_pad.sdc"
+../01_RTL_Synthesis/outputs/khu_sensor_pad.sdc
+set FUNC2_SDC          ""
+set SCAN1_SDC          ""
+set SCAN2_SDC          ""
+set BIST1_SDC          ""
+set BIST2_SDC          ""
+set JTAG_SDC           ""
+set FUNCCTS_SDC        "../01_RTL_Synthesis/outputs/khu_sensor_pad.sdc"
+../01_RTL_Synthesis/outputs/khu_sensor_pad.sdc
+set SCANCTS_SDC        ""
+set BISTCTS_SDC        ""
+set JTAGCTS_SDC        ""
+####### Define Default Operating Conditions
+##
+## You have to write the default operation condition name and library name of standard cell.
+## If some instances of your design have other operation condition (PVT) such as IO,
+## You have to define the operation condition name and library name in user_opcond.tcl.
+##
+set OPCOND_WST          V105WTP1250
+V105WTP1250
+set OPCOND_WST_LIB      std150e_wst_105_p125 
+std150e_wst_105_p125
+set OPCOND_WST_TIV      ""
+set OPCOND_WST_LIB_TIV  ""
+set OPCOND_BST          V135BTN0400
+V135BTN0400
+set OPCOND_BST_LIB      std150e_bst_135_n040
+std150e_bst_135_n040
+set OPCOND_BST_TIV      ""
+set OPCOND_BST_LIB_TIV  ""
+#########################   DO NOT CHANGE BELOW THIS LINE   ##############################
+##########################################################################################
+set REPORTS_DIR                 "./reports"
+./reports
+## Avoiding too many messages
+set_message_info -id PSYN-040   -limit 5
+1
+set_message_info -id PSYN-087   -limit 5
+1
+set_message_info -id LINT-8     -limit 5
+1
+set_message_info -id RT-104     -limit 5
+1
+set_message_info -id RT-065     -limit 5
+1
+set_message_info -id TIM-128    -limit 5
+1
+set_message_info -id TIM-141    -limit 5
+1
+set_message_info -id PSYN-267   -limit 5
+1
+set_message_info -id RT-104     -limit 5
+1
+set_message_info -id MWUI-040   -limit 5
+1
+set_message_info -id PSYN-024   -limit 5
+1
+set_message_info -id MWLIBP-300 -limit 5
+1
+set_message_info -id MWLIBP-314 -limit 5
+1
+set_message_info -id PSYN-058   -limit 5
+1
+set_message_info -id PSYN-025   -limit 5
+1
+set_message_info -id PSYN-086   -limit 1
+1
+set_message_info -id PSYN-039   -limit 5
+1
+set_message_info -id PSYN-523   -limit 5
+1
+set_message_info -id PSYN-900   -limit 1
+1
+set_message_info -id PSYN-850   -limit 1
+1
+set_message_info -id CTS-102    -limit 1
+1
+set_message_info -id OPT-170    -limit 1
+1
+set_message_info -id TIM-178    -limit 1
+1
+set_message_info -id TIM-179    -limit 1
+1
+1
+source -echo -v ./icc_scripts/common_lib_setup.tcl
+#******************************************************************************
+#**                          common library settings                         **
+#******************************************************************************
+echo "***********************************************************************"
+***********************************************************************
+echo "                                                                       "
+                                                                       
+echo "                       common_lib_setup.tcl                            "
+                       common_lib_setup.tcl                            
+echo "                                                                       "
+                                                                       
+echo "***********************************************************************"
+***********************************************************************
+#******************************************************************************
+#                       set basic parameter                                  **
+#******************************************************************************
+set designer "Man"
+Man
+set company "KHU Room327"
+KHU Room327
+#******************************************************************************
+#**                         Set Library Parameter                            **
+#******************************************************************************
+setenv SEC_SYNOPSYS /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys
+/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys
+setenv SEC_SYNOPSYS_AUX env(SEC_SYNOPSYS)/aux
+env(SEC_SYNOPSYS)/aux
+#******************************************************************************
+#**                Set New Variable for 'search_path'                        **
+#******************************************************************************
+set dk_home [getenv SEC_SYNOPSYS]
+/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys
+set dk_home_aux [getenv SEC_SYNOPSYS_AUX]
+env(SEC_SYNOPSYS)/aux
+#******************************************************************************
+#**                Set 'search_path'                                         **
+#******************************************************************************
+set search_path [list . [format "%s%s"  $synopsys_root /libraries/syn]     [format "%s%s"  $dk_home /syn/STD150E] $dk_home_aux]
+. /Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E env(SEC_SYNOPSYS)/aux
+#******************************************************************************
+#**                Set libraries                                             **
+#******************************************************************************
+# Reference/Front_End/samsung013/sec150e_synopsys/readme/SynopsysDKGuide.pdf p.14
+# Typical (TT / 1.20V / 25 Celcius)
+set STD_TYP std150e_typ_120_p025
+std150e_typ_120_p025
+set STD_TYP_MEM std150e_typ_120_p025_memory
+std150e_typ_120_p025_memory
+# Worst (SS / 1.05V / 125 Celcius)
+set STD_WST std150e_wst_105_p125
+std150e_wst_105_p125
+# Best (FF / 1.35V / -40 Celcius)
+set STD_BST std150e_bst_135_n040
+std150e_bst_135_n040
+set target_library [concat         $STD_WST.db         $STD_BST.db
+]
+std150e_wst_105_p125.db std150e_bst_135_n040.db
+# * : all designs which are in dc_shell 
+set synthetic_library dw_foundation.sldb
+dw_foundation.sldb
+set link_library [concat         {*}         $target_library 	$synthetic_library
+]
+* std150e_wst_105_p125.db std150e_bst_135_n040.db dw_foundation.sldb
+set link_path $link_library
+* std150e_wst_105_p125.db std150e_bst_135_n040.db dw_foundation.sldb
+set symbol_library [list std150e_veri.sdb]
+std150e_veri.sdb
+#******************************************************************************
+#**                         Common Setup File                                **
+#******************************************************************************
+set_host_options -max_cores $ICC_NUM_CPUS
+1
+set_route_mode_options -zroute true
+1
+#******************************************************************************
+#******************************************************************************
+#**                   Set Physical Library Parameter                         **
+#******************************************************************************
+setenv SEC_SYNOPSYS_ICC [sh pwd]/MilkyWay
+/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay
+#******************************************************************************
+#******************************************************************************
+#**                Set New Variable for 'MW_REF_LIB_DIRS'                   **
+#******************************************************************************
+set icc_home [getenv SEC_SYNOPSYS_ICC]
+/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay
+set all_milky [list 		$icc_home/std150e_prim_050504 		$icc_home/std150e_60poi_power_6lm_070420 		$icc_home/std150e_60poi_io_6lm_071011
+	      ]
+/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420 /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011
+set MW_REF_LIB_DIRS "$all_milky"
+/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420 /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011
+# Since I/O pad name is different between logical and physical, we should add
+# LM cell db for ICC to search I/O pad cell properly
+if { $step != "00_read_design" } {
+	lappend link_library $icc_home/std150e_60poi_io_6lm_071011/LM/${STD_WST}_astro.db
+	lappend link_library $icc_home/std150e_60poi_io_6lm_071011/LM/${STD_BST}_astro.db
+}
+#******************************************************************************
+#******************************************************************************
+#**                       Set TECH and TLUP Files                           **
+#******************************************************************************
+set TECH_FILE "./TECH/std150e_prim_6m.techgen.tf"
+./TECH/std150e_prim_6m.techgen.tf
+set TLUP_DIR [sh pwd]/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G
+/home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G
+set MAP_FILE "${TLUP_DIR}/MAP/L13_CELL_6LM.map"
+/home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/MAP/L13_CELL_6LM.map
+set TLUP_MAX_FILE "${TLUP_DIR}/TLUP/L13_CELL_WST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup"
+/home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/TLUP/L13_CELL_WST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup
+set TLUP_MIN_FILE "${TLUP_DIR}/TLUP/L13_CELL_BST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup"
+/home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/TLUP/L13_CELL_BST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup
+#******************************************************************************
+#******************************************************************************
+#**                        Set Stream Out Map File                           **
+#******************************************************************************
+set STREAM_OUT_MAP "./TECH/layer.map"
+./TECH/layer.map
+#******************************************************************************
+#******************************************************************************
+#**                           Set Antenna_Rule                               **
+#******************************************************************************
+# Reference/Back_End/KHU_ASTRO User Guide p.86 and samsung65 TECH antenna_rules
+# IC User Guide p.457
+# make antenna_rule.tcl
+set ANTENNA_RULE "./TECH/std150e_prim713_antenna_200827.tcl"
+./TECH/std150e_prim713_antenna_200827.tcl
+#******************************************************************************
+#******************************************************************************
+#**                           Set IO FILLERS                                 **
+#******************************************************************************
+set IO_FILLER "iofillerh30_p iofillerh10_p iofillerh5_p iofiller1_p"
+iofillerh30_p iofillerh10_p iofillerh5_p iofiller1_p
+set IO_FILLER_OVERLAP ""
+#******************************************************************************
+#**                        Set Clock Tree Layers                             **
+#******************************************************************************
+# clock tree layers
+set ICC_CTS_RULE_NAME "shield_130nm_rule"
+shield_130nm_rule
+#******************************************************************************
+#**                    Default Timing Environment Setting                   **
+#******************************************************************************
+set timing_enable_multiple_clocks_per_reg true
+true
+set timing_enable_non_sequential_checks true
+true
+set case_analysis_with_logic_constants true
+true
+set disable_auto_time_borrow false
+false
+set legalize_support_phys_only_cell true
+true
+set_separate_process_options -placement false
+1
+set_separate_process_options -routing false
+1
+set_separate_process_options -extraction false
+1
+#******************************************************************************
+#******************************************************************************
+#**                               ETC                                        **
+#******************************************************************************
+set sh_enable_page_mode false
+false
+setenv TMPDIR [sh pwd]/TMP
+/home/graduation_project3/2015103977/03_Physical_Synthesis/TMP
+set back [sh date +%m%d_%H:%M:%S]
+0912_02:17:50
+#******************************************************************************
+# Clear existing mw library and re-make dir
+set _mw_lib ./mw_db/${TOP_MODULE}_${step}
+./mw_db/khu_sensor_pad_00_read_design
+if {[file exist $_mw_lib]} {
+	sh rm -rf $_mw_lib
+}
+# Create a Milkyway Design DB
+echo "***********************************************************************"
+***********************************************************************
+echo "                                                                       "
+                                                                       
+echo "                   Creating a Milkyway Design DB                       "
+                   Creating a Milkyway Design DB                       
+echo "                                                                       "
+                                                                       
+echo "***********************************************************************"
+***********************************************************************
+create_mw_lib ./mw_db/${TOP_MODULE}_${step} 	-technology $TECH_FILE 	-mw_reference_library $MW_REF_LIB_DIRS 	-bus_naming_style {[%d]} 	-open
+Start to load technology file ./TECH/std150e_prim_6m.techgen.tf.
+Warning: Layer 'ACT' is missing the attribute 'minSpacing'. (line 173) (TFCHK-014)
+Warning: Layer 'ACT' is missing the attribute 'minWidth'. (line 173) (TFCHK-014)
+Warning: Layer 'LDIO' is missing the attribute 'minSpacing'. (line 236) (TFCHK-014)
+Warning: Layer 'LDIO' is missing the attribute 'minWidth'. (line 236) (TFCHK-014)
+Warning: Layer 'CHBD' is missing the attribute 'minSpacing'. (line 246) (TFCHK-014)
+Warning: Layer 'CHBD' is missing the attribute 'minWidth'. (line 246) (TFCHK-014)
+Warning: Layer 'NPLUS' is missing the attribute 'minSpacing'. (line 287) (TFCHK-014)
+Warning: Layer 'NPLUS' is missing the attribute 'minWidth'. (line 287) (TFCHK-014)
+Warning: Layer 'PPLUS' is missing the attribute 'minSpacing'. (line 297) (TFCHK-014)
+Warning: Layer 'PPLUS' is missing the attribute 'minWidth'. (line 297) (TFCHK-014)
+Warning: Layer 'PAD' is missing the attribute 'minSpacing'. (line 687) (TFCHK-014)
+Warning: Layer 'PAD' is missing the attribute 'minWidth'. (line 687) (TFCHK-014)
+Warning: Layer 'STEXT' is missing the attribute 'minSpacing'. (line 697) (TFCHK-014)
+Warning: Layer 'STEXT' is missing the attribute 'minWidth'. (line 697) (TFCHK-014)
+Warning: Layer 'PTEXT' is missing the attribute 'minSpacing'. (line 707) (TFCHK-014)
+Warning: Layer 'PTEXT' is missing the attribute 'minWidth'. (line 707) (TFCHK-014)
+Warning: Layer 'M1TEXT' is missing the attribute 'minSpacing'. (line 717) (TFCHK-014)
+Warning: Layer 'M1TEXT' is missing the attribute 'minWidth'. (line 717) (TFCHK-014)
+Warning: Layer 'M2TEXT' is missing the attribute 'minSpacing'. (line 727) (TFCHK-014)
+Warning: Layer 'M2TEXT' is missing the attribute 'minWidth'. (line 727) (TFCHK-014)
+Warning: Layer 'M3TEXT' is missing the attribute 'minSpacing'. (line 737) (TFCHK-014)
+Warning: Layer 'M3TEXT' is missing the attribute 'minWidth'. (line 737) (TFCHK-014)
+Warning: Layer 'M4TEXT' is missing the attribute 'minSpacing'. (line 747) (TFCHK-014)
+Warning: Layer 'M4TEXT' is missing the attribute 'minWidth'. (line 747) (TFCHK-014)
+Warning: Layer 'M5TEXT' is missing the attribute 'minSpacing'. (line 757) (TFCHK-014)
+Warning: Layer 'M5TEXT' is missing the attribute 'minWidth'. (line 757) (TFCHK-014)
+Warning: Layer 'M6TEXT' is missing the attribute 'minSpacing'. (line 767) (TFCHK-014)
+Warning: Layer 'M6TEXT' is missing the attribute 'minWidth'. (line 767) (TFCHK-014)
+Warning: Layer 'BOUND' is missing the attribute 'minSpacing'. (line 777) (TFCHK-014)
+Warning: Layer 'BOUND' is missing the attribute 'minWidth'. (line 777) (TFCHK-014)
+Warning: FringeCap 1 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 992) (TFCHK-067)
+Warning: FringeCap 3 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1010) (TFCHK-067)
+Warning: FringeCap 6 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1037) (TFCHK-067)
+Warning: FringeCap 10 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1073) (TFCHK-067)
+Warning: FringeCap 15 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1118) (TFCHK-067)
+Warning: FringeCap 21 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1171) (TFCHK-067)
+Warning: Layer 'MET1' has a pitch 0.4 that does not match the recommended wire-to-via pitch 0.37 or 0.34. (TFCHK-049)
+Warning: Layer 'MET2' has a pitch 0.44 that does not match the recommended wire-to-via pitch 0.4 or 0.43. (TFCHK-049)
+Warning: Layer 'MET4' has a pitch 0.44 that does not match the recommended wire-to-via pitch 0.4 or 0.43. (TFCHK-049)
+Warning: Layer 'MET3' has a pitch 0.4 that does not match the doubled pitch 0.8 or tripled pitch 1.2. (TFCHK-050)
+Warning: Layer 'MET4' has a pitch 0.44 that does not match the doubled pitch 0.88 or tripled pitch 1.32. (TFCHK-050)
+Warning: Layer 'MET5' has a pitch 0.4 that does not match the doubled pitch 0.8 or tripled pitch 1.2. (TFCHK-050)
+Technology file ./TECH/std150e_prim_6m.techgen.tf has been loaded successfully.
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+	6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+	Main Library (khu_sensor_pad_00_read_design)|	Reference Library (std150e_prim_050504)
+	Upper Layer     MET6 (130, 130)   |	MET6 (10, 40)	 (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+	Main Library (khu_sensor_pad_00_read_design)|	Reference Library (std150e_prim_050504)
+	Upper Layer     MET6 (130, 130)   |	MET6 (10, 40)	 (MWLIBP-324)
+{khu_sensor_pad_00_read_design}
+# If the "-open" option is not used, the library needs to be opened in order to import the design
+# open_mw_lib ./mw_db/${TOP_MODULE}_${step}
+# Apply pad naming rule in physical library
+source $ICC_IO_NAMING_FILE
+Loading db file '/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db'
+Loading db file '/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_bst_135_n040.db'
+Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/dw_foundation.sldb'
+# Read verilog netlist
+read_verilog -top ${TOP_MODULE} $ICC_IN_VERILOG_NETLIST_FILE
+Warning: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504: bus naming style _<%d> is not consistent with main lib. (MWNL-111)
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+Compiling source file /home/graduation_project3/2015103977/01_RTL_Synthesis/outputs/khu_sensor_pad.vg
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:01, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+Compiling source file /home/graduation_project3/2015103977/01_RTL_Synthesis/outputs/khu_sensor_pad.vg
+
+*****  Pass 2 Complete *****
+
+*****   Verilog HDL translation completed! *****
+Elapsed =    0:00:00, CPU =    0:00:00
+Hierarchy Preservation is turned ON
+The quick-attach skip-search mode has been turned on.
+  Start axu naming escaping style change ...
+  End axu naming escaping style change, status is 1
+Checking single pin net for cell 'khu_sensor_pad.CEL' now...
+Total number of cell instances: 26621
+Total number of nets: 28599
+Total number of ports: 13 (include 0 PG ports)
+Total number of hierarchical cell instances: 233
+
+The quick-attach skip-search mode has been turned off.
+INFO:  total find 0 pg nets connected with tie net.
+Elapsed =    0:00:01, CPU =    0:00:00
+Information: Read verilog completed successfully.
+1
+link
+1
+current_design $TOP_MODULE
+khu_sensor_pad
+uniquify_fp_mw_cel
+1
+# Can be replaced by
+#import_designs $ICC_IN_VERILOG_NETLIST_FILE -format verilog -top ${TOP_MODULE}
+# Save
+change_names -rule verilog -hier
+Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/gtech.db'
+Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/standard.sldb'
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Warning: The 'cgnd1_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd1_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd2_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd2_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd3_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd3_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd4_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd4_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd6_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+	marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd6_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+	have corresponding physical cell description. (PSYN-024)
+Note - message 'PSYN-039' limit (5) exceeded.  Remainder will be suppressed.
+Note - message 'PSYN-024' limit (5) exceeded.  Remainder will be suppressed.
+
+  Linking design 'khu_sensor_pad'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (233 designs)             khu_sensor_pad.CEL, etc
+  std150e_wst_105_p125 (library) /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db
+  std150e_bst_135_n040 (library) /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_bst_135_n040.db
+  dw_foundation.sldb (library) /Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/dw_foundation.sldb
+
+Warning: Unable to resolve reference 'vdd12ih_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vssiph_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phic_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vdd33oph_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phob12_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vssoh_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vdd12ih_core_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phbct24_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phis_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phbct12_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Updating database...
+Information: Updating top database 'khu_sensor_pad.CEL;1'. (MWDC-255)
+1
+set verilogout_no_tri true
+true
+save_mw_cel -as ${TOP_MODULE}
+Information: Performing CEL netlist consistency check. (MWDC-118)
+Information: CEL consistency check PASSED. (MWDC-119)
+Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Saved design named khu_sensor_pad. (UIG-5)
+1
+# close lib
+close_mw_lib
+1
+# Reset netlist file for applying naming rule
+sh rm -f $ICC_IN_VERILOG_NETLIST_FILE
+sh cp ${ICC_IN_VERILOG_NETLIST_FILE}.bak $ICC_IN_VERILOG_NETLIST_FILE
+exit
+
+Thank you...
+Exit IC Compiler!

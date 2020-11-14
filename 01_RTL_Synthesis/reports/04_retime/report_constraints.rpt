@@ -1,0 +1,92 @@
+ 
+****************************************
+Report : constraint
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:54:22 2020
+****************************************
+
+
+                                                   Weighted
+    Group (max_delay/setup)      Cost     Weight     Cost
+    -----------------------------------------------------
+    FEEDTHROUGH                  0.00      1.00      0.00
+    REGIN                        0.00      1.00      0.00
+    REGOUT                       0.00      1.00      0.00
+    clk                          0.00      1.00      0.00
+    clk_half                     0.00      1.00      0.00
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    max_delay/setup                                  0.00
+
+                              Total Neg  Critical
+    Group (critical_range)      Slack    Endpoints   Cost
+    -----------------------------------------------------
+    FEEDTHROUGH                  0.00         0      0.00
+    REGIN                        0.00         0      0.00
+    REGOUT                       0.00         0      0.00
+    clk                          0.00         0      0.00
+    clk_half                     0.00         0      0.00
+    default                      0.00         0      0.00
+    -----------------------------------------------------
+    critical_range                                   0.00
+
+                                                   Weighted
+    Group (min_delay/hold)       Cost     Weight     Cost
+    -----------------------------------------------------
+    FEEDTHROUGH                  0.00      1.00      0.00
+    REGIN                        0.00      1.00      0.00
+    REGOUT                       0.00      1.00      0.00
+    clk                          0.00      1.00      0.00
+    clk_half                     0.00      1.00      0.00
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    min_delay/hold                                   0.00
+    Constraint                                     Slack
+    ----------------------------------------------------
+    max_leakage_power                              -0.05  (VIOLATED)
+
+
+    Constraint                                       Cost
+    -----------------------------------------------------
+    multiport_net                                    0.00 (MET)
+    max_transition                                   0.00 (MET)
+    max_capacitance                                  0.00 (MET)
+    max_delay/setup                                  0.00 (MET)
+    sequential_clock_pulse_width                     0.00 (MET)
+    critical_range                                   0.00 (MET)
+    min_delay/hold                                   0.00 (MET)
+    max_leakage_power                                0.05 (VIOLATED)
+    max_area                                     109123.52
+                                                          (VIOLATED)
+
+
+1
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -verbose
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:54:22 2020
+****************************************
+
+
+    Design: khu_sensor_pad
+
+    max_area               0.00
+  - Current Area       109123.52
+  ------------------------------
+    Slack              -109123.52  (VIOLATED)
+
+
+    Design: khu_sensor_pad
+
+    max_leakage_power          0.00
+  - Current Leakage Power      0.05
+  ----------------------------------
+    Slack                     -0.05  (VIOLATED)
+
+
+1

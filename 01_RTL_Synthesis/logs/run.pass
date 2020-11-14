@@ -1,0 +1,2575 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+              Version L-2016.03-SP5-5 for linux64 - Apr 21, 2017 
+
+                    Copyright (c) 1988 - 2017 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+***********************************************************************
+                                                                       
+                     synopsys_dc_setup.tcl                             
+                                                                       
+***********************************************************************
+***********************************************************************
+       NOTE>>> You MUST fix the design which have multiple ports
+               Use the following command
+               set_fix_multiple_port_nets -all -buffer_constants
+************************************************************************
+***********************************************************************
+       NOTE>>> Use the old compile_fix_multiple_port_nets
+               because reoptimize_design does not honor
+               the set_fix_multiple_port_nets command
+************************************************************************
+Initializing gui preferences from file  /home/VLSI_graduated_2020/2015104027/.synopsys_dv_prefs.tcl
+echo "------------------------------------------------------------------------"
+------------------------------------------------------------------------
+echo "--                                                                    --"
+--                                                                    --
+echo "--                                                                    --"
+--                                                                    --
+echo "--                    khu_sensor_65n compile start                    --"
+--                    khu_sensor_65n compile start                    --
+echo "--                                                                    --"
+--                                                                    --
+echo "--                                                                    --"
+--                                                                    --
+echo "------------------------------------------------------------------------"
+------------------------------------------------------------------------
+##########################################################################################
+##
+## Create Operating_Conditions
+##
+##########################################################################################
+#########################   DO NOT CHANGE BELOW THIS LINE   ##############################
+##########################################################################################
+# Samsung 65nm
+# Dual Vth (Sign-off Corner, no need Multi-VDD)
+# Logic Synthesis & Pre-STA (1st Sign-off)
+# RVT: SS 1.08V 125c - WIRE Zero Wire Load Model
+# HVT: SS 1.08V 125c - WIRE Zero Wire Load Model
+remove_design -all
+1
+# source the common_setup & Common variables file
+source -echo -v ./dc_scripts/user_scripts/user_design_setup.tcl
+#******************************************************************************
+#**                          user design settings                           **
+#******************************************************************************
+echo "***********************************************************************"
+***********************************************************************
+echo "                                                                       "
+                                                                       
+echo "                      user_design_setup.tcl                            "
+                      user_design_setup.tcl                            
+echo "                                                                       "
+                                                                       
+echo "***********************************************************************"
+***********************************************************************
+#******************************************************************************
+#**                         General ICC Varialbes                            **
+#******************************************************************************
+set TOP_MODULE                     "khu_sensor_pad"    ;# set design top module name
+khu_sensor_pad
+set POWER_OPT                      true              ;# set to true when enabling Power Optimization during compile.
+true
+set DC_NUM_CPUS                   "1"                ;# used during placement & routing
+1
+set INOUT_OPT                      true               ;# set to true when optimizing i2r and r2o paths
+true
+set INTER_CLK_GROUPS               "clk clk_half"    ;# Define clocks. "clkA clkB"
+clk clk_half
+set CLOCK_MAX_TRAN                 "0.3"              ;# clock path max transtion time.
+0.3
+#######################################################
+## Input Files
+#######################################################
+set DC_IN_VERILOG_RTL_FILE       "./Source/MPR121/i2c_master.v                                   ./Source/MPR121/mpr121_controller.v                                   ./Source/ADS1292/spi_master.v                                   ./Source/ADS1292/ads1292_controller.v                                   ./Source/ADS1292/ADS1292_Filter/Float/float_adder.v                                   ./Source/ADS1292/ADS1292_Filter/Float/float_multiplier.v                                   ./Source/ADS1292/ADS1292_Filter/Float/converter_f2i.v                                   ./Source/ADS1292/ADS1292_Filter/Float/converter_i2f.v                                   ./Source/ADS1292/ADS1292_Filter/IIR_LPF/iir_lpf.v                                   ./Source/ADS1292/ADS1292_Filter/IIR_Notch/iir_notch.v                                   ./Source/ADS1292/ADS1292_Filter/IIR_HPF/iir_hpf.v                                   ./Source/ADS1292/ADS1292_Filter/ads1292_filter.v                                   ./Source/Sensor_Core/sensor_core.v                                   ./Source/UART_Controller/uart_rx.v                                   ./Source/UART_Controller/uart_tx.v  				                          ./Source/Divider_by_2/divider_by_2.v                                   ./Source/UART_Controller/uart_controller.v                                   ./Source/khu_sensor_top.v                                   ./Source/khu_sensor_pad.v"
+./Source/MPR121/i2c_master.v                                   ./Source/MPR121/mpr121_controller.v                                   ./Source/ADS1292/spi_master.v                                   ./Source/ADS1292/ads1292_controller.v                                   ./Source/ADS1292/ADS1292_Filter/Float/float_adder.v                                   ./Source/ADS1292/ADS1292_Filter/Float/float_multiplier.v                                   ./Source/ADS1292/ADS1292_Filter/Float/converter_f2i.v                                   ./Source/ADS1292/ADS1292_Filter/Float/converter_i2f.v                                   ./Source/ADS1292/ADS1292_Filter/IIR_LPF/iir_lpf.v                                   ./Source/ADS1292/ADS1292_Filter/IIR_Notch/iir_notch.v                                   ./Source/ADS1292/ADS1292_Filter/IIR_HPF/iir_hpf.v                                   ./Source/ADS1292/ADS1292_Filter/ads1292_filter.v                                   ./Source/Sensor_Core/sensor_core.v                                   ./Source/UART_Controller/uart_rx.v                                   ./Source/UART_Controller/uart_tx.v  				                          ./Source/Divider_by_2/divider_by_2.v                                   ./Source/UART_Controller/uart_controller.v                                   ./Source/khu_sensor_top.v                                   ./Source/khu_sensor_pad.v
+set HOLD_FIX                       true		      ;# If you want to fix hold violation then set true.
+true
+####### Define SDC Files
+## If you have only FUNC1_SDC, Write the sdc file in FUNC1_SDC field.
+## If you have only FUNC2_SDC, Write the sdc file in FUNC2_SDC field.
+set FUNC1_SDC          ""
+set FUNC2_SDC          ""
+####### Define Default Operating Conditions
+##
+## You have to write the default operation condition name and library name of standard cell.
+## If some instances of your design have other operation condition (PVT) such as IO,
+## You have to define the operation condition name and library name in user_opcond.tcl.
+##
+# Set operating conditions
+# Samsung 65nm
+# Dual Vth (Sign-off Corner, no need Multi-VDD)
+# Logic Synthesis & Pre-STA (1st Sign-off)
+# RVT: SS 1.08V 125c - WIRE Zero Wire Load Model
+# HVT: SS 1.08V 125c - WIRE Zero Wire Load Model
+#########################   DO NOT CHANGE BELOW THIS LINE   ##############################
+##########################################################################################
+set REPORTS_DIR                 "./reports"
+./reports
+## Avoiding too many messages
+set_message_info -id PSYN-040   -limit 5
+1
+set_message_info -id PSYN-087   -limit 5
+1
+set_message_info -id LINT-8     -limit 5
+1
+set_message_info -id RT-104     -limit 5
+1
+set_message_info -id RT-065     -limit 5
+1
+set_message_info -id TIM-128    -limit 5
+1
+set_message_info -id TIM-141    -limit 5
+1
+set_message_info -id PSYN-267   -limit 5
+1
+set_message_info -id RT-104     -limit 5
+1
+set_message_info -id PSYN-024   -limit 5
+1
+set_message_info -id PSYN-058   -limit 5
+1
+set_message_info -id PSYN-025   -limit 5
+1
+set_message_info -id PSYN-039   -limit 5
+1
+set_message_info -id PSYN-523   -limit 5
+1
+set_message_info -id PSYN-900   -limit 1
+1
+set_message_info -id CTS-102    -limit 1
+1
+set_message_info -id OPT-112    -limit 1
+1
+set_message_info -id OPT-1206   -limit 1
+1
+set_message_info -id OPT-1215   -limit 1
+1
+1
+source -echo -v ./dc_scripts/common_lib_setup.tcl
+#******************************************************************************
+#**                          common library settings                         **
+#******************************************************************************
+echo "***********************************************************************"
+***********************************************************************
+echo "                                                                       "
+                                                                       
+echo "                       common_lib_setup.tcl                            "
+                       common_lib_setup.tcl                            
+echo "                                                                       "
+                                                                       
+echo "***********************************************************************"
+***********************************************************************
+#******************************************************************************
+#                       set basic parameter                                  **
+#******************************************************************************
+set designer "Man"
+Man
+set company "KHU Room327"
+KHU Room327
+# Define path directories for file locations
+set ALIB_DIR "./alib"
+./alib
+set SVF_DIR "./svf"
+./svf
+#******************************************************************************
+#**                         Set Library Parameter                            **
+#******************************************************************************
+set LIB_DIR /Tools/Library/samsung65_2016/CB_1502
+/Tools/Library/samsung65_2016/CB_1502
+set PRIMITIVE_LIB_DIR ${LIB_DIR}/PRIMITIVE
+/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE
+set IO_LIB_DIR ${LIB_DIR}/IO
+/Tools/Library/samsung65_2016/CB_1502/IO
+#******************************************************************************
+#**                Set 'search_path'                                         **
+#******************************************************************************
+set search_path ". $synopsys_root/libraries/syn 		    $PRIMITIVE_LIB_DIR/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys                      $PRIMITIVE_LIB_DIR/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys                      $PRIMITIVE_LIB_DIR/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys                     $PRIMITIVE_LIB_DIR/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys                     $IO_LIB_DIR/synopsys"
+. /Tools/Synopsys/DesignCompiler_2017/libraries/syn       /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys                      /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys                      /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys                     /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys                     /Tools/Library/samsung65_2016/CB_1502/IO/synopsys
+#******************************************************************************
+#**                Set libraries                                             **
+#******************************************************************************
+# Samsung 65nm
+# Dual Vth (Sign-off Corner, no need Multi-VDD)
+# Logic Synthesis & Pre-STA (1st Sign-off)
+# RVT: SS 1.08V 125c - WIRE Zero Wire Load Model
+# HVT: SS 1.08V 125c - WIRE Zero Wire Load Model
+# PMK (Power Management Kit)
+# RVT
+# SS (Worst)
+set PMK_RVT_SS scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm
+scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm
+# HVT
+# SS (Worst)
+set PMK_HVT_SS scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm
+scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm
+# Normal
+# RVT
+# SS (Worst)
+set NOM_RVT_SS scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+# HVT
+# SS (Worst)
+set NOM_HVT_SS scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm
+scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm
+# IO
+# SS (Worst)
+set IO_SS ss65lp3p3v_wst_108_300_p125
+ss65lp3p3v_wst_108_300_p125
+set target_library [concat         $PMK_RVT_SS.db         $PMK_HVT_SS.db         $NOM_RVT_SS.db         $NOM_HVT_SS.db         $IO_SS.db
+]
+scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db ss65lp3p3v_wst_108_300_p125.db
+# * : all designs which are in dc_shell
+#set synthetic_library dw_foundation.sldb
+set link_library [concat         {*} 	$PMK_RVT_SS.db         $PMK_HVT_SS.db         $NOM_RVT_SS.db         $NOM_HVT_SS.db         $IO_SS.db
+]
+* scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db ss65lp3p3v_wst_108_300_p125.db
+set link_path $link_library
+* scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db ss65lp3p3v_wst_108_300_p125.db
+set_app_var alib_library_analysis_path $ALIB_DIR
+./alib
+set_host_options -max_cores $DC_NUM_CPUS
+1
+#******************************************************************************
+#**                    Default Timing Environment Setting                   **
+#******************************************************************************
+set timing_enable_multiple_clocks_per_reg true
+true
+set timing_enable_non_sequential_checks true
+true
+set case_analysis_with_logic_constants true
+true
+set disable_auto_time_borrow false
+false
+#******************************************************************************
+#******************************************************************************
+#**                               ETC                                        **
+#******************************************************************************
+set sh_enable_page_mode false
+false
+setenv TMPDIR [sh pwd]/TMP
+/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/TMP
+set back [sh date +%m%d_%H:%M:%S]
+1114_08:48:23
+#******************************************************************************
+set_svf $SVF_DIR/$TOP_MODULE.svf
+1
+source ./dc_scripts/00_read_global_reset.tcl
+***********************************************************************
+                                                                       
+                      00_read_global_reset.tcl                         
+                                                                       
+***********************************************************************
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
+Loading db file '/Tools/Synopsys/DesignCompiler_2017/libraries/syn/gtech.db'
+Loading db file '/Tools/Synopsys/DesignCompiler_2017/libraries/syn/standard.sldb'
+  Loading link library 'scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm'
+  Loading link library 'scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm'
+  Loading link library 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm'
+  Loading link library 'scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm'
+  Loading link library 'ss65lp3p3v_wst_108_300_p125'
+  Loading link library 'gtech'
+Loading verilog file '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rstn_synchronizer.v'
+Running PRESTO HDLC
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rstn_synchronizer.v
+
+Inferred memory devices in process
+	in routine async_rstn_synchronizer line 8 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rstn_synchronizer.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     o_RSTN_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      r_ff_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rstn_synchronizer.db:async_rstn_synchronizer'
+Loaded 1 design.
+Current design is 'async_rstn_synchronizer'.
+Current design is 'async_rstn_synchronizer'.
+constraints i_RSTN
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Loading db file '/Tools/Synopsys/DesignCompiler_2017/libraries/syn/dw_foundation.sldb'
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | L-2016.03-DWBB_201603.5.1 |   *     |
+| Licensed DW Building Blocks        | L-2016.03-DWBB_201603.5.1 |   *     |
+============================================================================
+
+
+Loaded alib file './alib/alib-52/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db.alib' (placeholder)
+Loaded alib file './alib/alib-52/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db.alib' (placeholder)
+Loaded alib file './alib/alib-52/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db.alib'
+Loaded alib file './alib/alib-52/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db.alib'
+Loaded alib file './alib/alib-52/ss65lp3p3v_wst_108_300_p125.db.alib' (placeholder)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+  Processing 'async_rstn_synchronizer'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Loading verilog file '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rst_synchronizer.v'
+Running PRESTO HDLC
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rst_synchronizer.v
+
+Inferred memory devices in process
+	in routine async_rst_synchronizer line 8 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rst_synchronizer.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      o_RST_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|      r_ff_reg       | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rst_synchronizer.db:async_rst_synchronizer'
+Loaded 1 design.
+Current design is 'async_rst_synchronizer'.
+Current design is 'async_rst_synchronizer'.
+constraints i_RSTN
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+  Processing 'async_rst_synchronizer'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Loading verilog file '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rstn_glitch_synchronizer.v'
+Running PRESTO HDLC
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rstn_glitch_synchronizer.v
+Warning:  /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rstn_glitch_synchronizer.v:11: Net o_RSTN connected to instance async_rstn_synchronizer is declared as reg data type but is not driven by an always block. (VER-1004)
+Presto compilation completed successfully.
+Current design is now '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rstn_glitch_synchronizer.db:async_rstn_glitch_synchronizer'
+Loaded 1 design.
+Current design is 'async_rstn_glitch_synchronizer'.
+Current design is 'async_rstn_glitch_synchronizer'.
+***********************************************************************
+                                                                       
+                    insert delay on or gate                            
+                                                                       
+***********************************************************************
+Warning: Library cell 'DLY4X1MTH' has dont_use attribute.  (NLE-033)
+Information: Buffering net i_RSTN. (HFS-701)
+Disconnecting net 'i_RSTN' from pin '__tmp100/A'.
+Creating net 'eco_net' in design 'async_rstn_glitch_synchronizer'.
+Creating cell 'eco_cell' in design 'async_rstn_glitch_synchronizer'.
+Connecting net 'eco_net' to pin 'eco_cell/Y'.
+Connecting net 'eco_net' to pin '__tmp100/A'.
+Connecting net 'i_RSTN' to pin 'eco_cell/A'.
+Information: Buffering net i_RSTN. (HFS-701)
+Disconnecting net 'i_RSTN' from pin 'eco_cell/A'.
+Creating net 'eco_net_1' in design 'async_rstn_glitch_synchronizer'.
+Creating cell 'eco_cell_1' in design 'async_rstn_glitch_synchronizer'.
+Connecting net 'eco_net_1' to pin 'eco_cell_1/Y'.
+Connecting net 'eco_net_1' to pin 'eco_cell/A'.
+Connecting net 'i_RSTN' to pin 'eco_cell_1/A'.
+Information: Buffering net i_RSTN. (HFS-701)
+Disconnecting net 'i_RSTN' from pin 'eco_cell_1/A'.
+Creating net 'eco_net_2' in design 'async_rstn_glitch_synchronizer'.
+Creating cell 'eco_cell_2' in design 'async_rstn_glitch_synchronizer'.
+Connecting net 'eco_net_2' to pin 'eco_cell_2/Y'.
+Connecting net 'eco_net_2' to pin 'eco_cell_1/A'.
+Connecting net 'i_RSTN' to pin 'eco_cell_2/A'.
+Information: Buffering net i_RSTN. (HFS-701)
+Disconnecting net 'i_RSTN' from pin 'eco_cell_2/A'.
+Creating net 'eco_net_3' in design 'async_rstn_glitch_synchronizer'.
+Creating cell 'eco_cell_3' in design 'async_rstn_glitch_synchronizer'.
+Connecting net 'eco_net_3' to pin 'eco_cell_3/Y'.
+Connecting net 'eco_net_3' to pin 'eco_cell_2/A'.
+Connecting net 'i_RSTN' to pin 'eco_cell_3/A'.
+Current design is 'async_rstn_glitch_synchronizer'.
+Warning: Object 'link6' is invalid. It must be a pin of a leaf cell or a port. (OPT-812)
+constraints i_RSTN
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+
+Information: There are 1 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+  Processing 'async_rstn_glitch_synchronizer'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+source ./dc_scripts/01_read_designs.tcl
+***********************************************************************
+                                                                       
+                         01_read_designs.tcl                           
+                                                                       
+***********************************************************************
+Loading verilog files: '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/MPR121/i2c_master.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/MPR121/mpr121_controller.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/spi_master.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ads1292_controller.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_adder.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_multiplier.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/converter_f2i.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/converter_i2f.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_LPF/iir_lpf.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_Notch/iir_notch.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_HPF/iir_hpf.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/ads1292_filter.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_rx.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_tx.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Divider_by_2/divider_by_2.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_controller.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/khu_sensor_top.v' '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/khu_sensor_pad.v' 
+Running PRESTO HDLC
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/MPR121/i2c_master.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/MPR121/mpr121_controller.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/spi_master.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ads1292_controller.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_adder.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_multiplier.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/converter_f2i.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/converter_i2f.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_LPF/iir_lpf.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_Notch/iir_notch.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_HPF/iir_hpf.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/ads1292_filter.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_rx.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_tx.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Divider_by_2/divider_by_2.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_controller.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/khu_sensor_top.v
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/khu_sensor_pad.v
+
+Statistics for case statements in always block at line 293 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/MPR121/i2c_master.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           329            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 598 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/MPR121/i2c_master.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           633            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine i2c_master line 839 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/MPR121/i2c_master.v'.
+=======================================================================================
+|        Register Name        |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=======================================================================================
+|    data_out_last_reg_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        sda_i_reg_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        scl_i_reg_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      bit_count_reg_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|      data_out_reg_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     missed_ack_reg_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       r_prescale_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|     last_sda_i_reg_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        delay_reg_reg        | Flip-flop |  17   |  Y  | N  | N  | N  | N  | N  | N  |
+|      delay_scl_reg_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      delay_sda_reg_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      cmd_ready_reg_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    data_in_ready_reg_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   data_out_valid_reg_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        scl_o_reg_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        sda_o_reg_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        busy_reg_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     bus_active_reg_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     bus_control_reg_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      phy_state_reg_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|        state_reg_reg        | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     phy_rx_data_reg_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        addr_reg_reg         | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|        data_reg_reg         | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|        last_reg_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      mode_read_reg_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| mode_write_multiple_reg_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      mode_stop_reg_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+=======================================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|  i2c_master/539  |   8    |    1    |      3       |
+======================================================
+
+Statistics for case statements in always block at line 311 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/MPR121/mpr121_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           347            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine mpr121_controller line 311 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/MPR121/mpr121_controller.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+| r_i2c_data_in_valid_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  r_i2c_data_in_last_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_i2c_data_out_ready_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       r_pstate_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_i2c_reg_addr_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|  o_MPR121_DATA_OUT_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       r_lstate_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    o_MPR121_BUSY_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_clk_counter_reg     | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  o_MPR121_INIT_SET_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  r_i2c_reg_data_in_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     r_i2c_start_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      r_i2c_read_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     r_i2c_write_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_i2c_write_multiple_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      r_i2c_stop_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_i2c_cmd_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_i2c_data_in_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+====================================================================================
+
+Inferred memory devices in process
+	in routine spi_master line 110 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/spi_master.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| r_SPI_Clk_Edges_reg | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_SPI_Clk_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_Trailing_Edge_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_Leading_Edge_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_SPI_Clk_Count_reg | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   o_TX_Ready_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine spi_master line 168 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/spi_master.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     r_TX_DV_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_TX_Byte_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine spi_master line 188 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/spi_master.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   o_SPI_MOSI_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_TX_Bit_Count_reg  | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine spi_master line 218 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/spi_master.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    o_RX_Byte_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+| r_RX_Bit_Count_reg  | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
+|     o_RX_DV_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine spi_master line 251 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/spi_master.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    o_SPI_Clk_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|  spi_master/211  |   8    |    1    |      3       |
+======================================================
+
+Statistics for case statements in always block at line 287 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ads1292_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           322            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine ads1292_controller line 235 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ads1292_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   r_rreg_mode_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  r_rdatac_mode_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  r_sdatac_mode_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_idle_mode_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  r_syscmd_mode_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_wreg_mode_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ads1292_controller line 277 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ads1292_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     r_ldrdy_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ads1292_controller line 287 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ads1292_controller.v'.
+======================================================================================
+|       Register Name        |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+======================================================================================
+|     r_spi_data_in_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_spi_data_in_valid_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     r_ads_data_out_reg     | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   o_ADS1292_INIT_SET_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  o_ADS1292_DATA_VALID_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   o_ADS1292_DATA_OUT_reg   | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+| o_ADS1292_REG_DATA_OUT_reg | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    o_ADS1292_START_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       o_SPI_CSN_reg        | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|  r_drdy_edge_counter_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_ads_data_in_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_ads_reg_addr_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    o_ADS1292_RESET_reg     | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|     r_clk_counter_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_data_counter_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        r_pstate_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     o_ADS1292_BUSY_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     r_ads_command_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        r_lstate_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+======================================================================================
+Warning:  /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_adder.v:116: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_adder.v:122: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 42 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_adder.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            44            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine float_adder line 42 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_adder.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       z_s_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       a_s_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       b_e_reg       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+|       b_s_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        a_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    o_AB_ACK_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|       o_Z_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      guard_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       a_e_reg       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|        b_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sticky_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    round_bit_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       z_m_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|        z_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       a_m_reg       | Flip-flop |  27   |  Y  | N  | N  | N  | N  | N  | N  |
+|       z_e_reg       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|       sum_reg       | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+|       b_m_reg       | Flip-flop |  27   |  Y  | N  | N  | N  | N  | N  | N  |
+|     o_Z_STB_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Warning:  /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_multiplier.v:120: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_multiplier.v:126: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 43 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_multiplier.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            45            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine float_multiplier line 43 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/float_multiplier.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       z_m_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|        z_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       b_s_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       a_e_reg       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|       a_m_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       b_e_reg       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|       b_m_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       a_s_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        b_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    round_bit_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       z_s_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    o_AB_ACK_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|        a_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      guard_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       o_Z_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+|     sticky_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     product_reg     | Flip-flop |  50   |  Y  | N  | N  | N  | N  | N  | N  |
+|       z_e_reg       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|     o_Z_STB_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 31 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/converter_f2i.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            33            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine converter_f2i line 31 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/converter_f2i.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | Y  | N  | N  |
+|       a_e_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|       a_m_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        a_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       o_Z_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        z_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     o_Z_STB_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|       a_s_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     o_A_ACK_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 36 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/converter_i2f.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            38            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine converter_i2f line 36 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/Float/converter_i2f.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       o_Z_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      guard_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       z_r_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       z_e_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | Y  | N  | N  |
+|        a_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      value_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       z_s_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     o_A_ACK_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|     o_Z_STB_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|        z_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sticky_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       z_m_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|    round_bit_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 181 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_LPF/iir_lpf.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           210            |    auto/auto     |
+|           244            |    auto/auto     |
+|           289            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine iir_lpf line 166 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_LPF/iir_lpf.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    r_y_data_reg     | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_x_data_reg     | Flip-flop |  96   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine iir_lpf line 181 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_LPF/iir_lpf.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     r_add_B_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_add_AB_STB_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_add_Z_ACK_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_pstate_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| o_Y_DATA_VALID_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_mult_2_B_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   r_mult_2_A_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_counter_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_mult_Z_ACK_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_mult_1_B_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_mult_AB_STB_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_mult_1_A_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| o_X_DATA_READY_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    o_Y_DATA_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_add_A_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 207 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_Notch/iir_notch.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           245            |    auto/auto     |
+|           286            |     no/auto      |
+|           361            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine iir_notch line 192 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_Notch/iir_notch.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    r_y_data_reg     | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_x_data_reg     | Flip-flop |  160  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine iir_notch line 207 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_Notch/iir_notch.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   r_mult_1_B_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   r_mult_2_A_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   r_mult_2_B_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| o_X_DATA_READY_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    r_pstate_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| r_mult_2_AB_STB_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_mult_3_B_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| r_mult_1_Z_ACK_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_mult_3_Z_ACK_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_mult_2_Z_ACK_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| o_Y_DATA_VALID_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_mult_1_AB_STB_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_counter_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   r_mult_3_A_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| r_mult_3_AB_STB_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    o_Y_DATA_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_add_1_A_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_add_1_B_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| r_add_1_AB_STB_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  r_add_1_Z_ACK_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_add_2_A_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_add_2_B_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| r_add_2_AB_STB_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  r_add_2_Z_ACK_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_mult_1_A_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 142 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_HPF/iir_hpf.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           166            |    auto/auto     |
+|           200            |     no/auto      |
+|           237            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine iir_hpf line 127 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_HPF/iir_hpf.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    r_y_data_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_x_data_reg     | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine iir_hpf line 142 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/IIR_HPF/iir_hpf.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     r_add_B_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_add_AB_STB_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_add_Z_ACK_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| o_Y_DATA_VALID_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_counter_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_mult_AB_STB_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_pstate_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_mult_B_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_mult_Z_ACK_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_mult_A_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| o_X_DATA_READY_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    o_Y_DATA_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_add_A_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 180 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/ads1292_filter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           223            |    auto/auto     |
+|           251            |     no/auto      |
+|           303            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine ads1292_filter line 180 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/ADS1292/ADS1292_Filter/ads1292_filter.v'.
+=============================================================================================
+|           Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=============================================================================================
+|     r_converter_i2f_a_stb_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|           r_pstate_reg            | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_converter_i2f_z_ack_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      r_iir_notch_x_valid_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       r_iir_lpf_x_valid_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|           r_counter_reg           | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_converter_f2i_z_ack_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     r_converter_f2i_a_stb_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       r_converter_f2i_a_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        r_iir_hpf_y_ack_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|          r_iir_lpf_x_reg          | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       r_iir_hpf_x_valid_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|          r_iir_hpf_x_reg          | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       r_iir_notch_y_ack_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|         r_iir_notch_x_reg         | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        r_iir_lpf_y_ack_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| o_ADS1292_FILTERED_DATA_VALID_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    o_ADS1292_FILTERED_DATA_reg    | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       r_converter_i2f_a_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+=============================================================================================
+
+Statistics for case statements in always block at line 99 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           112            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 231 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           248            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 395 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           432            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 778 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           807            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine sensor_core line 99 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|    o_UART_DATA_TX_reg    | Flip-flop |  56   |  Y  | N  | Y  | N  | N  | N  | N  |
+| o_UART_DATA_TX_VALID_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_uart_data_rx_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_uart_clk_counter_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| r_mpr_read_reg_mode_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_ads_read_reg_mode_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      r_run_mode_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    r_uart_pstate_reg     | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_uart_pstate_reg     | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+====================================================================================
+
+Inferred memory devices in process
+	in routine sensor_core line 195 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   r_chip_set_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sensor_core line 207 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    r_run_set_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sensor_core line 231 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  r_core_pstate_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_mpr_run_set_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_mpr_read_reg_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_ads_read_reg_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  r_ads_run_set_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_ads_chip_set_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_mpr_chip_set_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sensor_core line 395 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+|  r_mpr_chip_set_done_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  r_mpr_run_set_done_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   r_mpr_set_counter_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| r_mpr_touch_status_1_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_mpr_touch_status_reg   | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_mpr_status_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     r_mpr_pstate_reg      | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_mpr_pstate_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+| r_mpr_touch_status_0_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_mpr_second_param_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_mpr_reg_addr_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_mpr_lstate_reg      | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_mpr_lstate_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|    r_mpr_reg_data_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   r_mpr_clk_counter_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   r_mpr_first_param_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  r_mpr_read_reg_done_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   o_MPR121_REG_ADDR_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   o_MPR121_DATA_IN_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+| o_MPR121_WRITE_ENABLE_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| o_MPR121_READ_ENABLE_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    o_MPR121_ERROR_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+
+Inferred memory devices in process
+	in routine sensor_core line 778 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Sensor_Core/sensor_core.v'.
+===========================================================================================
+|          Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================================
+|     r_ads_chip_set_done_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     r_ads_run_set_done_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      r_ads_set_counter_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      r_ads_first_param_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_ads_second_param_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        r_ads_pstate_reg         | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        r_ads_pstate_reg         | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
+|        r_ads_lstate_reg         | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        r_ads_lstate_reg         | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
+|      r_ads_clk_counter_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_ads_data_send_ready_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     r_ads_ch2_data_out_reg      | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_ads_read_reg_done_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      o_ADS1292_CONTROL_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     o_ADS1292_REG_ADDR_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      o_ADS1292_DATA_IN_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+| o_ADS1292_FILTERED_DATA_ACK_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       r_ads_reg_addr_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       r_ads_reg_data_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===========================================================================================
+
+Statistics for case statements in always block at line 65 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_rx.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            75            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_rx line 52 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_rx.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   r_Rx_Data_R_reg   | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|    r_Rx_Data_reg    | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine uart_rx line 65 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_rx.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  r_Clock_Count_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_SM_Main_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   r_Bit_Index_reg   | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_Rx_Byte_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     r_Rx_DV_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 46 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_tx.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            56            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_tx line 46 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_tx.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    r_SM_Main_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_Tx_Done_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  r_Clock_Count_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   r_Bit_Index_reg   | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_Tx_Data_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   o_Tx_Serial_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|    uart_tx/97    |   8    |    1    |      3       |
+======================================================
+
+Inferred memory devices in process
+	in routine divider_by_2 line 8 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Divider_by_2/divider_by_2.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   o_CLK_DIV_2_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 120 in file
+	'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           140            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_controller line 120 in file
+		'/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/UART_Controller/uart_controller.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|       r_pstate_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| r_uart_data_tx_shift_reg | Flip-flop |  56   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_uart_data_tx_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       r_lstate_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    r_data_counter_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| o_UART_DATA_TX_READY_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    o_UART_DATA_RX_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+| o_UART_DATA_RX_VALID_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| r_uart_data_tx_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+====================================================================================
+Presto compilation completed successfully.
+Current design is now '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/i2c_master.db:i2c_master'
+Loaded 19 designs.
+Current design is 'i2c_master'.
+Current design is 'khu_sensor_pad'.
+
+  Linking design 'khu_sensor_pad'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (22 designs)              /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/khu_sensor_pad.db, etc
+  scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db
+  scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db
+  scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db
+  scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db
+  ss65lp3p3v_wst_108_300_p125 (library) /Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db
+
+Information: Uniquified 4 instances of design 'float_adder'. (OPT-1056)
+Information: Uniquified 6 instances of design 'float_multiplier'. (OPT-1056)
+1
+# Apply constraints
+source ./dc_scripts/02_constraints.tcl
+***********************************************************************
+                                                                       
+                         02_constraints.tcl                            
+                                                                       
+***********************************************************************
+***********************************************************************
+                                                                       
+                        common_clock_env.tcl                           
+                                                                       
+***********************************************************************
+Information: Updating graph... (UID-83)
+Warning: Design 'khu_sensor_pad' contains 19 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : clocks
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:49:49 2020
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+clk              4.20   {0 2.1}                       {i_CLK}
+clk_half         8.40   {0 4.2}             G         {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
+--------------------------------------------------------------------------------
+
+Generated     Master         Generated      Master         Waveform
+Clock         Source         Source         Clock          Modification
+--------------------------------------------------------------------------------
+clk_half      i_CLK          {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
+                                            clk            divide_by(2)
+--------------------------------------------------------------------------------
+***********************************************************************
+                                                                       
+                      common_constraints.tcl                           
+                                                                       
+***********************************************************************
+constraints i_RSTN
+constraints Reset Synchronizer
+constraints async_rstn_synchronizer...
+constraints async_rst_synchronizer...
+constraints async_rstn_glitch_synchronizer...
+Delete i_CLK delay between PAD and virtual port!
+Delete i_RSTN delay between PAD and virtual port!
+Delete UART_RXD delay between PAD and virtual port!
+Delete UART_TXD delay between PAD and virtual port!
+Delete MPR121_SCL delay between PAD and virtual port!
+Delete MPR121_SDA delay between PAD and virtual port!
+Delete ADS1292_SCLK delay between PAD and virtual port!
+Delete ADS1292_MISO delay between PAD and virtual port!
+Delete ADS1292_MOSI delay between PAD and virtual port!
+Delete ADS1292_DRDY delay between PAD and virtual port!
+Delete ADS1292_RESET delay between PAD and virtual port!
+Delete ADS1292_START delay between PAD and virtual port!
+Delete ADS1292_CSN delay between PAD and virtual port!
+# Define Group Paths
+set ports_clock_root [get_ports [all_fanout -flat -clock_tree -level 0]]
+Warning: Design 'khu_sensor_pad' contains 19 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+{i_CLK khu_sensor_top/divider_by_2/o_CLK_DIV_2}
+group_path -name REGOUT -to [all_outputs]
+1
+group_path -name REGIN -from [remove_from_collection [all_inputs] $ports_clock_root]
+1
+group_path -name FEEDTHROUGH -from [remove_from_collection [all_inputs] $ports_clock_root] -to [all_outputs]
+1
+source ./dc_scripts/03_compile_ultra.tcl
+***********************************************************************
+                                                                       
+                       03_compile_ultra.tcl                            
+                                                                       
+***********************************************************************
+Using operating conditions 'SS65LP3P3V_WST_108_300_P125' found in library 'ss65lp3p3v_wst_108_300_p125'.
+Using operating conditions 'SS65LP3P3V_WST_108_300_P125' found in library 'ss65lp3p3v_wst_108_300_p125'.
+Using operating conditions 'ss_1p08v_125c' found in library 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm'.
+Using operating conditions 'ss_1p08v_125c' found in library 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm'.
+SEC_INFO: Define user operating condtions
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
+
+Information: There are 228 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib/alib-52/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db.alib' (placeholder)
+Loaded alib file './alib/alib-52/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db.alib' (placeholder)
+Loaded alib file './alib/alib-52/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db.alib'
+Loaded alib file './alib/alib-52/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db.alib'
+Loaded alib file './alib/alib-52/ss65lp3p3v_wst_108_300_p125.db.alib' (placeholder)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
+  Processing 'spi_master'
+Information: The register 'r_TX_DV_reg' will be removed. (OPT-1207)
+Information: Added key list 'DesignWare' to design 'spi_master'. (DDB-72)
+  Processing 'ads1292_controller'
+Information: Added key list 'DesignWare' to design 'ads1292_controller'. (DDB-72)
+Information: The register 'r_pstate_reg[7]' is a constant and will be removed. (OPT-1206)
+Note - message 'OPT-1206' limit (1) exceeded.  Remainder will be suppressed.
+  Processing 'converter_f2i'
+  Processing 'float_multiplier_0'
+  Processing 'float_adder_0'
+  Processing 'iir_hpf'
+Information: Added key list 'DesignWare' to design 'iir_hpf'. (DDB-72)
+  Processing 'float_adder_1'
+  Processing 'float_adder_2'
+  Processing 'iir_notch'
+Information: Added key list 'DesignWare' to design 'iir_notch'. (DDB-72)
+  Processing 'float_adder_3'
+  Processing 'iir_lpf'
+Information: Added key list 'DesignWare' to design 'iir_lpf'. (DDB-72)
+  Processing 'converter_i2f'
+  Processing 'ads1292_filter'
+  Processing 'i2c_master'
+Information: Added key list 'DesignWare' to design 'i2c_master'. (DDB-72)
+  Processing 'mpr121_controller'
+  Processing 'sensor_core'
+Information: Added key list 'DesignWare' to design 'sensor_core'. (DDB-72)
+  Processing 'uart_rx'
+Information: Added key list 'DesignWare' to design 'uart_rx'. (DDB-72)
+  Processing 'uart_tx'
+Information: Added key list 'DesignWare' to design 'uart_tx'. (DDB-72)
+  Processing 'uart_controller'
+Information: Added key list 'DesignWare' to design 'uart_controller'. (DDB-72)
+  Processing 'divider_by_2'
+  Processing 'khu_sensor_pad'
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+  Mapping 'ads1292_controller_DW_cmp_0'
+  Mapping 'ads1292_controller_DW_cmp_1'
+  Mapping 'ads1292_controller_DW_cmp_2'
+  Mapping 'ads1292_controller_DW_cmp_3'
+  Mapping 'ads1292_controller_DW_cmp_4'
+  Mapping 'ads1292_controller_DW01_inc_0'
+  Mapping 'ads1292_controller_DW_cmp_5'
+  Mapping 'spi_master_DW01_inc_0'
+  Mapping 'spi_master_DW01_dec_0'
+  Mapping 'spi_master_DW_cmp_0'
+  Mapping 'ads1292_filter_DW01_inc_0'
+  Mapping 'converter_f2i_DW01_sub_0'
+  Mapping 'converter_f2i_DW_cmp_0'
+  Mapping 'converter_f2i_DW_cmp_1'
+  Mapping 'float_multiplier_0_DW_cmp_0'
+  Mapping 'float_multiplier_0_DW01_add_0'
+  Mapping 'float_multiplier_0_DW01_inc_0'
+  Mapping 'float_multiplier_0_DW_cmp_1'
+  Mapping 'float_multiplier_0_DW_mult_uns_0'
+  Mapping 'float_adder_0_DW_cmp_0'
+  Mapping 'float_adder_0_DW01_add_0'
+  Mapping 'float_adder_0_DW01_inc_0'
+  Mapping 'float_adder_0_DW_cmp_1'
+  Mapping 'float_adder_0_DW_cmp_2'
+  Mapping 'float_adder_0_DW_cmp_3'
+  Mapping 'float_adder_0_DW_cmp_4'
+  Mapping 'float_adder_0_DW_cmp_5'
+  Mapping 'float_adder_0_DW01_add_1'
+  Mapping 'float_adder_0_DW01_add_2'
+  Mapping 'float_multiplier_1_DW_cmp_0'
+  Mapping 'float_multiplier_1_DW01_add_0'
+  Mapping 'float_multiplier_1_DW01_inc_0'
+  Mapping 'float_multiplier_1_DW_cmp_1'
+  Mapping 'float_multiplier_1_DW_mult_uns_0'
+  Mapping 'float_multiplier_2_DW_cmp_0'
+  Mapping 'float_multiplier_2_DW01_add_0'
+  Mapping 'float_multiplier_2_DW01_inc_0'
+  Mapping 'float_multiplier_2_DW_cmp_1'
+  Mapping 'float_multiplier_2_DW_mult_uns_0'
+  Mapping 'float_multiplier_3_DW_cmp_0'
+  Mapping 'float_multiplier_3_DW01_add_0'
+  Mapping 'float_multiplier_3_DW01_inc_0'
+  Mapping 'float_multiplier_3_DW_cmp_1'
+  Mapping 'float_multiplier_3_DW_mult_uns_0'
+  Mapping 'float_adder_1_DW_cmp_0'
+  Mapping 'float_adder_1_DW01_add_0'
+  Mapping 'float_adder_1_DW01_inc_0'
+  Mapping 'float_adder_1_DW_cmp_1'
+  Mapping 'float_adder_1_DW_cmp_2'
+  Mapping 'float_adder_1_DW_cmp_3'
+  Mapping 'float_adder_1_DW_cmp_4'
+  Mapping 'float_adder_1_DW_cmp_5'
+  Mapping 'float_adder_1_DW01_add_1'
+  Mapping 'float_adder_1_DW01_add_2'
+  Mapping 'float_adder_2_DW_cmp_0'
+  Mapping 'float_adder_2_DW01_add_0'
+  Mapping 'float_adder_2_DW01_inc_0'
+  Mapping 'float_adder_2_DW_cmp_1'
+  Mapping 'float_adder_2_DW_cmp_2'
+  Mapping 'float_adder_2_DW_cmp_3'
+  Mapping 'float_adder_2_DW_cmp_4'
+  Mapping 'float_adder_2_DW_cmp_5'
+  Mapping 'float_adder_2_DW01_add_1'
+  Mapping 'float_adder_2_DW01_add_2'
+  Mapping 'float_multiplier_4_DW_cmp_0'
+  Mapping 'float_multiplier_4_DW01_add_0'
+  Mapping 'float_multiplier_4_DW01_inc_0'
+  Mapping 'float_multiplier_4_DW_cmp_1'
+  Mapping 'float_multiplier_4_DW_mult_uns_0'
+  Mapping 'float_multiplier_5_DW_cmp_0'
+  Mapping 'float_multiplier_5_DW01_add_0'
+  Mapping 'float_multiplier_5_DW01_inc_0'
+  Mapping 'float_multiplier_5_DW_cmp_1'
+  Mapping 'float_multiplier_5_DW_mult_uns_0'
+  Mapping 'float_adder_3_DW_cmp_0'
+  Mapping 'float_adder_3_DW01_add_0'
+  Mapping 'float_adder_3_DW01_inc_0'
+  Mapping 'float_adder_3_DW_cmp_1'
+  Mapping 'float_adder_3_DW_cmp_2'
+  Mapping 'float_adder_3_DW_cmp_3'
+  Mapping 'float_adder_3_DW_cmp_4'
+  Mapping 'float_adder_3_DW_cmp_5'
+  Mapping 'float_adder_3_DW01_add_1'
+  Mapping 'float_adder_3_DW01_add_2'
+  Mapping 'converter_i2f_DW01_add_0'
+  Mapping 'converter_i2f_DW01_inc_0'
+  Mapping 'converter_i2f_DW01_sub_0'
+  Mapping 'mpr121_controller_DW_cmp_0'
+  Mapping 'mpr121_controller_DW01_inc_0'
+  Mapping 'mpr121_controller_DW_cmp_1'
+  Mapping 'i2c_master_DW01_dec_0'
+  Mapping 'i2c_master_DW_cmp_0'
+  Mapping 'uart_rx_DW_cmp_0'
+  Mapping 'uart_rx_DW01_inc_0'
+  Mapping 'uart_tx_DW_cmp_0'
+  Mapping 'uart_tx_DW01_inc_0'
+  Mapping 'converter_i2f_DP_OP_47_122_1108_0'
+  Mapping 'converter_i2f_DP_OP_41_124_849_0'
+  Mapping 'converter_i2f_DP_OP_40_123_849_0'
+  Processing 'mselector_n2_m8'
+  Mapping 'converter_f2i_DP_OP_21_125_9590_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m9'
+  Mapping 'converter_f2i_DP_OP_17_127_5628_0'
+  Mapping 'converter_f2i_DP_OP_16_126_4860_0'
+  Processing 'mselector_n2_m9'
+  Mapping 'float_adder_0_DP_OP_132_128_8595_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_0_DP_OP_128_130_6503_0'
+  Mapping 'float_adder_0_DP_OP_127_129_7863_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_0_DP_OP_129_131_4362_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_0_DP_OP_125_133_9258_0'
+  Mapping 'float_adder_0_DP_OP_124_132_3630_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_1_DP_OP_132_134_2193_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_1_DP_OP_128_136_9478_0'
+  Mapping 'float_adder_1_DP_OP_127_135_5666_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_1_DP_OP_129_137_9428_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_1_DP_OP_125_139_7776_0'
+  Mapping 'float_adder_1_DP_OP_124_138_2934_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_2_DP_OP_132_140_2113_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_2_DP_OP_128_142_1832_0'
+  Mapping 'float_adder_2_DP_OP_127_141_5618_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_2_DP_OP_129_143_9348_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_2_DP_OP_125_145_130_0'
+  Mapping 'float_adder_2_DP_OP_124_144_2886_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_3_DP_OP_132_146_9171_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_3_DP_OP_128_148_4319_0'
+  Mapping 'float_adder_3_DP_OP_127_147_6903_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_3_DP_OP_129_149_4938_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_3_DP_OP_125_151_7074_0'
+  Mapping 'float_adder_3_DP_OP_124_150_2670_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_0_DP_OP_110_152_2484_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_0_DP_OP_106_154_6380_0'
+  Mapping 'float_multiplier_0_DP_OP_105_153_1967_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_0_DP_OP_107_155_3252_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_0_DP_OP_103_157_4678_0'
+  Mapping 'float_multiplier_0_DP_OP_102_156_9202_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_0_DP_OP_119_158_3501_0'
+  Mapping 'float_multiplier_0_DP_OP_110_161_2508_0'
+  Mapping 'float_multiplier_0_DP_OP_109_160_2508_0'
+  Mapping 'float_multiplier_0_DP_OP_108_159_482_0'
+  Processing 'mselector_n3_m10'
+  Mapping 'float_multiplier_1_DP_OP_110_162_1904_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_1_DP_OP_106_164_9027_0'
+  Mapping 'float_multiplier_1_DP_OP_105_163_6175_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_1_DP_OP_107_165_1136_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_1_DP_OP_103_167_762_0'
+  Mapping 'float_multiplier_1_DP_OP_102_166_8907_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_1_DP_OP_119_168_3191_0'
+  Mapping 'float_multiplier_1_DP_OP_110_171_2980_0'
+  Mapping 'float_multiplier_1_DP_OP_109_170_2980_0'
+  Mapping 'float_multiplier_1_DP_OP_108_169_4929_0'
+  Processing 'mselector_n3_m10'
+  Mapping 'float_multiplier_2_DP_OP_110_172_9830_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_2_DP_OP_106_174_4931_0'
+  Mapping 'float_multiplier_2_DP_OP_105_173_6191_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_2_DP_OP_107_175_9062_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_2_DP_OP_103_177_6633_0'
+  Mapping 'float_multiplier_2_DP_OP_102_176_8923_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_2_DP_OP_119_178_9062_0'
+  Mapping 'float_multiplier_2_DP_OP_110_181_8851_0'
+  Mapping 'float_multiplier_2_DP_OP_109_180_8851_0'
+  Mapping 'float_multiplier_2_DP_OP_108_179_2174_0'
+  Processing 'mselector_n3_m10'
+  Mapping 'float_multiplier_3_DP_OP_110_182_7789_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_3_DP_OP_106_184_835_0'
+  Mapping 'float_multiplier_3_DP_OP_105_183_6207_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_3_DP_OP_107_185_7021_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_3_DP_OP_103_187_2537_0'
+  Mapping 'float_multiplier_3_DP_OP_102_186_8939_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_3_DP_OP_119_188_7833_0'
+  Mapping 'float_multiplier_3_DP_OP_110_191_4755_0'
+  Mapping 'float_multiplier_3_DP_OP_109_190_4755_0'
+  Mapping 'float_multiplier_3_DP_OP_108_189_9386_0'
+  Processing 'mselector_n3_m10'
+  Mapping 'float_multiplier_4_DP_OP_110_192_8651_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_4_DP_OP_106_194_8811_0'
+  Mapping 'float_multiplier_4_DP_OP_105_193_3549_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_4_DP_OP_107_195_8395_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_4_DP_OP_103_197_6056_0'
+  Mapping 'float_multiplier_4_DP_OP_102_196_7782_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_4_DP_OP_119_198_9179_0'
+  Mapping 'float_multiplier_4_DP_OP_110_201_4030_0'
+  Mapping 'float_multiplier_4_DP_OP_109_200_4030_0'
+  Mapping 'float_multiplier_4_DP_OP_108_199_6425_0'
+  Processing 'mselector_n3_m10'
+  Mapping 'float_multiplier_5_DP_OP_110_202_2528_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_5_DP_OP_106_204_6490_0'
+  Mapping 'float_multiplier_5_DP_OP_105_203_3597_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_5_DP_OP_107_205_2272_0'
+  Processing 'mselector_n2_m7'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_5_DP_OP_103_207_3735_0'
+  Mapping 'float_multiplier_5_DP_OP_102_206_7830_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_multiplier_5_DP_OP_119_208_9725_0'
+  Mapping 'float_multiplier_5_DP_OP_110_211_1709_0'
+  Mapping 'float_multiplier_5_DP_OP_109_210_1709_0'
+  Mapping 'float_multiplier_5_DP_OP_108_209_8127_0'
+  Processing 'mselector_n3_m10'
+  Mapping 'float_adder_0_DP_OP_139_212_6578_0'
+  Mapping 'float_adder_0_DP_OP_133_214_3748_0'
+  Mapping 'float_adder_0_DP_OP_132_213_3748_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_1_DP_OP_139_215_3862_0'
+  Mapping 'float_adder_1_DP_OP_133_217_2266_0'
+  Mapping 'float_adder_1_DP_OP_132_216_2266_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_2_DP_OP_139_218_18_0'
+  Mapping 'float_adder_2_DP_OP_133_220_4587_0'
+  Mapping 'float_adder_2_DP_OP_132_219_4587_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_3_DP_OP_139_221_5626_0'
+  Mapping 'float_adder_3_DP_OP_133_223_1564_0'
+  Mapping 'float_adder_3_DP_OP_132_222_1564_0'
+  Processing 'mselector_n2_m10'
+  Mapping 'float_adder_0_DP_OP_46_224_9810_0'
+  Processing 'mselector_n2_m27'
+  Processing 'mselector_n2_m27'
+  Processing 'mselector_n3_m1'
+  Mapping 'float_adder_0_DP_OP_38_227_1237_0'
+  Mapping 'float_adder_0_DP_OP_37_226_1237_0'
+  Mapping 'float_adder_0_DP_OP_36_225_1237_0'
+  Processing 'mselector_n3_m28'
+  Mapping 'float_adder_1_DP_OP_46_228_9786_0'
+  Processing 'mselector_n2_m27'
+  Processing 'mselector_n2_m27'
+  Processing 'mselector_n3_m1'
+  Mapping 'float_adder_1_DP_OP_38_231_4580_0'
+  Mapping 'float_adder_1_DP_OP_37_230_4580_0'
+  Mapping 'float_adder_1_DP_OP_36_229_4580_0'
+  Processing 'mselector_n3_m28'
+  Mapping 'float_adder_2_DP_OP_46_232_75_0'
+  Processing 'mselector_n2_m27'
+  Processing 'mselector_n2_m27'
+  Processing 'mselector_n3_m1'
+  Mapping 'float_adder_2_DP_OP_38_235_8388_0'
+  Mapping 'float_adder_2_DP_OP_37_234_8388_0'
+  Mapping 'float_adder_2_DP_OP_36_233_8388_0'
+  Processing 'mselector_n3_m28'
+  Mapping 'float_adder_3_DP_OP_46_236_7011_0'
+  Processing 'mselector_n2_m27'
+  Processing 'mselector_n2_m27'
+  Processing 'mselector_n3_m1'
+  Mapping 'float_adder_3_DP_OP_38_239_4380_0'
+  Mapping 'float_adder_3_DP_OP_37_238_4380_0'
+  Mapping 'float_adder_3_DP_OP_36_237_4380_0'
+  Processing 'mselector_n3_m28'
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:48  126665.9     15.20    8121.9      47.0                              0.5624      0.00  
+    0:00:49  125363.5     14.86    8062.1      51.9                              0.5601      0.00  
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'converter_f2i'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'float_multiplier_0'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'float_adder_0'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'float_multiplier_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'float_multiplier_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'float_multiplier_3'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'float_adder_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'float_adder_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'float_multiplier_4'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'float_multiplier_5'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'float_adder_3'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mpr121_controller'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'converter_i2f'. (DDB-72)
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+  Selecting implementations
+  Mapping 'mpr121_controller_DW01_inc_2'
+  Mapping 'mpr121_controller_DW01_inc_3'
+  Selecting implementations
+  Mapping 'ads1292_filter_DW01_inc_2'
+  Mapping 'ads1292_filter_DW01_inc_3'
+  Selecting implementations
+  Mapping 'ads1292_controller_DW01_inc_2'
+  Mapping 'ads1292_controller_DW01_inc_3'
+  Selecting implementations
+  Mapping 'uart_tx_DW01_inc_2'
+  Mapping 'uart_tx_DW01_inc_3'
+  Selecting implementations
+  Mapping 'uart_rx_DW01_inc_2'
+  Mapping 'uart_rx_DW01_inc_3'
+  Selecting implementations
+  Mapping 'i2c_master_DW01_dec_2'
+  Mapping 'i2c_master_DW01_dec_3'
+  Mapping 'converter_i2f_DP_OP_47_122_1108_1'
+  Selecting implementations
+  Mapping 'converter_i2f_DW01_sub_2'
+  Mapping 'converter_i2f_DW01_sub_3'
+  Mapping 'converter_i2f_DW01_inc_2'
+  Mapping 'converter_i2f_DW01_inc_3'
+  Mapping 'converter_f2i_DP_OP_17_127_5628_1'
+  Mapping 'converter_f2i_DP_OP_16_126_4860_1'
+  Selecting implementations
+  Mapping 'converter_f2i_DW01_sub_2'
+  Mapping 'converter_f2i_DW01_sub_3'
+  Selecting implementations
+  Mapping 'spi_master_DW01_inc_2'
+  Mapping 'spi_master_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_adder_3_DP_OP_139_221_5626_1'
+  Mapping 'float_adder_3_DP_OP_125_151_7074_1'
+  Mapping 'float_adder_3_DP_OP_124_150_2670_1'
+  Mapping 'float_adder_3_DP_OP_128_148_4319_1'
+  Mapping 'float_adder_3_DP_OP_127_147_6903_1'
+  Mapping 'float_adder_3_DW01_inc_2'
+  Mapping 'float_adder_3_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_5_DW_mult_uns_2'
+  Mapping 'float_multiplier_5_DW_mult_uns_3'
+  Mapping 'float_multiplier_5_DP_OP_102_206_7830_1'
+  Mapping 'float_multiplier_5_DP_OP_105_203_3597_1'
+  Mapping 'float_multiplier_5_DW01_inc_2'
+  Mapping 'float_multiplier_5_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_adder_2_DP_OP_139_218_18_1'
+  Mapping 'float_adder_2_DP_OP_125_145_130_1'
+  Mapping 'float_adder_2_DP_OP_124_144_2886_1'
+  Mapping 'float_adder_2_DP_OP_128_142_1832_1'
+  Mapping 'float_adder_2_DP_OP_127_141_5618_1'
+  Mapping 'float_adder_2_DW01_inc_2'
+  Mapping 'float_adder_2_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_adder_1_DP_OP_139_215_3862_1'
+  Mapping 'float_adder_1_DP_OP_125_139_7776_1'
+  Mapping 'float_adder_1_DP_OP_124_138_2934_1'
+  Mapping 'float_adder_1_DP_OP_128_136_9478_1'
+  Mapping 'float_adder_1_DP_OP_127_135_5666_1'
+  Mapping 'float_adder_1_DW01_inc_2'
+  Mapping 'float_adder_1_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_adder_0_DP_OP_139_212_6578_1'
+  Mapping 'float_adder_0_DP_OP_125_133_9258_1'
+  Mapping 'float_adder_0_DP_OP_124_132_3630_1'
+  Mapping 'float_adder_0_DP_OP_128_130_6503_1'
+  Mapping 'float_adder_0_DP_OP_127_129_7863_1'
+  Mapping 'float_adder_0_DW01_inc_2'
+  Mapping 'float_adder_0_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_0_DW_mult_uns_2'
+  Mapping 'float_multiplier_0_DW_mult_uns_3'
+  Mapping 'float_multiplier_0_DP_OP_102_156_9202_1'
+  Mapping 'float_multiplier_0_DP_OP_105_153_1967_1'
+  Mapping 'float_multiplier_0_DW01_inc_2'
+  Mapping 'float_multiplier_0_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_1_DW_mult_uns_2'
+  Mapping 'float_multiplier_1_DW_mult_uns_3'
+  Mapping 'float_multiplier_1_DP_OP_102_166_8907_1'
+  Mapping 'float_multiplier_1_DP_OP_105_163_6175_1'
+  Mapping 'float_multiplier_1_DW01_inc_2'
+  Mapping 'float_multiplier_1_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_2_DW_mult_uns_2'
+  Mapping 'float_multiplier_2_DW_mult_uns_3'
+  Mapping 'float_multiplier_2_DP_OP_102_176_8923_1'
+  Mapping 'float_multiplier_2_DP_OP_105_173_6191_1'
+  Mapping 'float_multiplier_2_DW01_inc_2'
+  Mapping 'float_multiplier_2_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_3_DW_mult_uns_2'
+  Mapping 'float_multiplier_3_DW_mult_uns_3'
+  Mapping 'float_multiplier_3_DP_OP_102_186_8939_1'
+  Mapping 'float_multiplier_3_DP_OP_105_183_6207_1'
+  Mapping 'float_multiplier_3_DW01_inc_2'
+  Mapping 'float_multiplier_3_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_4_DW_mult_uns_2'
+  Mapping 'float_multiplier_4_DW_mult_uns_3'
+  Mapping 'float_multiplier_4_DP_OP_102_196_7782_1'
+  Mapping 'float_multiplier_4_DP_OP_105_193_3549_1'
+  Mapping 'float_multiplier_4_DW01_inc_2'
+  Mapping 'float_multiplier_4_DW01_inc_3'
+Information: The register 'khu_sensor_top/mpr121_controller/i2c_master/bus_control_reg_reg' will be removed. (OPT-1207)
+Information: The register 'khu_sensor_top/ads1292_filter/converter_i2f/sticky_reg' will be removed. (OPT-1207)
+    0:01:20  211528.0      7.59    1696.7      28.1                              0.7734      0.00  
+    0:01:20  211528.0      7.59    1696.7      28.1                              0.7734      0.00  
+    0:01:20  211528.0      7.59    1696.7      28.1                              0.7734      0.00  
+    0:01:20  211527.7      7.59    1696.5      28.1                              0.7734      0.00  
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:01:28  205377.0      0.99     651.7      16.2                              0.7539      0.00  
+    0:01:28  205377.0      0.99     651.7      16.2                              0.7539      0.00  
+    0:01:36  186292.2      0.99     334.0       7.5                              0.6986      0.00  
+    0:01:36  186292.2      0.99     334.0       7.5                              0.6986      0.00  
+    0:01:36  186547.8      0.89     151.5       8.8                              0.6991      0.00  
+    0:01:36  186547.8      0.89     151.5       8.8                              0.6991      0.00  
+    0:01:44  187236.2      0.00       0.0       6.7                              0.6996      0.00  
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:01:44  187236.2      0.00       0.0       6.7                              0.6996      0.00  
+    0:01:44  187236.2      0.00       0.0       6.7                              0.6996      0.00  
+    0:01:44  187236.2      0.00       0.0       6.7                              0.6996      0.00  
+    0:01:44  187236.2      0.00       0.0       6.7                              0.6996      0.00  
+    0:01:44  187236.2      0.00       0.0       6.7                              0.6996      0.00  
+    0:01:46  187032.0      0.03       0.2       6.7                              0.6991      0.00  
+
+
+  Beginning Design Rule Fixing  (min_path)  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:01:47  187032.0      0.03       0.2       6.7                              0.6991     -0.19  
+    0:01:48  186962.2      0.00       0.0       0.0                              0.6989     -0.19  
+    0:01:56  183578.9      0.02       0.0       0.0                              0.6852     -0.19  
+    0:01:57  183578.9      0.02       0.0       0.0                              0.6852     -0.19  
+    0:01:57  183570.9      0.00       0.0       0.0                              0.6852     -0.19  
+    0:01:57  183570.9      0.00       0.0       0.0                              0.6852     -0.19  
+    0:01:57  183570.9      0.00       0.0       0.0                              0.6852     -0.19  
+    0:01:57  183570.9      0.00       0.0       0.0                              0.6852     -0.19  
+    0:01:57  183570.9      0.00       0.0       0.0                              0.6852     -0.19  
+    0:01:57  183570.9      0.00       0.0       0.0                              0.6852     -0.19  
+    0:01:57  183570.9      0.00       0.0       0.0                              0.6852     -0.19  
+
+
+  Beginning Power Optimization
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:01:57  183570.9      0.00       0.0       0.0                              0.6852     -0.19  
+    0:02:00  183373.1      0.00       0.0       0.0                              0.6851     -0.19  
+    0:02:02  183357.8      0.00       0.0       0.0                              0.6851      0.00  
+    0:02:08  182541.1      0.00       0.0       0.0                              0.6838      0.00  
+    0:02:08  182541.1      0.00       0.0       0.0                              0.6838      0.00  
+    0:02:08  182533.4      0.00       0.0       0.0                              0.6838      0.00  
+    0:02:08  182533.4      0.00       0.0       0.0                              0.6838      0.00  
+    0:02:08  182533.4      0.00       0.0       0.0                              0.6838      0.00  
+    0:02:08  182533.4      0.00       0.0       0.0                              0.6838      0.00  
+    0:02:08  182533.4      0.00       0.0       0.0                              0.6838      0.00  
+    0:02:08  182533.4      0.00       0.0       0.0                              0.6838      0.00  
+    0:02:08  182533.4      0.00       0.0       0.0                              0.6838      0.00  
+    0:02:09  182533.4      0.00       0.0       0.0                              0.6838      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:02:09  182533.4      0.00       0.0       0.0                              0.6838      0.00  
+    0:02:13  182370.6      0.00       0.0       0.0                              0.6836      0.00  
+
+  Beginning Delay Optimization HSVT Pass
+  --------------------------------------
+    0:02:15  182370.6      0.00       0.0       0.0                              0.6836      0.00  
+    0:02:15  182370.6      0.00       0.0       0.0                              0.6836      0.00  
+    0:02:15  182370.6      0.00       0.0       0.0                              0.6836      0.00  
+    0:02:16  182368.3      0.00       0.0       0.0                              0.6836      0.00  
+    0:02:22  181024.3      0.00       0.0       0.0                              0.6798     -0.02  
+    0:02:26  179160.3      0.00       0.0       0.0                              0.6741     -0.02  
+    0:02:45  128898.9      0.04       0.1       0.0                              0.5565     -0.02  
+    0:02:47  128923.8      0.00       0.0       0.0                              0.5566     -0.02  
+    0:02:47  128923.8      0.00       0.0       0.0                              0.5566     -0.02  
+    0:02:47  128923.8      0.00       0.0       0.0                              0.5566     -0.02  
+    0:03:00  112551.7      0.00       0.0       0.0                              0.5159     -0.16  
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'khu_sensor_pad' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'khu_sensor_top/ads1292_filter/iir_lpf/mult_2/i_CLK': 4930 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated black box outputs. (PWR-428)
+***********************************************************************
+                                                                       
+                           fix violation                               
+                                                                       
+***********************************************************************
+***********************************************************************
+                                                                       
+                       common_reports.tcl                              
+                                                                       
+***********************************************************************
+source ./dc_scripts/04_retime.tcl
+***********************************************************************
+                                                                       
+                             04_retime.tcl                             
+                                                                       
+***********************************************************************
+Using operating conditions 'SS65LP3P3V_WST_108_300_P125' found in library 'ss65lp3p3v_wst_108_300_p125'.
+Using operating conditions 'SS65LP3P3V_WST_108_300_P125' found in library 'ss65lp3p3v_wst_108_300_p125'.
+Using operating conditions 'ss_1p08v_125c' found in library 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm'.
+Using operating conditions 'ss_1p08v_125c' found in library 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm'.
+SEC_INFO: Define user operating condtions
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Retiming is enabled. SVF file must be used for formal verification. (OPT-1210)
+
+Information: There are 378 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:10  112551.7      0.00       0.0       0.0                              0.5159      0.00  
+    0:00:10  112551.7      0.00       0.0       0.0                              0.5159      0.00  
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+  Selecting implementations
+  Mapping 'mpr121_controller_DW01_inc_1'
+  Mapping 'mpr121_controller_DW01_inc_2'
+  Selecting implementations
+  Mapping 'ads1292_filter_DW01_inc_1'
+  Mapping 'ads1292_filter_DW01_inc_2'
+  Selecting implementations
+  Mapping 'ads1292_controller_DW01_inc_1'
+  Mapping 'ads1292_controller_DW01_inc_2'
+  Selecting implementations
+  Mapping 'uart_tx_DW01_inc_1'
+  Mapping 'uart_tx_DW01_inc_2'
+  Selecting implementations
+  Mapping 'uart_rx_DW01_inc_1'
+  Mapping 'uart_rx_DW01_inc_2'
+  Selecting implementations
+  Mapping 'i2c_master_DW01_dec_1'
+  Mapping 'i2c_master_DW01_dec_2'
+  Mapping 'converter_i2f_DP_OP_47_122_1108_0_0'
+  Selecting implementations
+  Mapping 'converter_i2f_DW01_sub_1'
+  Mapping 'converter_i2f_DW01_sub_2'
+  Mapping 'converter_i2f_DW01_inc_1'
+  Mapping 'converter_i2f_DW01_inc_2'
+  Mapping 'converter_f2i_DP_OP_17_127_5628_0_0'
+  Mapping 'converter_f2i_DP_OP_16_126_4860_0_0'
+  Selecting implementations
+  Mapping 'converter_f2i_DW01_sub_1'
+  Mapping 'converter_f2i_DW01_sub_2'
+  Selecting implementations
+  Mapping 'spi_master_DW01_inc_1'
+  Mapping 'spi_master_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_adder_3_DW_cmp_0'
+  Mapping 'float_adder_3_DW_cmp_1'
+  Mapping 'float_adder_3_DP_OP_46_236_7011_0_0'
+  Mapping 'float_adder_3_DP_OP_139_221_5626_0_0'
+  Mapping 'float_adder_3_DP_OP_125_151_7074_0_0'
+  Mapping 'float_adder_3_DP_OP_124_150_2670_0_0'
+  Mapping 'float_adder_3_DP_OP_128_148_4319_0_0'
+  Mapping 'float_adder_3_DP_OP_127_147_6903_0_0'
+  Mapping 'float_adder_3_DW01_inc_1'
+  Mapping 'float_adder_3_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_multiplier_5_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_5_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_5_DP_OP_119_208_9725_0_0'
+  Mapping 'float_multiplier_5_DP_OP_102_206_7830_0_0'
+  Mapping 'float_multiplier_5_DP_OP_105_203_3597_0_0'
+  Mapping 'float_multiplier_5_DW01_inc_1'
+  Mapping 'float_multiplier_5_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_multiplier_4_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_4_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_4_DP_OP_119_198_9179_0_0'
+  Mapping 'float_multiplier_4_DP_OP_105_193_3549_0_0'
+  Mapping 'float_multiplier_4_DW01_inc_1'
+  Mapping 'float_multiplier_4_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_adder_2_DW_cmp_0'
+  Mapping 'float_adder_2_DW_cmp_1'
+  Mapping 'float_adder_2_DP_OP_46_232_75_0_0'
+  Mapping 'float_adder_2_DP_OP_139_218_18_0_0'
+  Mapping 'float_adder_2_DP_OP_125_145_130_0_0'
+  Mapping 'float_adder_2_DP_OP_124_144_2886_0_0'
+  Mapping 'float_adder_2_DP_OP_128_142_1832_0_0'
+  Mapping 'float_adder_2_DP_OP_127_141_5618_0_0'
+  Mapping 'float_adder_2_DW01_inc_1'
+  Mapping 'float_adder_2_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_adder_1_DW_cmp_0'
+  Mapping 'float_adder_1_DW_cmp_1'
+  Mapping 'float_adder_1_DP_OP_46_228_9786_0_0'
+  Mapping 'float_adder_1_DP_OP_139_215_3862_0_0'
+  Mapping 'float_adder_1_DP_OP_125_139_7776_0_0'
+  Mapping 'float_adder_1_DP_OP_124_138_2934_0_0'
+  Mapping 'float_adder_1_DP_OP_128_136_9478_0_0'
+  Mapping 'float_adder_1_DP_OP_127_135_5666_0_0'
+  Mapping 'float_adder_1_DW01_inc_1'
+  Mapping 'float_adder_1_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_multiplier_3_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_3_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_3_DP_OP_119_188_7833_0_0'
+  Mapping 'float_multiplier_3_DP_OP_102_186_8939_0_0'
+  Mapping 'float_multiplier_3_DP_OP_105_183_6207_0_0'
+  Mapping 'float_multiplier_3_DW01_inc_1'
+  Mapping 'float_multiplier_3_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_multiplier_2_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_2_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_2_DP_OP_119_178_9062_0_0'
+  Mapping 'float_multiplier_2_DP_OP_105_173_6191_0_0'
+  Mapping 'float_multiplier_2_DW01_inc_1'
+  Mapping 'float_multiplier_2_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_multiplier_1_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_1_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_1_DP_OP_119_168_3191_0_0'
+  Mapping 'float_multiplier_1_DP_OP_102_166_8907_0_0'
+  Mapping 'float_multiplier_1_DP_OP_105_163_6175_0_0'
+  Mapping 'float_multiplier_1_DW01_inc_1'
+  Mapping 'float_multiplier_1_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_adder_0_DW_cmp_0'
+  Mapping 'float_adder_0_DW_cmp_1'
+  Mapping 'float_adder_0_DP_OP_46_224_9810_0_0'
+  Mapping 'float_adder_0_DP_OP_139_212_6578_0_0'
+  Mapping 'float_adder_0_DP_OP_125_133_9258_0_0'
+  Mapping 'float_adder_0_DP_OP_124_132_3630_0_0'
+  Mapping 'float_adder_0_DP_OP_128_130_6503_0_0'
+  Mapping 'float_adder_0_DP_OP_127_129_7863_0_0'
+  Mapping 'float_adder_0_DW01_inc_1'
+  Mapping 'float_adder_0_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_multiplier_0_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_0_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_0_DP_OP_119_158_3501_0_0'
+  Mapping 'float_multiplier_0_DP_OP_105_153_1967_0_0'
+  Mapping 'float_multiplier_0_DW01_inc_1'
+  Mapping 'float_multiplier_0_DW01_inc_2'
+    0:00:29  112541.1      0.00       0.0       0.0                              0.5160      0.00  
+    0:00:29  112541.1      0.00       0.0       0.0                              0.5160      0.00  
+    0:00:29  112541.1      0.00       0.0       0.0                              0.5160      0.00  
+    0:00:29  112541.1      0.00       0.0       0.0                              0.5160      0.00  
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:31  112540.8      0.00       0.0       0.0                              0.5160      0.00  
+    0:00:31  112540.8      0.00       0.0       0.0                              0.5160      0.00  
+    0:00:35  112575.7      0.00       0.0       0.0                              0.5156      0.00  
+    0:00:35  112575.7      0.00       0.0       0.0                              0.5156      0.00  
+    0:00:35  112575.7      0.00       0.0       0.0                              0.5156      0.00  
+    0:00:35  112575.7      0.00       0.0       0.0                              0.5156      0.00  
+    0:00:35  112575.7      0.00       0.0       0.0                              0.5156      0.00  
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:35  112575.7      0.00       0.0       0.0                              0.5156      0.00  
+    0:00:35  112575.7      0.00       0.0       0.0                              0.5156      0.00  
+    0:00:35  112575.7      0.00       0.0       0.0                              0.5156      0.00  
+    0:00:35  112575.7      0.00       0.0       0.0                              0.5156      0.00  
+    0:00:35  112575.7      0.00       0.0       0.0                              0.5156      0.00  
+    0:00:36  112565.8      0.00       0.0       0.0                              0.5153      0.00  
+
+
+  Beginning Design Rule Fixing  (min_path)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:38  112565.8      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:38  112565.8      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:42  112569.3      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:42  112569.3      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:42  112569.3      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:42  112569.3      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:42  112569.3      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:42  112569.3      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:42  112569.3      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:42  112569.3      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:42  112569.3      0.00       0.0       0.0                              0.5153     -0.02  
+
+
+  Beginning Power Optimization
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:42  112569.3      0.00       0.0       0.0                              0.5153     -0.02  
+    0:00:44  112567.7      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:48  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:48  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:48  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:48  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:48  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:48  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:48  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:48  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:48  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:48  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:49  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:52  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+
+  Beginning Delay Optimization HSVT Pass
+  --------------------------------------
+    0:00:54  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:54  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:54  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:00:54  112568.3      0.00       0.0       0.0                              0.5153      0.00  
+    0:01:01  112293.8      0.00       0.0       0.0                              0.5141      0.00  
+    0:01:09  109520.3      0.00       0.0       0.0                              0.5058      0.00  
+    0:01:09  109520.3      0.00       0.0       0.0                              0.5058      0.00  
+    0:01:12  109123.5      0.00       0.0       0.0                              0.5026      0.00  
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'khu_sensor_pad' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/i_CLK': 4926 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated black box outputs. (PWR-428)
+***********************************************************************
+                                                                       
+                       common_reports.tcl                              
+                                                                       
+***********************************************************************
+# In samsung 65nm lib, the clock-gating technology is not adopted in the phase of Logic synthesis.
+# The clock gating are used in cts phase only due to a precise calculation of the Clock.
+source ./dc_scripts/05_gate_clock.tcl
+***********************************************************************
+                                                                       
+                         05_gate_clock.tcl                             
+                                                                       
+***********************************************************************
+
+Current clock gating style....
+Sequential cell: latch
+Minimum bank bitwidth: 4
+Minimum bank bitwidth for enhanced clock gating: 8
+Maximum fanout: 128
+Setup time for clock gate: -
+Hold time for clock gate: -
+Clock gating circuitry (positive edge): integrated
+Clock gating circuitry (negative edge): or
+ Note: inverter between clock gating circuitry 
+       and (negative edge) register clock pin.
+Control point insertion: before
+Control signal for control point: scan_enable
+Observation point insertion: false
+Observation logic depth: 5
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Performing automatic clock gating circuitry identification in design 'khu_sensor_pad'. (PWR-757)
+Information: No gating element has been automatically identified (PWR-878)
+
+Information: There are 357 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
+Information: Performing global clock-gating on design khu_sensor_pad. (PWR-731)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:01:02  107854.7      3.79     531.6       9.0                              0.5092      0.00  
+    0:01:02  108323.8      2.08     353.6       9.8                              0.5103      0.00  
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+  Selecting implementations
+  Mapping 'mpr121_controller_DW01_inc_2'
+  Mapping 'mpr121_controller_DW01_inc_3'
+  Selecting implementations
+  Mapping 'ads1292_filter_DW01_inc_2'
+  Mapping 'ads1292_filter_DW01_inc_3'
+  Selecting implementations
+  Mapping 'ads1292_controller_DW01_inc_2'
+  Mapping 'ads1292_controller_DW01_inc_3'
+  Selecting implementations
+  Mapping 'uart_tx_DW01_inc_2'
+  Mapping 'uart_tx_DW01_inc_3'
+  Selecting implementations
+  Mapping 'uart_rx_DW01_inc_2'
+  Mapping 'uart_rx_DW01_inc_3'
+  Selecting implementations
+  Mapping 'i2c_master_DW01_dec_2'
+  Mapping 'i2c_master_DW01_dec_3'
+  Selecting implementations
+  Mapping 'converter_i2f_DW01_inc_2'
+  Mapping 'converter_i2f_DW01_inc_3'
+  Mapping 'converter_i2f_DP_OP_47_122_1108_0_0'
+  Mapping 'converter_i2f_DW01_sub_2'
+  Mapping 'converter_i2f_DW01_sub_3'
+  Selecting implementations
+  Mapping 'converter_f2i_DW01_sub_2'
+  Mapping 'converter_f2i_DW01_sub_3'
+  Mapping 'converter_f2i_DP_OP_17_127_5628_0_0'
+  Mapping 'converter_f2i_DP_OP_16_126_4860_0_0'
+  Selecting implementations
+  Mapping 'spi_master_DW01_inc_2'
+  Mapping 'spi_master_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_adder_3_DW_cmp_1'
+  Mapping 'float_adder_3_DW_cmp_2'
+  Mapping 'float_adder_3_DP_OP_46_236_7011_0_0'
+  Mapping 'float_adder_3_DP_OP_139_221_5626_0_0'
+  Mapping 'float_adder_3_DP_OP_125_151_7074_0_0'
+  Mapping 'float_adder_3_DP_OP_124_150_2670_0_0'
+  Mapping 'float_adder_3_DP_OP_128_148_4319_0_0'
+  Mapping 'float_adder_3_DP_OP_127_147_6903_0_0'
+  Mapping 'float_adder_3_DW01_inc_2'
+  Mapping 'float_adder_3_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_5_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_5_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_5_DP_OP_119_208_9725_0_0'
+  Mapping 'float_multiplier_5_DP_OP_102_206_7830_0_0'
+  Mapping 'float_multiplier_5_DP_OP_105_203_3597_0_0'
+  Mapping 'float_multiplier_5_DW01_inc_2'
+  Mapping 'float_multiplier_5_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_4_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_4_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_4_DP_OP_119_198_9179_0_0'
+  Mapping 'float_multiplier_4_DP_OP_105_193_3549_0_0'
+  Mapping 'float_multiplier_4_DW01_inc_2'
+  Mapping 'float_multiplier_4_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_adder_2_DW_cmp_1'
+  Mapping 'float_adder_2_DW_cmp_2'
+  Mapping 'float_adder_2_DP_OP_46_232_75_0_0'
+  Mapping 'float_adder_2_DP_OP_139_218_18_0_0'
+  Mapping 'float_adder_2_DP_OP_125_145_130_0_0'
+  Mapping 'float_adder_2_DP_OP_124_144_2886_0_0'
+  Mapping 'float_adder_2_DP_OP_128_142_1832_0_0'
+  Mapping 'float_adder_2_DP_OP_127_141_5618_0_0'
+  Mapping 'float_adder_2_DW01_inc_2'
+  Mapping 'float_adder_2_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_adder_1_DW_cmp_1'
+  Mapping 'float_adder_1_DW_cmp_2'
+  Mapping 'float_adder_1_DP_OP_46_228_9786_0_0'
+  Mapping 'float_adder_1_DP_OP_125_139_7776_0_0'
+  Mapping 'float_adder_1_DP_OP_124_138_2934_0_0'
+  Mapping 'float_adder_1_DP_OP_128_136_9478_0_0'
+  Mapping 'float_adder_1_DP_OP_127_135_5666_0_0'
+  Mapping 'float_adder_1_DW01_inc_2'
+  Mapping 'float_adder_1_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_3_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_3_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_3_DP_OP_119_188_7833_0_0'
+  Mapping 'float_multiplier_3_DP_OP_102_186_8939_0_0'
+  Mapping 'float_multiplier_3_DP_OP_105_183_6207_0_0'
+  Mapping 'float_multiplier_3_DW01_inc_2'
+  Mapping 'float_multiplier_3_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_2_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_2_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_2_DP_OP_119_178_9062_0_0'
+  Mapping 'float_multiplier_2_DP_OP_105_173_6191_0_0'
+  Mapping 'float_multiplier_2_DW01_inc_2'
+  Mapping 'float_multiplier_2_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_1_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_1_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_1_DP_OP_119_168_3191_0_0'
+  Mapping 'float_multiplier_1_DP_OP_102_166_8907_0_0'
+  Mapping 'float_multiplier_1_DP_OP_105_163_6175_0_0'
+  Mapping 'float_multiplier_1_DW01_inc_2'
+  Mapping 'float_multiplier_1_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_adder_0_DW_cmp_1'
+  Mapping 'float_adder_0_DW_cmp_2'
+  Mapping 'float_adder_0_DP_OP_46_224_9810_0_0'
+  Mapping 'float_adder_0_DP_OP_139_212_6578_0_0'
+  Mapping 'float_adder_0_DP_OP_125_133_9258_0_0'
+  Mapping 'float_adder_0_DP_OP_124_132_3630_0_0'
+  Mapping 'float_adder_0_DP_OP_128_130_6503_0_0'
+  Mapping 'float_adder_0_DP_OP_127_129_7863_0_0'
+  Mapping 'float_adder_0_DW01_inc_2'
+  Mapping 'float_adder_0_DW01_inc_3'
+  Selecting implementations
+  Mapping 'float_multiplier_0_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_0_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_0_DP_OP_105_153_1967_0_0'
+  Mapping 'float_multiplier_0_DW01_inc_2'
+  Mapping 'float_multiplier_0_DW01_inc_3'
+Information: In design 'khu_sensor_pad', the register 'khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_A_reg[1]' is removed because it is merged to 'khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_A_reg[4]'. (OPT-1215)
+Note - message 'OPT-1215' limit (1) exceeded.  Remainder will be suppressed.
+    0:01:25  107945.3      1.02      13.0       1.9                              0.5133      0.00  
+    0:01:25  107945.3      1.02      13.0       1.9                              0.5133      0.00  
+    0:01:25  107945.3      1.02      13.0       1.9                              0.5133      0.00  
+    0:01:25  107946.6      0.98      11.6       1.9                              0.5133      0.00  
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:01:28  106314.9      0.00       0.0       1.9                              0.5092      0.00  
+    0:01:29  106314.9      0.00       0.0       1.9                              0.5092      0.00  
+    0:01:33  105697.0      0.01       0.0       1.9                              0.5066      0.00  
+    0:01:33  105697.0      0.01       0.0       1.9                              0.5066      0.00  
+    0:01:33  105698.2      0.00       0.0       1.9                              0.5066      0.00  
+    0:01:33  105698.2      0.00       0.0       1.9                              0.5066      0.00  
+    0:01:33  105698.2      0.00       0.0       1.9                              0.5066      0.00  
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:01:33  105698.2      0.00       0.0       1.9                              0.5066      0.00  
+    0:01:33  105698.2      0.00       0.0       1.9                              0.5066      0.00  
+    0:01:33  105698.2      0.00       0.0       1.9                              0.5066      0.00  
+    0:01:33  105698.2      0.00       0.0       1.9                              0.5066      0.00  
+    0:01:33  105698.2      0.00       0.0       1.9                              0.5066      0.00  
+    0:01:35  105650.2      0.01       0.0       1.9                              0.5065      0.00  
+
+
+  Beginning Design Rule Fixing  (min_path)  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:01:36  105650.2      0.01       0.0       1.9                              0.5065     -3.13  
+    0:01:37  105653.8      0.00       0.0       0.0                              0.5065     -3.13  
+    0:01:40  105603.2      0.00       0.0       0.0                              0.5064     -3.13  
+    0:01:40  105603.2      0.00       0.0       0.0                              0.5064     -3.13  
+    0:01:40  105611.5      0.00       0.0       0.0                              0.5064     -3.13  
+    0:01:40  105611.5      0.00       0.0       0.0                              0.5064     -3.13  
+    0:01:40  105611.5      0.00       0.0       0.0                              0.5064     -3.13  
+    0:01:40  105611.5      0.00       0.0       0.0                              0.5064     -3.13  
+    0:01:40  105611.5      0.00       0.0       0.0                              0.5064     -3.13  
+    0:01:40  105611.5      0.00       0.0       0.0                              0.5064     -3.13  
+    0:01:40  105611.5      0.00       0.0       0.0                              0.5064     -3.13  
+
+
+  Beginning Power Optimization
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:01:40  105611.5      0.00       0.0       0.0                              0.5064     -3.13  
+    0:01:43  105486.7      0.00       0.0       0.0                              0.5063     -3.13  
+    0:01:44  105566.1      0.00       0.0       0.0                              0.5064      0.00  
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:01:48  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:52  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+
+  Beginning Delay Optimization HSVT Pass
+  --------------------------------------
+    0:01:54  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:54  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:54  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:01:54  105561.9      0.00       0.0       0.0                              0.5063      0.00  
+    0:02:01  104845.1      0.00       0.0       0.0                              0.5046     -0.07  
+    0:02:09  102974.1      0.00       0.0       0.0                              0.4978      0.00  
+    0:02:09  102974.1      0.00       0.0       0.0                              0.4978      0.00  
+    0:02:11  102892.5      0.00       0.0       0.0                              0.4976      0.00  
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated black box outputs. (PWR-428)
+***********************************************************************
+                                                                       
+                       common_reports.tcl                              
+                                                                       
+***********************************************************************
+source ./dc_scripts/06_design_finish.tcl
+***********************************************************************
+                                                                       
+                        06_design_finish.tcl                           
+                                                                       
+***********************************************************************
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
+Writing verilog file '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/outputs/khu_sensor_pad.vg'.
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/outputs/khu_sensor_pad.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+Information: Writing parasitics to file '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/outputs/khu_sensor_pad_parasitics'. (WP-3)
+Current design is 'khu_sensor_top'.
+Writing verilog file '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/outputs/khu_sensor_top.vg'.
+1
+start_gui
+Current design is 'khu_sensor_top'.
+4.1
+#exit
+dc_shell> dc_shell> Loading db file '/Tools/Synopsys/DesignCompiler_2017/libraries/syn/generic.sdb'
+Current design is 'khu_sensor_top'.
+dc_shell> 

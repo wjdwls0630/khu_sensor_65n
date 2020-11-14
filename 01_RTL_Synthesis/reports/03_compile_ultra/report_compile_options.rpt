@@ -1,0 +1,541 @@
+ 
+****************************************
+Report : compile_options
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:52:59 2020
+****************************************
+
+Design                                   Compile Option         Value
+--------------------------------------------------------------------------------
+khu_sensor_pad                           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+                                         fix_multiple_port_nets feedthroughs
+                                                                constants
+                                                                outputs
+                                                                buffer_constants
+                                         isolate_port           disabled
+
+khu_sensor_top                           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+async_rstn_glitch_synchronizer           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+divider_by_2                             flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+uart_controller                          flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+uart_tx                                  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+uart_tx_DW01_inc_0                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+uart_rx                                  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+uart_rx_DW01_inc_0                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+sensor_core                              flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+mpr121_controller                        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+i2c_master                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+i2c_master_DW01_dec_0                    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+mpr121_controller_DW01_inc_0             flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+ads1292_filter                           flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_i2f                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_i2f_DW01_inc_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_i2f_DW01_sub_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_i2f_DP_OP_47_122_1108_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+iir_lpf                                  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DW01_inc_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_127_147_6903_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_128_148_4319_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_124_150_2670_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_125_151_7074_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_139_221_5626_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DP_OP_46_236_7011_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_3_DW_cmp_6                   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5_DP_OP_105_203_3597_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5_DP_OP_102_206_7830_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5_DP_OP_119_208_9725_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_5_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4_DP_OP_105_193_3549_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4_DP_OP_102_196_7782_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4_DP_OP_119_198_9179_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_4_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+iir_notch                                flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DW01_inc_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_127_141_5618_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_128_142_1832_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_124_144_2886_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_125_145_130_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_139_218_18_0         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DP_OP_46_232_75_0          flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_2_DW_cmp_6                   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DW01_inc_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_127_135_5666_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_128_136_9478_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_124_138_2934_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_125_139_7776_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_139_215_3862_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DP_OP_46_228_9786_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_1_DW_cmp_6                   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3_DP_OP_105_183_6207_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3_DP_OP_102_186_8939_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3_DP_OP_119_188_7833_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_3_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2_DP_OP_105_173_6191_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2_DP_OP_102_176_8923_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2_DP_OP_119_178_9062_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_2_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1_DP_OP_105_163_6175_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1_DP_OP_102_166_8907_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1_DP_OP_119_168_3191_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_1_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+iir_hpf                                  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+async_rst_synchronizer                   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DW01_inc_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_127_129_7863_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_128_130_6503_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_124_132_3630_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_125_133_9258_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_139_212_6578_0       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DP_OP_46_224_9810_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_adder_0_DW_cmp_6                   flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0_DP_OP_105_153_1967_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0_DP_OP_102_156_9202_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0_DP_OP_119_158_3501_0  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+float_multiplier_0_DW_mult_uns_1         flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_f2i                            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_f2i_DW01_sub_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_f2i_DP_OP_16_126_4860_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+converter_f2i_DP_OP_17_127_5628_0        flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+ads1292_filter_DW01_inc_0                flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+ads1292_controller                       flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+spi_master                               flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+async_rstn_synchronizer                  flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+spi_master_DW01_inc_0                    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
+ads1292_controller_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+--------------------------------------------------------------------------------
+1

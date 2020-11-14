@@ -1,0 +1,461 @@
+ 
+****************************************
+Report : timing_requirements
+        -attributes
+Design : khu_sensor_pad
+Version: L-2016.03-SP5-5
+Date   : Sat Nov 14 08:56:45 2020
+****************************************
+
+Description                            Setup               Hold
+--------------------------------------------------------------------------------
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    i_RSTN
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff_reg/CK
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg/CK
+TIMING EXCEPTION                       FALSE               FALSE
+	-to      async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg/RN
+TIMING EXCEPTION                       FALSE               FALSE
+	-to      async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff_reg/RN
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    { khu_sensor_top/ads1292_controller/async_rstn_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/ads1292_filter/async_rstn_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/mpr121_controller/async_rstn_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/uart_controller/async_rstn_synchronizer/r_ff_reg/CK }
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    { khu_sensor_top/ads1292_controller/async_rstn_synchronizer/o_RSTN_reg/CK\
+		   khu_sensor_top/ads1292_filter/async_rstn_synchronizer/o_RSTN_reg/CK\
+		   khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg/CK\
+		   khu_sensor_top/mpr121_controller/async_rstn_synchronizer/o_RSTN_reg/CK\
+		   khu_sensor_top/uart_controller/async_rstn_synchronizer/o_RSTN_reg/CK }
+TIMING EXCEPTION                       FALSE               FALSE
+	-to      { khu_sensor_top/ads1292_controller/async_rstn_synchronizer/o_RSTN_reg/RN\
+		   khu_sensor_top/ads1292_filter/async_rstn_synchronizer/o_RSTN_reg/RN\
+		   khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg/RN\
+		   khu_sensor_top/mpr121_controller/async_rstn_synchronizer/o_RSTN_reg/RN\
+		   khu_sensor_top/uart_controller/async_rstn_synchronizer/o_RSTN_reg/RN }
+TIMING EXCEPTION                       FALSE               FALSE
+	-to      { khu_sensor_top/ads1292_controller/async_rstn_synchronizer/r_ff_reg/RN\
+		   khu_sensor_top/ads1292_filter/async_rstn_synchronizer/r_ff_reg/RN\
+		   khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff_reg/RN\
+		   khu_sensor_top/mpr121_controller/async_rstn_synchronizer/r_ff_reg/RN\
+		   khu_sensor_top/uart_controller/async_rstn_synchronizer/r_ff_reg/RN }
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    { khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/r_ff_reg/CK }
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    { khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/o_RSTN_reg/CK\
+		   khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/o_RSTN_reg/CK\
+		   khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/o_RSTN_reg/CK\
+		   khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/o_RSTN_reg/CK\
+		   khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/o_RSTN_reg/CK }
+TIMING EXCEPTION                       FALSE               FALSE
+	-to      { khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/o_RSTN_reg/RN\
+		   khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/o_RSTN_reg/RN\
+		   khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/o_RSTN_reg/RN\
+		   khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/o_RSTN_reg/RN\
+		   khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/o_RSTN_reg/RN }
+TIMING EXCEPTION                       FALSE               FALSE
+	-to      { khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/r_ff_reg/RN\
+		   khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/r_ff_reg/RN\
+		   khu_sensor_top/ads1292_filter/iir_lpf/async_rstn_synchronizer/r_ff_reg/RN\
+		   khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/r_ff_reg/RN\
+		   khu_sensor_top/mpr121_controller/i2c_master/async_rstn_synchronizer/r_ff_reg/RN }
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    { khu_sensor_top/ads1292_filter/async_rst_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/sensor_core/async_rst_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/uart_controller/async_rst_synchronizer/r_ff_reg/CK }
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    { khu_sensor_top/ads1292_filter/async_rst_synchronizer/o_RST_reg/CK\
+		   khu_sensor_top/sensor_core/async_rst_synchronizer/o_RST_reg/CK\
+		   khu_sensor_top/uart_controller/async_rst_synchronizer/o_RST_reg/CK }
+TIMING EXCEPTION                       FALSE               FALSE
+	-to      { khu_sensor_top/ads1292_filter/async_rst_synchronizer/o_RST_reg/SN\
+		   khu_sensor_top/sensor_core/async_rst_synchronizer/o_RST_reg/SN\
+		   khu_sensor_top/uart_controller/async_rst_synchronizer/o_RST_reg/SN }
+TIMING EXCEPTION                       FALSE               FALSE
+	-to      { khu_sensor_top/ads1292_filter/async_rst_synchronizer/r_ff_reg/SN\
+		   khu_sensor_top/sensor_core/async_rst_synchronizer/r_ff_reg/SN\
+		   khu_sensor_top/uart_controller/async_rst_synchronizer/r_ff_reg/SN }
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    { khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/r_ff_reg/CK\
+		   khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/r_ff_reg/CK }
+TIMING EXCEPTION                       FALSE               FALSE
+	-from    { khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/o_RST_reg/CK\
+		   khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/o_RST_reg/CK\
+		   khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/o_RST_reg/CK\
+		   khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/o_RST_reg/CK\
+		   khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/o_RST_reg/CK }
+TIMING EXCEPTION                       FALSE               FALSE
+	-to      { khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/o_RST_reg/SN\
+		   khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/o_RST_reg/SN\
+		   khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/o_RST_reg/SN\
+		   khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/o_RST_reg/SN\
+		   khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/o_RST_reg/SN }
+TIMING EXCEPTION                       FALSE               FALSE
+	-to      { khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/r_ff_reg/SN\
+		   khu_sensor_top/ads1292_filter/iir_lpf/async_rst_synchronizer/r_ff_reg/SN\
+		   khu_sensor_top/ads1292_filter/iir_notch/async_rst_synchronizer/r_ff_reg/SN\
+		   khu_sensor_top/uart_controller/uart_rx/async_rst_synchronizer/r_ff_reg/SN\
+		   khu_sensor_top/uart_controller/uart_tx/async_rst_synchronizer/r_ff_reg/SN }
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/uart_controller/uart_tx/clk_gate_r_Tx_Data_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/uart_controller/uart_tx/clk_gate_o_Tx_Serial_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/uart_controller/uart_rx/clk_gate_r_Bit_Index_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/uart_controller/clk_gate_r_uart_data_tx_shift_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/uart_controller/clk_gate_r_uart_data_tx_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/uart_controller/clk_gate_o_UART_DATA_RX_reg_2/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/uart_controller/clk_gate_o_UART_DATA_RX_reg_1/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_o_UART_DATA_TX_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_ads_ch2_data_out_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_uart_clk_counter_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_ads_second_param_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_mpr_reg_data_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_ads_read_reg_done_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_0_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_mpr_reg_addr_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_mpr_first_param_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_ads_reg_addr_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_o_MPR121_REG_ADDR_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_o_ADS1292_REG_ADDR_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_o_ADS1292_DATA_IN_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_mpr_second_param_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_o_MPR121_DATA_IN_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_1_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_mpr_lstate_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_ads_run_set_done_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_ads_lstate_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/sensor_core/clk_gate_r_mpr_chip_set_done_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_last_reg_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_data_out_reg_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_phy_rx_data_reg_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_reg_addr_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_INIT_SET_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_data_in_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_DATA_OUT_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_write_multiple_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_z_m_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_value_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_a_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_b_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_b_m_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_a_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_guard_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_e_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_a_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_a_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_product_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_b_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_a_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_sticky_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_e_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_a_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_a_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_product_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_b_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_a_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_sticky_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_z_e_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_a_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_mult_1_A_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_x_data_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_y_data_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_add_B_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_o_Y_DATA_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_b_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_b_m_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_a_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_guard_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_e_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_a_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_b_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_b_m_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_guard_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_e_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_product_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_a_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_sticky_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_z_e_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_a_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_product_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_sticky_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_z_e_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_a_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_product_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_sticky_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_z_e_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_a_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_2_B_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_x_data_reg_1/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_x_data_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_y_data_reg_1/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_add_2_B_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_add_1_A_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_3_B_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_o_Y_DATA_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_3_AB_STB_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_b_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_z_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_b_m_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_a_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_round_bit_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_z_e_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_a_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_b_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_product_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_b_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_a_s_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_sticky_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_z_e_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_a_e_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_x_data_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_add_A_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_mult_A_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_o_Y_DATA_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_o_Z_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_m_reg_2/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_m_reg_1/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/clk_gate_r_iir_notch_x_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/clk_gate_r_iir_lpf_x_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/clk_gate_r_iir_hpf_x_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/clk_gate_r_converter_f2i_a_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/clk_gate_r_converter_i2f_a_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/clk_gate_o_ADS1292_FILTERED_DATA_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/clk_gate_r_counter_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_filter/clk_gate_r_converter_f2i_a_stb_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_TX_Byte_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_SPI_Clk_Count_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/spi_master/clk_gate_o_RX_Byte_reg/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_SPI_Clk_Edges_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/clk_gate_r_clk_counter_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/clk_gate_r_ads_data_out_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_DATA_OUT_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/clk_gate_r_ads_data_in_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/clk_gate_r_spi_data_in_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/clk_gate_r_ads_command_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_REG_DATA_OUT_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/clk_gate_r_lstate_reg_0/ENCLK
+TIMING EXCEPTION                       max=0               -
+	-from    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_BUSY_reg/ENCLK
+
+1

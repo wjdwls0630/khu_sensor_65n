@@ -1,0 +1,395 @@
+***********************************************************************
+                                                                       
+                     synopsys_dc_setup.tcl                             
+                                                                       
+***********************************************************************
+***********************************************************************
+       NOTE>>> You MUST fix the design which have multiple ports
+               Use the following command
+               set_fix_multiple_port_nets -all -buffer_constants
+************************************************************************
+***********************************************************************
+       NOTE>>> Use the old compile_fix_multiple_port_nets
+               because reoptimize_design does not honor
+               the set_fix_multiple_port_nets command
+************************************************************************
+Initializing gui preferences from file  /home/graduation_project3/2015103977/.synopsys_icc_prefs.tcl
+icc_shell> gui_start
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+icc_shell> 
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+icc_shell> open_mw_lib /home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+{khu_sensor_pad_08_chip_finish}
+icc_shell> ::iccGUI::open_mw_cel  khu_sensor_pad
+icc_shell> open_mw_cel khu_sensor_pad
+Preparing data for query................... 
+Warning: No valid link library found; check the link_library variable. (IFS-008)
+Information: Opened "khu_sensor_pad.CEL;1" from "/home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish" library. (MWUI-068)
+{khu_sensor_pad}
+icc_shell> 
+icc_shell> 
+Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/gtech.db'
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Error: Fail to rebuild timing design from database (UID-841)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Error: Current design is not defined. (UID-4)
+Error: Can't find clocks matching '*'. (UID-109)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Error: Current design is not defined. (UID-4)
+Error: Can't find clocks matching '*'. (UID-109)
+icc_shell> source ./icc_scripts/user_scripts/user_design_setup.tcl
+***********************************************************************
+                                                                       
+                      user_design_setup.tcl                            
+                                                                       
+***********************************************************************
+1
+icc_shell> source ./icc_scripts/common_lib_setup.tcl
+***********************************************************************
+                                                                       
+                       common_lib_setup.tcl                            
+                                                                       
+***********************************************************************
+Error: can't read "step": no such variable
+        Use error_info for more info. (CMD-013)
+icc_shell> set setup "08_chip_finish"
+08_chip_finish
+icc_shell> source ./icc_scripts/common_lib_setup.tcl
+***********************************************************************
+                                                                       
+                       common_lib_setup.tcl                            
+                                                                       
+***********************************************************************
+Error: can't read "step": no such variable
+        Use error_info for more info. (CMD-013)
+icc_shell> close_mw_lib
+icc_shell> 
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 (MWLIBP-300)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Note - message 'MWLIBP-300' limit (5) exceeded.  Remainder will be suppressed.
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+icc_shell> open_mw_lib /home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+{khu_sensor_pad_08_chip_finish}
+icc_shell> ::iccGUI::open_mw_cel  khu_sensor_pad
+icc_shell> open_mw_cel khu_sensor_pad
+Preparing data for query................... 
+Loading db file '/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db'
+Information: Opened "khu_sensor_pad.CEL;1" from "/home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_08_chip_finish" library. (MWUI-068)
+{khu_sensor_pad}
+icc_shell> 
+icc_shell> 
+Loading db file '/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_bst_135_n040.db'
+Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/dw_foundation.sldb'
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Warning: The 'cgnd1_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+        marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd1_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+        have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd2_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+        marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd2_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+        have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd3_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+        marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd3_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+        have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd4_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+        marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd4_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+        have corresponding physical cell description. (PSYN-024)
+Warning: The 'cgnd6_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+        marked as "dont_use". (PSYN-039)
+Warning: The 'cgnd6_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+        have corresponding physical cell description. (PSYN-024)
+Note - message 'PSYN-039' limit (5) exceeded.  Remainder will be suppressed.
+Note - message 'PSYN-024' limit (5) exceeded.  Remainder will be suppressed.
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+Current scenario is func1_wst.
+Information: Loading local_link_library attribute {std150e_wst_105_p125.db, std150e_bst_135_n040.db}. (MWDC-290)
+
+  Linking design 'khu_sensor_pad'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (233 designs)             khu_sensor_pad.CEL, etc
+  std150e_wst_105_p125 (library) /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db
+  std150e_bst_135_n040 (library) /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_bst_135_n040.db
+  dw_foundation.sldb (library) /Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/dw_foundation.sldb
+
+Warning: Unable to resolve reference 'vdd12ih_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vssiph_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phic_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vdd33oph_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phob12_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vssoh_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vdd12ih_core_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phbct24_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phis_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phbct12_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
+Floorplan loading succeeded.
+Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
+icc_shell> close_mw_lib
+Removing physical design 'khu_sensor_pad'
+Information: Removing all scenarios because all designs have been removed. (UID-1040)
+Information: Removed scenario func1_wst from memory. (UID-1024)
+Information: Removed scenario funccts_wst from memory. (UID-1024)
+icc_shell> 
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_08_chip_finish)|   Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_07_route_opt)|     Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_07_route_opt)|     Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_07_route_opt)|     Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_07_route_opt)|     Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_07_route_opt)|     Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_07_route_opt)|     Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+icc_shell> open_mw_lib /home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_07_route_opt
+Warning: Inconsistent Number Of Metal Layers:
+        6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Data for Contact Code 10
+        Main Library (khu_sensor_pad_07_route_opt)|     Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+Warning: Inconsistent Data for Contact Code 11
+        Main Library (khu_sensor_pad_07_route_opt)|     Reference Library (std150e_prim_050504)
+        Upper Layer     MET6 (130, 130)   |     MET6 (10, 40)    (MWLIBP-324)
+{khu_sensor_pad_07_route_opt}
+icc_shell> ::iccGUI::open_mw_cel  01_before_shield
+icc_shell> open_mw_cel 01_before_shield
+Preparing data for query................... 
+Information: Opened "01_before_shield.CEL;1" from "/home/graduation_project3/2015103977/03_Physical_Synthesis/mw_db/khu_sensor_pad_07_route_opt" library. (MWUI-068)
+{01_before_shield}
+icc_shell> 
+icc_shell> 
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
+Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+Current scenario is func1_wst.
+Information: Loading local_link_library attribute {std150e_wst_105_p125.db, std150e_bst_135_n040.db}. (MWDC-290)
+
+  Linking design 'khu_sensor_pad'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (233 designs)             01_before_shield.CEL, etc
+  std150e_wst_105_p125 (library) /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db
+  std150e_bst_135_n040 (library) /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_bst_135_n040.db
+  dw_foundation.sldb (library) /Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/dw_foundation.sldb
+
+Warning: Unable to resolve reference 'vdd12ih_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vssiph_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phic_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vdd33oph_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phob12_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vssoh_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'vdd12ih_core_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phbct24_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phis_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Unable to resolve reference 'phbct12_p' in 'khu_sensor_pad'. (LINK-5)
+Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
+Floorplan loading succeeded.
+Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
