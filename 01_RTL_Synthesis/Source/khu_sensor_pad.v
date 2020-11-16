@@ -121,70 +121,83 @@ module khu_sensor_pad (
   // break - A_I/O - vsstv - vddtv - A_I/O - break
   //============================================================================
   /****************************************************************************
-  *                    LEFT (pad1() ~ pad11()) 		                         *
+  *                    LEFT (pad1() ~ pad14()) 		                         *
   *****************************************************************************/
   ec_breakv pad1();
-  vddtvh pad2();
+  vsstvh pad2();
   pvhbcudtart pad3(.CI(1'b1), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(1'b0), .A(1'b0), .PI(1'b0), .CLTCH(), .PAD(i_CLK), .Y(w_clk_p));
-  vsstvh pad4();
-  ec_breakv pad5();
-  vsstvh pad6();
-  pvhbcudtbrt pad7(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_ads1292_reset_p), .PI(1'b0), .CLTCH(), .PAD(ADS1292_RESET));
-  pvhbcudtbrt pad9(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_ads1292_start_p), .PI(1'b0), .CLTCH(), .PAD(ADS1292_START));
-  vssipvh pad8();
-  vddivh pad10();
-  pvhbcudtbrt pad11(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_ads1292_csn_p), .PI(1'b0), .CLTCH(), .PAD(ADS1292_CSN));
+  vssipvh pad4();
+  vddivh pad5();
+  vddtvh pad6();
+  ec_breakv pad7();
+  vsstvh pad8();
+  vddtvh pad9();
+  pvhbcudtbrt pad10(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_ads1292_reset_p), .PI(1'b0), .CLTCH(), .PAD(ADS1292_RESET));
+  pvhbcudtbrt pad11(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_ads1292_start_p), .PI(1'b0), .CLTCH(), .PAD(ADS1292_START));
+  vssipvh pad12();
+  vddivh pad13();
+  pvhbcudtbrt pad14(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_ads1292_csn_p), .PI(1'b0), .CLTCH(), .PAD(ADS1292_CSN));
   //============================================================================
   /****************************************************************************
-  *                    Bottom (pad12() ~ pad22())          	                 *
+  *                    Bottom (pad15() ~ pad28())          	                 *
   *****************************************************************************/
   //============================================================================
-  vddtvh pad12();
-  pvhbcudtbrt pad13(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_ads1292_sclk_p), .PI(1'b0), .CLTCH(), .PAD(ADS1292_SCLK));
-  vsstvh pad14();
-  pvhbcudtbrt pad15(.CI(1'b1), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(1'b0), .A(1'b0), .PI(1'b0), .CLTCH(), .PAD(ADS1292_MISO), .Y(w_ads1292_miso_p));
-  vssipvh pad16();
-  vddivh pad17();
-  pvhbcudtbrt pad18(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_ads1292_mosi_p), .PI(1'b0), .CLTCH(), .PAD(ADS1292_MOSI));
-  vsstvh pad19();
+  ec_breakv pad15();
+  vsstvh pad16();
+  pvhbcudtbrt pad17(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_ads1292_sclk_p), .PI(1'b0), .CLTCH(), .PAD(ADS1292_SCLK));
+  vssipvh pad18();
+  vddivh pad19();
   vddtvh pad20();
-  pvhbcudtbrt pad21(.CI(1'b1), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(1'b0), .A(1'b0), .PI(1'b0), .CLTCH(), .PAD(ADS1292_DRDY), .Y(w_ads1292_drdy_p));
-  vsstvh pad22();
-  //============================================================================
-  /****************************************************************************
-  *                    Right (pad23() ~ pad33())           	                 *
-  *****************************************************************************/
-  //============================================================================
+  ec_breakv pad21();
+  pvhbcudtbrt pad22(.CI(1'b1), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(1'b0), .A(1'b0), .PI(1'b0), .CLTCH(), .PAD(ADS1292_MISO), .Y(w_ads1292_miso_p));
   vssipvh pad23();
   vddivh pad24();
-  vddtvh pad25();
-  pvhbcudtbrt pad26(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_uart_tx_p), .PI(1'b0), .CLTCH(), .PAD(UART_TXD));
-  vddivh pad27();
-  vssipvh pad28();
-  pvhbcudtbrt pad29(.CI(1'b1), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(1'b0), .A(1'b0), .PI(1'b0), .CLTCH(), .PAD(UART_RXD), .Y(w_uart_rx_p));
-  vsstvh pad30();
-  vddivh pad31();
-  vssipvh pad32();
-  vddtvh pad33();
+  pvhbcudtbrt pad25(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_ads1292_mosi_p), .PI(1'b0), .CLTCH(), .PAD(ADS1292_MOSI));
+  ec_breakv pad26();
+  pvhbcudtbrt pad27(.CI(1'b1), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(1'b0), .A(1'b0), .PI(1'b0), .CLTCH(), .PAD(ADS1292_DRDY), .Y(w_ads1292_drdy_p));
+  vsstvh pad28();
   //============================================================================
   /****************************************************************************
-  *                    TOP (pad34() ~ pad44())                                *
+  *                    Right (pad29() ~ pad42())           	                 *
+  *****************************************************************************/
+  //============================================================================
+  vssipvh pad29();
+  vddivh pad30();
+  vddtvh pad31();
+  ec_breakv pad32();
+  vsstvh pad33();
+  pvhbcudtbrt pad34(.CI(1'b0), .CPU(1'b0), .CPD(1'b0), .CD0(1'b1), .CD1(1'b1), .CE(1'b1), .A(w_uart_tx_p), .PI(1'b0), .CLTCH(), .PAD(UART_TXD));
+  ec_breakv pad35();
+  pvhbcudtbrt pad36(.CI(1'b1), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(1'b0), .A(1'b0), .PI(1'b0), .CLTCH(), .PAD(UART_RXD), .Y(w_uart_rx_p));
+  vddtvh pad37();
+  vssipvh pad38();
+  vddivh pad39();
+  vsstvh pad40();
+  ec_breakv pad41();
+  vddtvh pad42();
+  //============================================================================
+  /****************************************************************************
+  *                    TOP (pad43() ~ pad56())                                *
   *****************************************************************************/
   //============================================================================
   // w_mpr121_scl_en_p ? in : out
   // w_mpr121_sda_en_p ? in : out
-  pvhbcudtbrt pad34(.CI(w_mpr121_scl_en_p), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(~w_mpr121_scl_en_p), .A(w_mpr121_scl_out_p), .PI(1'b0), .CLTCH(), .PAD(MPR121_SCL), .Y(w_mpr121_scl_in_p));
-  ec_breakv pad35();
-  pvhbcudtbrt pad36(.CI(w_mpr121_sda_en_p), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(~w_mpr121_sda_en_p), .A(w_mpr121_sda_out_p), .PI(1'b0), .CLTCH(), .PAD(MPR121_SDA), .Y(w_mpr121_sda_in_p));
-  vddtvh pad37();
-  vsstvh pad38();
+  pvhbcudtbrt pad43(.CI(w_mpr121_scl_en_p), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(~w_mpr121_scl_en_p), .A(w_mpr121_scl_out_p), .PI(1'b0), .CLTCH(), .PAD(MPR121_SCL), .Y(w_mpr121_scl_in_p));
+  ec_breakv pad44();
+  pvhbcudtbrt pad45(.CI(w_mpr121_sda_en_p), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(~w_mpr121_sda_en_p), .A(w_mpr121_sda_out_p), .PI(1'b0), .CLTCH(), .PAD(MPR121_SDA), .Y(w_mpr121_sda_in_p));
+  vsstvh pad46();
+  vssipvh pad47();
+  vddivh pad48();
+  vddtvh pad49();
+  ec_breakv pad50();
+  vssipvh pad51();
+  vddivh pad52();
+  vddtvh pad53();
+  vsstvh pad54();
+  ec_breakv pad55();
   // vsstv - N_I/O - vssipv - vddiv - vddtv
   // schmitt trigger for global reset
-  pvhbsudtart pad39(.CI(1'b1), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(1'b0), .A(1'b0), .PI(1'b0), .CLTCH(), .PAD(i_RSTN), .Y(w_rstn_p));
-  vssipvh pad40();
-  vddivh pad41();
-  vddtvh pad42();
-  ec_breakv pad43();
+  pvhbsudtart pad56(.CI(1'b1), .CPU(1'b0), .CPD(1'b0), .CD0(1'b0), .CD1(1'b0), .CE(1'b0), .A(1'b0), .PI(1'b0), .CLTCH(), .PAD(i_RSTN), .Y(w_rstn_p));
   //============================================================================
 	/****************************************************************************
 	*                           async_rstn_glitch_synchronizer                                   *
