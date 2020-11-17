@@ -15,8 +15,8 @@ echo "***********************************************************************"
 set step "08_chip_finish"
 
 # source the user_design_setup & common_lib_setup
-source ./icc_scripts/user_scripts/user_design_setup.tcl
-source ./icc_scripts/common_lib_setup.tcl
+source -echo -v ./icc_scripts/user_scripts/user_design_setup.tcl
+source -echo -v ./icc_scripts/common_lib_setup.tcl
 
 # Clear existing mw library and re-make dir
 set _mw_lib ./mw_db/${TOP_MODULE}_${step}
@@ -41,8 +41,11 @@ current_design $TOP_MODULE
 # Read scenario file
 remove_sdc
 remove_scenario -all
-sh sed -i 's/ ${STD_WST}/ ${STD_WST}.db:${STD_WST}/' $FUNC1_SDC
-#sh sed -i '/set_max_fanout/d' $FUNC1_SDC
+
+# After placement, delete max_delay constraints. It is only for placing
+# clock gating cell and gated register in proximity.
+sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
+
 source $ICC_MCMM_SCENARIOS_FILE
 set_active_scenario $CHIP_FINISH_SCN
 
@@ -60,9 +63,12 @@ verify_zrt_route
 route_zrt_detail -inc true -initial_drc_from_input true
 
 # Connect Power & Grounding in extraction and update timing
-derive_pg_connection -power_net  $MW_R_POWER_NET    -power_pin  $MW_POWER_PORT
-derive_pg_connection -ground_net $MW_R_GROUND_NET   -ground_pin $MW_GROUND_PORT
-derive_pg_connection -power_net  $MW_R_POWER_NET    -ground_net $MW_R_GROUND_NET -tie
+derive_pg_connection -power_net $MW_R_POWER_NET -power_pin  $MW_POWER_PORT
+derive_pg_connection -ground_net $MW_R_GROUND_NET -ground_pin $MW_GROUND_PORT
+derive_pg_connection -power_net $MW_R_POWER_NET -ground_net $MW_R_GROUND_NET -tie
+
+## Read scenario file
+set_active_scenarios [lminus [all_scenarios] $CLOCK_OPT_CTS_SCN]
 
 # Intermediate Save
 # Use timing driven SnR.
@@ -98,14 +104,22 @@ redirect -file $REPORTS_STEP_DIR/constraints.rpt { report_constraint \
 redirect -file $REPORTS_STEP_DIR/max_timing.rpt {
 	report_timing -significant_digits 4 \
 	-delay max -transition_time  -capacitance \
-	-max_paths 100 -nets -input_pins -slack_greater_than 0.0 \
+	-max_paths 20 -nets -input_pins \
 	-physical -attributes -nosplit -derate -crosstalk_delta -derate -path full_clock_expanded
 }
 redirect -file $REPORTS_STEP_DIR/min_timing.rpt {
 	report_timing -significant_digits 4 \
 	-delay min -transition_time  -capacitance \
-	-max_paths 100 -nets -input_pins \
+	-max_paths 20 -nets -input_pins \
 	-physical -attributes -nosplit -crosstalk_delta -derate -path full_clock_expanded
+}
+report_clock_gating -style > $REPORTS_STEP_DIR/clock_gating.rpt
+report_clock_gating_check -significant_digits 4 >> $REPORTS_STEP_DIR/clock_gating.rpt
+report_clock_gating -structure >> $REPORTS_STEP_DIR/clock_gating.rpt
+report_timing -max_paths 10 -to [get_pins -hierarchical "clk_gate*"] \
+	> $REPORTS_STEP_DIR/clock_gating_max_paths.rpt
+redirect -file $REPORTS_STEP_DIR/power.rpt {
+ 	report_power -verbose -analyze_effort high
 }
 # To verify CRPR
 #redirect -file $REPORTS_DIR/${step}/crpr.rpt { report_crpr }
@@ -120,6 +134,25 @@ save_mw_cel -as ${TOP_MODULE}
 verify_lvs -max_error 500
 
 # Write outputs
+
+# insert extra cell (I/O Filler, STD Filler, decap)
+# Decap
+insert_stdcell_filler
+	-cell_with_metal $DECAP_FILLER
+	-ignore_soft_placement_blockage
+	-between_std_cells_only
+	-connect_to_power {VDD} -connect_to_ground {VSS}
+
+# STD Filler
+insert_stdcell_filler
+	-cell_without_metal $RVT_FILLER
+	-ignore_soft_placement_blockage
+	-between_std_cells_only
+	-connect_to_power {VDD} -connect_to_ground {VSS}
+
+# I/O Filler
+insert_pad_filler -cell $IO_FILLER
+
 write_verilog ./outputs/${TOP_MODULE}.vg \
 	-no_corner_pad_cells -no_pad_filler_cells -diode_ports \
 	-no_core_filler_cells -no_flip_chip_bump_cells -wire_declaration
@@ -129,7 +162,6 @@ write_verilog ./outputs/${TOP_MODULE}.sim.v \
 	-no_core_filler_cells -no_flip_chip_bump_cells -wire_declaration \
 	-no_tap_cells -no_unconnected_cells
 
-# It is impossible because layer.map file is damaged!
 set_write_stream_options -child_depth 0 -map_layer $STREAM_OUT_MAP \
 	-output_pin {geometry text} \
 	-keep_data_type -max_name_length 128
@@ -158,5 +190,5 @@ write_verilog -no_corner_pad_cells -no_pad_filler_cells -no_core_filler_cells \
 	-no_flip_chip_bump_cells -no_cover_cells -diode_ports -output_net_name_for_tie \
 	-pg_ports -no_tap_cells -no_chip_cells \
 	-split_bus ./outputs/${TOP_MODULE}.lvs.v
-#start_gui
-exit
+start_gui
+#exit
