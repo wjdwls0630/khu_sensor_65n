@@ -34,14 +34,22 @@ open_mw_cel $TOP_MODULE
 link
 current_design $TOP_MODULE
 
-## Read scenario file
-#sh sed -i '/set_max_fanout/d' $FUNC1_SDC
-sh sed -i 's/ ${STD_WST}/ ${STD_WST}.db:${STD_WST}/' $FUNC1_SDC
 if { $CLOCK_OPT_CTS_SCN_READ_AGAIN } {
 	remove_sdc
 	remove_scenario -all
+
+	## Read scenario file
+	# After placement, delete max_delay constraints. It is only for placing
+	# clock gating cell and gated register in proximity.
+	sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
+
 	source $ICC_MCMM_SCENARIOS_FILE
+} else {
+	# After placement, delete max_delay constraints. It is only for placing
+	# clock gating cell and gated register in proximity.
+	sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
 }
+
 set_active_scenario $CLOCK_OPT_CTS_SCN
 
 #******************************************************************************
@@ -82,7 +90,7 @@ foreach cts_mode_scenario $CLOCK_OPT_CTS_SCN {
 	set cts_remove_buffers_inserted_by_fixing_drc false
 
 	# Source shielding rule
-	source ./icc_scripts/rules/shield_130nm_rule.tcl
+	source ./icc_scripts/rules/shield_65nm_rule.tcl
 
 	# CTS options
 	set_clock_tree_options \
@@ -118,7 +126,7 @@ foreach cts_mode_scenario $CLOCK_OPT_CTS_SCN {
 		sh rm -rf $REPORTS_DIR/${step}/${cts_mode_scenario}
 	}
 	sh mkdir $REPORTS_DIR/${step}/${cts_mode_scenario}
-	
+
 	redirect -file $REPORTS_DIR/${step}/${cts_mode_scenario}/clock_tree_settings   {report_clock_tree -settings}
 	redirect -file $REPORTS_DIR/${step}/${cts_mode_scenario}/clock_tree_exceptions {report_clock_tree -exceptions}
 	redirect -file $REPORTS_DIR/${step}/${cts_mode_scenario}/skew                  {report_clock_tree}
@@ -132,9 +140,9 @@ foreach cts_mode_scenario $CLOCK_OPT_CTS_SCN {
 }
 
 # Connect Power & Grounding in extraction and update timing
-derive_pg_connection -power_net  $MW_R_POWER_NET    -power_pin  $MW_POWER_PORT
-derive_pg_connection -ground_net $MW_R_GROUND_NET   -ground_pin $MW_GROUND_PORT
-derive_pg_connection -power_net  $MW_R_POWER_NET    -ground_net $MW_R_GROUND_NET -tie
+derive_pg_connection -power_net $MW_R_POWER_NET -power_pin  $MW_POWER_PORT
+derive_pg_connection -ground_net $MW_R_GROUND_NET -ground_pin $MW_GROUND_PORT
+derive_pg_connection -power_net $MW_R_POWER_NET -ground_net $MW_R_GROUND_NET -tie
 
 # Running extraction and updating the timing
 extract_rc
@@ -174,15 +182,20 @@ redirect -file $REPORTS_STEP_DIR/constraints.rpt { report_constraint \
 redirect -file $REPORTS_STEP_DIR/max_timing.rpt {
 	report_timing -significant_digits 4 \
 	-delay max -transition_time  -capacitance \
-	-max_paths 100 -nets -input_pins -slack_greater_than 0.0 \
+	-max_paths 20 -nets -input_pins \
 	-physical -attributes -nosplit -derate -crosstalk_delta -derate -path full_clock_expanded
 }
 redirect -file $REPORTS_STEP_DIR/min_timing.rpt {
 	report_timing -significant_digits 4 \
 	-delay min -transition_time  -capacitance \
-	-max_paths 100 -nets -input_pins \
+	-max_paths 20 -nets -input_pins \
 	-physical -attributes -nosplit -crosstalk_delta -derate -path full_clock_expanded
 }
+report_clock_gating -style > $REPORTS_STEP_DIR/clock_gating.rpt
+report_clock_gating_check -significant_digits 4 >> $REPORTS_STEP_DIR/clock_gating.rpt
+report_clock_gating -structure >> $REPORTS_STEP_DIR/clock_gating.rpt
+report_timing -max_paths 10 -to [get_pins -hierarchical "clk_gate*"] \
+	> $REPORTS_STEP_DIR/clock_gating_max_paths.rpt
 # delete "snapshot" directory called by create_qor_snapshot command
 sh rm -rf snapshot/
 
@@ -208,4 +221,5 @@ close_mw_lib
 sh rm -f $FUNC1_SDC
 sh cp ${FUNC1_SDC}.bak ${FUNC1_SDC}
 
+#start_gui
 exit

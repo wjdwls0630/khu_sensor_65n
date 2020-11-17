@@ -4,7 +4,7 @@ Report : timing_requirements
         -attributes
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Sat Nov 14 08:56:45 2020
+Date   : Tue Nov 17 01:42:43 2020
 ****************************************
 
 Description                            Setup               Hold
@@ -170,7 +170,7 @@ TIMING EXCEPTION                       max=0               -
 TIMING EXCEPTION                       max=0               -
 	-from    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_phy_rx_data_reg_reg/ENCLK
 TIMING EXCEPTION                       max=0               -
-	-from    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_reg_addr_reg_0/ENCLK
+	-from    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_reg_data_in_reg/ENCLK
 TIMING EXCEPTION                       max=0               -
 	-from    khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_INIT_SET_reg/ENCLK
 TIMING EXCEPTION                       max=0               -
@@ -290,7 +290,7 @@ TIMING EXCEPTION                       max=0               -
 TIMING EXCEPTION                       max=0               -
 	-from    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_e_reg/ENCLK
 TIMING EXCEPTION                       max=0               -
-	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_reg/ENCLK
+	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_a_reg_0/ENCLK
 TIMING EXCEPTION                       max=0               -
 	-from    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_product_reg_0/ENCLK
 TIMING EXCEPTION                       max=0               -

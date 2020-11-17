@@ -3,7 +3,7 @@
 Report : constraint
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Sat Nov 14 08:54:22 2020
+Date   : Tue Nov 17 01:40:20 2020
 ****************************************
 
 
@@ -57,7 +57,7 @@ Date   : Sat Nov 14 08:54:22 2020
     critical_range                                   0.00 (MET)
     min_delay/hold                                   0.00 (MET)
     max_leakage_power                                0.05 (VIOLATED)
-    max_area                                     109123.52
+    max_area                                     109165.44
                                                           (VIOLATED)
 
 
@@ -69,16 +69,16 @@ Report : constraint
         -verbose
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Sat Nov 14 08:54:22 2020
+Date   : Tue Nov 17 01:40:20 2020
 ****************************************
 
 
     Design: khu_sensor_pad
 
     max_area               0.00
-  - Current Area       109123.52
+  - Current Area       109165.44
   ------------------------------
-    Slack              -109123.52  (VIOLATED)
+    Slack              -109165.44  (VIOLATED)
 
 
     Design: khu_sensor_pad

@@ -36,11 +36,17 @@ current_design $TOP_MODULE
 
 ## Read scenario file
 sh sed -i 's/ ${STD_WST}/ ${STD_WST}.db:${STD_WST}/' $FUNC1_SDC
-#sh sed -i '/set_max_fanout/d' $FUNC1_SDC
+# After placement, delete max_delay constraints. It is only for placing
+# clock gating cell and gated register in proximity.
+sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
 if { $CLOCK_OPT_PSYN_SCN_READ_AGAIN } {
 	remove_sdc
 	remove_scenario -all
 	source $ICC_MCMM_SCENARIOS_FILE
+} else {
+	# After placement, delete max_delay constraints. It is only for placing
+	# clock gating cell and gated register in proximity.
+	sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
 }
 set_active_scenario $CLOCK_OPT_PSYN_SCN
 
@@ -123,14 +129,24 @@ if { $LEAKAGE_POWER_POST_CTS } {
 	clock_opt -no_clock_route -only_psyn -area_recovery
 }
 
+# TIE cell insertion for io, macros except for memories.
+if { $TIECELL_INSERT } {
+  connect_tie_cells -objects [get_cells -hier *] \
+    -obj_type cell_inst \
+    -tie_high_lib_cell ${TIEHI_CELL} \
+    -tie_low_lib_cell ${TIELO_CELL} \
+    -max_fanout 5 \
+    -max_wirelength 800
+}
+
 # Connect Power & Grounding in extraction and update timing
-derive_pg_connection -power_net  $MW_R_POWER_NET    -power_pin  $MW_POWER_PORT
-derive_pg_connection -ground_net $MW_R_GROUND_NET   -ground_pin $MW_GROUND_PORT
-derive_pg_connection -power_net  $MW_R_POWER_NET    -ground_net $MW_R_GROUND_NET -tie
+derive_pg_connection -power_net $MW_R_POWER_NET -power_pin  $MW_POWER_PORT
+derive_pg_connection -ground_net $MW_R_GROUND_NET -ground_pin $MW_GROUND_PORT
+derive_pg_connection -power_net $MW_R_POWER_NET -ground_net $MW_R_GROUND_NET -tie
 
 # Generate global zroute based congestion map
 if { $GEN_GL_CONG_MAP } {
-	route_zrt_global  -congestion_map_only true
+	route_zrt_global -congestion_map_only true
 }
 
 # Running extraction and updating the timing
@@ -159,16 +175,22 @@ redirect -file $REPORTS_STEP_DIR/constraints.rpt { report_constraint \
 redirect -file $REPORTS_STEP_DIR/max_timing.rpt {
 	report_timing -significant_digits 4 \
 	-delay max -transition_time  -capacitance \
-	-max_paths 100 -nets -input_pins -slack_greater_than 0.0 \
+	-max_paths 20 -nets -input_pins \
 	-physical -attributes -nosplit -derate -crosstalk_delta -derate -path full_clock_expanded
 }
 redirect -file $REPORTS_STEP_DIR/min_timing.rpt {
 	report_timing -significant_digits 4 \
 	-delay min -transition_time  -capacitance \
-	-max_paths 100 -nets -input_pins \
+	-max_paths 20 -nets -input_pins \
 	-physical -attributes -nosplit -crosstalk_delta -derate -path full_clock_expanded
 }
+report_clock_gating -style > $REPORTS_STEP_DIR/clock_gating.rpt
+report_clock_gating_check -significant_digits 4 >> $REPORTS_STEP_DIR/clock_gating.rpt
+report_clock_gating -structure >> $REPORTS_STEP_DIR/clock_gating.rpt
+report_timing -max_paths 10 -to [get_pins -hierarchical "clk_gate*"] \
+	> $REPORTS_STEP_DIR/clock_gating_max_paths.rpt
 # To verify CRPR
+# Clock Reconvergence Pessimism
 #redirect -file $REPORTS_STEP_DIR/crpr.rpt { report_crpr }
 # delete "snapshot" directory called by create_qor_snapshot command
 sh rm -rf snapshot/

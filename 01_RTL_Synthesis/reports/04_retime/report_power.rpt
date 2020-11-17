@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Sat Nov 14 08:54:24 2020
+Date   : Tue Nov 17 01:40:22 2020
 ****************************************
 
 
@@ -24,24 +24,24 @@ Power-specific unit information :
     Leakage Power Units = 1mW
 
 
-  Cell Internal Power  =  15.8952 mW    (5%)
+  Cell Internal Power  =  15.9056 mW    (5%)
   Net Switching Power  = 280.4655 mW   (95%)
                          ---------
-Total Dynamic Power    = 296.3607 mW  (100%)
+Total Dynamic Power    = 296.3712 mW  (100%)
 
-Cell Leakage Power     =  44.8391 uW
+Cell Leakage Power     =  47.0992 uW
 
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
 --------------------------------------------------------------------------------------------------
-io_pad             6.1697          280.4601        1.3448e-02          286.6432  (  96.71%)
+io_pad             6.1697          280.4601        1.5515e-02          286.6452  (  96.70%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register           9.7149        1.8840e-03        7.2161e-03            9.7241  (   3.28%)
+register           9.7253        1.8838e-03        7.2456e-03            9.7345  (   3.28%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  1.0181e-02        2.9847e-03        2.4175e-02        3.7340e-02  (   0.01%)
+combinational  1.0180e-02        2.9848e-03        2.4338e-02        3.7503e-02  (   0.01%)
 --------------------------------------------------------------------------------------------------
-Total             15.8948 mW       280.4649 mW     4.4839e-02 mW       296.4046 mW
+Total             15.9052 mW       280.4649 mW     4.7099e-02 mW       296.4172 mW
 1

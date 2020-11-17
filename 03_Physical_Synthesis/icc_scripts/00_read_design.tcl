@@ -29,17 +29,13 @@ echo "                   Creating a Milkyway Design DB                       "
 echo "                                                                       "
 echo "***********************************************************************"
 
+# If the "-open" option is not used, the library needs to be opened in order to import the design
+# open_mw_lib ./mw_db/${TOP_MODULE}_${step}
 create_mw_lib ./mw_db/${TOP_MODULE}_${step} \
 	-technology $TECH_FILE \
 	-mw_reference_library $MW_REF_LIB_DIRS \
 	-bus_naming_style {[%d]} \
 	-open
-
-# If the "-open" option is not used, the library needs to be opened in order to import the design
-# open_mw_lib ./mw_db/${TOP_MODULE}_${step}
-
-# Apply pad naming rule in physical library
-source $ICC_IO_NAMING_FILE
 
 # Read verilog netlist
 read_verilog -top ${TOP_MODULE} $ICC_IN_VERILOG_NETLIST_FILE
@@ -58,7 +54,4 @@ save_mw_cel -as ${TOP_MODULE}
 # close lib
 close_mw_lib
 
-# Reset netlist file for applying naming rule
-sh rm -f $ICC_IN_VERILOG_NETLIST_FILE
-sh cp ${ICC_IN_VERILOG_NETLIST_FILE}.bak $ICC_IN_VERILOG_NETLIST_FILE
 exit

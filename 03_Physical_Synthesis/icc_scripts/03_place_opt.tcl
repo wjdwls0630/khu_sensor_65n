@@ -12,8 +12,8 @@ echo "***********************************************************************"
 set step "03_place_opt"
 
 # source the user_design_setup & common_lib_setup
-source ./icc_scripts/user_scripts/user_design_setup.tcl
-source ./icc_scripts/common_lib_setup.tcl
+source -echo -v ./icc_scripts/user_scripts/user_design_setup.tcl
+source -echo -v ./icc_scripts/common_lib_setup.tcl
 
 # Clear existing mw library and re-make dir
 set _mw_lib ./mw_db/${TOP_MODULE}_${step}
@@ -38,8 +38,7 @@ current_design $TOP_MODULE
 # Read scenario file
 remove_sdc
 remove_scenario -all
-sh sed -i 's/ ${STD_WST}/ ${STD_WST}.db:${STD_WST}/' $FUNC1_SDC
-#sh sed -i '/set_max_fanout/d' $FUNC1_SDC
+
 source $ICC_MCMM_SCENARIOS_FILE
 set_active_scenario $PLACE_OPT_SCN
 
@@ -58,10 +57,10 @@ if { !$INOUT_OPT } {
 # Optimization Common Session Options - set in all sessions
 source ./icc_scripts/common_place_opt_env.tcl
 
-source ./icc_scripts/rules/shield_130nm_rule.tcl
+source ./icc_scripts/rules/shield_65nm_rule.tcl
 
 set_clock_tree_options -clock_trees [all_clocks] \
-	-routing_rule shield_130nm_rule -layer_list "MET3 MET4"
+	-routing_rule shield_65nm_rule -layer_list "M3 B2"
 
 
 # Unplace all standard cells except for tap and well_edge cells
@@ -130,15 +129,20 @@ redirect -file $REPORTS_STEP_DIR/constraints.rpt { report_constraint \
 redirect -file $REPORTS_STEP_DIR/max_timing.rpt {
 	report_timing -significant_digits 4 \
 	-delay max -transition_time  -capacitance \
-	-max_paths 100 -nets -input_pins -slack_greater_than 0.0 \
+	-max_paths 20 -nets -input_pins -slack_greater_than 0.0 \
 	-physical -attributes -nosplit -derate
 }
 redirect -file $REPORTS_STEP_DIR/min_timing.rpt {
 	report_timing -significant_digits 4 \
 	-delay min -transition_time  -capacitance \
-	-max_paths 100 -nets -input_pins \
+	-max_paths 20 -nets -input_pins \
 	-physical -attributes -nosplit -crosstalk_delta -derate -path full_clock_expanded
 }
+report_clock_gating -style > $REPORTS_STEP_DIR/clock_gating.rpt
+report_clock_gating_check -significant_digits 4 >> $REPORTS_STEP_DIR/clock_gating.rpt
+report_clock_gating -structure >> $REPORTS_STEP_DIR/clock_gating.rpt
+report_timing -max_paths 10 -to [get_pins -hierarchical "clk_gate*"] \
+	> $REPORTS_STEP_DIR/clock_gating_max_paths.rpt
 # delete "snapshot" directory called by create_qor_snapshot command
 sh rm -rf snapshot/
 
@@ -149,9 +153,5 @@ save_mw_cel -as ${TOP_MODULE}
 
 # close lib
 close_mw_lib
-
-# Reset sdc file for applying sdc
-sh rm -f $FUNC1_SDC
-sh cp ${FUNC1_SDC}.bak ${FUNC1_SDC}
 
 exit

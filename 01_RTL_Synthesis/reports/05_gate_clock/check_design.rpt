@@ -1,10 +1,10 @@
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
 Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
  
 ****************************************
 check_design summary:
 Version:     L-2016.03-SP5-5
-Date:        Sat Nov 14 08:56:42 2020
+Date:        Tue Nov 17 01:42:40 2020
 ****************************************
 
                    Name                                            Total
@@ -13,10 +13,10 @@ Inputs/Outputs                                                    183
     Multiply driven inputs (LINT-6)                                 5
     Unconnected ports (LINT-28)                                   178
 
-Cells                                                             365
-    Cells do not drive (LINT-1)                                    32
+Cells                                                             377
+    Cells do not drive (LINT-1)                                    45
     Connected to power or ground (LINT-32)                        309
-    Nets connected to multiple pins on same cell (LINT-33)         24
+    Nets connected to multiple pins on same cell (LINT-33)         23
 --------------------------------------------------------------------------------
 
 Warning: In design 'khu_sensor_pad', cell 'pad1' does not drive any nets. (LINT-1)
@@ -24,20 +24,22 @@ Warning: In design 'khu_sensor_pad', cell 'pad2' does not drive any nets. (LINT-
 Warning: In design 'khu_sensor_pad', cell 'pad4' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad5' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad6' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad7' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad8' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad10' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad9' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad12' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad14' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad13' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad15' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad16' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad17' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad18' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad19' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad20' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad22' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad21' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad23' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad24' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad25' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad27' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad26' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad28' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad29' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad30' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad31' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad32' does not drive any nets. (LINT-1)
@@ -45,10 +47,21 @@ Warning: In design 'khu_sensor_pad', cell 'pad33' does not drive any nets. (LINT
 Warning: In design 'khu_sensor_pad', cell 'pad35' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad37' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad38' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad39' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad40' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad41' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad42' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad43' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad44' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad46' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad47' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad48' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad49' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad50' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad51' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad52' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad53' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad54' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad55' does not drive any nets. (LINT-1)
 Warning: In design 'async_rstn_synchronizer', cell 'I_0' does not drive any nets. (LINT-1)
 Warning: In design 'async_rst_synchronizer', cell 'I_0' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', input port 'i_CLK' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
@@ -302,7 +315,7 @@ Warning: In design 'sensor_core', a pin on submodule 'clk_gate_r_ads_lstate_reg_
    Pin 'TE' is connected to logic 0. 
 Warning: In design 'sensor_core', a pin on submodule 'clk_gate_r_mpr_chip_set_done_reg' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
-Warning: In design 'mpr121_controller', a pin on submodule 'clk_gate_r_i2c_reg_addr_reg_0' is connected to logic 1 or logic 0. (LINT-32)
+Warning: In design 'mpr121_controller', a pin on submodule 'clk_gate_r_i2c_reg_data_in_reg' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
 Warning: In design 'mpr121_controller', a pin on submodule 'clk_gate_o_MPR121_INIT_SET_reg' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
@@ -754,7 +767,7 @@ Warning: In design 'float_adder_1', a pin on submodule 'clk_gate_z_e_reg_0' is c
    Pin 'TE' is connected to logic 0. 
 Warning: In design 'float_adder_1', a pin on submodule 'clk_gate_a_e_reg' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
-Warning: In design 'float_multiplier_3', a pin on submodule 'clk_gate_b_reg' is connected to logic 1 or logic 0. (LINT-32)
+Warning: In design 'float_multiplier_3', a pin on submodule 'clk_gate_a_reg_0' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
 Warning: In design 'float_multiplier_3', a pin on submodule 'clk_gate_product_reg_0' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
@@ -861,11 +874,11 @@ Warning: In design 'converter_i2f', the same net is connected to more than one p
 Warning: In design 'iir_lpf', the same net is connected to more than one pin on submodule 'mult_1'. (LINT-33)
    Net 'r_mult_2_A[7]' is connected to pins 'i_A[29]', 'i_A[28]'', 'i_A[27]', 'i_A[26]', 'i_A[23]', 'i_A[22]', 'i_A[20]', 'i_A[17]', 'i_A[11]', 'i_A[10]', 'i_A[7]', 'i_A[6]', 'i_A[5]', 'i_A[3]'.
 Warning: In design 'iir_lpf', the same net is connected to more than one pin on submodule 'mult_1'. (LINT-33)
-   Net 'r_mult_1_A[15]' is connected to pins 'i_A[25]', 'i_A[24]'', 'i_A[15]', 'i_A[14]', 'i_A[12]', 'i_A[9]', 'i_A[8]', 'i_A[4]'.
+   Net 'r_mult_2_A[14]' is connected to pins 'i_A[25]', 'i_A[24]'', 'i_A[15]', 'i_A[14]', 'i_A[12]', 'i_A[9]', 'i_A[8]', 'i_A[4]'.
 Warning: In design 'iir_lpf', the same net is connected to more than one pin on submodule 'mult_1'. (LINT-33)
    Net 'r_mult_1_A[19]' is connected to pins 'i_A[19]', 'i_A[16]'', 'i_A[2]', 'i_A[1]', 'i_A[0]'.
 Warning: In design 'iir_lpf', the same net is connected to more than one pin on submodule 'mult_2'. (LINT-33)
-   Net 'r_mult_1_A[15]' is connected to pins 'i_A[31]', 'i_A[25]'', 'i_A[24]', 'i_A[21]', 'i_A[14]', 'i_A[13]', 'i_A[8]', 'i_A[4]'.
+   Net 'r_mult_2_A[14]' is connected to pins 'i_A[31]', 'i_A[25]'', 'i_A[24]', 'i_A[21]', 'i_A[14]', 'i_A[13]', 'i_A[8]', 'i_A[4]'.
 Warning: In design 'iir_lpf', the same net is connected to more than one pin on submodule 'mult_2'. (LINT-33)
    Net 'r_mult_2_A[7]' is connected to pins 'i_A[29]', 'i_A[28]'', 'i_A[27]', 'i_A[26]', 'i_A[20]', 'i_A[17]', 'i_A[16]', 'i_A[11]', 'i_A[10]', 'i_A[7]', 'i_A[6]', 'i_A[5]', 'i_A[3]', 'i_A[0]'.
 Warning: In design 'iir_lpf', the same net is connected to more than one pin on submodule 'mult_2'. (LINT-33)
@@ -875,11 +888,9 @@ Warning: In design 'iir_notch', the same net is connected to more than one pin o
 Warning: In design 'iir_notch', the same net is connected to more than one pin on submodule 'mult_2'. (LINT-33)
    Net 'r_mult_2_A[26]' is connected to pins 'i_A[29]', 'i_A[28]'', 'i_A[27]', 'i_A[26]', 'i_A[25]', 'i_A[22]', 'i_A[10]', 'i_A[8]', 'i_A[6]', 'i_A[3]'.
 Warning: In design 'iir_notch', the same net is connected to more than one pin on submodule 'mult_2'. (LINT-33)
-   Net 'r_mult_2_A[24]' is connected to pins 'i_A[24]', 'i_A[17]'', 'i_A[15]', 'i_A[0]'.
-Warning: In design 'iir_notch', the same net is connected to more than one pin on submodule 'mult_2'. (LINT-33)
    Net 'r_mult_2_A[21]' is connected to pins 'i_A[21]', 'i_A[9]''.
 Warning: In design 'iir_notch', the same net is connected to more than one pin on submodule 'mult_2'. (LINT-33)
-   Net 'r_mult_2_A[4]' is connected to pins 'i_A[20]', 'i_A[13]'', 'i_A[4]', 'i_A[1]'.
+   Net 'r_mult_2_A[1]' is connected to pins 'i_A[20]', 'i_A[13]'', 'i_A[4]', 'i_A[1]'.
 Warning: In design 'iir_notch', the same net is connected to more than one pin on submodule 'mult_2'. (LINT-33)
    Net 'r_mult_2_A[12]' is connected to pins 'i_A[18]', 'i_A[12]''.
 Warning: In design 'iir_notch', the same net is connected to more than one pin on submodule 'mult_3'. (LINT-33)

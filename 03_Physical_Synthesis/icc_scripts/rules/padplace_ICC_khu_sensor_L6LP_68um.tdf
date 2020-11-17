@@ -1,0 +1,84 @@
+# samsung 65nm - ICC
+# TDF : Top Design Format file
+# By PARK JUNG JIN / KHU Room327
+# revision history
+# DATE : 2009.02.  by Ki- iL , HONG
+# DATE : 2009.08.03  by Ki- iL , HONG
+# DATE : 2020.11.03 by Jung Jin Park
+
+# Define the Die Area (Boundary)
+
+set_die_area -coordinate {0 0 1400 1400}
+
+# Create corners and P/G pads
+create_cell {CORNLT CORNRT CORNRB CORNLB} cornerv
+
+# Define corner pad locations
+set_pad_physical_constraints -pad_name "CORNLT" -side 1
+set_pad_physical_constraints -pad_name "CORNRT" -side 2
+set_pad_physical_constraints -pad_name "CORNRB" -side 3
+set_pad_physical_constraints -pad_name "CORNLB" -side 4
+
+#;Left pad
+set_pad_physical_constraints -pad_name  "pad14"         -side 1 -order  1 -offset       192
+set_pad_physical_constraints -pad_name  "pad13"         -side 1 -order  2 -offset       272
+set_pad_physical_constraints -pad_name  "pad12"         -side 1 -order  3 -offset       340
+set_pad_physical_constraints -pad_name  "pad11"         -side 1 -order  4 -offset       408
+set_pad_physical_constraints -pad_name  "pad10"         -side 1 -order  5 -offset       488
+set_pad_physical_constraints -pad_name  "pad9"          -side 1 -order  6 -offset       568
+set_pad_physical_constraints -pad_name  "pad8"          -side 1 -order  7 -offset       636
+set_pad_physical_constraints -pad_name  "pad7"          -side 1 -order  8 -offset       704
+set_pad_physical_constraints -pad_name  "pad6"          -side 1 -order  9 -offset       772
+set_pad_physical_constraints -pad_name  "pad5"          -side 1 -order  10 -offset      840
+set_pad_physical_constraints -pad_name  "pad4"          -side 1 -order  11 -offset      908
+set_pad_physical_constraints -pad_name  "pad3"          -side 1 -order  12 -offset      976
+set_pad_physical_constraints -pad_name  "pad2"          -side 1 -order  13 -offset     1056
+set_pad_physical_constraints -pad_name  "pad1"          -side 1 -order  14 -offset     1148
+
+#;Bottom pad
+set_pad_physical_constraints -pad_name  "pad15"         -side 4 -order  1 -offset       192
+set_pad_physical_constraints -pad_name  "pad16"         -side 4 -order  2 -offset       260
+set_pad_physical_constraints -pad_name  "pad17"         -side 4 -order  3 -offset       328
+set_pad_physical_constraints -pad_name  "pad18"         -side 4 -order  4 -offset       408
+set_pad_physical_constraints -pad_name  "pad19"         -side 4 -order  5 -offset       476
+set_pad_physical_constraints -pad_name  "pad20"         -side 4 -order  6 -offset       544
+set_pad_physical_constraints -pad_name  "pad21"         -side 4 -order  7 -offset       612
+set_pad_physical_constraints -pad_name  "pad22"         -side 4 -order  8 -offset       680
+set_pad_physical_constraints -pad_name  "pad23"         -side 4 -order  9 -offset       760
+set_pad_physical_constraints -pad_name  "pad24"         -side 4 -order  10 -offset      828
+set_pad_physical_constraints -pad_name  "pad25"         -side 4 -order  11 -offset      896
+set_pad_physical_constraints -pad_name  "pad26"         -side 4 -order  11 -offset      976
+set_pad_physical_constraints -pad_name  "pad27"         -side 4 -order  11 -offset     1044
+set_pad_physical_constraints -pad_name  "pad28"         -side 4 -order  11 -offset     1148
+
+#;Right pad
+set_pad_physical_constraints -pad_name  "pad29"        -side 3 -order  1 -offset       192
+set_pad_physical_constraints -pad_name  "pad30"        -side 3 -order  2 -offset       260
+set_pad_physical_constraints -pad_name  "pad31"        -side 3 -order  3 -offset       328
+set_pad_physical_constraints -pad_name  "pad32"        -side 3 -order  4 -offset       396
+set_pad_physical_constraints -pad_name  "pad33"        -side 3 -order  5 -offset       464
+set_pad_physical_constraints -pad_name  "pad34"        -side 3 -order  6 -offset       532
+set_pad_physical_constraints -pad_name  "pad35"        -side 3 -order  7 -offset       612
+set_pad_physical_constraints -pad_name  "pad36"        -side 3 -order  8 -offset       680
+set_pad_physical_constraints -pad_name  "pad37"        -side 3 -order  9 -offset       760
+set_pad_physical_constraints -pad_name  "pad38"        -side 3 -order  10 -offset      828
+set_pad_physical_constraints -pad_name  "pad39"        -side 3 -order  11 -offset      896
+set_pad_physical_constraints -pad_name  "pad40"        -side 3 -order  11 -offset      964
+set_pad_physical_constraints -pad_name  "pad41"        -side 3 -order  11 -offset     1032
+set_pad_physical_constraints -pad_name  "pad42"        -side 3 -order  11 -offset     1148
+
+#;Top pad
+set_pad_physical_constraints -pad_name  "pad56"        -side 2 -order  1 -offset       192
+set_pad_physical_constraints -pad_name  "pad55"        -side 2 -order  1 -offset       272
+set_pad_physical_constraints -pad_name  "pad54"        -side 2 -order  1 -offset       340
+set_pad_physical_constraints -pad_name  "pad53"        -side 2 -order  1 -offset       408
+set_pad_physical_constraints -pad_name  "pad52"        -side 2 -order  2 -offset       476
+set_pad_physical_constraints -pad_name  "pad51"        -side 2 -order  3 -offset       544
+set_pad_physical_constraints -pad_name  "pad50"        -side 2 -order  4 -offset       612
+set_pad_physical_constraints -pad_name  "pad49"        -side 2 -order  5 -offset       680
+set_pad_physical_constraints -pad_name  "pad48"        -side 2 -order  6 -offset       748
+set_pad_physical_constraints -pad_name  "pad47"        -side 2 -order  7 -offset       816
+set_pad_physical_constraints -pad_name  "pad46"        -side 2 -order  8 -offset       884
+set_pad_physical_constraints -pad_name  "pad45"        -side 2 -order  9 -offset       952
+set_pad_physical_constraints -pad_name  "pad44"        -side 2 -order  10 -offset     1032
+set_pad_physical_constraints -pad_name  "pad43"        -side 2 -order  11 -offset     1148

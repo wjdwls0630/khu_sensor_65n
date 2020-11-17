@@ -3,7 +3,7 @@
 Report : clocks
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Sat Nov 14 08:56:44 2020
+Date   : Tue Nov 17 01:42:42 2020
 ****************************************
 
 Attributes:
@@ -31,7 +31,7 @@ clk_half      i_CLK          {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
 Report : clock_skew
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Sat Nov 14 08:56:44 2020
+Date   : Tue Nov 17 01:42:42 2020
 ****************************************
 
                  Rise      Fall  Min Rise  Min fall        Uncertainty

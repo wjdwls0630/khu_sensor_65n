@@ -3,7 +3,7 @@
 Report : qor
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Sat Nov 14 08:56:45 2020
+Date   : Tue Nov 17 01:42:43 2020
 ****************************************
 
 
@@ -23,8 +23,8 @@ Date   : Sat Nov 14 08:56:45 2020
   Timing Path Group 'REGOUT'
   -----------------------------------
   Levels of Logic:               1.00
-  Critical Path Length:          3.12
-  Critical Path Slack:           0.29
+  Critical Path Length:          3.10
+  Critical Path Slack:           0.30
   Critical Path Clk Period:      4.20
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
@@ -35,9 +35,9 @@ Date   : Sat Nov 14 08:56:45 2020
 
   Timing Path Group 'clk'
   -----------------------------------
-  Levels of Logic:              11.00
-  Critical Path Length:          3.51
-  Critical Path Slack:           0.00
+  Levels of Logic:               8.00
+  Critical Path Length:          3.48
+  Critical Path Slack:           0.03
   Critical Path Clk Period:      4.20
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
@@ -48,9 +48,9 @@ Date   : Sat Nov 14 08:56:45 2020
 
   Timing Path Group 'clk_half'
   -----------------------------------
-  Levels of Logic:               5.00
+  Levels of Logic:               8.00
   Critical Path Length:          1.94
-  Critical Path Slack:           1.67
+  Critical Path Slack:           1.68
   Critical Path Clk Period:      8.40
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
@@ -77,36 +77,36 @@ Date   : Sat Nov 14 08:56:45 2020
   -----------------------------------
   Hierarchical Cell Count:        294
   Hierarchical Port Count:       5543
-  Leaf Cell Count:              27326
-  Buf/Inv Cell Count:            3010
+  Leaf Cell Count:              27334
+  Buf/Inv Cell Count:            3036
   Buf Cell Count:                  91
-  Inv Cell Count:                2919
+  Inv Cell Count:                2945
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:     21930
-  Sequential Cell Count:         5396
+  Combinational Cell Count:     21935
+  Sequential Cell Count:         5399
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:    58607.360086
-  Noncombinational Area: 44285.120105
-  Buf/Inv Area:           3079.359940
-  Total Buffer Area:           172.16
-  Total Inverter Area:        2907.20
+  Combinational Area:    58582.720086
+  Noncombinational Area: 44318.080105
+  Buf/Inv Area:           3099.839939
+  Total Buffer Area:           168.32
+  Total Inverter Area:        2931.52
   Macro/Black Box Area:      0.000000
   Net Area:                  0.000000
   -----------------------------------
-  Cell Area:            102892.480191
-  Design Area:          102892.480191
+  Cell Area:            102900.800191
+  Design Area:          102900.800191
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:         29948
-  Nets With Violations:            11
-  Max Trans Violations:            11
+  Total Number of Nets:         29901
+  Nets With Violations:            12
+  Max Trans Violations:            12
   Max Cap Violations:               0
   -----------------------------------
 
@@ -115,12 +115,12 @@ Date   : Sat Nov 14 08:56:45 2020
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                    2.40
-  Logic Optimization:                  1.96
-  Mapping Optimization:               26.57
+  Resource Sharing:                    2.34
+  Logic Optimization:                  1.74
+  Mapping Optimization:               26.46
   -----------------------------------------
-  Overall Compile Time:              135.63
-  Overall Compile Wall Clock Time:   136.87
+  Overall Compile Time:              135.67
+  Overall Compile Wall Clock Time:   137.01
 
   --------------------------------------------------------------------
 

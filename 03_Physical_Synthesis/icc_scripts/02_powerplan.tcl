@@ -43,14 +43,19 @@ current_design $TOP_MODULE
 # Read scenario file
 remove_sdc
 remove_scenario -all
-sh sed -i 's/ ${STD_WST}/ ${STD_WST}.db:${STD_WST}/' $FUNC1_SDC
-#sh sed -i '/set_max_fanout/d' $FUNC1_SDC
+
 source $ICC_MCMM_SCENARIOS_FILE
-set_active_scenario $FP_SCN
+set_active_scenario $FLOORPLAN_SCN
 
 #set_dont_touch_placement [all_macro_cells]
 
 # Describe VDD and VSS used by the standard cell
+# Power Ring (internal to external, in order)
+# VDDI: 1.2V I/O power ring
+# VSSIP: 1.2V I/O ground ring
+# VDDP: 1.8V/2.5V/3.3V I/O power ring
+# VDDO: 1.8V/2.5V/3.3V I/O power ring
+# VSSO: 1.8V/2.5V/3.3V I/O ground ring
 derive_pg_connection \
 	-power_net VDD \
 	-power_pin VDD \
@@ -59,13 +64,35 @@ derive_pg_connection \
 
 derive_pg_connection \
 	-power_net VDD \
-	-power_pin VDD12I \
+	-power_pin VDDI \
 	-ground_net VSS \
 	-ground_pin VSSIP
 
 derive_pg_connection \
-	-power_net VDD_12I \
-	-power_pin VDD_12I 
+	-power_net VDD \
+	-power_pin VDDCE \
+	-ground_net VSS \
+	-ground_pin VSSE
+
+derive_pg_connection \
+	-power_net VDD \
+	-power_pin VDDPE
+
+# tie cell - constant logic 1 and constant logic 0
+derive_pg_connection \
+	-power_net VDD \
+	-ground_net VSS \
+	-tie
+
+# Normal Operation Mode Setting
+# If you do not need retention or failsafe function of I/O, you can use only
+# general function of I/O by tie-up CLTCH pin to VDDT.
+derive_pg_connection \
+	-power_net VDDT \
+	-power_pin VDDT
+
+# CLTCH: Retention Control (Retention or Fail-safe IO have feature for reducing leakage power consumption.)
+connect_net VDDT [get_pins pad*/CLTCH]
 #******************************************************************************
 # Memory P/G ring
 #set_fp_rail_region_constraints \
@@ -88,44 +115,9 @@ derive_pg_connection \
 #commit_fp_group_block_ring
 #preroute_instances  -ignore_pads -ignore_cover_cells -primary_routing_layer pin
 #******************************************************************************
+
 #******************************************************************************
-# power rail (strap)
-set_fp_rail_constraints \
-	-add_layer -layer MET5 -direction horizontal \
-	-max_strap 50 -min_strap 16 -max_width 3 -min_width 0.200 \
-	-spacing minimum
-
-set_fp_rail_constraints \
-	-add_layer  -layer MET6 -direction vertical \
-	-max_strap 50 -min_strap 16 -max_width 3 -min_width 0.440 \
-	-spacing minimum
-
-set_fp_rail_region_constraints \
-	-polygon {{169.070 1035.925} {169.070 172.595} {1019.810 172.595} {1019.810 1035.925}}
-
-set_fp_rail_constraints  -set_ring -nets {VDD VSS} \
-	-horizontal_ring_layer { MET3 } -vertical_ring_layer { MET4 }
-
-set_fp_rail_constraints -set_global -no_routing_over_hard_macros
-
-synthesize_fp_rail \
-	-nets {VDD VSS} -voltage_supply 1.35 \
-	-synthesize_power_plan -power_budget 350 -pad_masters {  vdd12ih_p vssiph_p  }
-
-commit_fp_rail
-#******************************************************************************
-
-# creates power ring
-# power rings help all macro cells to be supplied voltage.
-
-create_rectangular_rings \
-	-nets {VDD_12I} \
-	-left_offset 25 -left_segment_layer MET5 -left_segment_width 1 \
-	-right_offset 25 -right_segment_layer MET5 -right_segment_width 1 \
-	-bottom_offset 25 -bottom_segment_layer MET6 -bottom_segment_width 1 \
-	-top_offset 15 -top_segment_layer MET6 -top_segment_width 1 
-
-# additional power net robustness
+# power net robustness
 #******************************************************************************
 # Note Voltage noise induced by inductance
 #
@@ -150,17 +142,57 @@ create_rectangular_rings \
 # (The effect of mutual inductive coupling is greatly increasing especially when the return path
 # is far from conductor.)
 #******************************************************************************
+#******************************************************************************
+# power rail (strap)
+set_fp_rail_constraints \
+	-add_layer -layer EA -direction horizontal \
+	-max_strap 50 -min_strap 16 -max_width 3 -min_width 0.200 \
+	-spacing minimum
+
+set_fp_rail_constraints \
+	-add_layer  -layer B2 -direction vertical \
+	-max_strap 50 -min_strap 16 -max_width 3 -min_width 0.440 \
+	-spacing minimum
+
+set_fp_rail_region_constraints \
+	-polygon {{169.070 1228.420} {169.070 172.595} {1230.950 172.595} {1230.950 1228.420}}
+
+set_fp_rail_constraints  -set_ring -nets {VDD VSS} \
+	-horizontal_ring_layer { M3 } -vertical_ring_layer { M2 }
+
+set_fp_rail_constraints -set_global -no_routing_over_hard_macros
+
+# 10% error in voltage is okay.
+synthesize_fp_rail \
+	-nets {VDD VSS} -voltage_supply 1.32 \
+	-synthesize_power_plan -power_budget 320 -pad_masters {  vddivh vssipvh  }
+
+commit_fp_rail
+#******************************************************************************
+
+# creates power ring
+# power rings help all macro cells to be supplied voltage.
+
+create_rectangular_rings \
+	-nets {VDDT} \
+	-left_offset 25 -left_segment_layer M4 -left_segment_width 1 \
+	-right_offset 25 -right_segment_layer M4 -right_segment_width 1 \
+	-bottom_offset 25 -bottom_segment_layer B1 -bottom_segment_width 1 \
+	-top_offset 25 -top_segment_layer B1 -top_segment_width 1
+
 create_fp_placement -timing_driven -no_hierarchy_gravity
+#******************************************************************************
+
 
 # route_guide
 #create_route_guide \
 	-name route_guide_0 \
-	-no_signal_layers {MET4 MET5 MET6} \
-	-preferred_direction_only_layers {MET1 MET2 MET3} \
-	-coordinate {{1540.710 1820.910} {1640.710 2020.510}} -no_snap
+	-no_signal_layers {M4 B1 B2 EA OA LB} \
+	-preferred_direction_only_layers {M1 M2 M3} \
+	-coordin {{187.630 187.630} {1212.390 1209.860}} -no_snap
 
 # connect P/G (I/O STD)
-set_preroute_drc_strategy  -treat_fat_blockage_as_fat_wire  -min_layer MET1  -max_layer MET6
+set_preroute_drc_strategy  -treat_fat_blockage_as_fat_wire  -min_layer M1  -max_layer LB
 preroute_instances  -ignore_macros -primary_routing_layer pin
 preroute_standard_cells \
 	-connect horizontal -skip_macro_pins -skip_pad_pins  -remove_floating_pieces \
@@ -172,11 +204,12 @@ preroute_standard_cells \
 	-route_type {P/G Std. Cell Pin Conn}
 preroute_instances  -ignore_macros -ignore_cover_cells \
 	-select_net_by_type specified \
-	-nets  {VDD_12I}
+	-nets  {VDDT}
+#preroute_instances  -ignore_macros -ignore_cover_cells
 verify_pg_nets  -error_cell test
 
-# short checking 
-set_pnet_options -partial "MET2 MET3 MET4 MET5 MET6"
+# short checking
+set_pnet_options -partial "M2 M3 M4 B1 B2 EA OA LB"
 
 # legalize
 # To resolve cell placement conflicts after doing initial placement, such as violating Standard(STD)
@@ -186,6 +219,8 @@ legalize_placement
 
 
 # Perform actual global routing to make sure the congestion
+# Global routing
+# Abstract the routing problem to a notional set of abutting channels
 route_zrt_global
 report_congestion -grc_based -by_layer -routing_stage global
 
@@ -200,8 +235,5 @@ save_mw_cel -as ${TOP_MODULE}
 # close lib
 close_mw_lib
 
-# Reset sdc file for applying sdc
-sh rm -f $FUNC1_SDC
-sh cp ${FUNC1_SDC}.bak ${FUNC1_SDC}
-
+#start_gui
 exit

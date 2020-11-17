@@ -3,7 +3,7 @@
 Report : dont_touch
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Sat Nov 14 08:56:44 2020
+Date   : Tue Nov 17 01:42:42 2020
 **************************************************
 
 Description for Cell dont_touch Types:
@@ -25,8 +25,8 @@ pad4                                             cell        inh_ref
 pad5                                             cell        inh_ref
 pad6                                             cell        inh_ref
 pad7                                             cell        inh_ref
-pad9                                             cell        inh_ref
 pad8                                             cell        inh_ref
+pad9                                             cell        inh_ref
 pad10                                            cell        inh_ref
 pad11                                            cell        inh_ref
 pad12                                            cell        inh_ref
@@ -61,6 +61,19 @@ pad40                                            cell        inh_ref
 pad41                                            cell        inh_ref
 pad42                                            cell        inh_ref
 pad43                                            cell        inh_ref
+pad44                                            cell        inh_ref
+pad45                                            cell        inh_ref
+pad46                                            cell        inh_ref
+pad47                                            cell        inh_ref
+pad48                                            cell        inh_ref
+pad49                                            cell        inh_ref
+pad50                                            cell        inh_ref
+pad51                                            cell        inh_ref
+pad52                                            cell        inh_ref
+pad53                                            cell        inh_ref
+pad54                                            cell        inh_ref
+pad55                                            cell        inh_ref
+pad56                                            cell        inh_ref
 async_rstn_glitch_synchronizer                   cell        inh_ref
 async_rstn_glitch_synchronizer/async_rstn_synchronizer
                                                  cell        inh_parent, inh_ref
@@ -664,7 +677,7 @@ khu_sensor_top/ads1292_filter/iir_lpf/mult_1/i_RST
 khu_sensor_top/ads1292_filter/iir_lpf/mult_1/n4  net         idn
 khu_sensor_top/ads1292_filter/iir_lpf/mult_2/i_RST
                                                  net         idn
-khu_sensor_top/ads1292_filter/iir_lpf/mult_2/n913
+khu_sensor_top/ads1292_filter/iir_lpf/mult_2/n912
                                                  net         idn
 khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/*Logic1*
                                                  net         inh_parent
@@ -702,7 +715,7 @@ khu_sensor_top/ads1292_filter/iir_notch/mult_1/n922
                                                  net         idn
 khu_sensor_top/ads1292_filter/iir_notch/mult_2/i_RST
                                                  net         idn
-khu_sensor_top/ads1292_filter/iir_notch/mult_2/n912
+khu_sensor_top/ads1292_filter/iir_notch/mult_2/n913
                                                  net         idn
 khu_sensor_top/ads1292_filter/iir_notch/mult_3/i_RST
                                                  net         idn
@@ -749,6 +762,6 @@ khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/r_ff
 khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/n30
                                                  net         inh_parent
 --------------------------------------------------------------------------------
-Total 195 dont_touch cells
+Total 208 dont_touch cells
 Total 266 dont_touch nets
 1

@@ -45,8 +45,8 @@ foreach scenario $scenarios {
   # Set operating conditions
   if { $corner == "wst" } {
     set_operating_conditions -analysis_type on_chip_variation \
-      -max_library ${STD_WST}.db:$OPCOND_WST_LIB -max $OPCOND_WST \
-      -min_library ${STD_WST}.db:$OPCOND_WST_LIB -min $OPCOND_WST
+      -max_library $OPCOND_WST_LIB -max $OPCOND_WST \
+      -min_library $OPCOND_WST_LIB -min $OPCOND_WST
 
     set user_opcond "./icc_scripts/user_scripts/user_operation_conditions.tcl"
     if {[file exist $user_opcond]} {
@@ -64,8 +64,8 @@ foreach scenario $scenarios {
     }
   } elseif { $corner == "bst" } {
     set_operating_conditions -analysis_type on_chip_variation \
-      -max_library ${STD_BST}.db:$OPCOND_BST_LIB -max $OPCOND_BST \
-      -min_library ${STD_BST}.db:$OPCOND_BST_LIB -min $OPCOND_BST
+      -max_library $OPCOND_BST_LIB -max $OPCOND_BST \
+      -min_library $OPCOND_BST_LIB -min $OPCOND_BST
 
     set user_opcond "./icc_scripts/user_scripts/user_operation_conditions.tcl"
     if {[file exist $user_opcond]} {

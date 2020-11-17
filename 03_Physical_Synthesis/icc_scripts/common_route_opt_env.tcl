@@ -11,7 +11,7 @@ echo "***********************************************************************"
 set_route_mode_options -zroute true
 
 # common options
-set_route_zrt_common_options -connect_within_pins { {MET1 via_wire_standard_cell_pins} }
+set_route_zrt_common_options -connect_within_pins { {m1 via_wire_standard_cell_pins} }
 set_route_zrt_common_options -wide_macro_pin_as_fat_wire true
 set_route_zrt_common_options -concurrent_redundant_via_mode reserve_space
 
@@ -45,7 +45,7 @@ set_si_options -delta_delay true -static_noise true \
 	-max_transition_mode total_slew
 
 # Set Min/Max Routing Layers
-set_ignored_layers -rc_congestion_ignored_layers {MET5 MET6}
+set_ignored_layers -rc_congestion_ignored_layers {LB}
 
 if { $MAX_ROUTING_LAYER != ""} {set_ignored_layers -max_routing_layer $MAX_ROUTING_LAYER}
 if { $MIN_ROUTING_LAYER != ""} {set_ignored_layers -min_routing_layer $MIN_ROUTING_LAYER}
@@ -83,10 +83,10 @@ set route_opt_enable_blocked_region_buffer true
 # Notwithstanding that the Elmore delay is faster, its result do not always
 # correlate with PrimeTime. The Arnoldi model is more exact, but more runtime and memory.
 # For best QoR, the Arnoldi model is better during CTS.
-set_delay_calculation -arnoldi_effort high 
+set_delay_calculation -arnoldi_effort high
 
-# Handy Naming Convention for new cels added
-set compile_instance_name_prefix icc_place
+# Handy Naming Convention for new cells added
+set compile_instance_name_prefix icc_route
 
 # Added
 set timing_separate_clock_gating_group true

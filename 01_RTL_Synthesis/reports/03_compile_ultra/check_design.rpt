@@ -1,10 +1,10 @@
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad39 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
+Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
 Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
  
 ****************************************
 check_design summary:
 Version:     L-2016.03-SP5-5
-Date:        Sat Nov 14 08:52:57 2020
+Date:        Tue Nov 17 01:38:52 2020
 ****************************************
 
                    Name                                            Total
@@ -13,8 +13,8 @@ Inputs/Outputs                                                    198
     Multiply driven inputs (LINT-6)                                 5
     Unconnected ports (LINT-28)                                   193
 
-Cells                                                             180
-    Cells do not drive (LINT-1)                                    32
+Cells                                                             193
+    Cells do not drive (LINT-1)                                    45
     Connected to power or ground (LINT-32)                        140
     Nets connected to multiple pins on same cell (LINT-33)          8
 --------------------------------------------------------------------------------
@@ -24,20 +24,22 @@ Warning: In design 'khu_sensor_pad', cell 'pad2' does not drive any nets. (LINT-
 Warning: In design 'khu_sensor_pad', cell 'pad4' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad5' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad6' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad7' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad8' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad10' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad9' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad12' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad14' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad13' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad15' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad16' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad17' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad18' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad19' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad20' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad22' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad21' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad23' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad24' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad25' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad27' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad26' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad28' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad29' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad30' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad31' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad32' does not drive any nets. (LINT-1)
@@ -45,10 +47,21 @@ Warning: In design 'khu_sensor_pad', cell 'pad33' does not drive any nets. (LINT
 Warning: In design 'khu_sensor_pad', cell 'pad35' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad37' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad38' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad39' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad40' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad41' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', cell 'pad42' does not drive any nets. (LINT-1)
-Warning: In design 'khu_sensor_pad', cell 'pad43' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad44' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad46' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad47' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad48' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad49' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad50' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad51' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad52' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad53' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad54' does not drive any nets. (LINT-1)
+Warning: In design 'khu_sensor_pad', cell 'pad55' does not drive any nets. (LINT-1)
 Warning: In design 'async_rstn_synchronizer', cell 'I_0' does not drive any nets. (LINT-1)
 Warning: In design 'async_rst_synchronizer', cell 'I_0' does not drive any nets. (LINT-1)
 Warning: In design 'khu_sensor_pad', input port 'i_CLK' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)

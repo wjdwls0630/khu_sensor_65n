@@ -7,7 +7,7 @@ Report : timing
         -max_paths 10
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Sat Nov 14 08:56:45 2020
+Date   : Tue Nov 17 01:42:43 2020
 ****************************************
 
 Information: Some cells in the design are using inferred operating conditions.
@@ -81,38 +81,6 @@ Wire Load Model Mode: top
   slack (MET)                                                        0.12      
 
 
-  Startpoint: khu_sensor_top/mpr121_controller/i2c_master/sda_i_reg_reg
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: khu_sensor_top/mpr121_controller/i2c_master/last_sda_i_reg_reg
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: min
-
-  Point                                                   Incr       Path      Voltage
-  ------------------------------------------------------------------------------------
-  clock clk (rise edge)                                   0.00       0.00      
-  clock network delay (ideal)                             0.75       0.75      
-  khu_sensor_top/mpr121_controller/i2c_master/sda_i_reg_reg/CK (DFFTRX1MTH)
-                                                          0.00       0.75 r    1.08
-  khu_sensor_top/mpr121_controller/i2c_master/sda_i_reg_reg/Q (DFFTRX1MTH)
-                                                          0.54       1.29 f    1.08
-  khu_sensor_top/mpr121_controller/i2c_master/last_sda_i_reg_reg/D (DFFSQX1MTH)
-                                                          0.00       1.29 f    1.08
-  data arrival time                                                  1.29      
-
-  clock clk (rise edge)                                   0.00       0.00      
-  clock network delay (ideal)                             0.75       0.75      
-  khu_sensor_top/mpr121_controller/i2c_master/last_sda_i_reg_reg/CK (DFFSQX1MTH)
-                                                          0.00       0.75 r    
-  library hold time                                       0.32       1.07      
-  data required time                                                 1.07      
-  ------------------------------------------------------------------------------------
-  data required time                                                 1.07      
-  data arrival time                                                 -1.29      
-  ------------------------------------------------------------------------------------
-  slack (MET)                                                        0.22      
-
-
   Startpoint: khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]
@@ -128,7 +96,7 @@ Wire Load Model Mode: top
                                                           0.00       0.75 r    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/Q (DFFRHQX8MTR)
                                                           0.24       0.99 r    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U16/Y (AO2B2X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U18/Y (AO2B2X1MTH)
                                                           0.15       1.14 r    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/D (DFFRHQX8MTR)
                                                           0.00       1.14 r    1.08
@@ -162,7 +130,7 @@ Wire Load Model Mode: top
                                                           0.00       0.75 r    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/Q (DFFRHQX8MTR)
                                                           0.24       0.99 r    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U16/Y (AO2B2X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U18/Y (AO2B2X1MTH)
                                                           0.15       1.14 r    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/D (DFFRHQX8MTR)
                                                           0.00       1.14 r    1.08
@@ -196,7 +164,7 @@ Wire Load Model Mode: top
                                                           0.00       0.75 r    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/Q (DFFRHQX8MTR)
                                                           0.24       0.99 r    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U16/Y (AO2B2X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U18/Y (AO2B2X1MTH)
                                                           0.16       1.15 r    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/D (DFFRHQX8MTR)
                                                           0.00       1.15 r    1.08
@@ -215,6 +183,38 @@ Wire Load Model Mode: top
   slack (MET)                                                        0.24      
 
 
+  Startpoint: khu_sensor_top/mpr121_controller/i2c_master/sda_i_reg_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: khu_sensor_top/mpr121_controller/i2c_master/last_sda_i_reg_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00      
+  clock network delay (ideal)                             0.75       0.75      
+  khu_sensor_top/mpr121_controller/i2c_master/sda_i_reg_reg/CK (DFFTRX1MTH)
+                                                          0.00       0.75 r    1.08
+  khu_sensor_top/mpr121_controller/i2c_master/sda_i_reg_reg/Q (DFFTRX1MTH)
+                                                          0.54       1.29 f    1.08
+  khu_sensor_top/mpr121_controller/i2c_master/last_sda_i_reg_reg/D (DFFQX1MTH)
+                                                          0.00       1.29 f    1.08
+  data arrival time                                                  1.29      
+
+  clock clk (rise edge)                                   0.00       0.00      
+  clock network delay (ideal)                             0.75       0.75      
+  khu_sensor_top/mpr121_controller/i2c_master/last_sda_i_reg_reg/CK (DFFQX1MTH)
+                                                          0.00       0.75 r    
+  library hold time                                       0.29       1.04      
+  data required time                                                 1.04      
+  ------------------------------------------------------------------------------------
+  data required time                                                 1.04      
+  data arrival time                                                 -1.29      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        0.25      
+
+
   Startpoint: khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: khu_sensor_top/ads1292_filter/iir_hpf/r_counter_reg[1]
@@ -230,9 +230,9 @@ Wire Load Model Mode: top
                                                           0.00       0.75 r    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/Q (DFFRHQX8MTR)
                                                           0.24       0.99 r    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U36/Y (OAI32X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U38/Y (OAI32X1MTH)
                                                           0.07       1.07 f    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U19/Y (AO2B2X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U21/Y (AO2B2X1MTH)
                                                           0.26       1.33 f    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_counter_reg[1]/D (DFFRQX4MTH)
                                                           0.00       1.33 f    1.08
@@ -266,9 +266,9 @@ Wire Load Model Mode: top
                                                           0.00       0.75 r    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/Q (DFFRHQX8MTR)
                                                           0.24       0.99 r    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U36/Y (OAI32X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U38/Y (OAI32X1MTH)
                                                           0.08       1.07 f    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U19/Y (AO2B2X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U21/Y (AO2B2X1MTH)
                                                           0.26       1.34 f    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_counter_reg[1]/D (DFFRQX4MTH)
                                                           0.00       1.34 f    1.08
@@ -302,9 +302,9 @@ Wire Load Model Mode: top
                                                           0.00       0.75 r    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/Q (DFFRHQX8MTR)
                                                           0.24       0.99 r    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U36/Y (OAI32X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U38/Y (OAI32X1MTH)
                                                           0.08       1.07 f    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U19/Y (AO2B2X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U21/Y (AO2B2X1MTH)
                                                           0.26       1.34 f    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_counter_reg[1]/D (DFFRQX4MTH)
                                                           0.00       1.34 f    1.08
@@ -338,9 +338,9 @@ Wire Load Model Mode: top
                                                           0.00       0.75 r    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[1]/Q (DFFRHQX8MTR)
                                                           0.24       0.99 r    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U26/Y (XNOR2X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U28/Y (XNOR2X1MTH)
                                                           0.07       1.07 f    1.08
-  khu_sensor_top/ads1292_filter/iir_hpf/U22/Y (AO2B2X1MTH)
+  khu_sensor_top/ads1292_filter/iir_hpf/U24/Y (AO2B2X1MTH)
                                                           0.27       1.34 f    1.08
   khu_sensor_top/ads1292_filter/iir_hpf/o_Y_DATA_VALID_reg/D (DFFRQX1MTH)
                                                           0.00       1.34 f    1.08

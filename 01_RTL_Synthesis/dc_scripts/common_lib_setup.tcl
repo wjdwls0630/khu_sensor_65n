@@ -26,11 +26,11 @@ set IO_LIB_DIR ${LIB_DIR}/IO
 #**                Set 'search_path'                                         **
 #******************************************************************************
 set search_path ". $synopsys_root/libraries/syn \
-		    $PRIMITIVE_LIB_DIR/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys  \
-                    $PRIMITIVE_LIB_DIR/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys  \
-                    $PRIMITIVE_LIB_DIR/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys \
-                    $PRIMITIVE_LIB_DIR/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys \
-                    $IO_LIB_DIR/synopsys"
+		    					 $PRIMITIVE_LIB_DIR/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys  \
+                   $PRIMITIVE_LIB_DIR/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys  \
+                   $PRIMITIVE_LIB_DIR/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys \
+                   $PRIMITIVE_LIB_DIR/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys \
+                   $IO_LIB_DIR/synopsys"
 
 #******************************************************************************
 #**                Set libraries                                             **
@@ -78,7 +78,7 @@ set target_library [concat \
 #set synthetic_library dw_foundation.sldb
 set link_library [concat \
         {*} \
-	$PMK_RVT_SS.db \
+				$PMK_RVT_SS.db \
         $PMK_HVT_SS.db \
         $NOM_RVT_SS.db \
         $NOM_HVT_SS.db \

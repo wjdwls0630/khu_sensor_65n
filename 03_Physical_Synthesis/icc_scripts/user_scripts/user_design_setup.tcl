@@ -33,19 +33,14 @@ set USER_DIE_SIZE                  false              ;# true | false, if you kn
 set DIE_WIDTH                      ""                 ;# If USER_DIE_SIZW is true, define this variable.
 set DIE_HEIGHT                     ""                 ;# If USER_DIE_SIZW is true, define this variable.
 
-set ICC_IN_IO_CONST_FILE           "./TECH/padplace_ICC_khu_sensor_L13_68um.tdf"  ;# This is tdf format.
-
-# This is a tcl file that changes pad names in logic library to in physical library.
-# The tcl file functions appending "_p" to a last character of the pad names.
-# (e.g. vssoh -> vssoh_p)
-set ICC_IO_NAMING_FILE             "./icc_scripts/rules/pad_naming_rule.tcl"
+set ICC_IN_IO_CONST_FILE           "./rules/padplace_ICC_khu_sensor_L6LP_68um.tdf"; # This is tdf format.
 
 set CLOCK_MAX_TRAN    0.3; # clock path max transtion time.
 
-set MAX_ROUTING_LAYER              "MET4"
-set MIN_ROUTING_LAYER              ""
-set CLK_MAX_ROUTING_LAYER          "MET4"
-set CLK_MIN_ROUTING_LAYER          "MET3"
+set MAX_ROUTING_LAYER              "EA"; # Metal7
+set MIN_ROUTING_LAYER              "M1"; # Metal1
+set CLK_MAX_ROUTING_LAYER          "B2"; # Metal6
+set CLK_MIN_ROUTING_LAYER          "M3"; # Metal3
 
 #######################################################
 ## For Power Definition
@@ -104,7 +99,7 @@ set ICC_MCMM_SCENARIOS_FILE        "./icc_scripts/mcmm_scenario/scenarios.tcl"
 
 ## This is example, modify this according to your scenarios.
 ##
-## Generally, FP_SCN, PLACE_OPT_SNC and ROUTE_SCN uses worst function mode scenario such as func1_wstti.
+## Generally, FLOORPLAN_SCN, PLACE_OPT_SNC and ROUTE_SCN uses worst function mode scenario such as func1_wstti.
 ## CLOCK_OPT_CTS_SCN uses all cts scenario such as funccts_wstti,scantcts_wstti,bistcts_wstti,jtagcts_wstti.
 ## CLOCK_OPT_PSYN_SCN, ROUTE_OPT_SCN and CHIP_FINISH_SCN uses all scenarios except for CLOCK_OPT_CTS_SCN.
 ## HOLD_ONLY_SCN optimizes only hold time and mttv.
@@ -112,18 +107,18 @@ set ICC_MCMM_SCENARIOS_FILE        "./icc_scripts/mcmm_scenario/scenarios.tcl"
 ##
 # Since the samsung013 Library is damaged, the worst operating condition is only applied.
 #set scenarios                      "func1_wst func1_bst"
-set scenarios                      "func1_wst funccts_wst"
+set scenarios                      "func1_wst func1_bst funccts_wst"
 
-set FP_SCN                         "func1_wst"
+set FLOORPLAN_SCN                  "func1_wst"
 set PLACE_OPT_SCN                  "func1_wst"
 set CLOCK_OPT_CTS_SCN              "funccts_wst"
 #set CLOCK_OPT_PSYN_SCN             "func1_bst"
-set CLOCK_OPT_PSYN_SCN             "func1_wst"
+set CLOCK_OPT_PSYN_SCN             "func1_wst func1_bst"
 set ROUTE_SCN                      "func1_wst"
 #set ROUTE_OPT_SCN                  "func1_bst"
-set ROUTE_OPT_SCN                  "func1_wst"
+set ROUTE_OPT_SCN                  "func1_wst func1_bst"
 #set CHIP_FINISH_SCN                "func1_bst"
-set CHIP_FINISH_SCN                "func1_wst"
+set CHIP_FINISH_SCN                "func1_wst func1_bst"
 
 set CLOCK_OPT_CTS_SCN_READ_AGAIN   true              ;# If true, ICC will create scenario again.
 set CLOCK_OPT_PSYN_SCN_READ_AGAIN  false              ;# If true, ICC will create scenario again.
@@ -157,14 +152,14 @@ set JTAGCTS_SDC        ""
 ## You have to define the operation condition name and library name in user_opcond.tcl.
 ##
 
-set OPCOND_WST          V105WTP1250
-set OPCOND_WST_LIB      std150e_wst_105_p125 
+set OPCOND_WST          "ss_1p08v_125c ss_1p08v_m40c"
+set OPCOND_WST_LIB      "scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm"
 
 set OPCOND_WST_TIV      ""
 set OPCOND_WST_LIB_TIV  ""
 
-set OPCOND_BST          V135BTN0400
-set OPCOND_BST_LIB      std150e_bst_135_n040
+set OPCOND_BST          "ff_1p32v_m40c"
+set OPCOND_BST_LIB      "scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm"
 
 set OPCOND_BST_TIV      ""
 set OPCOND_BST_LIB_TIV  ""
@@ -199,4 +194,3 @@ set_message_info -id CTS-102    -limit 1
 set_message_info -id OPT-170    -limit 1
 set_message_info -id TIM-178    -limit 1
 set_message_info -id TIM-179    -limit 1
-

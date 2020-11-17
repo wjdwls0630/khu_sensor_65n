@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Sat Nov 14 08:56:51 2020
+# Created by write_sdc on Tue Nov 17 01:42:49 2020
 
 ###################################################################
 set sdc_version 2.0
@@ -315,7 +315,7 @@ khu_sensor_top/mpr121_controller/i2c_master/clk_gate_data_out_reg_reg_0/ENCLK]
 set_max_delay 0  -from [get_pins                                                               \
 khu_sensor_top/mpr121_controller/i2c_master/clk_gate_phy_rx_data_reg_reg/ENCLK]
 set_max_delay 0  -from [get_pins                                                               \
-khu_sensor_top/mpr121_controller/clk_gate_r_i2c_reg_addr_reg_0/ENCLK]
+khu_sensor_top/mpr121_controller/clk_gate_r_i2c_reg_data_in_reg/ENCLK]
 set_max_delay 0  -from [get_pins                                                               \
 khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_INIT_SET_reg/ENCLK]
 set_max_delay 0  -from [get_pins                                                               \
@@ -434,7 +434,7 @@ khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_e_reg_0/ENCLK]
 set_max_delay 0  -from [get_pins                                                               \
 khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_e_reg/ENCLK]
 set_max_delay 0  -from [get_pins                                                               \
-khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_reg/ENCLK]
+khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_a_reg_0/ENCLK]
 set_max_delay 0  -from [get_pins                                                               \
 khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_product_reg_0/ENCLK]
 set_max_delay 0  -from [get_pins                                                               \
@@ -624,6 +624,16 @@ set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
 SS65LP3P3V_WST_108_300_P125 -min_library                                       \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
+[get_cells pad45]
+set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
+ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
+SS65LP3P3V_WST_108_300_P125 -min_library                                       \
+ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
+[get_cells pad43]
+set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
+ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
+SS65LP3P3V_WST_108_300_P125 -min_library                                       \
+ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
 [get_cells pad36]
 set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
@@ -634,32 +644,27 @@ set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
 SS65LP3P3V_WST_108_300_P125 -min_library                                       \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
-[get_cells pad29]
+[get_cells pad27]
 set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
 SS65LP3P3V_WST_108_300_P125 -min_library                                       \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
-[get_cells pad26]
+[get_cells pad25]
 set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
 SS65LP3P3V_WST_108_300_P125 -min_library                                       \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
-[get_cells pad21]
+[get_cells pad22]
 set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
 SS65LP3P3V_WST_108_300_P125 -min_library                                       \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
-[get_cells pad18]
+[get_cells pad17]
 set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
 SS65LP3P3V_WST_108_300_P125 -min_library                                       \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
-[get_cells pad15]
-set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
-ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
-SS65LP3P3V_WST_108_300_P125 -min_library                                       \
-ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
-[get_cells pad13]
+[get_cells pad14]
 set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
 SS65LP3P3V_WST_108_300_P125 -min_library                                       \
@@ -669,12 +674,7 @@ set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
 SS65LP3P3V_WST_108_300_P125 -min_library                                       \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
-[get_cells pad9]
-set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
-ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
-SS65LP3P3V_WST_108_300_P125 -min_library                                       \
-ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -object_list        \
-[get_cells pad7]
+[get_cells pad10]
 set_operating_conditions -max SS65LP3P3V_WST_108_300_P125 -max_library         \
 ss65lp3p3v_wst_108_300_p125.db:ss65lp3p3v_wst_108_300_p125 -min                \
 SS65LP3P3V_WST_108_300_P125 -min_library                                       \

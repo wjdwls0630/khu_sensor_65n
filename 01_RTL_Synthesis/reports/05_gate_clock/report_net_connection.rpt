@@ -5,7 +5,7 @@ Report : net
         -verbose
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Sat Nov 14 08:56:44 2020
+Date   : Tue Nov 17 01:42:42 2020
 ****************************************
 
 
@@ -48,7 +48,7 @@ Connections for net 'net2113':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad7/CLTCH          Input Pin (pvhbcudtbrt)
+    pad10/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2112':
@@ -69,7 +69,7 @@ Connections for net 'net2112':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad9/CLTCH          Input Pin (pvhbcudtbrt)
+    pad11/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2111':
@@ -90,7 +90,7 @@ Connections for net 'net2111':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad11/CLTCH         Input Pin (pvhbcudtbrt)
+    pad14/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2110':
@@ -111,7 +111,7 @@ Connections for net 'net2110':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad13/CLTCH         Input Pin (pvhbcudtbrt)
+    pad17/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2109':
@@ -132,7 +132,7 @@ Connections for net 'net2109':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad15/CLTCH         Input Pin (pvhbcudtbrt)
+    pad22/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2108':
@@ -153,7 +153,7 @@ Connections for net 'net2108':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad18/CLTCH         Input Pin (pvhbcudtbrt)
+    pad25/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2107':
@@ -174,7 +174,7 @@ Connections for net 'net2107':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad21/CLTCH         Input Pin (pvhbcudtbrt)
+    pad27/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2106':
@@ -195,7 +195,7 @@ Connections for net 'net2106':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad26/CLTCH         Input Pin (pvhbcudtbrt)
+    pad34/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2105':
@@ -216,7 +216,7 @@ Connections for net 'net2105':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad29/CLTCH         Input Pin (pvhbcudtbrt)
+    pad36/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2104':
@@ -237,7 +237,7 @@ Connections for net 'net2104':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad34/CLTCH         Input Pin (pvhbcudtbrt)
+    pad43/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2103':
@@ -258,7 +258,7 @@ Connections for net 'net2103':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad36/CLTCH         Input Pin (pvhbcudtbrt)
+    pad45/CLTCH         Input Pin (pvhbcudtbrt)
                                             0.01347
 
 net 'net2102':
@@ -279,7 +279,7 @@ Connections for net 'net2102':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad39/CLTCH         Input Pin (pvhbsudtart)
+    pad56/CLTCH         Input Pin (pvhbsudtart)
                                             0.01347
 
 net 'w_rstn':
@@ -323,7 +323,7 @@ Connections for net 'w_rstn_p':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad39/Y             Output Pin (pvhbsudtart)
+    pad56/Y             Output Pin (pvhbsudtart)
                                             0
 
     Load Pins           Type                Pin Cap
@@ -349,7 +349,7 @@ Connections for net 'w_mpr121_sda_in_p':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad36/Y             Output Pin (pvhbcudtbrt)
+    pad45/Y             Output Pin (pvhbcudtbrt)
                                             0
 
     Load Pins           Type                Pin Cap
@@ -378,18 +378,18 @@ Connections for net 'w_mpr121_sda_out_p':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    khu_sensor_top/mpr121_controller/i2c_master/U38/B1
+    khu_sensor_top/mpr121_controller/i2c_master/U35/B1
                         Input Pin (AO22X1MTH)
                                             0.0005643
-    khu_sensor_top/mpr121_controller/i2c_master/U217/A
+    khu_sensor_top/mpr121_controller/i2c_master/U216/A
                         Input Pin (INVX1MTH)
                                             0.0008208
     khu_sensor_top/mpr121_controller/i2c_master/U245/B1
                         Input Pin (AOI221X1MTH)
                                             0.00081985
-    pad36/CE            Input Pin (pvhbcudtbrt)
+    pad45/CE            Input Pin (pvhbcudtbrt)
                                             0.00792
-    pad36/A             Input Pin (pvhbcudtbrt)
+    pad45/A             Input Pin (pvhbcudtbrt)
                                             0.00744
 
 net 'w_mpr121_sda_en_p':
@@ -406,7 +406,7 @@ Connections for net 'w_mpr121_sda_en_p':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    khu_sensor_top/mpr121_controller/i2c_master/U217/Y
+    khu_sensor_top/mpr121_controller/i2c_master/U216/Y
                         Output Pin (INVX1MTH)
                                             0
 
@@ -415,7 +415,7 @@ Connections for net 'w_mpr121_sda_en_p':
     khu_sensor_top/mpr121_controller/i2c_master/U256/A1
                         Input Pin (OAI211X1MTH)
                                             0.0008474
-    pad36/CI            Input Pin (pvhbcudtbrt)
+    pad45/CI            Input Pin (pvhbcudtbrt)
                                             0.00728
 
 net 'w_mpr121_scl_in_p':
@@ -432,7 +432,7 @@ Connections for net 'w_mpr121_scl_in_p':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad34/Y             Output Pin (pvhbcudtbrt)
+    pad43/Y             Output Pin (pvhbcudtbrt)
                                             0
 
     Load Pins           Type                Pin Cap
@@ -443,9 +443,9 @@ Connections for net 'w_mpr121_scl_in_p':
 
 net 'w_mpr121_scl_out_p':
     dont_touch:         FALSE               
-    pin capacitance:    min:0.0101301    max:0.0102163
+    pin capacitance:    min:0.0103574    max:0.0104354
     wire capacitance:   min:0    max:0
-    total capacitance:  min:0.0101301    max:0.0102163
+    total capacitance:  min:0.0103574    max:0.0104354
     wire resistance:    NA
     number of drivers:  1
     number of loads:    5
@@ -461,10 +461,10 @@ Connections for net 'w_mpr121_scl_out_p':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    khu_sensor_top/mpr121_controller/i2c_master/U14/A
-                        Input Pin (BUFX2MTR)
-                                            0.0007623
-    khu_sensor_top/mpr121_controller/i2c_master/U337/B1
+    khu_sensor_top/mpr121_controller/i2c_master/U40/A
+                        Input Pin (BUFX4MTH)
+                                            0.00098135
+    khu_sensor_top/mpr121_controller/i2c_master/U335/B1
                         Input Pin (AO22X1MTH)
                                             0.0005643
     khu_sensor_top/mpr121_controller/i2c_master/U242/A1
@@ -473,7 +473,7 @@ Connections for net 'w_mpr121_scl_out_p':
     khu_sensor_top/mpr121_controller/i2c_master/U371/A
                         Input Pin (INVX1MTH)
                                             0.0008208
-    pad34/A             Input Pin (pvhbcudtbrt)
+    pad43/A             Input Pin (pvhbcudtbrt)
                                             0.00744
 
 net '_78_net_':
@@ -495,7 +495,7 @@ Connections for net '_78_net_':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad34/CE            Input Pin (pvhbcudtbrt)
+    pad43/CE            Input Pin (pvhbcudtbrt)
                                             0.00792
 
 net 'w_mpr121_scl_en_p':
@@ -512,15 +512,15 @@ Connections for net 'w_mpr121_scl_en_p':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    khu_sensor_top/mpr121_controller/i2c_master/U14/Y
-                        Output Pin (BUFX2MTR)
+    khu_sensor_top/mpr121_controller/i2c_master/U40/Y
+                        Output Pin (BUFX4MTH)
                                             0
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
     I_0/A               Input Pin (INVX4MTR)
                                             0.0020313
-    pad34/CI            Input Pin (pvhbcudtbrt)
+    pad43/CI            Input Pin (pvhbcudtbrt)
                                             0.00728
 
 net 'w_uart_rx_p':
@@ -537,7 +537,7 @@ Connections for net 'w_uart_rx_p':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad29/Y             Output Pin (pvhbcudtbrt)
+    pad36/Y             Output Pin (pvhbcudtbrt)
                                             0
 
     Load Pins           Type                Pin Cap
@@ -569,7 +569,7 @@ Connections for net 'w_uart_tx_p':
     khu_sensor_top/uart_controller/uart_tx/U27/B0
                         Input Pin (OAI21X1MTH)
                                             0.00080275
-    pad26/A             Input Pin (pvhbcudtbrt)
+    pad34/A             Input Pin (pvhbcudtbrt)
                                             0.00744
 
 net 'w_ads1292_drdy_p':
@@ -586,24 +586,24 @@ Connections for net 'w_ads1292_drdy_p':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad21/Y             Output Pin (pvhbcudtbrt)
+    pad27/Y             Output Pin (pvhbcudtbrt)
                                             0
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    khu_sensor_top/ads1292_controller/U47/AN
+    khu_sensor_top/ads1292_controller/U48/AN
                         Input Pin (NAND2BX1MTH)
                                             0.00072105
     khu_sensor_top/ads1292_controller/r_ldrdy_reg/D
                         Input Pin (DFFRQX1MTH)
                                             0.000475
-    khu_sensor_top/ads1292_controller/U44/A0
+    khu_sensor_top/ads1292_controller/U40/A0
                         Input Pin (AOI211X2MTR)
                                             0.0009819
-    khu_sensor_top/ads1292_controller/U70/A2
+    khu_sensor_top/ads1292_controller/U73/A2
                         Input Pin (AOI31X2MTR)
                                             0.0009936
-    khu_sensor_top/ads1292_controller/U88/A
+    khu_sensor_top/ads1292_controller/U86/A
                         Input Pin (NOR2X2MTR)
                                             0.0010809
 
@@ -622,7 +622,7 @@ Connections for net 'w_ads1292_mosi_p':
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
     khu_sensor_top/ads1292_controller/spi_master/o_SPI_MOSI_reg/Q
-                        Output Pin (DFFRQX1MTH)
+                        Output Pin (DFFRQX4MTH)
                                             0
 
     Load Pins           Type                Pin Cap
@@ -630,7 +630,7 @@ Connections for net 'w_ads1292_mosi_p':
     khu_sensor_top/ads1292_controller/spi_master/U35/A0
                         Input Pin (AO2B2X1MTH)
                                             0.00059565
-    pad18/A             Input Pin (pvhbcudtbrt)
+    pad25/A             Input Pin (pvhbcudtbrt)
                                             0.00744
 
 net 'w_ads1292_miso_p':
@@ -647,7 +647,7 @@ Connections for net 'w_ads1292_miso_p':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad15/Y             Output Pin (pvhbcudtbrt)
+    pad22/Y             Output Pin (pvhbcudtbrt)
                                             0
 
     Load Pins           Type                Pin Cap
@@ -679,7 +679,7 @@ Connections for net 'w_ads1292_sclk_p':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad13/A             Input Pin (pvhbcudtbrt)
+    pad17/A             Input Pin (pvhbcudtbrt)
                                             0.00744
 
 net 'w_ads1292_csn_p':
@@ -705,7 +705,7 @@ Connections for net 'w_ads1292_csn_p':
     khu_sensor_top/ads1292_controller/U4/A1N
                         Input Pin (OAI2BB2X1MTH)
                                             0.00068875
-    pad11/A             Input Pin (pvhbcudtbrt)
+    pad14/A             Input Pin (pvhbcudtbrt)
                                             0.00744
 
 net 'w_ads1292_start_p':
@@ -731,7 +731,7 @@ Connections for net 'w_ads1292_start_p':
     khu_sensor_top/ads1292_controller/U314/B
                         Input Pin (NAND2X1MTH)
                                             0.0008208
-    pad9/A              Input Pin (pvhbcudtbrt)
+    pad11/A             Input Pin (pvhbcudtbrt)
                                             0.00744
 
 net 'w_ads1292_reset_p':
@@ -757,14 +757,14 @@ Connections for net 'w_ads1292_reset_p':
     khu_sensor_top/ads1292_controller/U3/A0N
                         Input Pin (OAI2BB2X1MTH)
                                             0.0006764
-    pad7/A              Input Pin (pvhbcudtbrt)
+    pad10/A             Input Pin (pvhbcudtbrt)
                                             0.00744
 
 net 'w_clk_p':
     dont_touch:         FALSE               
-    pin capacitance:    min:0.499162    max:0.507678
+    pin capacitance:    min:0.500038    max:0.508598
     wire capacitance:   min:0    max:0
-    total capacitance:  min:0.499162    max:0.507678
+    total capacitance:  min:0.500038    max:0.508598
     wire resistance:    NA
     number of drivers:  1
     number of loads:    363
@@ -911,7 +911,7 @@ Connections for net 'w_clk_p':
     khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_product_reg_0/latch/CK
                         Input Pin (TLATNTSCAX2MTH)
                                             0.00202
-    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_reg/latch/CK
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_a_reg_0/latch/CK
                         Input Pin (TLATNTSCAX2MTH)
                                             0.00202
     khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_e_reg/latch/CK
@@ -1094,6 +1094,9 @@ Connections for net 'w_clk_p':
     khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_x_data_reg_0/latch/CK
                         Input Pin (TLATNTSCAX2MTH)
                                             0.00202
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/state_reg[1]/CK
+                        Input Pin (DFFQX2MTH)
+                                            0.0008113
     khu_sensor_top/ads1292_filter/iir_hpf/mult/o_Z_STB_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
@@ -1106,15 +1109,12 @@ Connections for net 'w_clk_p':
     khu_sensor_top/ads1292_filter/iir_hpf/mult/guard_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
-    khu_sensor_top/ads1292_filter/iir_hpf/mult/state_reg[1]/CK
-                        Input Pin (DFFQX2MTH)
-                                            0.0008113
     khu_sensor_top/ads1292_filter/iir_hpf/mult/state_reg[2]/CK
-                        Input Pin (DFFQX1MTR)
-                                            0.0008055
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
     khu_sensor_top/ads1292_filter/iir_hpf/mult/state_reg[3]/CK
-                        Input Pin (DFFTRX1MTR)
-                                            0.0009036
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
     khu_sensor_top/ads1292_filter/iir_hpf/mult/state_reg[0]/CK
                         Input Pin (DFFTRX1MTH)
                                             0.00089585
@@ -1178,16 +1178,10 @@ Connections for net 'w_clk_p':
     khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_2_B_reg/latch/CK
                         Input Pin (TLATNTSCAX2MTH)
                                             0.00202
-    khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg[2]/CK
-                        Input Pin (DFFQX1MTR)
-                                            0.0008055
     khu_sensor_top/ads1292_filter/iir_notch/mult_3/o_AB_ACK_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
     khu_sensor_top/ads1292_filter/iir_notch/mult_3/round_bit_reg/CK
-                        Input Pin (DFFQX1MTH)
-                                            0.00079895
-    khu_sensor_top/ads1292_filter/iir_notch/mult_3/guard_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
     khu_sensor_top/ads1292_filter/iir_notch/mult_3/o_Z_STB_reg/CK
@@ -1196,6 +1190,12 @@ Connections for net 'w_clk_p':
     khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg[1]/CK
                         Input Pin (DFFQX2MTH)
                                             0.0008113
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg[2]/CK
+                        Input Pin (DFFQX2MTH)
+                                            0.0008113
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/guard_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
     khu_sensor_top/ads1292_filter/iir_notch/mult_3/state_reg[0]/CK
                         Input Pin (DFFTRX1MTH)
                                             0.00089585
@@ -1215,8 +1215,8 @@ Connections for net 'w_clk_p':
                         Input Pin (DFFQX2MTR)
                                             0.000819
     khu_sensor_top/ads1292_filter/iir_notch/mult_2/state_reg[2]/CK
-                        Input Pin (DFFHQX2MTR)
-                                            0.0011232
+                        Input Pin (DFFQX4MTR)
+                                            0.0008163
     khu_sensor_top/ads1292_filter/iir_notch/mult_2/state_reg[0]/CK
                         Input Pin (DFFTRX1MTR)
                                             0.0009036
@@ -1227,8 +1227,8 @@ Connections for net 'w_clk_p':
                         Input Pin (DFFTRX1MTR)
                                             0.0009036
     khu_sensor_top/ads1292_filter/iir_notch/mult_1/state_reg[1]/CK
-                        Input Pin (DFFQX1MTH)
-                                            0.00079895
+                        Input Pin (DFFQX2MTH)
+                                            0.0008113
     khu_sensor_top/ads1292_filter/iir_notch/mult_1/round_bit_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
@@ -1238,27 +1238,27 @@ Connections for net 'w_clk_p':
     khu_sensor_top/ads1292_filter/iir_notch/mult_1/o_Z_STB_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
-    khu_sensor_top/ads1292_filter/iir_notch/mult_1/state_reg[2]/CK
-                        Input Pin (DFFQX2MTH)
-                                            0.0008113
     khu_sensor_top/ads1292_filter/iir_notch/mult_1/o_AB_ACK_reg/CK
                         Input Pin (DFFQX4MTH)
                                             0.0008094
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/state_reg[2]/CK
+                        Input Pin (DFFTRX1MTH)
+                                            0.00089585
     khu_sensor_top/ads1292_filter/iir_notch/mult_1/state_reg[3]/CK
                         Input Pin (DFFTRX1MTH)
                                             0.00089585
     khu_sensor_top/ads1292_filter/iir_notch/mult_1/state_reg[0]/CK
-                        Input Pin (DFFTRX1MTH)
-                                            0.00089585
+                        Input Pin (DFFTRX1MTR)
+                                            0.0009036
     khu_sensor_top/ads1292_filter/iir_notch/add_2/o_AB_ACK_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/state_reg[3]/CK
+                        Input Pin (DFFQX1MTR)
+                                            0.0008055
     khu_sensor_top/ads1292_filter/iir_notch/add_2/o_Z_STB_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
-    khu_sensor_top/ads1292_filter/iir_notch/add_2/state_reg[3]/CK
-                        Input Pin (DFFQX2MTR)
-                                            0.000819
     khu_sensor_top/ads1292_filter/iir_notch/add_2/state_reg[1]/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
@@ -1344,20 +1344,20 @@ Connections for net 'w_clk_p':
                         Input Pin (DFFTRX1MTH)
                                             0.00089585
     khu_sensor_top/ads1292_filter/iir_lpf/mult_1/state_reg[1]/CK
-                        Input Pin (DFFQX1MTR)
-                                            0.0008055
+                        Input Pin (DFFHQX8MTR)
+                                            0.0024255
     khu_sensor_top/ads1292_filter/iir_lpf/mult_1/o_Z_STB_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
     khu_sensor_top/ads1292_filter/iir_lpf/mult_1/round_bit_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/state_reg[2]/CK
+                        Input Pin (DFFHQX1MTR)
+                                            0.0010998
     khu_sensor_top/ads1292_filter/iir_lpf/mult_1/guard_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
-    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/state_reg[2]/CK
-                        Input Pin (DFFQX2MTR)
-                                            0.000819
     khu_sensor_top/ads1292_filter/iir_lpf/mult_1/o_AB_ACK_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
@@ -1374,8 +1374,8 @@ Connections for net 'w_clk_p':
                         Input Pin (DFFQX1MTH)
                                             0.00079895
     khu_sensor_top/ads1292_filter/iir_lpf/add/state_reg[3]/CK
-                        Input Pin (DFFQX2MTH)
-                                            0.0008113
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
     khu_sensor_top/ads1292_filter/iir_lpf/add/state_reg[1]/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
@@ -1458,14 +1458,17 @@ Connections for net 'w_clk_p':
                         Input Pin (TLATNTSCAX2MTH)
                                             0.00202
     khu_sensor_top/ads1292_controller/spi_master/o_SPI_MOSI_reg/CK
-                        Input Pin (DFFRQX1MTH)
-                                            0.0006783
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_controller/spi_master/r_TX_Bit_Count_reg[1]/CK
+                        Input Pin (DFFSQX2MTH)
+                                            0.001007
     khu_sensor_top/ads1292_controller/spi_master/r_TX_Bit_Count_reg[2]/CK
                         Input Pin (DFFSQX1MTH)
                                             0.0010089
-    khu_sensor_top/ads1292_controller/spi_master/r_TX_Bit_Count_reg[1]/CK
-                        Input Pin (DFFSQX1MTH)
-                                            0.0010089
+    khu_sensor_top/ads1292_controller/spi_master/o_TX_Ready_reg/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
     khu_sensor_top/ads1292_controller/spi_master/r_TX_Bit_Count_reg[0]/CK
                         Input Pin (DFFSQX1MTH)
                                             0.0010089
@@ -1473,9 +1476,6 @@ Connections for net 'w_clk_p':
                         Input Pin (DFFRQX1MTH)
                                             0.0006783
     khu_sensor_top/ads1292_controller/spi_master/r_Trailing_Edge_reg/CK
-                        Input Pin (DFFRQX4MTH)
-                                            0.0006612
-    khu_sensor_top/ads1292_controller/spi_master/o_TX_Ready_reg/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
     khu_sensor_top/ads1292_controller/spi_master/o_RX_DV_reg/CK
@@ -1547,13 +1547,13 @@ Connections for net 'w_clk_p':
     khu_sensor_top/ads1292_filter/iir_hpf/o_X_DATA_READY_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
-    khu_sensor_top/ads1292_filter/iir_hpf/r_mult_Z_ACK_reg/CK
-                        Input Pin (DFFRQX4MTH)
-                                            0.0006612
     khu_sensor_top/ads1292_filter/iir_hpf/r_pstate_reg[0]/CK
                         Input Pin (DFFRHQX4MTR)
                                             0.0013806
     khu_sensor_top/ads1292_filter/iir_hpf/r_counter_reg[1]/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_hpf/r_add_AB_STB_reg/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
     khu_sensor_top/ads1292_filter/iir_hpf/r_add_Z_ACK_reg/CK
@@ -1562,7 +1562,7 @@ Connections for net 'w_clk_p':
     khu_sensor_top/ads1292_filter/iir_hpf/r_mult_AB_STB_reg/CK
                         Input Pin (DFFRQX1MTH)
                                             0.0006783
-    khu_sensor_top/ads1292_filter/iir_hpf/r_add_AB_STB_reg/CK
+    khu_sensor_top/ads1292_filter/iir_hpf/r_mult_Z_ACK_reg/CK
                         Input Pin (DFFRQX1MTH)
                                             0.0006783
     khu_sensor_top/ads1292_filter/iir_hpf/r_counter_reg[0]/CK
@@ -1574,42 +1574,42 @@ Connections for net 'w_clk_p':
     khu_sensor_top/ads1292_filter/iir_hpf/o_Y_DATA_VALID_reg/CK
                         Input Pin (DFFRQX1MTH)
                                             0.0006783
+    khu_sensor_top/ads1292_filter/iir_notch/r_counter_reg[2]/CK
+                        Input Pin (DFFRHQX2MTR)
+                                            0.0012681
     khu_sensor_top/ads1292_filter/iir_notch/o_X_DATA_READY_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
     khu_sensor_top/ads1292_filter/iir_notch/o_Y_DATA_VALID_reg/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
-    khu_sensor_top/ads1292_filter/iir_notch/r_mult_3_Z_ACK_reg/CK
+    khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_Z_ACK_reg/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
-    khu_sensor_top/ads1292_filter/iir_notch/r_mult_1_Z_ACK_reg/CK
+    khu_sensor_top/ads1292_filter/iir_notch/r_mult_3_Z_ACK_reg/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
     khu_sensor_top/ads1292_filter/iir_notch/r_mult_2_Z_ACK_reg/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
+    khu_sensor_top/ads1292_filter/iir_notch/r_add_1_Z_ACK_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
     khu_sensor_top/ads1292_filter/iir_notch/r_add_2_Z_ACK_reg/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
-    khu_sensor_top/ads1292_filter/iir_notch/r_pstate_reg[1]/CK
-                        Input Pin (DFFRHQX2MTH)
-                                            0.00127395
-    khu_sensor_top/ads1292_filter/iir_notch/r_counter_reg[2]/CK
-                        Input Pin (DFFRHQX2MTR)
-                                            0.0012681
     khu_sensor_top/ads1292_filter/iir_notch/r_pstate_reg[0]/CK
-                        Input Pin (DFFRQX4MTR)
-                                            0.0006795
-    khu_sensor_top/ads1292_filter/iir_notch/r_add_1_Z_ACK_reg/CK
-                        Input Pin (DFFRQX1MTH)
-                                            0.0006783
-    khu_sensor_top/ads1292_filter/iir_notch/r_counter_reg[1]/CK
-                        Input Pin (DFFRHQX8MTR)
-                                            0.0024867
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
     khu_sensor_top/ads1292_filter/iir_notch/r_counter_reg[0]/CK
                         Input Pin (DFFRHQX8MTR)
                                             0.0024867
+    khu_sensor_top/ads1292_filter/iir_notch/r_counter_reg[1]/CK
+                        Input Pin (DFFRHQX8MTR)
+                                            0.0024867
+    khu_sensor_top/ads1292_filter/iir_notch/r_pstate_reg[1]/CK
+                        Input Pin (DFFRQX1MTH)
+                                            0.0006783
     khu_sensor_top/ads1292_filter/iir_lpf/o_Y_DATA_VALID_reg/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
@@ -1622,13 +1622,13 @@ Connections for net 'w_clk_p':
     khu_sensor_top/ads1292_filter/iir_lpf/r_pstate_reg[1]/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
-    khu_sensor_top/ads1292_filter/iir_lpf/r_counter_reg[0]/CK
-                        Input Pin (DFFRQX4MTR)
-                                            0.0006795
     khu_sensor_top/ads1292_filter/iir_lpf/r_add_AB_STB_reg/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
     khu_sensor_top/ads1292_filter/iir_lpf/r_add_Z_ACK_reg/CK
+                        Input Pin (DFFRQX4MTH)
+                                            0.0006612
+    khu_sensor_top/ads1292_filter/iir_lpf/r_counter_reg[0]/CK
                         Input Pin (DFFRQX4MTH)
                                             0.0006612
     khu_sensor_top/ads1292_filter/iir_lpf/r_counter_reg[1]/CK
@@ -1685,10 +1685,13 @@ Connections for net 'w_clk_p':
     khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_INIT_SET_reg/latch/CK
                         Input Pin (TLATNTSCAX2MTH)
                                             0.00202
-    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_reg_addr_reg_0/latch/CK
+    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_reg_data_in_reg/latch/CK
                         Input Pin (TLATNTSCAX2MTH)
                                             0.00202
     khu_sensor_top/mpr121_controller/i2c_master/data_out_valid_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
+    khu_sensor_top/mpr121_controller/i2c_master/delay_scl_reg_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
     khu_sensor_top/mpr121_controller/i2c_master/mode_read_reg_reg/CK
@@ -1698,9 +1701,6 @@ Connections for net 'w_clk_p':
                         Input Pin (DFFQX1MTH)
                                             0.00079895
     khu_sensor_top/mpr121_controller/i2c_master/delay_reg_reg[9]/CK
-                        Input Pin (DFFQX1MTH)
-                                            0.00079895
-    khu_sensor_top/mpr121_controller/i2c_master/bus_active_reg_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
     khu_sensor_top/mpr121_controller/i2c_master/mode_stop_reg_reg/CK
@@ -1721,7 +1721,7 @@ Connections for net 'w_clk_p':
     khu_sensor_top/mpr121_controller/i2c_master/mode_write_multiple_reg_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
-    khu_sensor_top/mpr121_controller/i2c_master/delay_scl_reg_reg/CK
+    khu_sensor_top/mpr121_controller/i2c_master/bus_active_reg_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
     khu_sensor_top/mpr121_controller/i2c_master/bit_count_reg_reg[3]/CK
@@ -1730,12 +1730,12 @@ Connections for net 'w_clk_p':
     khu_sensor_top/mpr121_controller/i2c_master/scl_i_reg_reg/CK
                         Input Pin (DFFTRX1MTH)
                                             0.00089585
-    khu_sensor_top/mpr121_controller/i2c_master/last_sda_i_reg_reg/CK
-                        Input Pin (DFFSQX1MTH)
-                                            0.0010089
     khu_sensor_top/mpr121_controller/i2c_master/sda_i_reg_reg/CK
                         Input Pin (DFFTRX1MTH)
                                             0.00089585
+    khu_sensor_top/mpr121_controller/i2c_master/last_sda_i_reg_reg/CK
+                        Input Pin (DFFQX1MTH)
+                                            0.00079895
     khu_sensor_top/mpr121_controller/i2c_master/missed_ack_reg_reg/CK
                         Input Pin (DFFQX1MTH)
                                             0.00079895
@@ -1883,13 +1883,13 @@ Connections for net 'ADS1292_CSN':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad11/PAD           Inout Pin (pvhbcudtbrt)
+    pad14/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
     ADS1292_CSN         Output Port         0.025
-    pad11/PAD           Inout Pin (pvhbcudtbrt)
+    pad14/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'ADS1292_START':
@@ -1906,13 +1906,13 @@ Connections for net 'ADS1292_START':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad9/PAD            Inout Pin (pvhbcudtbrt)
+    pad11/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
     ADS1292_START       Output Port         0.025
-    pad9/PAD            Inout Pin (pvhbcudtbrt)
+    pad11/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'ADS1292_RESET':
@@ -1929,13 +1929,13 @@ Connections for net 'ADS1292_RESET':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad7/PAD            Inout Pin (pvhbcudtbrt)
+    pad10/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
     ADS1292_RESET       Output Port         0.025
-    pad7/PAD            Inout Pin (pvhbcudtbrt)
+    pad10/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'ADS1292_DRDY':
@@ -1953,12 +1953,12 @@ Connections for net 'ADS1292_DRDY':
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
     ADS1292_DRDY        Input Port          0
-    pad21/PAD           Inout Pin (pvhbcudtbrt)
+    pad27/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad21/PAD           Inout Pin (pvhbcudtbrt)
+    pad27/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'ADS1292_MOSI':
@@ -1975,13 +1975,13 @@ Connections for net 'ADS1292_MOSI':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad18/PAD           Inout Pin (pvhbcudtbrt)
+    pad25/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
     ADS1292_MOSI        Output Port         0.025
-    pad18/PAD           Inout Pin (pvhbcudtbrt)
+    pad25/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'ADS1292_MISO':
@@ -1999,12 +1999,12 @@ Connections for net 'ADS1292_MISO':
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
     ADS1292_MISO        Input Port          0
-    pad15/PAD           Inout Pin (pvhbcudtbrt)
+    pad22/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad15/PAD           Inout Pin (pvhbcudtbrt)
+    pad22/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'ADS1292_SCLK':
@@ -2021,13 +2021,13 @@ Connections for net 'ADS1292_SCLK':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad13/PAD           Inout Pin (pvhbcudtbrt)
+    pad17/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
     ADS1292_SCLK        Output Port         0.025
-    pad13/PAD           Inout Pin (pvhbcudtbrt)
+    pad17/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'MPR121_SDA':
@@ -2045,13 +2045,13 @@ Connections for net 'MPR121_SDA':
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
     MPR121_SDA          Inout Port          0.025
-    pad36/PAD           Inout Pin (pvhbcudtbrt)
+    pad45/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
     MPR121_SDA          Inout Port          0.025
-    pad36/PAD           Inout Pin (pvhbcudtbrt)
+    pad45/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'MPR121_SCL':
@@ -2069,13 +2069,13 @@ Connections for net 'MPR121_SCL':
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
     MPR121_SCL          Inout Port          0.025
-    pad34/PAD           Inout Pin (pvhbcudtbrt)
+    pad43/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
     MPR121_SCL          Inout Port          0.025
-    pad34/PAD           Inout Pin (pvhbcudtbrt)
+    pad43/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'UART_TXD':
@@ -2092,13 +2092,13 @@ Connections for net 'UART_TXD':
 
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
-    pad26/PAD           Inout Pin (pvhbcudtbrt)
+    pad34/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
     UART_TXD            Output Port         0.025
-    pad26/PAD           Inout Pin (pvhbcudtbrt)
+    pad34/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'UART_RXD':
@@ -2116,12 +2116,12 @@ Connections for net 'UART_RXD':
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
     UART_RXD            Input Port          0
-    pad29/PAD           Inout Pin (pvhbcudtbrt)
+    pad36/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad29/PAD           Inout Pin (pvhbcudtbrt)
+    pad36/PAD           Inout Pin (pvhbcudtbrt)
                                             2.1266
 
 net 'i_RSTN':
@@ -2139,12 +2139,12 @@ Connections for net 'i_RSTN':
     Driver Pins         Type                Pin Cap
     ------------        ----------------    --------
     i_RSTN              Input Port          0
-    pad39/PAD           Inout Pin (pvhbsudtart)
+    pad56/PAD           Inout Pin (pvhbsudtart)
                                             2.1493
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad39/PAD           Inout Pin (pvhbsudtart)
+    pad56/PAD           Inout Pin (pvhbsudtart)
                                             2.1493
 
 net 'i_CLK':
@@ -2194,19 +2194,39 @@ Connections for net '*Logic0*':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad39/CPU           Input Pin (pvhbsudtart)
+    pad56/CPU           Input Pin (pvhbsudtart)
                                             0.00714
-    pad39/CPD           Input Pin (pvhbsudtart)
+    pad56/CPD           Input Pin (pvhbsudtart)
                                             0.0072
-    pad39/CD0           Input Pin (pvhbsudtart)
+    pad56/CD0           Input Pin (pvhbsudtart)
                                             0.0073
-    pad39/CD1           Input Pin (pvhbsudtart)
+    pad56/CD1           Input Pin (pvhbsudtart)
                                             0.00733
-    pad39/CE            Input Pin (pvhbsudtart)
+    pad56/CE            Input Pin (pvhbsudtart)
                                             0.00791
-    pad39/A             Input Pin (pvhbsudtart)
+    pad56/A             Input Pin (pvhbsudtart)
                                             0.00744
-    pad39/PI            Input Pin (pvhbsudtart)
+    pad56/PI            Input Pin (pvhbsudtart)
+                                            0.00835
+    pad45/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad45/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad45/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad45/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad45/PI            Input Pin (pvhbcudtbrt)
+                                            0.00835
+    pad43/CPU           Input Pin (pvhbcudtbrt)
+                                            0.00715
+    pad43/CPD           Input Pin (pvhbcudtbrt)
+                                            0.0072
+    pad43/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad43/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad43/PI            Input Pin (pvhbcudtbrt)
                                             0.00835
     pad36/CPU           Input Pin (pvhbcudtbrt)
                                             0.00715
@@ -2216,83 +2236,71 @@ Connections for net '*Logic0*':
                                             0.00731
     pad36/CD1           Input Pin (pvhbcudtbrt)
                                             0.00733
+    pad36/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad36/A             Input Pin (pvhbcudtbrt)
+                                            0.00744
     pad36/PI            Input Pin (pvhbcudtbrt)
                                             0.00835
+    pad34/CI            Input Pin (pvhbcudtbrt)
+                                            0.00728
     pad34/CPU           Input Pin (pvhbcudtbrt)
                                             0.00715
     pad34/CPD           Input Pin (pvhbcudtbrt)
                                             0.0072
-    pad34/CD0           Input Pin (pvhbcudtbrt)
-                                            0.00731
-    pad34/CD1           Input Pin (pvhbcudtbrt)
-                                            0.00733
     pad34/PI            Input Pin (pvhbcudtbrt)
                                             0.00835
-    pad29/CPU           Input Pin (pvhbcudtbrt)
+    pad27/CPU           Input Pin (pvhbcudtbrt)
                                             0.00715
-    pad29/CPD           Input Pin (pvhbcudtbrt)
+    pad27/CPD           Input Pin (pvhbcudtbrt)
                                             0.0072
-    pad29/CD0           Input Pin (pvhbcudtbrt)
+    pad27/CD0           Input Pin (pvhbcudtbrt)
                                             0.00731
-    pad29/CD1           Input Pin (pvhbcudtbrt)
+    pad27/CD1           Input Pin (pvhbcudtbrt)
                                             0.00733
-    pad29/CE            Input Pin (pvhbcudtbrt)
+    pad27/CE            Input Pin (pvhbcudtbrt)
                                             0.00792
-    pad29/A             Input Pin (pvhbcudtbrt)
+    pad27/A             Input Pin (pvhbcudtbrt)
                                             0.00744
-    pad29/PI            Input Pin (pvhbcudtbrt)
+    pad27/PI            Input Pin (pvhbcudtbrt)
                                             0.00835
-    pad26/CI            Input Pin (pvhbcudtbrt)
+    pad25/CI            Input Pin (pvhbcudtbrt)
                                             0.00728
-    pad26/CPU           Input Pin (pvhbcudtbrt)
+    pad25/CPU           Input Pin (pvhbcudtbrt)
                                             0.00715
-    pad26/CPD           Input Pin (pvhbcudtbrt)
+    pad25/CPD           Input Pin (pvhbcudtbrt)
                                             0.0072
-    pad26/PI            Input Pin (pvhbcudtbrt)
+    pad25/PI            Input Pin (pvhbcudtbrt)
                                             0.00835
-    pad21/CPU           Input Pin (pvhbcudtbrt)
+    pad22/CPU           Input Pin (pvhbcudtbrt)
                                             0.00715
-    pad21/CPD           Input Pin (pvhbcudtbrt)
+    pad22/CPD           Input Pin (pvhbcudtbrt)
                                             0.0072
-    pad21/CD0           Input Pin (pvhbcudtbrt)
+    pad22/CD0           Input Pin (pvhbcudtbrt)
                                             0.00731
-    pad21/CD1           Input Pin (pvhbcudtbrt)
+    pad22/CD1           Input Pin (pvhbcudtbrt)
                                             0.00733
-    pad21/CE            Input Pin (pvhbcudtbrt)
+    pad22/CE            Input Pin (pvhbcudtbrt)
                                             0.00792
-    pad21/A             Input Pin (pvhbcudtbrt)
+    pad22/A             Input Pin (pvhbcudtbrt)
                                             0.00744
-    pad21/PI            Input Pin (pvhbcudtbrt)
+    pad22/PI            Input Pin (pvhbcudtbrt)
                                             0.00835
-    pad18/CI            Input Pin (pvhbcudtbrt)
+    pad17/CI            Input Pin (pvhbcudtbrt)
                                             0.00728
-    pad18/CPU           Input Pin (pvhbcudtbrt)
+    pad17/CPU           Input Pin (pvhbcudtbrt)
                                             0.00715
-    pad18/CPD           Input Pin (pvhbcudtbrt)
+    pad17/CPD           Input Pin (pvhbcudtbrt)
                                             0.0072
-    pad18/PI            Input Pin (pvhbcudtbrt)
+    pad17/PI            Input Pin (pvhbcudtbrt)
                                             0.00835
-    pad15/CPU           Input Pin (pvhbcudtbrt)
-                                            0.00715
-    pad15/CPD           Input Pin (pvhbcudtbrt)
-                                            0.0072
-    pad15/CD0           Input Pin (pvhbcudtbrt)
-                                            0.00731
-    pad15/CD1           Input Pin (pvhbcudtbrt)
-                                            0.00733
-    pad15/CE            Input Pin (pvhbcudtbrt)
-                                            0.00792
-    pad15/A             Input Pin (pvhbcudtbrt)
-                                            0.00744
-    pad15/PI            Input Pin (pvhbcudtbrt)
-                                            0.00835
-    pad13/CI            Input Pin (pvhbcudtbrt)
+    pad14/CI            Input Pin (pvhbcudtbrt)
                                             0.00728
-    pad13/CPU           Input Pin (pvhbcudtbrt)
+    pad14/CPU           Input Pin (pvhbcudtbrt)
                                             0.00715
-    pad13/CPD           Input Pin (pvhbcudtbrt)
+    pad14/CPD           Input Pin (pvhbcudtbrt)
                                             0.0072
-    pad13/PI            Input Pin (pvhbcudtbrt)
+    pad14/PI            Input Pin (pvhbcudtbrt)
                                             0.00835
     pad11/CI            Input Pin (pvhbcudtbrt)
                                             0.00728
@@ -2302,21 +2310,13 @@ Connections for net '*Logic0*':
                                             0.0072
     pad11/PI            Input Pin (pvhbcudtbrt)
                                             0.00835
-    pad9/CI             Input Pin (pvhbcudtbrt)
+    pad10/CI            Input Pin (pvhbcudtbrt)
                                             0.00728
-    pad9/CPU            Input Pin (pvhbcudtbrt)
+    pad10/CPU           Input Pin (pvhbcudtbrt)
                                             0.00715
-    pad9/CPD            Input Pin (pvhbcudtbrt)
+    pad10/CPD           Input Pin (pvhbcudtbrt)
                                             0.0072
-    pad9/PI             Input Pin (pvhbcudtbrt)
-                                            0.00835
-    pad7/CI             Input Pin (pvhbcudtbrt)
-                                            0.00728
-    pad7/CPU            Input Pin (pvhbcudtbrt)
-                                            0.00715
-    pad7/CPD            Input Pin (pvhbcudtbrt)
-                                            0.0072
-    pad7/PI             Input Pin (pvhbcudtbrt)
+    pad10/PI            Input Pin (pvhbcudtbrt)
                                             0.00835
     pad3/CPU            Input Pin (pvhbcudtart)
                                             0.00714
@@ -2351,31 +2351,37 @@ Connections for net '*Logic1*':
 
     Load Pins           Type                Pin Cap
     ------------        ----------------    --------
-    pad39/CI            Input Pin (pvhbsudtart)
+    pad56/CI            Input Pin (pvhbsudtart)
                                             0.00728
-    pad29/CI            Input Pin (pvhbcudtbrt)
+    pad36/CI            Input Pin (pvhbcudtbrt)
                                             0.00728
-    pad26/CD0           Input Pin (pvhbcudtbrt)
+    pad34/CD0           Input Pin (pvhbcudtbrt)
                                             0.00731
-    pad26/CD1           Input Pin (pvhbcudtbrt)
+    pad34/CD1           Input Pin (pvhbcudtbrt)
                                             0.00733
-    pad26/CE            Input Pin (pvhbcudtbrt)
+    pad34/CE            Input Pin (pvhbcudtbrt)
                                             0.00792
-    pad21/CI            Input Pin (pvhbcudtbrt)
+    pad27/CI            Input Pin (pvhbcudtbrt)
                                             0.00728
-    pad18/CD0           Input Pin (pvhbcudtbrt)
+    pad25/CD0           Input Pin (pvhbcudtbrt)
                                             0.00731
-    pad18/CD1           Input Pin (pvhbcudtbrt)
+    pad25/CD1           Input Pin (pvhbcudtbrt)
                                             0.00733
-    pad18/CE            Input Pin (pvhbcudtbrt)
+    pad25/CE            Input Pin (pvhbcudtbrt)
                                             0.00792
-    pad15/CI            Input Pin (pvhbcudtbrt)
+    pad22/CI            Input Pin (pvhbcudtbrt)
                                             0.00728
-    pad13/CD0           Input Pin (pvhbcudtbrt)
+    pad17/CD0           Input Pin (pvhbcudtbrt)
                                             0.00731
-    pad13/CD1           Input Pin (pvhbcudtbrt)
+    pad17/CD1           Input Pin (pvhbcudtbrt)
                                             0.00733
-    pad13/CE            Input Pin (pvhbcudtbrt)
+    pad17/CE            Input Pin (pvhbcudtbrt)
+                                            0.00792
+    pad14/CD0           Input Pin (pvhbcudtbrt)
+                                            0.00731
+    pad14/CD1           Input Pin (pvhbcudtbrt)
+                                            0.00733
+    pad14/CE            Input Pin (pvhbcudtbrt)
                                             0.00792
     pad11/CD0           Input Pin (pvhbcudtbrt)
                                             0.00731
@@ -2383,17 +2389,11 @@ Connections for net '*Logic1*':
                                             0.00733
     pad11/CE            Input Pin (pvhbcudtbrt)
                                             0.00792
-    pad9/CD0            Input Pin (pvhbcudtbrt)
+    pad10/CD0           Input Pin (pvhbcudtbrt)
                                             0.00731
-    pad9/CD1            Input Pin (pvhbcudtbrt)
+    pad10/CD1           Input Pin (pvhbcudtbrt)
                                             0.00733
-    pad9/CE             Input Pin (pvhbcudtbrt)
-                                            0.00792
-    pad7/CD0            Input Pin (pvhbcudtbrt)
-                                            0.00731
-    pad7/CD1            Input Pin (pvhbcudtbrt)
-                                            0.00733
-    pad7/CE             Input Pin (pvhbcudtbrt)
+    pad10/CE            Input Pin (pvhbcudtbrt)
                                             0.00792
     pad3/CI             Input Pin (pvhbcudtart)
                                             0.00728

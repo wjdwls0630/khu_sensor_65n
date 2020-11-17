@@ -38,11 +38,9 @@ current_design $TOP_MODULE
 # Read scenario file
 remove_sdc
 remove_scenario -all
-sh sed -i 's/ ${STD_WST}/ ${STD_WST}.db:${STD_WST}/' $FUNC1_SDC
-#sh sed -i '/set_max_fanout/d' $FUNC1_SDC
-source $ICC_MCMM_SCENARIOS_FILE
-set_active_scenario $FP_SCN
 
+source $ICC_MCMM_SCENARIOS_FILE
+set_active_scenario $FLOORPLAN_SCN
 
 # call pad place (.tdf)
 source $ICC_IN_IO_CONST_FILE
@@ -52,16 +50,10 @@ create_floorplan -control_type boundary -start_first_row -flip_first_row \
 -core_utilization $CORE_UTIL
 
 # Add I/O Filler
-# VDD/VSS : Voltage which is supplied to core (Internal 1.2V)
-# VDDO/VSSO : Voltage which is supplied to PAD (Output-Driver 3.3V)
-# VDDQ/VSSQ : Voltage which is supplied to PAD (Pre-Driver 3.3V)
-# For Samsung Library, Voltage of Pre-Driver and Output-Driver is connected automatically(PAD_Ring)
-# when PAD Filler is inserted, consider only VDD and VSS which are core voltage in this process
-# Insert Filler in order from big to small for the sake of reducing the number of fillers.
 insert_pad_filler -cell $IO_FILLER
 
 # Define ignored layers
-set_ignored_layers -max_routing_layer MET6
+set_ignored_layers -max_routing_layer EA
 
 #*******************************************************************************************
 ## NOTE for FloorPlan ######################################################################
@@ -131,30 +123,26 @@ set_ignored_layers -max_routing_layer MET6
 # hard blockage for macro
 # In case of hard, Any macro cannot place in an area of blockage.
 # In case of soft, a few buffers can place in an area of blockage.
-#create_placement_blockage -coordinate {{1468.686 2188.000} {1572.000 2520.000}} -name block_1 -type hard -no_snap
-#create_placement_blockage -coordinate {{1468.686 1520.000} {1772.000 1812.000}} -name block_2 -type hard -no_snap
-#create_placement_blockage -coordinate {{2228.000 1480.000} {1531.314 1812.000}} -name block_3 -type hard -no_snap
-#create_placement_blockage -coordinate {{2228.000 2188.000} {2531.314 2520.000}} -name block_4 -type hard -no_snap
-#remove_placement_blockage -all
+#create_placement_blockage -coordinate {{881.680 187.490} {1008.360 392.370}} \
+   -name block_1 -type hard -no_snap
 
 # Unplace all standard cells
 remove_placement -object_type standard_cell
 
 #*******************************************************************************************
-# In this library, well edge cell and tap cell is not existed.
 # Physical Cells Placement
 # Add well edge cell
-#add_end_cap -respect_blockage -ignore_soft_blockage -lib_cell $WELL_EDGE_CELL
-#
+add_end_cap -respect_blockage -ignore_soft_blockage -lib_cell $WELL_EDGE_CELL
+
 #get_cells -all *cap*
 #remove_cell [get_cells -all *cap*]
-#
+
 #Add tap cell
-#add_tap_cell_array  -master_cell_name $TAP_CELL \
-#	-pattern stagger_every_other_row \
-#	-distance $TAP_DIST \
-#	-ignore_soft_blockage true \
-#	-skip_fixed_cells true
+add_tap_cell_array  -master_cell_name $TAP_CELL \
+	-pattern stagger_every_other_row \
+  -distance $TAP_DIST \
+	-ignore_soft_blockage true \
+	-skip_fixed_cells true
 #remove_stdcell_filler  -tap
 #*******************************************************************************************
 
@@ -166,8 +154,5 @@ save_mw_cel -as ${TOP_MODULE}
 # close lib
 close_mw_lib
 
-# Reset sdc file for applying sdc
-sh rm -f $FUNC1_SDC
-sh cp ${FUNC1_SDC}.bak ${FUNC1_SDC}
-
+#start_gui
 exit
