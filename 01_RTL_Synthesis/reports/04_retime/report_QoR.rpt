@@ -3,16 +3,16 @@
 Report : qor
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:40:21 2020
+Date   : Thu Nov 19 19:09:27 2020
 ****************************************
 
 
   Timing Path Group 'REGIN'
   -----------------------------------
-  Levels of Logic:               5.00
-  Critical Path Length:          1.10
-  Critical Path Slack:           2.31
-  Critical Path Clk Period:      4.20
+  Levels of Logic:               6.00
+  Critical Path Length:          0.83
+  Critical Path Slack:           3.71
+  Critical Path Clk Period:      5.40
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
   Worst Hold Violation:          0.00
@@ -22,10 +22,10 @@ Date   : Tue Nov 17 01:40:21 2020
 
   Timing Path Group 'REGOUT'
   -----------------------------------
-  Levels of Logic:               1.00
-  Critical Path Length:          3.40
-  Critical Path Slack:           0.00
-  Critical Path Clk Period:      4.20
+  Levels of Logic:               2.00
+  Critical Path Length:          3.18
+  Critical Path Slack:           1.34
+  Critical Path Clk Period:      5.40
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
   Worst Hold Violation:          0.00
@@ -35,10 +35,10 @@ Date   : Tue Nov 17 01:40:21 2020
 
   Timing Path Group 'clk'
   -----------------------------------
-  Levels of Logic:              16.00
-  Critical Path Length:          3.89
+  Levels of Logic:              34.00
+  Critical Path Length:          5.07
   Critical Path Slack:           0.00
-  Critical Path Clk Period:      4.20
+  Critical Path Clk Period:      5.40
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
   Worst Hold Violation:          0.00
@@ -49,9 +49,9 @@ Date   : Tue Nov 17 01:40:21 2020
   Timing Path Group 'clk_half'
   -----------------------------------
   Levels of Logic:               4.00
-  Critical Path Length:          2.18
-  Critical Path Slack:           1.41
-  Critical Path Clk Period:      8.40
+  Critical Path Length:          1.45
+  Critical Path Slack:           3.20
+  Critical Path Clk Period:     10.80
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
   Worst Hold Violation:          0.00
@@ -64,12 +64,12 @@ Date   : Tue Nov 17 01:40:21 2020
   -----------------------------------
   Hierarchical Cell Count:        119
   Hierarchical Port Count:       4843
-  Leaf Cell Count:              29198
-  Buf/Inv Cell Count:            3286
-  Buf Cell Count:                 118
-  Inv Cell Count:                3168
+  Leaf Cell Count:              28643
+  Buf/Inv Cell Count:            2779
+  Buf Cell Count:                  12
+  Inv Cell Count:                2767
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:     23849
+  Combinational Cell Count:     23294
   Sequential Cell Count:         5349
   Macro Count:                      0
   -----------------------------------
@@ -77,21 +77,21 @@ Date   : Tue Nov 17 01:40:21 2020
 
   Area
   -----------------------------------
-  Combinational Area:    64529.920409
-  Noncombinational Area: 44635.520097
-  Buf/Inv Area:           3375.359934
-  Total Buffer Area:           216.00
-  Total Inverter Area:        3159.36
+  Combinational Area:    62339.200261
+  Noncombinational Area: 44194.560532
+  Buf/Inv Area:           2796.159946
+  Total Buffer Area:            48.64
+  Total Inverter Area:        2747.52
   Macro/Black Box Area:      0.000000
   Net Area:                  0.000000
   -----------------------------------
-  Cell Area:            109165.440506
-  Design Area:          109165.440506
+  Cell Area:            106533.760792
+  Design Area:          106533.760792
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:         31656
+  Total Number of Nets:         31767
   Nets With Violations:             0
   Max Trans Violations:             0
   Max Cap Violations:               0
@@ -102,12 +102,12 @@ Date   : Tue Nov 17 01:40:21 2020
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                    2.92
-  Logic Optimization:                  1.63
-  Mapping Optimization:               22.50
+  Resource Sharing:                    2.65
+  Logic Optimization:                  1.59
+  Mapping Optimization:               19.87
   -----------------------------------------
-  Overall Compile Time:               79.53
-  Overall Compile Wall Clock Time:    80.15
+  Overall Compile Time:               57.85
+  Overall Compile Wall Clock Time:    58.34
 
   --------------------------------------------------------------------
 

@@ -28,7 +28,7 @@ Initializing...
                because reoptimize_design does not honor
                the set_fix_multiple_port_nets command
 ************************************************************************
-Initializing gui preferences from file  /home/graduation_project3/2015103977/.synopsys_icc_prefs.tcl
+Initializing gui preferences from file  /home/VLSI_graduated_2020/2015104027/.synopsys_icc_prefs.tcl
 #******************************************************************************
 #**                         00_read_design                                   **
 #**               create mw library and read verilog netlist                 **
@@ -96,22 +96,20 @@ false
 ;# Then write bellow variables.
 set DIE_WIDTH                      ""                 ;# If USER_DIE_SIZW is true, define this variable.
 set DIE_HEIGHT                     ""                 ;# If USER_DIE_SIZW is true, define this variable.
-set ICC_IN_IO_CONST_FILE           "./TECH/padplace_ICC_khu_sensor_L13_68um.tdf"  ;# This is tdf format.
-./TECH/padplace_ICC_khu_sensor_L13_68um.tdf
-# This is a tcl file that changes pad names in logic library to in physical library.
-# The tcl file functions appending "_p" to a last character of the pad names.
-# (e.g. vssoh -> vssoh_p)
-set ICC_IO_NAMING_FILE             "./icc_scripts/rules/pad_naming_rule.tcl"
-./icc_scripts/rules/pad_naming_rule.tcl
-set CLOCK_MAX_TRAN    0.3; # clock path max transtion time.
-0.3
-set MAX_ROUTING_LAYER              "MET4"
-MET4
-set MIN_ROUTING_LAYER              ""
-set CLK_MAX_ROUTING_LAYER          "MET4"
-MET4
-set CLK_MIN_ROUTING_LAYER          "MET3"
-MET3
+set ICC_IN_IO_CONST_FILE           "./icc_scripts/rules/padplace_ICC_khu_sensor_L6LP_68um.tdf"; # This is tdf format.
+./icc_scripts/rules/padplace_ICC_khu_sensor_L6LP_68um.tdf
+set ICC_SDC_SETUP_FILE             "./icc_scripts/user_scripts/sdc_setup.tcl"
+./icc_scripts/user_scripts/sdc_setup.tcl
+set CLOCK_MAX_TRAN    0.5; # clock path max transtion time.
+0.5
+set MAX_ROUTING_LAYER              "EA"; # Metal7
+EA
+set MIN_ROUTING_LAYER              "M1"; # Metal1
+M1
+set CLK_MAX_ROUTING_LAYER          "B2"; # Metal6
+B2
+set CLK_MIN_ROUTING_LAYER          "M3"; # Metal3
+M3
 #######################################################
 ## For Power Definition
 #######################################################
@@ -170,7 +168,7 @@ set ICC_MCMM_SCENARIOS_FILE        "./icc_scripts/mcmm_scenario/scenarios.tcl"
 ####### Define scenarios
 ## This is example, modify this according to your scenarios.
 ##
-## Generally, FP_SCN, PLACE_OPT_SNC and ROUTE_SCN uses worst function mode scenario such as func1_wstti.
+## Generally, FLOORPLAN_SCN, PLACE_OPT_SNC and ROUTE_SCN uses worst function mode scenario such as func1_wstti.
 ## CLOCK_OPT_CTS_SCN uses all cts scenario such as funccts_wstti,scantcts_wstti,bistcts_wstti,jtagcts_wstti.
 ## CLOCK_OPT_PSYN_SCN, ROUTE_OPT_SCN and CHIP_FINISH_SCN uses all scenarios except for CLOCK_OPT_CTS_SCN.
 ## HOLD_ONLY_SCN optimizes only hold time and mttv.
@@ -178,25 +176,25 @@ set ICC_MCMM_SCENARIOS_FILE        "./icc_scripts/mcmm_scenario/scenarios.tcl"
 ##
 # Since the samsung013 Library is damaged, the worst operating condition is only applied.
 #set scenarios                      "func1_wst func1_bst"
-set scenarios                      "func1_wst funccts_wst"
-func1_wst funccts_wst
-set FP_SCN                         "func1_wst"
+set scenarios                      "func1_wst func1_bst funccts_wst"
+func1_wst func1_bst funccts_wst
+set FLOORPLAN_SCN                  "func1_wst"
 func1_wst
 set PLACE_OPT_SCN                  "func1_wst"
 func1_wst
 set CLOCK_OPT_CTS_SCN              "funccts_wst"
 funccts_wst
 #set CLOCK_OPT_PSYN_SCN             "func1_bst"
-set CLOCK_OPT_PSYN_SCN             "func1_wst"
-func1_wst
+set CLOCK_OPT_PSYN_SCN             "func1_wst func1_bst"
+func1_wst func1_bst
 set ROUTE_SCN                      "func1_wst"
 func1_wst
 #set ROUTE_OPT_SCN                  "func1_bst"
-set ROUTE_OPT_SCN                  "func1_wst"
-func1_wst
+set ROUTE_OPT_SCN                  "func1_wst func1_bst"
+func1_wst func1_bst
 #set CHIP_FINISH_SCN                "func1_bst"
-set CHIP_FINISH_SCN                "func1_wst"
-func1_wst
+set CHIP_FINISH_SCN                "func1_wst func1_bst"
+func1_wst func1_bst
 set CLOCK_OPT_CTS_SCN_READ_AGAIN   true              ;# If true, ICC will create scenario again.
 true
 set CLOCK_OPT_PSYN_SCN_READ_AGAIN  false              ;# If true, ICC will create scenario again.
@@ -230,16 +228,17 @@ set JTAGCTS_SDC        ""
 ## If some instances of your design have other operation condition (PVT) such as IO,
 ## You have to define the operation condition name and library name in user_opcond.tcl.
 ##
-set OPCOND_WST          V105WTP1250
-V105WTP1250
-set OPCOND_WST_LIB      std150e_wst_105_p125 
-std150e_wst_105_p125
+# Temperature inversion - HVT WST ss_1p08v_m40c check
+set OPCOND_WST          "ss_1p08v_125c"
+ss_1p08v_125c
+set OPCOND_WST_LIB      "scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm"
+scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
 set OPCOND_WST_TIV      ""
 set OPCOND_WST_LIB_TIV  ""
-set OPCOND_BST          V135BTN0400
-V135BTN0400
-set OPCOND_BST_LIB      std150e_bst_135_n040
-std150e_bst_135_n040
+set OPCOND_BST          "ff_1p32v_m40c"
+ff_1p32v_m40c
+set OPCOND_BST_LIB      "scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm"
+scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm
 set OPCOND_BST_TIV      ""
 set OPCOND_BST_LIB_TIV  ""
 #########################   DO NOT CHANGE BELOW THIS LINE   ##############################
@@ -289,11 +288,21 @@ set_message_info -id PSYN-850   -limit 1
 1
 set_message_info -id CTS-102    -limit 1
 1
+set_message_info -id CTS-099    -limit 1
+1
+set_message_info -id CTS-618    -limit 1
+1
+set_message_info -id APL-017    -limit 1
+1
 set_message_info -id OPT-170    -limit 1
 1
 set_message_info -id TIM-178    -limit 1
 1
 set_message_info -id TIM-179    -limit 1
+1
+set_message_info -id DPI-020    -limit 1
+1
+set_message_info -id ZRT-325    -limit 1
 1
 1
 source -echo -v ./icc_scripts/common_lib_setup.tcl
@@ -320,50 +329,81 @@ KHU Room327
 #******************************************************************************
 #**                         Set Library Parameter                            **
 #******************************************************************************
-setenv SEC_SYNOPSYS /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys
-/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys
-setenv SEC_SYNOPSYS_AUX env(SEC_SYNOPSYS)/aux
-env(SEC_SYNOPSYS)/aux
-#******************************************************************************
-#**                Set New Variable for 'search_path'                        **
-#******************************************************************************
-set dk_home [getenv SEC_SYNOPSYS]
-/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys
-set dk_home_aux [getenv SEC_SYNOPSYS_AUX]
-env(SEC_SYNOPSYS)/aux
+set LIB_DIR /Tools/Library/samsung65_2016/CB_1502
+/Tools/Library/samsung65_2016/CB_1502
+set PRIMITIVE_LIB_DIR ${LIB_DIR}/PRIMITIVE
+/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE
+set IO_LIB_DIR ${LIB_DIR}/IO
+/Tools/Library/samsung65_2016/CB_1502/IO
 #******************************************************************************
 #**                Set 'search_path'                                         **
 #******************************************************************************
-set search_path [list . [format "%s%s"  $synopsys_root /libraries/syn]     [format "%s%s"  $dk_home /syn/STD150E] $dk_home_aux]
-. /Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E env(SEC_SYNOPSYS)/aux
+#set search_path ". $synopsys_root/libraries/syn 		               $PRIMITIVE_LIB_DIR/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys                     $PRIMITIVE_LIB_DIR/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys                     $PRIMITIVE_LIB_DIR/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys                    $PRIMITIVE_LIB_DIR/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys                    $IO_LIB_DIR/synopsys"
+#******************************************************************************
+set search_path ". $synopsys_root/libraries/syn 		               $PRIMITIVE_LIB_DIR/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys                     $PRIMITIVE_LIB_DIR/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys                    $IO_LIB_DIR/synopsys"
+. /Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn                  /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys                     /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys                    /Tools/Library/samsung65_2016/CB_1502/IO/synopsys
 #******************************************************************************
 #**                Set libraries                                             **
 #******************************************************************************
-# Reference/Front_End/samsung013/sec150e_synopsys/readme/SynopsysDKGuide.pdf p.14
-# Typical (TT / 1.20V / 25 Celcius)
-set STD_TYP std150e_typ_120_p025
-std150e_typ_120_p025
-set STD_TYP_MEM std150e_typ_120_p025_memory
-std150e_typ_120_p025_memory
-# Worst (SS / 1.05V / 125 Celcius)
-set STD_WST std150e_wst_105_p125
-std150e_wst_105_p125
-# Best (FF / 1.35V / -40 Celcius)
-set STD_BST std150e_bst_135_n040
-std150e_bst_135_n040
-set target_library [concat         $STD_WST.db         $STD_BST.db
+# Samsung 65nm
+# Dual Vth (Sign-off Corner, no need Multi-VDD)
+# The used corner and threshold are different by each stage in P&R.
+# Please refer to each stages' description
+# PMK (Power Management Kit)
+# RVT
+# SS (Worst)
+set PMK_RVT_SS scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm
+scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm
+# FF (Best)
+set PMK_RVT_FF scmetropmk_cmos10lp_rvt_ff_1p32v_m40c_sadhm
+scmetropmk_cmos10lp_rvt_ff_1p32v_m40c_sadhm
+# HVT
+# SS (Worst)
+#set PMK_HVT_SS scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm
+# FF (Best)
+#set PMK_HVT_FF scmetropmk_cmos10lp_hvt_ff_1p32v_m40c_sadhm
+# Normal
+# RVT
+# SS (Worst)
+set NOM_RVT_SS scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+# FF (Best)
+set NOM_RVT_FF scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm
+scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm
+# HVT
+# SS (Worst)
+#set NOM_HVT_SS scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm
+# FF (Best)
+#set NOM_HVT_FF scmetro_cmos10lp_hvt_ff_1p32v_m40c_sadhm
+# IO
+# SS (Worst)
+set IO_SS ss65lp3p3v_wst_108_300_p125
+ss65lp3p3v_wst_108_300_p125
+# FF (Best)
+set IO_FF ss65lp3p3v_bst_132_360_n040
+ss65lp3p3v_bst_132_360_n040
+#set target_library [concat         $PMK_RVT_SS.db         $PMK_RVT_FF.db         $PMK_HVT_SS.db         $PMK_HVT_FF.db         $NOM_RVT_SS.db         $NOM_RVT_FF.db         $NOM_HVT_SS.db         $NOM_HVT_FF.db         $IO_SS.db         $IO_FF.db ]
+set target_library [concat         $PMK_RVT_SS.db         $PMK_RVT_FF.db         $NOM_RVT_SS.db         $NOM_RVT_FF.db         $IO_SS.db         $IO_FF.db ]
+scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetropmk_cmos10lp_rvt_ff_1p32v_m40c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm.db ss65lp3p3v_wst_108_300_p125.db ss65lp3p3v_bst_132_360_n040.db
+# * : all designs which are in dc_shell
+#set synthetic_library dw_foundation.sldb
+#set link_library [concat         {*}         $PMK_RVT_SS.db         $PMK_RVT_FF.db         $PMK_HVT_SS.db         $PMK_HVT_FF.db         $NOM_RVT_SS.db         $NOM_RVT_FF.db         $NOM_HVT_SS.db         $NOM_HVT_FF.db         $IO_SS.db         $IO_FF.db ]
+set link_library [concat         {*}         $PMK_RVT_SS.db         $PMK_RVT_FF.db         $NOM_RVT_SS.db         $NOM_RVT_FF.db         $IO_SS.db         $IO_FF.db ]
+* scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetropmk_cmos10lp_rvt_ff_1p32v_m40c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm.db ss65lp3p3v_wst_108_300_p125.db ss65lp3p3v_bst_132_360_n040.db
+#******************************************************************************
+#**                   Set Physical Library Parameter                         **
+#******************************************************************************
+set MILKY_DIR ${LIB_DIR}/MilkyWay/ICC
+/Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC
+#******************************************************************************
+#******************************************************************************
+#**                Set New Variable for 'MW_REF_LIB_DIRS'                   **
+#******************************************************************************
+set all_milky [list     ${MILKY_DIR}/cmos10lprvt_m     ${MILKY_DIR}/Power_IO     ${MILKY_DIR}/RVT_PMK
 ]
-std150e_wst_105_p125.db std150e_bst_135_n040.db
-# * : all designs which are in dc_shell 
-set synthetic_library dw_foundation.sldb
-dw_foundation.sldb
-set link_library [concat         {*}         $target_library 	$synthetic_library
-]
-* std150e_wst_105_p125.db std150e_bst_135_n040.db dw_foundation.sldb
-set link_path $link_library
-* std150e_wst_105_p125.db std150e_bst_135_n040.db dw_foundation.sldb
-set symbol_library [list std150e_veri.sdb]
-std150e_veri.sdb
+/Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC/cmos10lprvt_m /Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC/Power_IO /Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC/RVT_PMK
+set MW_REF_LIB_DIRS "$all_milky"
+/Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC/cmos10lprvt_m /Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC/Power_IO /Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC/RVT_PMK
 #******************************************************************************
 #**                         Common Setup File                                **
 #******************************************************************************
@@ -373,69 +413,137 @@ set_route_mode_options -zroute true
 1
 #******************************************************************************
 #******************************************************************************
-#**                   Set Physical Library Parameter                         **
-#******************************************************************************
-setenv SEC_SYNOPSYS_ICC [sh pwd]/MilkyWay
-/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay
-#******************************************************************************
-#******************************************************************************
-#**                Set New Variable for 'MW_REF_LIB_DIRS'                   **
-#******************************************************************************
-set icc_home [getenv SEC_SYNOPSYS_ICC]
-/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay
-set all_milky [list 		$icc_home/std150e_prim_050504 		$icc_home/std150e_60poi_power_6lm_070420 		$icc_home/std150e_60poi_io_6lm_071011
-	      ]
-/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420 /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011
-set MW_REF_LIB_DIRS "$all_milky"
-/home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420 /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011
-# Since I/O pad name is different between logical and physical, we should add
-# LM cell db for ICC to search I/O pad cell properly
-if { $step != "00_read_design" } {
-	lappend link_library $icc_home/std150e_60poi_io_6lm_071011/LM/${STD_WST}_astro.db
-	lappend link_library $icc_home/std150e_60poi_io_6lm_071011/LM/${STD_BST}_astro.db
-}
-#******************************************************************************
-#******************************************************************************
 #**                       Set TECH and TLUP Files                           **
 #******************************************************************************
-set TECH_FILE "./TECH/std150e_prim_6m.techgen.tf"
-./TECH/std150e_prim_6m.techgen.tf
-set TLUP_DIR [sh pwd]/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G
-/home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G
-set MAP_FILE "${TLUP_DIR}/MAP/L13_CELL_6LM.map"
-/home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/MAP/L13_CELL_6LM.map
-set TLUP_MAX_FILE "${TLUP_DIR}/TLUP/L13_CELL_WST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup"
-/home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/TLUP/L13_CELL_WST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup
-set TLUP_MIN_FILE "${TLUP_DIR}/TLUP/L13_CELL_BST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup"
-/home/graduation_project3/2015103977/03_Physical_Synthesis/TLUP/sec060328_0003_0.13um_L13G__InternalRule-set_PROC_Astro-TLUp_N/L13G/TLUP/L13_CELL_BST_6LM_DUMMY_V8.0_R_vari_Hole_Rev3.0.tlup
+set TECH_AND_TLUP_DIR           "${LIB_DIR}/LAYOUT/ICC/65nm_TECH_TLUP_20120423"
+/Tools/Library/samsung65_2016/CB_1502/LAYOUT/ICC/65nm_TECH_TLUP_20120423
+set TECH_FILE                   "${TECH_AND_TLUP_DIR}/TECH/ICC/LR6LP/cmos10lp_4_20_01_3.tf"
+/Tools/Library/samsung65_2016/CB_1502/LAYOUT/ICC/65nm_TECH_TLUP_20120423/TECH/ICC/LR6LP/cmos10lp_4_20_01_3.tf
+set MAP_FILE                    "${TECH_AND_TLUP_DIR}/TLUP/LR6LP.4_20_01_3um.map"
+/Tools/Library/samsung65_2016/CB_1502/LAYOUT/ICC/65nm_TECH_TLUP_20120423/TLUP/LR6LP.4_20_01_3um.map
+set TLUP_MAX_FILE               "${TECH_AND_TLUP_DIR}/TLUP/LR6LP_SigCmax_4_20_01_00_3um_effective.tlup"
+/Tools/Library/samsung65_2016/CB_1502/LAYOUT/ICC/65nm_TECH_TLUP_20120423/TLUP/LR6LP_SigCmax_4_20_01_00_3um_effective.tlup
+set TLUP_MIN_FILE               "${TECH_AND_TLUP_DIR}/TLUP/LR6LP_SigCmin_4_20_01_00_3um_effective.tlup"
+/Tools/Library/samsung65_2016/CB_1502/LAYOUT/ICC/65nm_TECH_TLUP_20120423/TLUP/LR6LP_SigCmin_4_20_01_00_3um_effective.tlup
 #******************************************************************************
 #******************************************************************************
 #**                        Set Stream Out Map File                           **
 #******************************************************************************
-set STREAM_OUT_MAP "./TECH/layer.map"
-./TECH/layer.map
+# In order to export layout(ICC) to GDSII(Virtuoso), set stream option
+set STREAM_OUT_MAP              "${TECH_AND_TLUP_DIR}/TECH/ICC/LR6LP/gds2OutLayer_4_20_01_3.map"
+/Tools/Library/samsung65_2016/CB_1502/LAYOUT/ICC/65nm_TECH_TLUP_20120423/TECH/ICC/LR6LP/gds2OutLayer_4_20_01_3.map
+# On the contrary, stream-in is converting GDSII to layout.
+# The layermap file can be found in the same directory that contains stream out mapping file dir.
+# (gds2InLayer_4_20_01_3.map)
 #******************************************************************************
 #******************************************************************************
 #**                           Set Antenna_Rule                               **
 #******************************************************************************
-# Reference/Back_End/KHU_ASTRO User Guide p.86 and samsung65 TECH antenna_rules
-# IC User Guide p.457
-# make antenna_rule.tcl
-set ANTENNA_RULE "./TECH/std150e_prim713_antenna_200827.tcl"
-./TECH/std150e_prim713_antenna_200827.tcl
+set ANTENNA_RULE                "${TECH_AND_TLUP_DIR}/TECH/ICC/LR6LP/antenna_rules_4_20_01_3.tcl"
+/Tools/Library/samsung65_2016/CB_1502/LAYOUT/ICC/65nm_TECH_TLUP_20120423/TECH/ICC/LR6LP/antenna_rules_4_20_01_3.tcl
 #******************************************************************************
 #******************************************************************************
-#**                           Set IO FILLERS                                 **
+#**           Set decap cells, STD Fillers and IO Fillers                    **
 #******************************************************************************
-set IO_FILLER "iofillerh30_p iofillerh10_p iofillerh5_p iofiller1_p"
-iofillerh30_p iofillerh10_p iofillerh5_p iofiller1_p
-set IO_FILLER_OVERLAP ""
+# Decap cells
+# The cells is used for reducing dynamic voltage drop/rise(usually called ground bounce in power grids).
+# (It is okay to consider it energy reservoir or high pass filter)
+# (Decap cells are usually considered as thick gate NMOS decoupling cap)
+# The cells are always posed VDD on the gate, but gate leakage power can be ignored due to the thick gate.
+# After placement, the tools fill the cells empty space
+set DECAP_FILLER                "FILLDGCAP56MTR FILLDGCAP31MTR FILLDGCAP19MTR FILLDGCAP13MTR FILLDGCAP9MTR"
+FILLDGCAP56MTR FILLDGCAP31MTR FILLDGCAP19MTR FILLDGCAP13MTR FILLDGCAP9MTR
+# Filler cell contain dummy RX(diffusion) and PC(poly) patterns which make RX and PC
+# density not to be low on a chip. Of course, The Filler cells are cells with no logical functionality.
+# The reason why the Filler cells are used is that they fill gaps left in the layout where the area is unfilled.
+# (Filler cells in the layout connect power and ground rails across an area containing no cells.)
+# If you do DRC without Filler cells, you can easily expect to see spacing violation like "NWell minimum spacing not met."
+# This is where the Filler cells are needed.
+# In brief, the Filler cells is analogous to the standard cells, it has the VDD/VSS pins,
+# but they only have the base layer like NWell, which does not have function.
+set LVT_FILLER                  ""
+set RVT_FILLER                  "FILL64MTR FILL32MTR FILL16MTR FILL8MTR FILL4MTR FILL2MTR FILL1MTR"
+FILL64MTR FILL32MTR FILL16MTR FILL8MTR FILL4MTR FILL2MTR FILL1MTR
+set HVT_FILLER                  ""
+set LVTLIB                      ""
+set RVTLIB                      "$LIB_DIR/MilkyWay/ICC/cmos10lprvt_m"
+/Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC/cmos10lprvt_m
+set HVTLIB                      ""
+# Add I/O Filler
+# Power Ring (internal to external, in order)
+# VDDI: 1.2V I/O power ring
+# VSSIP: 1.2V I/O ground ring
+# VDDP: 1.8V/2.5V/3.3V I/O power ring
+# VDDO: 1.8V/2.5V/3.3V I/O power ring
+# VSSO: 1.8V/2.5V/3.3V I/O ground ring
+# For Samsung Library, Voltage of Pre-Driver and Output-Driver is connected automatically(PAD_Ring)
+# when PAD Filler is inserted, consider only VDD and VSS which are core voltage in this process.
+# Insert Filler in order from big to small for the sake of reducing the number of fillers.
+# Especially, iofillerv30 has two internal power ports which are connected to internal VDD and VSS rings.
+# Due to this cell, EM and IR-drop of internal power ring can be mitigated.
+set IO_FILLER                   "iofillerv30 iofillerv1 iofillerv_1 iofillerv_005"
+iofillerv30 iofillerv1 iofillerv_1 iofillerv_005
+set IO_FILLER_OVERLAP           ""
 #******************************************************************************
-#**                        Set Clock Tree Layers                             **
+#**                    Set well edge cell and tap cell                       **
+#******************************************************************************
+# Well Tap Cells,  (Fill tie cells)
+# Library cell(Bulk CMOS) usually have well taps which are traditionally used so that NWell
+# is connected to VDD and substrate is connected to GND.
+# However, each and every CMOS device do not need to have these taps.
+# Theoretically, the only one VDD tap per NWell(one row) and the only one GND tap per substrate
+# is needed. Actually, the significant area reduction can be achieved by removing these well ties from the layout.
+# Thus, most foundry companies chose to have "tap-less" libraries like samsung 65nm.
+# However, as we all know, if the device does not have taps, the Latch-up can easily occur.
+# Hence, the companies set the design rule or manual relating to a distance between tap cells
+# for preventing the latchup.
+# Following the design rule, ICC pre-place these Fill tie cells periodically in every row.
+set WELL_EDGE_CELL              "FILLTIEMTR"       ;# FILLTIEMT(H/R/L)
+FILLTIEMTR
+set TAP_CELL                    "FILLTIEMTR"       ;# FILLTIEMT(H/R/L)
+FILLTIEMTR
+set TAP_DIST                    "118.8"
+118.8
+#******************************************************************************
+#**                               Set TIE cell                               **
+#******************************************************************************
+# In aggressive scaling down technology, the gate oxide is so thin and sensitive that
+# the transistor, which connect to power or ground rails directly, can be easily damaged
+# due to voltage fluctuation in the power supply, such as ESD.
+# ESD: the abbreviation of Electro Static Discharge. The ESD is sudden flow of static
+# electricity between two electrical charge for a very short duration.
+# EOS(Electric Over-Stress) is also one byprouct of ESD.
+# ESD generates high peak voltage and current that may damage the IC.
+# ESD usually occurs when two objects that have different potential contact directly.
+# In terms of VLSI, it is usually occurs the I/O pads which are exposed to external world directly.
+# Hence, I/O pads have ESD protection circuits consisted of diodes.
+# By the way, to protect ESD, the Tie cells are needed. The Tie cells are didode connected NMOS or PMOS.
+# Hence tie cells, which are diode connected nmos or pmos are used instead.
+# Also, the outputs of these cells are driven through diffusion to provide isolation
+# from the power and ground rails(not directly connect to the rails) for better ESD protection. The standard cell abstract
+# methodology assumes that these cells are used to tie off any inputs to power and ground.
+# If these cells are not used and the router is allowed to drop vias on the power rail,
+# DRC errors or shorts may result.
+# The TIEHI cell drives the output to a logic constant high. (usually used when input logic is 1)
+# On the contrary, The TIELO cell drives the output to a logic constant low. (usually used when input logic is 0)
+# Lastly, due to a configuration of the tie cells in samsung 65nm,
+# the tie cells have lower leakage current compared to diodes, and rewiring the ECO cells is easy.
+set TIEHI_CELL                  "TIEHIMTR"
+TIEHIMTR
+set TIELO_CELL                  "TIELOMTR"
+TIELOMTR
+#******************************************************************************
+#**             Set CTS cells and rule for Clock Tree Synthesis              **
 #******************************************************************************
 # clock tree layers
-set ICC_CTS_RULE_NAME "shield_130nm_rule"
-shield_130nm_rule
+set ICC_CTS_RULE_NAME           "shield_65nm_rule"
+shield_65nm_rule
+# cells used for CTS
+set ICC_CTS_REF_LIST            "CLKINVX40MTR CLKINVX32MTR CLKINVX24MTR CLKINVX20MTR CLKINVX16MTR CLKINVX12MTR CLKINVX8MTR"
+CLKINVX40MTR CLKINVX32MTR CLKINVX24MTR CLKINVX20MTR CLKINVX16MTR CLKINVX12MTR CLKINVX8MTR
+# cells for CTS that are for sizing only
+set ICC_CTS_REF_SIZING_ONLY     "CLKINVX40MTR CLKINVX32MTR CLKINVX24MTR CLKINVX20MTR                                  CLKINVX16MTR CLKINVX12MTR CLKINVX8MTR CLKINVX6MTR                                  CLKINVX4MTR CLKINVX3MTR CLKINVX2MTR CLKINVX1MTR                                  CLKBUFX40MTR CLKBUFX32MTR CLKBUFX24MTR CLKBUFX20MTR                                  CLKBUFX16MTR CLKBUFX12MTR CLKBUFX8MTR CLKBUFX6MTR                                  CLKBUFX4MTR CLKBUFX3MTR CLKBUFX2MTR CLKBUFX1MTR "
+CLKINVX40MTR CLKINVX32MTR CLKINVX24MTR CLKINVX20MTR                                  CLKINVX16MTR CLKINVX12MTR CLKINVX8MTR CLKINVX6MTR                                  CLKINVX4MTR CLKINVX3MTR CLKINVX2MTR CLKINVX1MTR                                  CLKBUFX40MTR CLKBUFX32MTR CLKBUFX24MTR CLKBUFX20MTR                                  CLKBUFX16MTR CLKBUFX12MTR CLKBUFX8MTR CLKBUFX6MTR                                  CLKBUFX4MTR CLKBUFX3MTR CLKBUFX2MTR CLKBUFX1MTR 
 #******************************************************************************
 #**                    Default Timing Environment Setting                   **
 #******************************************************************************
@@ -462,9 +570,9 @@ set_separate_process_options -extraction false
 set sh_enable_page_mode false
 false
 setenv TMPDIR [sh pwd]/TMP
-/home/graduation_project3/2015103977/03_Physical_Synthesis/TMP
+/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/03_Physical_Synthesis/TMP
 set back [sh date +%m%d_%H:%M:%S]
-0912_02:17:50
+1119_19:14:48
 #******************************************************************************
 # Clear existing mw library and re-make dir
 set _mw_lib ./mw_db/${TOP_MODULE}_${step}
@@ -483,77 +591,47 @@ echo "                                                                       "
                                                                        
 echo "***********************************************************************"
 ***********************************************************************
-create_mw_lib ./mw_db/${TOP_MODULE}_${step} 	-technology $TECH_FILE 	-mw_reference_library $MW_REF_LIB_DIRS 	-bus_naming_style {[%d]} 	-open
-Start to load technology file ./TECH/std150e_prim_6m.techgen.tf.
-Warning: Layer 'ACT' is missing the attribute 'minSpacing'. (line 173) (TFCHK-014)
-Warning: Layer 'ACT' is missing the attribute 'minWidth'. (line 173) (TFCHK-014)
-Warning: Layer 'LDIO' is missing the attribute 'minSpacing'. (line 236) (TFCHK-014)
-Warning: Layer 'LDIO' is missing the attribute 'minWidth'. (line 236) (TFCHK-014)
-Warning: Layer 'CHBD' is missing the attribute 'minSpacing'. (line 246) (TFCHK-014)
-Warning: Layer 'CHBD' is missing the attribute 'minWidth'. (line 246) (TFCHK-014)
-Warning: Layer 'NPLUS' is missing the attribute 'minSpacing'. (line 287) (TFCHK-014)
-Warning: Layer 'NPLUS' is missing the attribute 'minWidth'. (line 287) (TFCHK-014)
-Warning: Layer 'PPLUS' is missing the attribute 'minSpacing'. (line 297) (TFCHK-014)
-Warning: Layer 'PPLUS' is missing the attribute 'minWidth'. (line 297) (TFCHK-014)
-Warning: Layer 'PAD' is missing the attribute 'minSpacing'. (line 687) (TFCHK-014)
-Warning: Layer 'PAD' is missing the attribute 'minWidth'. (line 687) (TFCHK-014)
-Warning: Layer 'STEXT' is missing the attribute 'minSpacing'. (line 697) (TFCHK-014)
-Warning: Layer 'STEXT' is missing the attribute 'minWidth'. (line 697) (TFCHK-014)
-Warning: Layer 'PTEXT' is missing the attribute 'minSpacing'. (line 707) (TFCHK-014)
-Warning: Layer 'PTEXT' is missing the attribute 'minWidth'. (line 707) (TFCHK-014)
-Warning: Layer 'M1TEXT' is missing the attribute 'minSpacing'. (line 717) (TFCHK-014)
-Warning: Layer 'M1TEXT' is missing the attribute 'minWidth'. (line 717) (TFCHK-014)
-Warning: Layer 'M2TEXT' is missing the attribute 'minSpacing'. (line 727) (TFCHK-014)
-Warning: Layer 'M2TEXT' is missing the attribute 'minWidth'. (line 727) (TFCHK-014)
-Warning: Layer 'M3TEXT' is missing the attribute 'minSpacing'. (line 737) (TFCHK-014)
-Warning: Layer 'M3TEXT' is missing the attribute 'minWidth'. (line 737) (TFCHK-014)
-Warning: Layer 'M4TEXT' is missing the attribute 'minSpacing'. (line 747) (TFCHK-014)
-Warning: Layer 'M4TEXT' is missing the attribute 'minWidth'. (line 747) (TFCHK-014)
-Warning: Layer 'M5TEXT' is missing the attribute 'minSpacing'. (line 757) (TFCHK-014)
-Warning: Layer 'M5TEXT' is missing the attribute 'minWidth'. (line 757) (TFCHK-014)
-Warning: Layer 'M6TEXT' is missing the attribute 'minSpacing'. (line 767) (TFCHK-014)
-Warning: Layer 'M6TEXT' is missing the attribute 'minWidth'. (line 767) (TFCHK-014)
-Warning: Layer 'BOUND' is missing the attribute 'minSpacing'. (line 777) (TFCHK-014)
-Warning: Layer 'BOUND' is missing the attribute 'minWidth'. (line 777) (TFCHK-014)
-Warning: FringeCap 1 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 992) (TFCHK-067)
-Warning: FringeCap 3 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1010) (TFCHK-067)
-Warning: FringeCap 6 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1037) (TFCHK-067)
-Warning: FringeCap 10 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1073) (TFCHK-067)
-Warning: FringeCap 15 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1118) (TFCHK-067)
-Warning: FringeCap 21 attribute 'layer2' is assigned a non-metal, non-poly layer 'ACT'. (line 1171) (TFCHK-067)
-Warning: Layer 'MET1' has a pitch 0.4 that does not match the recommended wire-to-via pitch 0.37 or 0.34. (TFCHK-049)
-Warning: Layer 'MET2' has a pitch 0.44 that does not match the recommended wire-to-via pitch 0.4 or 0.43. (TFCHK-049)
-Warning: Layer 'MET4' has a pitch 0.44 that does not match the recommended wire-to-via pitch 0.4 or 0.43. (TFCHK-049)
-Warning: Layer 'MET3' has a pitch 0.4 that does not match the doubled pitch 0.8 or tripled pitch 1.2. (TFCHK-050)
-Warning: Layer 'MET4' has a pitch 0.44 that does not match the doubled pitch 0.88 or tripled pitch 1.32. (TFCHK-050)
-Warning: Layer 'MET5' has a pitch 0.4 that does not match the doubled pitch 0.8 or tripled pitch 1.2. (TFCHK-050)
-Technology file ./TECH/std150e_prim_6m.techgen.tf has been loaded successfully.
-Warning: Reference Library Inconsistent With Main Library
-Reference Library: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504 (MWLIBP-300)
-Warning: Inconsistent Number Of Metal Layers:
-	6 (Main Library) <==> 7 (Reference Library). (MWLIBP-301)
-Warning: Inconsistent Data for Contact Code 10
-	Main Library (khu_sensor_pad_00_read_design)|	Reference Library (std150e_prim_050504)
-	Upper Layer     MET6 (130, 130)   |	MET6 (10, 40)	 (MWLIBP-324)
-Warning: Inconsistent Data for Contact Code 11
-	Main Library (khu_sensor_pad_00_read_design)|	Reference Library (std150e_prim_050504)
-	Upper Layer     MET6 (130, 130)   |	MET6 (10, 40)	 (MWLIBP-324)
-{khu_sensor_pad_00_read_design}
 # If the "-open" option is not used, the library needs to be opened in order to import the design
 # open_mw_lib ./mw_db/${TOP_MODULE}_${step}
-# Apply pad naming rule in physical library
-source $ICC_IO_NAMING_FILE
-Loading db file '/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db'
-Loading db file '/Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_bst_135_n040.db'
-Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/dw_foundation.sldb'
+create_mw_lib ./mw_db/${TOP_MODULE}_${step} 	-technology $TECH_FILE 	-mw_reference_library $MW_REF_LIB_DIRS 	-bus_naming_style {[%d]} 	-open
+Start to load technology file /Tools/Library/samsung65_2016/CB_1502/LAYOUT/ICC/65nm_TECH_TLUP_20120423/TECH/ICC/LR6LP/cmos10lp_4_20_01_3.tf.
+Warning: Layer 'OVERLAP' with layer number '192' is overriding pre-defined system layer. (line 251) (TFCHK-114)
+Warning: Layer 'OVERLAP' is missing the attribute 'minSpacing'. (line 258) (TFCHK-014)
+Warning: Layer 'OVERLAP' is missing the attribute 'minWidth'. (line 258) (TFCHK-014)
+Warning: Cut layer 'CA' has a non-cross primary default ContactCode 'CONT1'. (line 1987) (TFCHK-092)
+Warning: ContactCode 'via4' has undefined or zero enclosures. (line 2247). (TFCHK-073)
+Warning: ContactCode 'via5' has undefined or zero enclosures. (line 2269). (TFCHK-073)
+Warning: ContactCode 'via6' has undefined or zero enclosures. (line 2290). (TFCHK-073)
+Warning: ContactCode 'via7' has undefined or zero enclosures. (line 2311). (TFCHK-073)
+Warning: ContactCode 'via5_fat' has undefined or zero enclosures. (line 2440). (TFCHK-073)
+Warning: Layer 'M1' has a pitch 0.2 that does not match the recommended wire-to-via pitch 0.225. (TFCHK-049)
+Warning: Layer 'M2' has a pitch 0.2 that does not match the recommended wire-to-via pitch 0.25. (TFCHK-049)
+Warning: Layer 'M3' has a pitch 0.2 that does not match the recommended wire-to-via pitch 0.25. (TFCHK-049)
+Warning: Layer 'M4' has a pitch 0.2 that does not match the recommended wire-to-via pitch 0.25. (TFCHK-049)
+Warning: Layer 'B2' has a pitch 0.4 that does not match the recommended wire-to-via pitch 0.5. (TFCHK-049)
+Warning: Layer 'EA' has a pitch 0.8 that does not match the recommended wire-to-via pitch 1.2. (TFCHK-049)
+Warning: Layer 'OA' has a pitch 2.4 that does not match the recommended wire-to-via pitch 3.8. (TFCHK-049)
+Warning: Layer 'LB' has a pitch 3.8 that does not match the recommended wire-to-via pitch 4.9. (TFCHK-049)
+Warning: Layer 'M3' has a pitch 0.2 that does not match the doubled pitch 0.4 or tripled pitch 0.6. (TFCHK-050)
+Warning: Layer 'M4' has a pitch 0.2 that does not match the doubled pitch 0.4 or tripled pitch 0.6. (TFCHK-050)
+Warning: Layer 'OA' has a pitch 2.4 that does not match the doubled pitch 0.8 or tripled pitch 1.2. (TFCHK-050)
+Warning: Layer 'LB' has a pitch 3.8 that does not match the doubled pitch 1.6 or tripled pitch 2.4. (TFCHK-050)
+Warning: CapModel sections are missing. Capacitance models should be loaded with a TLU+ file later. (TFCHK-084)
+Technology file /Tools/Library/samsung65_2016/CB_1502/LAYOUT/ICC/65nm_TECH_TLUP_20120423/TECH/ICC/LR6LP/cmos10lp_4_20_01_3.tf has been loaded successfully.
+{khu_sensor_pad_00_read_design}
 # Read verilog netlist
 read_verilog -top ${TOP_MODULE} $ICC_IN_VERILOG_NETLIST_FILE
-Warning: /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504: bus naming style _<%d> is not consistent with main lib. (MWNL-111)
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
 
 *****  Verilog HDL translation! *****
 
 *****    Start Pass 1 *****
-Compiling source file /home/graduation_project3/2015103977/01_RTL_Synthesis/outputs/khu_sensor_pad.vg
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ff_1p32v_m40c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
+Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_bst_132_360_n040.db'
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/outputs/khu_sensor_pad.vg
 
 *****  Pass 1 Complete *****
 Elapsed =    0:00:01, CPU =    0:00:00
@@ -561,25 +639,38 @@ Elapsed =    0:00:01, CPU =    0:00:00
 *****  Verilog HDL translation! *****
 
 *****    Start Pass 2 *****
-Compiling source file /home/graduation_project3/2015103977/01_RTL_Synthesis/outputs/khu_sensor_pad.vg
+Compiling source file /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/outputs/khu_sensor_pad.vg
+Warning: In module 'khu_sensor_pad', instance 'pad3' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad10' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad11' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad14' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad17' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad22' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad25' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad27' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad34' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad36' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad43' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad45' has unconnected ports. (MWNL-220)
+Warning: In module 'khu_sensor_pad', instance 'pad56' has unconnected ports. (MWNL-220)
 
 *****  Pass 2 Complete *****
 
 *****   Verilog HDL translation completed! *****
-Elapsed =    0:00:00, CPU =    0:00:00
+Elapsed =    0:00:01, CPU =    0:00:00
 Hierarchy Preservation is turned ON
 The quick-attach skip-search mode has been turned on.
   Start axu naming escaping style change ...
   End axu naming escaping style change, status is 1
 Checking single pin net for cell 'khu_sensor_pad.CEL' now...
-Total number of cell instances: 26621
-Total number of nets: 28599
+Total number of cell instances: 26706
+Total number of nets: 28832
 Total number of ports: 13 (include 0 PG ports)
-Total number of hierarchical cell instances: 233
+Total number of hierarchical cell instances: 295
 
 The quick-attach skip-search mode has been turned off.
 INFO:  total find 0 pg nets connected with tie net.
-Elapsed =    0:00:01, CPU =    0:00:00
+Elapsed =    0:00:00, CPU =    0:00:00
 Information: Read verilog completed successfully.
 1
 link
@@ -594,28 +685,28 @@ uniquify_fp_mw_cel
 change_names -rule verilog -hier
 Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/gtech.db'
 Loading db file '/Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/standard.sldb'
-Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_prim_050504. (PSYN-878)
-Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_power_6lm_070420. (PSYN-878)
-Information: linking reference library : /home/graduation_project3/2015103977/03_Physical_Synthesis/MilkyWay/std150e_60poi_io_6lm_071011. (PSYN-878)
-Warning: The 'cgnd1_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+Information: linking reference library : /Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC/cmos10lprvt_m. (PSYN-878)
+Information: linking reference library : /Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC/Power_IO. (PSYN-878)
+Information: linking reference library : /Tools/Library/samsung65_2016/CB_1502/MilkyWay/ICC/RVT_PMK. (PSYN-878)
+Warning: The 'FILLCAP16MTR' cell in the 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm' technology library is being 
 	marked as "dont_use". (PSYN-039)
-Warning: The 'cgnd1_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+Warning: The 'FILLCAP16MTR' cell in the 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm' technology library does not 
 	have corresponding physical cell description. (PSYN-024)
-Warning: The 'cgnd2_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+Warning: The 'FILLCAP32MTR' cell in the 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm' technology library is being 
 	marked as "dont_use". (PSYN-039)
-Warning: The 'cgnd2_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+Warning: The 'FILLCAP32MTR' cell in the 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm' technology library does not 
 	have corresponding physical cell description. (PSYN-024)
-Warning: The 'cgnd3_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+Warning: The 'FILLCAP3MTR' cell in the 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm' technology library is being 
 	marked as "dont_use". (PSYN-039)
-Warning: The 'cgnd3_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+Warning: The 'FILLCAP3MTR' cell in the 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm' technology library does not 
 	have corresponding physical cell description. (PSYN-024)
-Warning: The 'cgnd4_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+Warning: The 'FILLCAP4MTR' cell in the 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm' technology library is being 
 	marked as "dont_use". (PSYN-039)
-Warning: The 'cgnd4_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+Warning: The 'FILLCAP4MTR' cell in the 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm' technology library does not 
 	have corresponding physical cell description. (PSYN-024)
-Warning: The 'cgnd6_hd' cell in the 'std150e_wst_105_p125' technology library is being 
+Warning: The 'FILLCAP64MTR' cell in the 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm' technology library is being 
 	marked as "dont_use". (PSYN-039)
-Warning: The 'cgnd6_hd' cell in the 'std150e_wst_105_p125' technology library does not 
+Warning: The 'FILLCAP64MTR' cell in the 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm' technology library does not 
 	have corresponding physical cell description. (PSYN-024)
 Note - message 'PSYN-039' limit (5) exceeded.  Remainder will be suppressed.
 Note - message 'PSYN-024' limit (5) exceeded.  Remainder will be suppressed.
@@ -623,39 +714,39 @@ Note - message 'PSYN-024' limit (5) exceeded.  Remainder will be suppressed.
   Linking design 'khu_sensor_pad'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (233 designs)             khu_sensor_pad.CEL, etc
-  std150e_wst_105_p125 (library) /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_wst_105_p125.db
-  std150e_bst_135_n040 (library) /Tools/Library/samsung013/sec050915_0050_STD150E_regular_DK_Synopsys_N/sec150e_synopsys/syn/STD150E/std150e_bst_135_n040.db
-  dw_foundation.sldb (library) /Tools/Synopsys/ICC_2017/icc/N-2017.09/libraries/syn/dw_foundation.sldb
+  * (295 designs)             khu_sensor_pad.CEL, etc
+  scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db
+  scmetropmk_cmos10lp_rvt_ff_1p32v_m40c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ff_1p32v_m40c_sadhm.db
+  scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db
+  scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm.db
+  ss65lp3p3v_wst_108_300_p125 (library) /Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db
+  ss65lp3p3v_bst_132_360_n040 (library) /Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_bst_132_360_n040.db
 
-Warning: Unable to resolve reference 'vdd12ih_p' in 'khu_sensor_pad'. (LINK-5)
-Warning: Unable to resolve reference 'vssiph_p' in 'khu_sensor_pad'. (LINK-5)
-Warning: Unable to resolve reference 'phic_p' in 'khu_sensor_pad'. (LINK-5)
-Warning: Unable to resolve reference 'vdd33oph_p' in 'khu_sensor_pad'. (LINK-5)
-Warning: Unable to resolve reference 'phob12_p' in 'khu_sensor_pad'. (LINK-5)
-Warning: Unable to resolve reference 'vssoh_p' in 'khu_sensor_pad'. (LINK-5)
-Warning: Unable to resolve reference 'vdd12ih_core_p' in 'khu_sensor_pad'. (LINK-5)
-Warning: Unable to resolve reference 'phbct24_p' in 'khu_sensor_pad'. (LINK-5)
-Warning: Unable to resolve reference 'phis_p' in 'khu_sensor_pad'. (LINK-5)
-Warning: Unable to resolve reference 'phbct12_p' in 'khu_sensor_pad'. (LINK-5)
-Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Information: Updating database...
 Information: Updating top database 'khu_sensor_pad.CEL;1'. (MWDC-255)
+...... Found Power Switch Cell FOOT16DMTR with output port VSS
+...... Found Power Switch Cell FOOT16MTR with output port VSS
+...... Found Power Switch Cell FOOT8DMTR with output port VSS
+...... Found Power Switch Cell FOOT8MTR with output port VSS
+...... Found Power Switch Cell HEAD16DMTR with output port VDD
+...... Found Power Switch Cell HEAD16MTR with output port VDD
+...... Found Power Switch Cell HEAD32DMTR with output port VDD
+...... Found Power Switch Cell HEAD32MTR with output port VDD
+...... Found Power Switch Cell HEAD64DMTR with output port VDD
+...... Found Power Switch Cell HEAD64MTR with output port VDD
+...... Found Power Switch Cell HEAD8DMTR with output port VDD
+...... Found Power Switch Cell HEAD8MTR with output port VDD
 1
 set verilogout_no_tri true
 true
 save_mw_cel -as ${TOP_MODULE}
 Information: Performing CEL netlist consistency check. (MWDC-118)
 Information: CEL consistency check PASSED. (MWDC-119)
-Warning: Design 'khu_sensor_pad' has '10' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Information: Saved design named khu_sensor_pad. (UIG-5)
 1
 # close lib
 close_mw_lib
 1
-# Reset netlist file for applying naming rule
-sh rm -f $ICC_IN_VERILOG_NETLIST_FILE
-sh cp ${ICC_IN_VERILOG_NETLIST_FILE}.bak $ICC_IN_VERILOG_NETLIST_FILE
 exit
 
 Thank you...

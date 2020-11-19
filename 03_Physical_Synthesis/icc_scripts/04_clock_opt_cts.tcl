@@ -41,13 +41,13 @@ if { $CLOCK_OPT_CTS_SCN_READ_AGAIN } {
 	## Read scenario file
 	# After placement, delete max_delay constraints. It is only for placing
 	# clock gating cell and gated register in proximity.
-	sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
+	source $ICC_SDC_SETUP_FILE
 
 	source $ICC_MCMM_SCENARIOS_FILE
 } else {
 	# After placement, delete max_delay constraints. It is only for placing
 	# clock gating cell and gated register in proximity.
-	sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
+	source $ICC_SDC_SETUP_FILE
 }
 
 set_active_scenario $CLOCK_OPT_CTS_SCN

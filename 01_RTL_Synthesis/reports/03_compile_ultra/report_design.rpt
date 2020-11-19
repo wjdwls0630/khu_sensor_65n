@@ -3,7 +3,7 @@
 Report : design
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:38:54 2020
+Date   : Thu Nov 19 19:08:18 2020
 ****************************************
 
 Design allows ideal nets on clock nets.
@@ -11,12 +11,11 @@ Design allows ideal nets on clock nets.
 Library(s) Used:
 
     scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (File: /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db)
-    scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm (File: /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db)
     ss65lp3p3v_wst_108_300_p125 (File: /Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db)
 
 Local Link Library:
 
-    {scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db, scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db, scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db, scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db, ss65lp3p3v_wst_108_300_p125.db}
+    {scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db, scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db, ss65lp3p3v_wst_108_300_p125.db}
 
 Flip-Flop Types:
 
@@ -30,7 +29,7 @@ Operating Conditions:
 
 
     Operating Condition Name : ss_1p08v_125c
-    Library : scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+    Library : scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm
     Process :   1.00
     Temperature : 125.00
     Voltage :   1.08

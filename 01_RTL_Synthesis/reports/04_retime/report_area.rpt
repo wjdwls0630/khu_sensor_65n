@@ -3,30 +3,29 @@
 Report : area
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:40:19 2020
+Date   : Thu Nov 19 19:09:25 2020
 ****************************************
 
 Library(s) Used:
 
-    scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm (File: /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db)
     scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (File: /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db)
     ss65lp3p3v_wst_108_300_p125 (File: /Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db)
 
 Number of ports:                         4856
-Number of nets:                         36304
-Number of cells:                        29427
-Number of combinational cells:          23804
-Number of sequential cells:              5459
+Number of nets:                         36415
+Number of cells:                        29785
+Number of combinational cells:          23249
+Number of sequential cells:              6372
 Number of macros/black boxes:              45
-Number of buf/inv:                       3286
-Number of references:                      11
+Number of buf/inv:                       2779
+Number of references:                      10
 
-Combinational area:              64529.920409
-Buf/Inv area:                     3375.359934
-Noncombinational area:           44635.520097
+Combinational area:              62339.200261
+Buf/Inv area:                     2796.159946
+Noncombinational area:           44194.560532
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                109165.440506
+Total cell area:                106533.760792
 Total area:                 undefined
 1

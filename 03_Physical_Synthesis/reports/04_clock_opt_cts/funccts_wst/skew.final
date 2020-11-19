@@ -4,7 +4,7 @@ Report : clock tree
 Design : khu_sensor_pad
 Scenario(s): funccts_wst
 Version: N-2017.09
-Date   : Sat Sep 12 02:33:41 2020
+Date   : Thu Nov 19 19:32:44 2020
 ****************************************
 
 =============================Report for scenario (funccts_wst)=============================
@@ -14,169 +14,153 @@ Information: Float pin scale factor for the 'max' operating condition of scenari
 
 Clock Tree Name                : "clk"
 Scenario                       : "funccts_wst"
-Clock Period                   : 12.00000       
+Clock Period                   : 5.40000        
 Clock Tree root pin            : "i_CLK"
-Number of Levels               : 12
-Number of Sinks                : 2226
-Number of CT Buffers           : 132
+Number of Levels               : 10
+Number of Sinks                : 5228
+Number of CT Buffers           : 124
 Number of CTS added gates      : 0
-Number of Preexisting Gates    : 124
-Number of Preexisting Buf/Inv  : 0
-Total Number of Clock Cells    : 256
-Total Area of CT Buffers       : 2005.34363     
-Total Area of CT cells         : 13215.07129    
-Max Global Skew                : 2.66365   
+Number of Preexisting Gates    : 177
+Number of Preexisting Buf/Inv  : 143
+Total Number of Clock Cells    : 444
+Total Area of CT Buffers       : 270.71991      
+Total Area of CT cells         : 8687.69238     
+Max Global Skew                : 1.78584   
 Number of MaxTran Violators    : 0
 Number of MaxCap Violators     : 0
 Number of MaxFanout Violators  : 0
 
 
 Operating Condition               worst
-Clock global Skew                 2.664
-Longest path delay                2.740
-Shortest path delay               0.076
+Clock global Skew                 1.786
+Longest path delay                2.010
+Shortest path delay               0.224
 
-The longest path delay end pin: khu_sensor_top/ads1292_filter/iir_hpf/r_mult_A_reg_5_/CK
-The shortest path delay end pin: async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg/CK
+The longest path delay end pin: khu_sensor_top/ads1292_filter/iir_lpf/mult_1/product_reg_34_/CK
+The shortest path delay end pin: async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff_reg/CK
 
 The longest Path:
 Pin                                         Cap       Fanout    Trans     Incr      Arri
 ----------------------------------------------------------------------------------------------------
 i_CLK                                       0.000            1  0.000     0.000     0.000     r
-i_CLK                                       2.097            3  0.000     0.000     0.000     r
-pad1/PAD                                    2.097            1  0.000     0.068     0.068     r
-pad1/Y                                      0.056            3  0.284     1.273     1.341     r
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G2B9I11/A
-                                            0.056            1  0.284     0.001     1.341     r
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G2B9I11/Y
-                                            0.126            1  0.131     0.107     1.449     f
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G2B9I1/A
-                                            0.126            1  0.133     0.010     1.458     f
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G2B9I1/Y
-                                            0.132            1  0.184     0.112     1.570     r
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G2B8I1/A
-                                            0.132            1  0.186     0.011     1.581     r
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G2B8I1/Y
-                                            0.256            2  0.194     0.129     1.710     f
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G2B7I1/A
-                                            0.256            1  0.195     0.002     1.712     f
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G2B7I1/Y
-                                            0.027            1  0.164     0.119     1.831     r
-khu_sensor_top/CTS_funccts_wst_ivd20_hd_G2B6I1/A
-                                            0.027            1  0.164     0.000     1.831     r
-khu_sensor_top/CTS_funccts_wst_ivd20_hd_G2B6I1/Y
-                                            0.123            3  0.167     0.130     1.961     f
-khu_sensor_top/CTS_funccts_wst_ivd16_hd_G2B5I3/A
-                                            0.123            1  0.168     0.002     1.963     f
-khu_sensor_top/CTS_funccts_wst_ivd16_hd_G2B5I3/Y
-                                            0.089            2  0.171     0.117     2.080     r
-khu_sensor_top/ads1292_filter/CTS_funccts_wst_ivd20_hd_G2B4I2/A
-                                            0.089            1  0.171     0.001     2.081     r
-khu_sensor_top/ads1292_filter/CTS_funccts_wst_ivd20_hd_G2B4I2/Y
-                                            0.116            1  0.202     0.148     2.229     f
-khu_sensor_top/ads1292_filter/CTS_funccts_wst_ivd16_hd_G2B3I6/A
-                                            0.116            1  0.203     0.009     2.237     f
-khu_sensor_top/ads1292_filter/CTS_funccts_wst_ivd16_hd_G2B3I6/Y
-                                            0.075            2  0.258     0.167     2.404     r
-khu_sensor_top/ads1292_filter/CTS_funccts_wst_ivd12_hd_G2B2I13/A
-                                            0.075            1  0.258     0.001     2.405     r
-khu_sensor_top/ads1292_filter/CTS_funccts_wst_ivd12_hd_G2B2I13/Y
-                                            0.092            2  0.187     0.157     2.562     f
-khu_sensor_top/ads1292_filter/iir_hpf/CTS_funccts_wst_ivd12_hd_G2B1I43/A
-                                            0.092            1  0.187     0.003     2.565     f
-khu_sensor_top/ads1292_filter/iir_hpf/CTS_funccts_wst_ivd12_hd_G2B1I43/Y
-                                            0.111           22  0.277     0.172     2.737     r
-khu_sensor_top/ads1292_filter/iir_hpf/r_mult_A_reg_5_/CK
-                                            0.111            0  0.278     0.003     2.740     r
-[clock delay]                                                                       2.740
+i_CLK                                       2.167            3  0.000     0.000     0.000     r
+pad3/PAD                                    2.167            1  0.000     0.221     0.221     r
+pad3/Y                                      0.029            2  0.115     0.448     0.669     r
+khu_sensor_top/CTS_funccts_wst_CLKINVX40MTR_G2B7I11/A
+                                            0.029            1  0.115     0.001     0.670     r
+khu_sensor_top/CTS_funccts_wst_CLKINVX40MTR_G2B7I11/Y
+                                            0.196            3  0.165     0.111     0.781     f
+khu_sensor_top/CTS_funccts_wst_CLKINVX40MTR_G2B5I3/A
+                                            0.196            1  0.198     0.051     0.832     f
+khu_sensor_top/CTS_funccts_wst_CLKINVX40MTR_G2B5I3/Y
+                                            0.163            4  0.256     0.198     1.030     r
+khu_sensor_top/CTS_funccts_wst_CLKINVX40MTR_G2B4I1/A
+                                            0.163            1  0.257     0.008     1.038     r
+khu_sensor_top/CTS_funccts_wst_CLKINVX40MTR_G2B4I1/Y
+                                            0.175            5  0.191     0.161     1.199     f
+khu_sensor_top/ads1292_filter/CTS_funccts_wst_CLKINVX40MTR_G2B3I10/A
+                                            0.175            1  0.192     0.010     1.210     f
+khu_sensor_top/ads1292_filter/CTS_funccts_wst_CLKINVX40MTR_G2B3I10/Y
+                                            0.204           15  0.301     0.225     1.435     r
+khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_s_reg/latch/CK
+                                            0.204            1  0.303     0.010     1.445     r
+khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_s_reg/latch/ECK
+                                            0.012            1  0.178     0.242     1.687     r
+khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_s_reg/icc_place1/A
+                                            0.012            1  0.178     0.000     1.687     r
+khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_s_reg/icc_place1/Y
+                                            0.169           49  0.410     0.289     1.976     r
+khu_sensor_top/ads1292_filter/iir_lpf/mult_1/product_reg_34_/CK
+                                            0.169            0  0.414     0.034     2.010     r
+[clock delay]                                                                       2.010
 ----------------------------------------------------------------------------------------------------
 
 The Shortest Path:
 Pin                                         Cap       Fanout    Trans     Incr      Arri
 ----------------------------------------------------------------------------------------------------
 i_CLK                                       0.000            1  0.000     0.000     0.000     r
-i_CLK                                       2.097            3  0.000     0.000     0.000     r
-async_rstn_glitch_synchronizer/async_rstn_synchronizer/o_RSTN_reg/CK
-                                            2.097            0  0.000     0.076     0.076     r
-[clock delay]                                                                       0.076
+i_CLK                                       2.167            3  0.000     0.000     0.000     r
+async_rstn_glitch_synchronizer/async_rstn_synchronizer/r_ff_reg/CK
+                                            2.167            0  0.000     0.224     0.224     r
+[clock delay]                                                                       0.224
 ----------------------------------------------------------------------------------------------------
 
 
 Clock Tree Name                : "clk_half"
 Scenario                       : "funccts_wst"
-Clock Period                   : 24.00000       
+Clock Period                   : 10.80000       
 Clock Tree root pin            : "khu_sensor_top/divider_by_2/o_CLK_DIV_2"
-Number of Levels               : 5
-Number of Sinks                : 421
-Number of CT Buffers           : 14
+Number of Levels               : 6
+Number of Sinks                : 413
+Number of CT Buffers           : 23
 Number of CTS added gates      : 0
-Number of Preexisting Gates    : 0
-Number of Preexisting Buf/Inv  : 0
-Total Number of Clock Cells    : 14
-Total Area of CT Buffers       : 209.08797      
-Total Area of CT cells         : 209.08797      
-Max Global Skew                : 0.03156   
+Number of Preexisting Gates    : 28
+Number of Preexisting Buf/Inv  : 5
+Total Number of Clock Cells    : 56
+Total Area of CT Buffers       : 39.68000       
+Total Area of CT cells         : 252.79991      
+Max Global Skew                : 0.23881   
 Number of MaxTran Violators    : 0
 Number of MaxCap Violators     : 0
 Number of MaxFanout Violators  : 0
 
 
 Operating Condition               worst
-Clock global Skew                 0.032
-Longest path delay                0.505
-Shortest path delay               0.473
+Clock global Skew                 0.239
+Longest path delay                0.714
+Shortest path delay               0.476
 
-The longest path delay end pin: khu_sensor_top/sensor_core/o_ADS1292_DATA_IN_reg_3_/CK
-The shortest path delay end pin: khu_sensor_top/sensor_core/r_mpr_pstate_reg_5_/CK
+The longest path delay end pin: khu_sensor_top/sensor_core/r_ads_second_param_reg_7_/CK
+The shortest path delay end pin: khu_sensor_top/sensor_core/r_mpr_lstate_reg_4_/CK
 
 The longest Path:
 Pin                                         Cap       Fanout    Trans     Incr      Arri
 ----------------------------------------------------------------------------------------------------
-khu_sensor_top/divider_by_2/o_CLK_DIV_2     0.009            1  0.084     0.000     0.000     r
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G4B4I1/A
-                                            0.009            1  0.084     0.000     0.000     r
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G4B4I1/Y
-                                            0.046            1  0.116     0.087     0.087     f
-khu_sensor_top/CTS_funccts_wst_ivd20_hd_G4B3I1/A
-                                            0.046            1  0.116     0.001     0.088     f
-khu_sensor_top/CTS_funccts_wst_ivd20_hd_G4B3I1/Y
-                                            0.113            3  0.192     0.118     0.206     r
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G4B2I3/A
-                                            0.113            1  0.193     0.001     0.208     r
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G4B2I3/Y
-                                            0.172            4  0.163     0.133     0.341     f
-khu_sensor_top/sensor_core/CTS_funccts_wst_ivd16_hd_G4B1I8/A
-                                            0.172            1  0.163     0.001     0.342     f
-khu_sensor_top/sensor_core/CTS_funccts_wst_ivd16_hd_G4B1I8/Y
-                                            0.159           32  0.263     0.160     0.502     r
-khu_sensor_top/sensor_core/o_ADS1292_DATA_IN_reg_3_/CK
-                                            0.159            0  0.263     0.003     0.505     r
-[clock delay]                                                                       0.505
+khu_sensor_top/divider_by_2/o_CLK_DIV_2     0.008            1  0.052     0.000     0.000     r
+khu_sensor_top/CTS_funccts_wst_CLKINVX40MTR_G4B5I11/A
+                                            0.008            1  0.052     0.000     0.000     r
+khu_sensor_top/CTS_funccts_wst_CLKINVX40MTR_G4B5I11/Y
+                                            0.030            2  0.153     0.111     0.111     f
+khu_sensor_top/CTS_funccts_wst_CLKINVX24MTR_G4B3I1/A
+                                            0.030            1  0.153     0.001     0.112     f
+khu_sensor_top/CTS_funccts_wst_CLKINVX24MTR_G4B3I1/Y
+                                            0.113           13  0.186     0.143     0.254     r
+khu_sensor_top/sensor_core/clk_gate_r_ads_second_param_reg_0/latch/CK
+                                            0.113            1  0.188     0.012     0.266     r
+khu_sensor_top/sensor_core/clk_gate_r_ads_second_param_reg_0/latch/ECK
+                                            0.010            1  0.153     0.208     0.474     r
+khu_sensor_top/sensor_core/CTS_funccts_wst_CLKINVX12MTR_G5B2I113/A
+                                            0.010            1  0.153     0.000     0.475     r
+khu_sensor_top/sensor_core/CTS_funccts_wst_CLKINVX12MTR_G5B2I113/Y
+                                            0.013            1  0.126     0.118     0.592     f
+khu_sensor_top/sensor_core/CTS_funccts_wst_CLKINVX8MTR_G5B1I113/A
+                                            0.013            1  0.126     0.000     0.593     f
+khu_sensor_top/sensor_core/CTS_funccts_wst_CLKINVX8MTR_G5B1I113/Y
+                                            0.035           16  0.142     0.119     0.712     r
+khu_sensor_top/sensor_core/r_ads_second_param_reg_7_/CK
+                                            0.035            0  0.142     0.003     0.714     r
+[clock delay]                                                                       0.714
 ----------------------------------------------------------------------------------------------------
 
 The Shortest Path:
 Pin                                         Cap       Fanout    Trans     Incr      Arri
 ----------------------------------------------------------------------------------------------------
-khu_sensor_top/divider_by_2/o_CLK_DIV_2     0.009            1  0.084     0.000     0.000     r
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G4B4I1/A
-                                            0.009            1  0.084     0.000     0.000     r
-khu_sensor_top/CTS_funccts_wst_ivd24_hd_G4B4I1/Y
-                                            0.046            1  0.116     0.087     0.087     f
-khu_sensor_top/CTS_funccts_wst_ivd20_hd_G4B3I1/A
-                                            0.046            1  0.116     0.001     0.088     f
-khu_sensor_top/CTS_funccts_wst_ivd20_hd_G4B3I1/Y
-                                            0.113            3  0.192     0.118     0.206     r
-khu_sensor_top/CTS_funccts_wst_ivd16_hd_G4B2I2/A
-                                            0.113            1  0.193     0.002     0.209     r
-khu_sensor_top/CTS_funccts_wst_ivd16_hd_G4B2I2/Y
-                                            0.137            3  0.140     0.120     0.329     f
-khu_sensor_top/sensor_core/CTS_funccts_wst_ivd20_hd_G4B1I9/A
-                                            0.137            1  0.140     0.002     0.331     f
-khu_sensor_top/sensor_core/CTS_funccts_wst_ivd20_hd_G4B1I9/Y
-                                            0.184           47  0.231     0.141     0.472     r
-khu_sensor_top/sensor_core/r_mpr_pstate_reg_5_/CK
-                                            0.184            0  0.232     0.001     0.473     r
-[clock delay]                                                                       0.473
+khu_sensor_top/divider_by_2/o_CLK_DIV_2     0.008            1  0.052     0.000     0.000     r
+khu_sensor_top/CTS_funccts_wst_CLKINVX40MTR_G4B5I11/A
+                                            0.008            1  0.052     0.000     0.000     r
+khu_sensor_top/CTS_funccts_wst_CLKINVX40MTR_G4B5I11/Y
+                                            0.030            2  0.153     0.111     0.111     f
+khu_sensor_top/CTS_funccts_wst_CLKINVX32MTR_G4B3I2/A
+                                            0.030            1  0.153     0.001     0.112     f
+khu_sensor_top/CTS_funccts_wst_CLKINVX32MTR_G4B3I2/Y
+                                            0.092           16  0.183     0.150     0.262     r
+khu_sensor_top/sensor_core/clk_gate_r_mpr_lstate_reg_0/latch/CK
+                                            0.092            1  0.184     0.003     0.265     r
+khu_sensor_top/sensor_core/clk_gate_r_mpr_lstate_reg_0/latch/ECK
+                                            0.010            4  0.159     0.210     0.475     r
+khu_sensor_top/sensor_core/r_mpr_lstate_reg_4_/CK
+                                            0.010            0  0.159     0.000     0.476     r
+[clock delay]                                                                       0.476
 ----------------------------------------------------------------------------------------------------
 
 1

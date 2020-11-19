@@ -33,7 +33,8 @@ set_pad_physical_constraints -pad_name  "pad5"          -side 1 -order  10 -offs
 set_pad_physical_constraints -pad_name  "pad4"          -side 1 -order  11 -offset      908
 set_pad_physical_constraints -pad_name  "pad3"          -side 1 -order  12 -offset      976
 set_pad_physical_constraints -pad_name  "pad2"          -side 1 -order  13 -offset     1056
-set_pad_physical_constraints -pad_name  "pad1"          -side 1 -order  14 -offset     1148
+set_pad_physical_constraints -pad_name  "pad1"          -side 1 -order  14 -offset     1124
+#set_pad_physical_constraints -pad_name  "pad1"          -side 1 -order  14 -offset     1148
 
 #;Bottom pad
 set_pad_physical_constraints -pad_name  "pad15"         -side 4 -order  1 -offset       192
@@ -49,7 +50,8 @@ set_pad_physical_constraints -pad_name  "pad24"         -side 4 -order  10 -offs
 set_pad_physical_constraints -pad_name  "pad25"         -side 4 -order  11 -offset      896
 set_pad_physical_constraints -pad_name  "pad26"         -side 4 -order  11 -offset      976
 set_pad_physical_constraints -pad_name  "pad27"         -side 4 -order  11 -offset     1044
-set_pad_physical_constraints -pad_name  "pad28"         -side 4 -order  11 -offset     1148
+set_pad_physical_constraints -pad_name  "pad28"         -side 4 -order  11 -offset     1124
+#set_pad_physical_constraints -pad_name  "pad28"         -side 4 -order  11 -offset     1148
 
 #;Right pad
 set_pad_physical_constraints -pad_name  "pad29"        -side 3 -order  1 -offset       192
@@ -65,7 +67,8 @@ set_pad_physical_constraints -pad_name  "pad38"        -side 3 -order  10 -offse
 set_pad_physical_constraints -pad_name  "pad39"        -side 3 -order  11 -offset      896
 set_pad_physical_constraints -pad_name  "pad40"        -side 3 -order  11 -offset      964
 set_pad_physical_constraints -pad_name  "pad41"        -side 3 -order  11 -offset     1032
-set_pad_physical_constraints -pad_name  "pad42"        -side 3 -order  11 -offset     1148
+set_pad_physical_constraints -pad_name  "pad42"        -side 3 -order  11 -offset     1100
+#set_pad_physical_constraints -pad_name  "pad42"        -side 3 -order  11 -offset     1148
 
 #;Top pad
 set_pad_physical_constraints -pad_name  "pad56"        -side 2 -order  1 -offset       192
@@ -81,4 +84,5 @@ set_pad_physical_constraints -pad_name  "pad47"        -side 2 -order  7 -offset
 set_pad_physical_constraints -pad_name  "pad46"        -side 2 -order  8 -offset       884
 set_pad_physical_constraints -pad_name  "pad45"        -side 2 -order  9 -offset       952
 set_pad_physical_constraints -pad_name  "pad44"        -side 2 -order  10 -offset     1032
-set_pad_physical_constraints -pad_name  "pad43"        -side 2 -order  11 -offset     1148
+set_pad_physical_constraints -pad_name  "pad43"        -side 2 -order  11 -offset     1100
+#set_pad_physical_constraints -pad_name  "pad43"        -side 2 -order  11 -offset     1148

@@ -44,7 +44,7 @@ remove_scenario -all
 
 # After placement, delete max_delay constraints. It is only for placing
 # clock gating cell and gated register in proximity.
-sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
+source $ICC_SDC_SETUP_FILE
 
 source $ICC_MCMM_SCENARIOS_FILE
 set_active_scenario $CHIP_FINISH_SCN
@@ -57,6 +57,29 @@ source $ANTENNA_RULE
 report_antenna_rules
 
 set_route_zrt_detail_options -antenna true
+
+# Search & Repair
+verify_zrt_route
+route_zrt_detail -inc true -initial_drc_from_input true
+
+# Error handle
+# After P&R, please check an errors by Error Browser.
+# In the Error Browser, check "Detail Route", and check errors.
+# For antenna violation fixing, set renewed detail route option and routing again.
+# Below lines, it is command for it.
+# In some case, antenna violation cannot be fixed completely.
+# If this is the case, the errors should be fixed manually by hop-up technique(in virtuoso)
+#
+# For short circuit, check detail one by one, if errors by a pin connection with custom modules or 
+# a limitation of the library, the errors can be ignored. 
+#
+# For diff net spacing, check the pins connection, if errors by a pin connection with custom modules
+# or a limitation of the library, the errors can be ignored. If not, the errors should be fixed by
+# re-routing or handling manually(in virtuoso)
+
+set_route_zrt_detail_options \
+	-diode_libcell_names diode_cell_hd \
+	-antenna_fixing_preference use_diodes
 
 # Search & Repair
 verify_zrt_route
@@ -112,14 +135,15 @@ redirect -file $REPORTS_STEP_DIR/min_timing.rpt {
 	-delay min -transition_time  -capacitance \
 	-max_paths 20 -nets -input_pins \
 	-physical -attributes -nosplit -crosstalk_delta -derate -path full_clock_expanded
-}
+}        
+report_zrt_shield -with_ground $MW_R_GROUND_NET -output $REPORTS_STEP_DIR/shield_ratio.rpt 
 report_clock_gating -style > $REPORTS_STEP_DIR/clock_gating.rpt
 report_clock_gating_check -significant_digits 4 >> $REPORTS_STEP_DIR/clock_gating.rpt
 report_clock_gating -structure >> $REPORTS_STEP_DIR/clock_gating.rpt
 report_timing -max_paths 10 -to [get_pins -hierarchical "clk_gate*"] \
 	> $REPORTS_STEP_DIR/clock_gating_max_paths.rpt
 redirect -file $REPORTS_STEP_DIR/power.rpt {
- 	report_power -verbose -analyze_effort high
+ 	report_power -verbose -analysis_effort high
 }
 # To verify CRPR
 #redirect -file $REPORTS_DIR/${step}/crpr.rpt { report_crpr }
@@ -137,21 +161,23 @@ verify_lvs -max_error 500
 
 # insert extra cell (I/O Filler, STD Filler, decap)
 # Decap
-insert_stdcell_filler
-	-cell_with_metal $DECAP_FILLER
-	-ignore_soft_placement_blockage
-	-between_std_cells_only
+insert_stdcell_filler \
+	-cell_with_metal $DECAP_FILLER \
+	-ignore_soft_placement_blockage \
+	-between_std_cells_only \
 	-connect_to_power {VDD} -connect_to_ground {VSS}
 
 # STD Filler
-insert_stdcell_filler
-	-cell_without_metal $RVT_FILLER
-	-ignore_soft_placement_blockage
-	-between_std_cells_only
+insert_stdcell_filler \
+	-cell_without_metal $RVT_FILLER \
+	-ignore_soft_placement_blockage \
+	-between_std_cells_only \
 	-connect_to_power {VDD} -connect_to_ground {VSS}
 
 # I/O Filler
 insert_pad_filler -cell $IO_FILLER
+
+save_mw_cel -as ${TOP_MODULE}_Insert_Filler
 
 write_verilog ./outputs/${TOP_MODULE}.vg \
 	-no_corner_pad_cells -no_pad_filler_cells -diode_ports \
@@ -166,21 +192,21 @@ set_write_stream_options -child_depth 0 -map_layer $STREAM_OUT_MAP \
 	-output_pin {geometry text} \
 	-keep_data_type -max_name_length 128
 
-write_stream -lib_name ./mw_db/${TOP_MODULE}_${step} -format gds -cells $TOP_MODULE \
-	./outputs/${TOP_MODULE}.gds_depth0
+write_stream -format gds -cells $TOP_MODULE ./outputs/${TOP_MODULE}.gds_depth0
 
 set_write_stream_options -child_depth 30 -map_layer $STREAM_OUT_MAP \
 	-output_pin {geometry text} \
 	-keep_data_type -max_name_length 128
 
-write_stream -lib_name ./mw_db/${TOP_MODULE}_${step} -format gds -cells $TOP_MODULE \
-	./outputs/${TOP_MODULE}.${step}.gds_depth30
+write_stream -format gds -cells $TOP_MODULE ./outputs/${TOP_MODULE}.gds_depth30
 
 write_def -nondefault_rule -rows_tracks_gcells -vias -all_vias -components -pins -blockages \
 	-regions_groups -specialnets -nets -diode_pins -output ./outputs/${TOP_MODULE}.def
 
 write_sdf ./outputs/$TOP_MODULE.sdf
 write_sdc ./outputs/$TOP_MODULE.sdc
+
+extract_rc -coupling_cap 
 write_parasitics -format SPEF -output ./outputs/${TOP_MODULE}.spef
 
 remove_power_domain -all

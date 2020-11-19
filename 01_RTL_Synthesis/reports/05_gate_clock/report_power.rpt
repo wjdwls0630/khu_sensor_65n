@@ -1,18 +1,26 @@
+Information: Propagating switching activity (high effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+Warning: Design has unannotated black box outputs. (PWR-428)
  
 ****************************************
 Report : power
-        -analysis_effort low
+        -analysis_effort high
+        -verbose
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:42:43 2020
+Date   : Thu Nov 19 19:10:59 2020
 ****************************************
 
 
 Library(s) Used:
 
-    scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm (File: /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db)
     scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (File: /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db)
     ss65lp3p3v_wst_108_300_p125 (File: /Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db)
+
+
+Operating Conditions: ss_1p08v_125c   Library: scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm
+Wire Load Model Mode: top
 
 
 Global Operating Voltage = 1.08 
@@ -24,24 +32,23 @@ Power-specific unit information :
     Leakage Power Units = 1mW
 
 
-  Cell Internal Power  =   6.7709 mW   (70%)
-  Net Switching Power  =   2.9461 mW   (30%)
+  Cell Internal Power  =   5.3909 mW   (92%)
+  Net Switching Power  = 450.4195 uW    (8%)
                          ---------
-Total Dynamic Power    =   9.7170 mW  (100%)
+Total Dynamic Power    =   5.8413 mW  (100%)
 
-Cell Leakage Power     =  42.7170 uW
+Cell Leakage Power     =  84.0460 uW
 
-
-                 Internal         Switching           Leakage            Total
-Power Group      Power            Power               Power              Power   (   %    )  Attrs
---------------------------------------------------------------------------------------------------
-io_pad             5.4979            2.8876        1.5515e-02            8.4010  (  86.09%)
-memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
-black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network      0.1896        4.7696e-02        8.5024e-05            0.2373  (   2.43%)
-register           1.0664        3.8424e-03        4.9230e-03            1.0752  (  11.02%)
-sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  1.7024e-02        5.8999e-03        2.2194e-02        4.5117e-02  (   0.46%)
---------------------------------------------------------------------------------------------------
-Total              6.7709 mW         2.9450 mW     4.2717e-02 mW         9.7586 mW
+                 Internal         Switching           Leakage            Total                         Cell
+Power Group      Power            Power               Power              Power   (   %    )  Attrs  Count
+---------------------------------------------------------------------------------------------------------
+io_pad             4.2661            0.3899        1.5512e-02            4.6715  (  78.84%)            56
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+clock_network      0.1622        5.4540e-02        1.1268e-03            0.2178  (   3.68%)            175
+register           0.9512        2.1995e-03        2.1846e-02            0.9753  (  16.46%)            5229
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+combinational  1.1340e-02        3.7550e-03        4.5561e-02        6.0656e-02  (   1.02%)            21246
+---------------------------------------------------------------------------------------------------------
+Total              5.3909 mW         0.4504 mW     8.4046e-02 mW         5.9253 mW
 1

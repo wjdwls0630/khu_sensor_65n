@@ -3,7 +3,7 @@
 Report : constraint
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:38:54 2020
+Date   : Thu Nov 19 19:08:18 2020
 ****************************************
 
 
@@ -37,14 +37,14 @@ Date   : Tue Nov 17 01:38:54 2020
     FEEDTHROUGH                  0.00      1.00      0.00
     REGIN                        0.00      1.00      0.00
     REGOUT                       0.00      1.00      0.00
-    clk                          0.11      1.00      0.11
-    clk_half                     0.05      1.00      0.05
+    clk                          0.00      1.00      0.00
+    clk_half                     0.00      1.00      0.00
     default                      0.00      1.00      0.00
     -----------------------------------------------------
-    min_delay/hold                                   0.16
+    min_delay/hold                                   0.00
     Constraint                                     Slack
     ----------------------------------------------------
-    max_leakage_power                              -0.06  (VIOLATED)
+    max_leakage_power                              -0.10  (VIOLATED)
 
 
     Constraint                                       Cost
@@ -55,9 +55,9 @@ Date   : Tue Nov 17 01:38:54 2020
     max_delay/setup                                  0.00 (MET)
     sequential_clock_pulse_width                     0.00 (MET)
     critical_range                                   0.00 (MET)
-    min_delay/hold                                   0.16 (VIOLATED)
-    max_leakage_power                                0.06 (VIOLATED)
-    max_area                                     112629.76
+    min_delay/hold                                   0.00 (MET)
+    max_leakage_power                                0.10 (VIOLATED)
+    max_area                                     107706.88
                                                           (VIOLATED)
 
 
@@ -69,159 +69,24 @@ Report : constraint
         -verbose
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:38:54 2020
+Date   : Thu Nov 19 19:08:18 2020
 ****************************************
-
-
-  Startpoint: khu_sensor_top/sensor_core/o_ADS1292_CONTROL_reg[0]
-              (rising edge-triggered flip-flop clocked by clk_half)
-  Endpoint: khu_sensor_top/ads1292_controller/r_wreg_mode_reg
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: min
-
-  Point                                                   Incr       Path      Voltage
-  ------------------------------------------------------------------------------------
-  clock clk_half (rise edge)                              0.00       0.00      
-  clock network delay (ideal)                             0.75       0.75      
-  khu_sensor_top/sensor_core/o_ADS1292_CONTROL_reg[0]/CK (DFFRHQX8MTR)
-                                                          0.00       0.75 r    1.08
-  khu_sensor_top/sensor_core/o_ADS1292_CONTROL_reg[0]/Q (DFFRHQX8MTR)
-                                                          0.23       0.98 r    1.08
-  khu_sensor_top/ads1292_controller/U185/Y (OAI22X1MTH)
-                                                          0.06       1.03 f    1.08
-  khu_sensor_top/ads1292_controller/r_wreg_mode_reg/D (DFFRQX4MTH)
-                                                          0.00       1.03 f    1.08
-  data arrival time                                                  1.03      
-
-  clock clk (rise edge)                                   0.00       0.00      
-  clock network delay (ideal)                             0.75       0.75      
-  khu_sensor_top/ads1292_controller/r_wreg_mode_reg/CK (DFFRQX4MTH)
-                                                          0.00       0.75 r    
-  library hold time                                       0.33       1.08      
-  data required time                                                 1.08      
-  ------------------------------------------------------------------------------------
-  data required time                                                 1.08      
-  data arrival time                                                 -1.03      
-  ------------------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.05      
-
-
-  Startpoint: khu_sensor_top/sensor_core/o_ADS1292_CONTROL_reg[0]
-              (rising edge-triggered flip-flop clocked by clk_half)
-  Endpoint: khu_sensor_top/ads1292_controller/r_rdatac_mode_reg
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: min
-
-  Point                                                   Incr       Path      Voltage
-  ------------------------------------------------------------------------------------
-  clock clk_half (rise edge)                              0.00       0.00      
-  clock network delay (ideal)                             0.75       0.75      
-  khu_sensor_top/sensor_core/o_ADS1292_CONTROL_reg[0]/CK (DFFRHQX8MTR)
-                                                          0.00       0.75 r    1.08
-  khu_sensor_top/sensor_core/o_ADS1292_CONTROL_reg[0]/Q (DFFRHQX8MTR)
-                                                          0.23       0.98 r    1.08
-  khu_sensor_top/ads1292_controller/U178/Y (OAI22X1MTH)
-                                                          0.06       1.03 f    1.08
-  khu_sensor_top/ads1292_controller/r_rdatac_mode_reg/D (DFFRQX4MTH)
-                                                          0.00       1.03 f    1.08
-  data arrival time                                                  1.03      
-
-  clock clk (rise edge)                                   0.00       0.00      
-  clock network delay (ideal)                             0.75       0.75      
-  khu_sensor_top/ads1292_controller/r_rdatac_mode_reg/CK (DFFRQX4MTH)
-                                                          0.00       0.75 r    
-  library hold time                                       0.33       1.08      
-  data required time                                                 1.08      
-  ------------------------------------------------------------------------------------
-  data required time                                                 1.08      
-  data arrival time                                                 -1.03      
-  ------------------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.05      
-
-
-  Startpoint: khu_sensor_top/sensor_core/o_ADS1292_CONTROL_reg[0]
-              (rising edge-triggered flip-flop clocked by clk_half)
-  Endpoint: khu_sensor_top/ads1292_controller/r_idle_mode_reg
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: min
-
-  Point                                                   Incr       Path      Voltage
-  ------------------------------------------------------------------------------------
-  clock clk_half (rise edge)                              0.00       0.00      
-  clock network delay (ideal)                             0.75       0.75      
-  khu_sensor_top/sensor_core/o_ADS1292_CONTROL_reg[0]/CK (DFFRHQX8MTR)
-                                                          0.00       0.75 r    1.08
-  khu_sensor_top/sensor_core/o_ADS1292_CONTROL_reg[0]/Q (DFFRHQX8MTR)
-                                                          0.23       0.98 r    1.08
-  khu_sensor_top/ads1292_controller/U181/Y (OAI2B2X1MTH)
-                                                          0.08       1.06 f    1.08
-  khu_sensor_top/ads1292_controller/r_idle_mode_reg/D (DFFRQX4MTH)
-                                                          0.00       1.06 f    1.08
-  data arrival time                                                  1.06      
-
-  clock clk (rise edge)                                   0.00       0.00      
-  clock network delay (ideal)                             0.75       0.75      
-  khu_sensor_top/ads1292_controller/r_idle_mode_reg/CK (DFFRQX4MTH)
-                                                          0.00       0.75 r    
-  library hold time                                       0.33       1.08      
-  data required time                                                 1.08      
-  ------------------------------------------------------------------------------------
-  data required time                                                 1.08      
-  data arrival time                                                 -1.06      
-  ------------------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.02      
-
-
-  Startpoint: khu_sensor_top/ads1292_controller/o_ADS1292_INIT_SET_reg
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: khu_sensor_top/sensor_core/r_core_pstate_reg[0]
-            (rising edge-triggered flip-flop clocked by clk_half)
-  Path Group: clk_half
-  Path Type: min
-
-  Point                                                   Incr       Path      Voltage
-  ------------------------------------------------------------------------------------
-  clock clk (rise edge)                                   8.40       8.40      
-  clock network delay (ideal)                             0.75       9.15      
-  khu_sensor_top/ads1292_controller/o_ADS1292_INIT_SET_reg/CK (DFFRHQX8MTR)
-                                                          0.00 #     9.15 r    1.08
-  khu_sensor_top/ads1292_controller/o_ADS1292_INIT_SET_reg/Q (DFFRHQX8MTR)
-                                                          0.23       9.38 r    1.08
-  khu_sensor_top/sensor_core/U621/Y (AOI32X2MTR)          0.06       9.43 f    1.08
-  khu_sensor_top/sensor_core/r_core_pstate_reg[0]/D (DFFRQX4MTH)
-                                                          0.00       9.43 f    1.08
-  data arrival time                                                  9.43      
-
-  clock clk_half (rise edge)                              8.40       8.40      
-  clock network delay (ideal)                             0.75       9.15      
-  khu_sensor_top/sensor_core/r_core_pstate_reg[0]/CK (DFFRQX4MTH)
-                                                          0.00       9.15 r    
-  library hold time                                       0.33       9.48      
-  data required time                                                 9.48      
-  ------------------------------------------------------------------------------------
-  data required time                                                 9.48      
-  data arrival time                                                 -9.43      
-  ------------------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.05      
 
 
     Design: khu_sensor_pad
 
     max_area               0.00
-  - Current Area       112629.76
+  - Current Area       107706.88
   ------------------------------
-    Slack              -112629.76  (VIOLATED)
+    Slack              -107706.88  (VIOLATED)
 
 
     Design: khu_sensor_pad
 
     max_leakage_power          0.00
-  - Current Leakage Power      0.06
+  - Current Leakage Power      0.10
   ----------------------------------
-    Slack                     -0.06  (VIOLATED)
+    Slack                     -0.10  (VIOLATED)
 
 
 1

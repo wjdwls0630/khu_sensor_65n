@@ -3,7 +3,7 @@
 Report : constraint
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:40:20 2020
+Date   : Thu Nov 19 19:09:26 2020
 ****************************************
 
 
@@ -44,7 +44,7 @@ Date   : Tue Nov 17 01:40:20 2020
     min_delay/hold                                   0.00
     Constraint                                     Slack
     ----------------------------------------------------
-    max_leakage_power                              -0.05  (VIOLATED)
+    max_leakage_power                              -0.10  (VIOLATED)
 
 
     Constraint                                       Cost
@@ -56,8 +56,8 @@ Date   : Tue Nov 17 01:40:20 2020
     sequential_clock_pulse_width                     0.00 (MET)
     critical_range                                   0.00 (MET)
     min_delay/hold                                   0.00 (MET)
-    max_leakage_power                                0.05 (VIOLATED)
-    max_area                                     109165.44
+    max_leakage_power                                0.10 (VIOLATED)
+    max_area                                     106533.76
                                                           (VIOLATED)
 
 
@@ -69,24 +69,24 @@ Report : constraint
         -verbose
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:40:20 2020
+Date   : Thu Nov 19 19:09:26 2020
 ****************************************
 
 
     Design: khu_sensor_pad
 
     max_area               0.00
-  - Current Area       109165.44
+  - Current Area       106533.76
   ------------------------------
-    Slack              -109165.44  (VIOLATED)
+    Slack              -106533.76  (VIOLATED)
 
 
     Design: khu_sensor_pad
 
     max_leakage_power          0.00
-  - Current Leakage Power      0.05
+  - Current Leakage Power      0.10
   ----------------------------------
-    Slack                     -0.05  (VIOLATED)
+    Slack                     -0.10  (VIOLATED)
 
 
 1

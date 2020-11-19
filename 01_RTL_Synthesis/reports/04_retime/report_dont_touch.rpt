@@ -3,7 +3,7 @@
 Report : dont_touch
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:40:19 2020
+Date   : Thu Nov 19 19:09:25 2020
 **************************************************
 
 Description for Cell dont_touch Types:
@@ -111,7 +111,7 @@ khu_sensor_top/uart_controller/async_rstn_synchronizer
 khu_sensor_top/uart_controller/U211              cell        idn
 khu_sensor_top/sensor_core/async_rst_synchronizer
                                                  cell        inh_ref
-khu_sensor_top/sensor_core/U648                  cell        idn
+khu_sensor_top/sensor_core/U651                  cell        idn
 khu_sensor_top/mpr121_controller/async_rstn_synchronizer
                                                  cell        inh_ref
 khu_sensor_top/mpr121_controller/U182            cell        idn
@@ -122,7 +122,7 @@ khu_sensor_top/ads1292_filter/async_rst_synchronizer
                                                  cell        inh_ref
 khu_sensor_top/ads1292_controller/async_rstn_synchronizer
                                                  cell        inh_ref
-khu_sensor_top/ads1292_controller/U353           cell        idn
+khu_sensor_top/ads1292_controller/U237           cell        idn
 khu_sensor_top/ads1292_controller/U456           cell        idn
 khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/U1
                                                  cell        inh_parent
@@ -402,7 +402,7 @@ khu_sensor_top/ads1292_filter/N17                net         idn
 khu_sensor_top/ads1292_controller/i_RSTN         net         idn
 khu_sensor_top/ads1292_controller/N79            net         idn
 khu_sensor_top/ads1292_controller/n51            net         idn
-khu_sensor_top/ads1292_controller/n83            net         idn
+khu_sensor_top/ads1292_controller/n82            net         idn
 khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/*Logic1*
                                                  net         inh_parent
 khu_sensor_top/async_rstn_glitch_synchronizer/async_rstn_synchronizer/i_CLK
@@ -619,7 +619,7 @@ khu_sensor_top/ads1292_filter/iir_lpf/mult_1/i_RST
 khu_sensor_top/ads1292_filter/iir_lpf/mult_1/n4  net         idn
 khu_sensor_top/ads1292_filter/iir_lpf/mult_2/i_RST
                                                  net         idn
-khu_sensor_top/ads1292_filter/iir_lpf/mult_2/n912
+khu_sensor_top/ads1292_filter/iir_lpf/mult_2/n1189
                                                  net         idn
 khu_sensor_top/ads1292_filter/iir_notch/async_rstn_synchronizer/*Logic1*
                                                  net         inh_parent
@@ -653,15 +653,15 @@ khu_sensor_top/ads1292_filter/iir_notch/add_2/i_RST
 khu_sensor_top/ads1292_filter/iir_notch/add_2/n3 net         idn
 khu_sensor_top/ads1292_filter/iir_notch/mult_1/i_RST
                                                  net         idn
-khu_sensor_top/ads1292_filter/iir_notch/mult_1/n922
+khu_sensor_top/ads1292_filter/iir_notch/mult_1/n1206
                                                  net         idn
 khu_sensor_top/ads1292_filter/iir_notch/mult_2/i_RST
                                                  net         idn
-khu_sensor_top/ads1292_filter/iir_notch/mult_2/n913
+khu_sensor_top/ads1292_filter/iir_notch/mult_2/n1192
                                                  net         idn
 khu_sensor_top/ads1292_filter/iir_notch/mult_3/i_RST
                                                  net         idn
-khu_sensor_top/ads1292_filter/iir_notch/mult_3/n920
+khu_sensor_top/ads1292_filter/iir_notch/mult_3/n1203
                                                  net         idn
 khu_sensor_top/ads1292_filter/iir_hpf/async_rstn_synchronizer/*Logic1*
                                                  net         inh_parent
@@ -690,7 +690,7 @@ khu_sensor_top/ads1292_filter/iir_hpf/async_rst_synchronizer/n14
 khu_sensor_top/ads1292_filter/iir_hpf/add/i_RST  net         idn
 khu_sensor_top/ads1292_filter/iir_hpf/add/n3     net         idn
 khu_sensor_top/ads1292_filter/iir_hpf/mult/i_RST net         idn
-khu_sensor_top/ads1292_filter/iir_hpf/mult/n899  net         idn
+khu_sensor_top/ads1292_filter/iir_hpf/mult/n1172 net         idn
 khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/*Logic1*
                                                  net         inh_parent
 khu_sensor_top/ads1292_controller/spi_master/async_rstn_synchronizer/i_CLK

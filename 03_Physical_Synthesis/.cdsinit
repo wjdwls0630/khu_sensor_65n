@@ -1,0 +1,40 @@
+; SamsungPDK 65nm Initialization File (.cdsinit)
+; Customizations can be made at the end of this file
+
+; Load display.drf
+envSetVal( "graphic" "drfPath" 'string strcat( getShellEnvVar("RULE_DIR") "display.drf"))
+
+; Load Bind Keys
+loadi( strcat( getShellEnvVar("PDK_DIR") "/ncsu_basekit/cdssetup/common_bindkeys.il"))
+
+; Setup Calibre
+if( getShellEnvVar("MGC_HOME") then
+  loadi( strcat( getShellEnvVar("MGC_HOME") "/shared/pkgs/icv/tools/queryskl/calibre.OA.skl"))
+) ;if
+
+
+; Load default .cdsenv file
+(envLoadVals ?envFile  strcat( getShellEnvVar("PDK_DIR") "/ncsu_basekit/" "cdssetup/cdsenv") ?tool "layout")
+
+printf( strcat( 
+"---------------------------------------------------------------------------\n"
+"Welcome to the SamsungPDK 65nm.\n"
+"\n"
+"This initiative is brought to you by the Semiconductor Research\n"
+"Corporation (SRC), the National Science Foundation (NSF), Silicon\n" 
+"Integration Initiative (Si2), Mentor Graphics, and Synopsys.\n"
+"\n"
+"This version of the kit was created by Jungjin Park at Kyung Hee University.\n"
+"\n"
+"Contributions and modifications to this kit are welcomed and encouraged.\n"
+"\n"
+"Copyright 2020 - Jungjin Park\n"
+"                 Kyung Hee University\n"
+"\n"
+"---------------------------------------------------------------------------\n"
+"\n"
+"Done loading SamsungPDK 65nm customizations.\n"
+))
+
+; Comment the line below to disable auto opening of the Library Manager 
+ddsOpenLibManager()

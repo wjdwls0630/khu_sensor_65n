@@ -3,7 +3,7 @@
 Report : reference
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:38:54 2020
+Date   : Thu Nov 19 19:08:18 2020
 ****************************************
 
 Attributes:
@@ -19,14 +19,12 @@ Attributes:
 
 Reference          Library       Unit Area   Count    Total Area   Attributes
 -----------------------------------------------------------------------------
-INVX4MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
-                                  1.280000       2      2.560000  
 async_rstn_glitch_synchronizer
                                  69.120000       1     69.120000  d, h, n
 ec_breakv          ss65lp3p3v_wst_108_300_p125
                                   0.000000      11      0.000000  d
-khu_sensor_top                112558.080324
-                                                 1  112558.080324 h, n
+khu_sensor_top                107637.760627
+                                                 1  107637.760627 h, n
 pvhbcudtart        ss65lp3p3v_wst_108_300_p125
                                   0.000000       1      0.000000  d, n
 pvhbcudtbrt        ss65lp3p3v_wst_108_300_p125
@@ -42,5 +40,5 @@ vssipvh            ss65lp3p3v_wst_108_300_p125
 vsstvh             ss65lp3p3v_wst_108_300_p125
                                   0.000000       8      0.000000  b, d
 -----------------------------------------------------------------------------
-Total 11 references                                 112629.760325
+Total 10 references                                 107706.880627
 1

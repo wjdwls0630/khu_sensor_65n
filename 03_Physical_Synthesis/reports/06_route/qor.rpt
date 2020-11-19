@@ -1,21 +1,22 @@
+Information: Scenario func1_bst either not exists or is inactive. report_qor will skip it. (UID-1059)
 Information: Scenario funccts_wst either not exists or is inactive. report_qor will skip it. (UID-1059)
  
 ****************************************
 Report : qor
 Design : khu_sensor_pad
-Scenario(s): func1_wst funccts_wst
+Scenario(s): func1_wst func1_bst funccts_wst
 Version: N-2017.09
-Date   : Sat Sep 12 02:44:48 2020
+Date   : Thu Nov 19 19:54:46 2020
 ****************************************
 
 
   Scenario 'func1_wst'
   Timing Path Group '**clock_gating_default**'
   -----------------------------------
-  Levels of Logic:            14.0000
-  Critical Path Length:        6.3411
-  Critical Path Slack:         4.9507
-  Critical Path Clk Period:   12.0000
+  Levels of Logic:            32.0000
+  Critical Path Length:        4.2536
+  Critical Path Slack:         0.1129
+  Critical Path Clk Period:    5.4000
   Total Negative Slack:        0.0000
   No. of Violating Paths:      0.0000
   Worst Hold Violation:        0.0000
@@ -26,10 +27,10 @@ Date   : Sat Sep 12 02:44:48 2020
   Scenario 'func1_wst'
   Timing Path Group 'REGIN'
   -----------------------------------
-  Levels of Logic:             1.0000
-  Critical Path Length:        1.5860
-  Critical Path Slack:         9.8625
-  Critical Path Clk Period:   24.0000
+  Levels of Logic:             2.0000
+  Critical Path Length:        0.8481
+  Critical Path Slack:         4.1770
+  Critical Path Clk Period:   10.8000
   Total Negative Slack:        0.0000
   No. of Violating Paths:      0.0000
   Worst Hold Violation:        0.0000
@@ -40,12 +41,12 @@ Date   : Sat Sep 12 02:44:48 2020
   Scenario 'func1_wst'
   Timing Path Group 'REGOUT'
   -----------------------------------
-  Levels of Logic:             5.0000
-  Critical Path Length:        4.6529
-  Critical Path Slack:         3.8703
-  Critical Path Clk Period:   12.0000
-  Total Negative Slack:        0.0000
-  No. of Violating Paths:      0.0000
+  Levels of Logic:             3.0000
+  Critical Path Length:        3.0458
+  Critical Path Slack:        -0.4522
+  Critical Path Clk Period:    5.4000
+  Total Negative Slack:       -1.2349
+  No. of Violating Paths:      7.0000
   Worst Hold Violation:        0.0000
   Total Hold Violation:        0.0000
   No. of Hold Violations:      0.0000
@@ -54,84 +55,71 @@ Date   : Sat Sep 12 02:44:48 2020
   Scenario 'func1_wst'
   Timing Path Group 'clk'
   -----------------------------------
-  Levels of Logic:            32.0000
-  Critical Path Length:        9.0600
-  Critical Path Slack:         2.6432
-  Critical Path Clk Period:   12.0000
-  Total Negative Slack:        0.0000
-  No. of Violating Paths:      0.0000
-  Worst Hold Violation:       -0.0057
-  Total Hold Violation:       -0.0057
-  No. of Hold Violations:      1.0000
+  Levels of Logic:            41.0000
+  Critical Path Length:        5.3015
+  Critical Path Slack:        -0.3457
+  Critical Path Clk Period:    5.4000
+  Total Negative Slack:       -2.8723
+  No. of Violating Paths:     23.0000
+  Worst Hold Violation:       -0.0795
+  Total Hold Violation:       -3.0030
+  No. of Hold Violations:    159.0000
   -----------------------------------
 
   Scenario 'func1_wst'
   Timing Path Group 'clk_half'
   -----------------------------------
-  Levels of Logic:             3.0000
-  Critical Path Length:        2.6857
-  Critical Path Slack:         6.6772
-  Critical Path Clk Period:   24.0000
+  Levels of Logic:             5.0000
+  Critical Path Length:        2.1714
+  Critical Path Slack:         1.3745
+  Critical Path Clk Period:   10.8000
   Total Negative Slack:        0.0000
   No. of Violating Paths:      0.0000
-  Worst Hold Violation:        0.0000
-  Total Hold Violation:        0.0000
-  No. of Hold Violations:      0.0000
-  -----------------------------------
-
-  Scenario 'func1_wst'
-  Timing Path Group 'default'
-  -----------------------------------
-  Levels of Logic:             2.0000
-  Critical Path Length:        0.5287
-  Critical Path Slack:        -0.5287
-  Critical Path Clk Period:       n/a
-  Total Negative Slack:     -660.9172
-  No. of Violating Paths:   2969.0000
-  Worst Hold Violation:        0.0000
-  Total Hold Violation:        0.0000
-  No. of Hold Violations:      0.0000
+  Worst Hold Violation:       -0.0318
+  Total Hold Violation:       -0.0789
+  No. of Hold Violations:      6.0000
   -----------------------------------
 
 
   Cell Count
   -----------------------------------
-  Hierarchical Cell Count:        232
-  Hierarchical Port Count:       6201
-  Leaf Cell Count:              28161
-  Buf/Inv Cell Count:            4504
-  Buf Cell Count:                 152
-  Inv Cell Count:                4352
-  CT Buf/Inv Cell Count:          132
-  Combinational Cell Count:     22826
-  Sequential Cell Count:         5335
+  Hierarchical Cell Count:        294
+  Hierarchical Port Count:       6271
+  Leaf Cell Count:              31703
+  Buf/Inv Cell Count:            7008
+  Buf Cell Count:                2194
+  Inv Cell Count:                4814
+  CT Buf/Inv Cell Count:          267
+  Combinational Cell Count:     26299
+  Sequential Cell Count:         5404
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:      52141.0303
-  Noncombinational Area:   36013.9983
-  Buf/Inv Area:             4207.3430
-  Total Buffer Area:         217.6662
-  Total Inverter Area:      3989.6768
+  Combinational Area:      84528.3196
+  Noncombinational Area:   46412.1604
+  Buf/Inv Area:            13146.8800
+  Total Buffer Area:        4611.2000
+  Total Inverter Area:      8535.6800
   Macro/Black Box Area:        0.0000
-  Net Area:                  892.1166
-  Net XLength        :    484036.1562
-  Net YLength        :    540789.3750
+  Net Area:                    0.0000
+  Net XLength        :    652831.5000
+  Net YLength        :    557955.8125
   -----------------------------------
-  Cell Area:               88155.0286
-  Design Area:             89047.1452
-  Net Length        :    1024825.5000
+  Cell Area:              130940.4800
+  Design Area:            130940.4800
+  Net Length        :    1210787.2500
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:         30306
-  Nets With Violations:            49
-  Max Trans Violations:            49
+  Total Number of Nets:         34151
+  Nets With Violations:            22
+  Max Trans Violations:             3
   Max Cap Violations:               0
+  Max Net Length Violations:       19
   -----------------------------------
 
 
@@ -141,19 +129,19 @@ Date   : Sat Sep 12 02:44:48 2020
   -----------------------------------------
   Resource Sharing:                  0.0000
   Logic Optimization:                0.0000
-  Mapping Optimization:             95.6575
+  Mapping Optimization:            289.2280
   -----------------------------------------
-  Overall Compile Time:             96.6093
-  Overall Compile Wall Clock Time:  96.8688
+  Overall Compile Time:            290.5988
+  Overall Compile Wall Clock Time: 291.6300
 
   --------------------------------------------------------------------
 
-  Scenario: func1_wst   WNS: 0.5287  TNS: 660.9172  Number of Violating Paths: 2969  (with Crosstalk delta delays)
-  Design  WNS: 0.5287  TNS: 660.9172  Number of Violating Paths: 2969  (with Crosstalk delta delays)
+  Scenario: func1_wst   WNS: 0.4522  TNS: 4.1073  Number of Violating Paths: 30  (with Crosstalk delta delays)
+  Design  WNS: 0.4522  TNS: 4.1073  Number of Violating Paths: 30  (with Crosstalk delta delays)
 
 
-  Scenario: func1_wst  (Hold)  WNS: 0.0057  TNS: 0.0057  Number of Violating Paths: 1  (with Crosstalk delta delays)
-  Design (Hold)  WNS: 0.0057  TNS: 0.0057  Number of Violating Paths: 1  (with Crosstalk delta delays)
+  Scenario: func1_wst  (Hold)  WNS: 0.0795  TNS: 3.0819  Number of Violating Paths: 165  (with Crosstalk delta delays)
+  Design (Hold)  WNS: 0.0795  TNS: 3.0819  Number of Violating Paths: 165  (with Crosstalk delta delays)
 
   --------------------------------------------------------------------
 

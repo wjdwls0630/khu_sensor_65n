@@ -1,30 +1,27 @@
 
-Warning: Pin PAD of reference cell phis_p has no physical location. (APL-028)
-Warning: Pin PAD of reference cell phbct12_p has no physical location. (APL-028)
-Warning: Pin PAD of reference cell phic_p has no physical location. (APL-028)
-Warning: Pin PAD of reference cell phob12_p has no physical location. (APL-028)
-Warning: Pin PAD of reference cell phbct24_p has no physical location. (APL-028)
+Warning: Pin PAD of reference cell pvhbcudtbrt has no physical location. (APL-028)
+Warning: Pin PAD of reference cell pvhbcudtart has no physical location. (APL-028)
+Warning: Pin PAD of reference cell pvhbsudtart has no physical location. (APL-028)
   Loading design 'khu_sensor_pad'
 
 
+Information: The design has 7125 physical cells. (PSYN-105)
 [begin initializing data for legality checker]
 
 Initializing Data Structure ...
 INFO: legalizer_via_spacing_check_mode 0
   Reading technology information ...
-    Technology table contains 6 routable metal layers
-    Top most routable layer is set to be metal4
-    This is considered as a 4-metal-layer design
+    Technology table contains 9 routable metal layers
+    Top most routable layer is set to be metal7
+    This is considered as a 7-metal-layer design
     Reading library information from DB ...
-Warning: Pin PAD of reference cell phis_p has no physical location. (APL-028)
-Warning: Pin PAD of reference cell phbct12_p has no physical location. (APL-028)
-Warning: Pin PAD of reference cell phic_p has no physical location. (APL-028)
-Warning: Pin PAD of reference cell phob12_p has no physical location. (APL-028)
-Warning: Pin PAD of reference cell phbct24_p has no physical location. (APL-028)
+Warning: Pin PAD of reference cell pvhbcudtbrt has no physical location. (APL-028)
+Warning: Pin PAD of reference cell pvhbcudtart has no physical location. (APL-028)
+Warning: Pin PAD of reference cell pvhbsudtart has no physical location. (APL-028)
   Reading misc information ...
-    array <unit> has 0 vertical and 227 horizontal rows
-    77 pre-routes for placement blockage/checking
-    563 pre-routes for map congestion calculation
+    array <unit> has 0 vertical and 646 horizontal rows
+    802 pre-routes for placement blockage/checking
+    1523 pre-routes for map congestion calculation
   Checking information read in ...
     design style = Horizontal masters, Horizontal rows
 
@@ -33,30 +30,30 @@ Warning: Pin PAD of reference cell phbct24_p has no physical location. (APL-028)
 ... design style 0
 ... number of base array 1 0
 INFO:... use original rows...
-INFO: 0 pre-routes used for checking; 0 redundant shapes removed
+INFO: 96 pre-routes used for checking; 0 redundant shapes removed
 [end initializing data for legality checker]
  
 ****************************************
   Report : Chip Summary
   Design : khu_sensor_pad
   Version: N-2017.09
-  Date   : Sat Sep 12 02:33:44 2020
+  Date   : Thu Nov 19 19:32:48 2020
 ****************************************
-Std cell utilization: 62.03%  (262588/(423355-0))
+Std cell utilization: 9.39%  (314038/(3343050-0))
 (Non-fixed + Fixed)
-Chip area:            423355   sites, bbox (187.62 187.62 1008.22 1004.82) um
-Std cell area:        262588   sites, (non-fixed:206306 fixed:56282)
-                      27734    cells, (non-fixed:25253  fixed:2481)
+Chip area:            3343050  sites, bbox (182.41 182.41 1217.41 1216.01) um
+Std cell area:        314038   sites, (non-fixed:306272 fixed:7766)
+                      27289    cells, (non-fixed:26788  fixed:501)
 Macro cell area:      0        sites
                       0        cells
 Placement blockages:  0        sites, (excluding fixed std cells)
                       0        sites, (include fixed std cells & chimney area)
                       0        sites, (complete p/g net blockages)
 Routing blockages:    0        sites, (partial p/g net blockages)
-                      0        sites, (routing blockages and signal pre-route)
-Lib cell count:       114 
-Avg. std cell width:  3.77 um 
-Site array:           unit     (width: 0.44 um, height: 3.60 um, rows: 227)
+                      456075   sites, (routing blockages and signal pre-route)
+Lib cell count:       147 
+Avg. std cell width:  2.08 um 
+Site array:           unit     (width: 0.20 um, height: 1.60 um, rows: 646)
 Physical DB scale:    1000 db_unit = 1 um 
 
  
@@ -64,25 +61,22 @@ Physical DB scale:    1000 db_unit = 1 um
   Report : pnet options
   Design : khu_sensor_pad
   Version: N-2017.09
-  Date   : Sat Sep 12 02:33:44 2020
+  Date   : Thu Nov 19 19:32:48 2020
 ****************************************
 
 
 --------------------------------------------------------------------
 Layer      Blockage   Min_width   Min_height   Via_additive     Density
 --------------------------------------------------------------------
-MET1       none          ---         ---       via additive      ---
-MET2       partial     7.20        1.80        via additive      ---
-MET3       partial     10000.00    10000.00    via additive      ---
-MET4       partial     10000.00    10000.00    via additive      ---
-MET5       partial     10000.00    10000.00    via additive      ---
-MET6       partial     10000.00    10000.00    via additive      ---
-Warning: Die area is not integer multiples of min site height (3600), object's width and height(1196000,1196000). (PSYN-523)
-Warning: Die area is not integer multiples of min site width (440), object's width and height(1196000,1196000). (PSYN-523)
-Warning: Cell pad23 is not integer multiples of min site width (440), object's width and height(60000,137620). (PSYN-523)
-Warning: Cell pad23 is not integer multiples of min site height (3600), object's width and height(137620,137620). (PSYN-523)
-Warning: Cell pad22 is not integer multiples of min site width (440), object's width and height(60000,137620). (PSYN-523)
-Note - message 'PSYN-523' limit (5) exceeded.  Remainder will be suppressed.
+M1         none          ---         ---       via additive      ---
+M2         partial     3.20        0.80        via additive      ---
+M3         partial     10000.00    10000.00    via additive      ---
+M4         partial     10000.00    10000.00    via additive      ---
+B1         partial     10000.00    10000.00    via additive      ---
+B2         partial     10000.00    10000.00    via additive      ---
+EA         partial     10000.00    10000.00    via additive      ---
+OA         partial     10000.00    10000.00    via additive      ---
+LB         partial     10000.00    10000.00    via additive      ---
 
 **************************************************** 
 Check_legality: Report for Fixed Placement Cells
@@ -106,8 +100,8 @@ Number of Site Violations             : 0
 Number of Power Strap Violations      : 0
 ******************************************** 
 
-  Total moveable cell area: 326788.7
-  Total fixed cell area: 452467.5
-  Total physical cell area: 779256.2
-  Core area: (187620 187620 1008220 1004820)
+  Total moveable cell area: 98007.0
+  Total fixed cell area: 308581.1
+  Total physical cell area: 406588.2
+  Core area: (182410 182410 1217410 1216010)
 1

@@ -48,7 +48,7 @@ echo "                                                                       "
 echo "                    insert delay on or gate                            "
 echo "                                                                       "
 echo "***********************************************************************"
-insert_buffer [get_pins __tmp100/A] $NOM_HVT_SS/DLY4X1MTH -no_of_cells 4
+insert_buffer [get_pins __tmp100/A] $NOM_RVT_SS/DLY4X1MTR -no_of_cells 4
 
 #set dont touch attribute
 set_dont_touch [current_design]

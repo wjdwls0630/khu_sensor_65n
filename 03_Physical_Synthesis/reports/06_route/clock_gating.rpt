@@ -1,0 +1,775 @@
+ 
+****************************************
+Report : clock_gating
+        -style
+Design : khu_sensor_pad
+Version: N-2017.09
+Date   : Thu Nov 19 19:55:00 2020
+****************************************
+
+
+
+ Information:  No Clock Gating Cell Found
+
+
+                             Clock Gating Summary
+          ------------------------------------------------------------
+          |    Number of Clock gating elements    |        0         |
+          |                                       |                  |
+          |    Number of Gated registers          |     0 (0.00%)    |
+          |                                       |                  |
+          |    Number of Ungated registers        |  5229 (100.00%)  |
+          |                                       |                  |
+          |    Total number of registers          |     5229         |
+          ------------------------------------------------------------
+
+
+
+1
+ 
+****************************************
+Report : clock gating check
+Design : khu_sensor_pad
+Scenario(s): func1_wst
+Version: N-2017.09
+Date   : Thu Nov 19 19:55:00 2020
+****************************************
+
+                                    Rise            Fall
+    Cell     Enable  Clock     Setup   Hold    Setup  Hold     Low/High  Attr
+--------------------------------------------------------------------------------
+
+    khu_sensor_top/ads1292_controller/clk_gate_r_clk_counter_reg_0/latch
+             E       CK        0.2515    -     0.1429   -      -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_clk_counter_reg_0/latch
+             E       CK          -     -0.0066   -    0.0058   -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_BUSY_reg/latch
+             E       CK        0.2745    -     0.1829   -      -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_BUSY_reg/latch
+             E       CK          -     -0.0150   -    -0.0141  -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_lstate_reg_0/latch
+             E       CK        0.2783    -     0.1469   -      -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_lstate_reg_0/latch
+             E       CK          -     -0.0257   -    0.0091   -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_REG_DATA_OUT_reg_0/latch
+             E       CK        0.2924    -     0.1810   -      -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_REG_DATA_OUT_reg_0/latch
+             E       CK          -     -0.0341   -    -0.0230  -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_ads_command_reg_0/latch
+             E       CK        0.2351    -     0.1127   -      -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_ads_command_reg_0/latch
+             E       CK          -     -0.0023   -    0.0242   -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_spi_data_in_reg_0/latch
+             E       CK        0.2882    -     0.1994   -      -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_spi_data_in_reg_0/latch
+             E       CK          -     -0.0211   -    -0.0327  -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_ads_reg_addr_reg/latch
+             E       CK        0.3157    -     0.2006   -      -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_ads_reg_addr_reg/latch
+             E       CK          -     -0.0341   -    -0.0362  -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_DATA_OUT_reg_0/latch
+             E       CK        0.3082    -     0.2048   -      -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_o_ADS1292_DATA_OUT_reg_0/latch
+             E       CK          -     -0.0397   -    -0.0371  -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_ads_data_out_reg_0/latch
+             E       CK        0.2965    -     0.1896   -      -         i l
+    khu_sensor_top/ads1292_controller/clk_gate_r_ads_data_out_reg_0/latch
+             E       CK          -     -0.0369   -    -0.0287  -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_converter_f2i_a_stb_reg/latch
+             E       CK        0.2780    -     0.1827   -      -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_converter_f2i_a_stb_reg/latch
+             E       CK          -     -0.0293   -    -0.0245  -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_counter_reg_0/latch
+             E       CK        0.2508    -     0.1544   -      -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_counter_reg_0/latch
+             E       CK          -     -0.0210   -    -0.0144  -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_o_ADS1292_FILTERED_DATA_reg_0/latch
+             E       CK        0.3145    -     0.1606   -      -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_o_ADS1292_FILTERED_DATA_reg_0/latch
+             E       CK          -     -0.0350   -    -0.0020  -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_converter_i2f_a_reg_0/latch
+             E       CK        0.3079    -     0.1960   -      -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_converter_i2f_a_reg_0/latch
+             E       CK          -     -0.0400   -    -0.0305  -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_converter_f2i_a_reg_0/latch
+             E       CK        0.3081    -     0.1715   -      -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_converter_f2i_a_reg_0/latch
+             E       CK          -     -0.0464   -    -0.0182  -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_iir_hpf_x_reg_0/latch
+             E       CK        0.3122    -     0.2041   -      -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_iir_hpf_x_reg_0/latch
+             E       CK          -     -0.0399   -    -0.0440  -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_iir_lpf_x_reg_0/latch
+             E       CK        0.3118    -     0.1688   -      -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_iir_lpf_x_reg_0/latch
+             E       CK          -     -0.0402   -    -0.0119  -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_iir_notch_x_reg_0/latch
+             E       CK        0.3132    -     0.1574   -      -         i l
+    khu_sensor_top/ads1292_filter/clk_gate_r_iir_notch_x_reg_0/latch
+             E       CK          -     -0.0391   -    -0.0039  -         i l
+    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_write_reg/latch
+             E       CK        0.2595    -     0.1292   -      -         i l
+    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_write_reg/latch
+             E       CK          -     -0.0005   -    0.0284   -         i l
+    khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_DATA_OUT_reg_0/latch
+             E       CK        0.2802    -     0.1443   -      -         i l
+    khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_DATA_OUT_reg_0/latch
+             E       CK          -     -0.0111   -    0.0171   -         i l
+    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_data_in_reg_0/latch
+             E       CK        0.2693    -     0.1392   -      -         i l
+    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_data_in_reg_0/latch
+             E       CK          -     -0.0042   -    0.0207   -         i l
+    khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_INIT_SET_reg/latch
+             E       CK        0.2640    -     0.1357   -      -         i l
+    khu_sensor_top/mpr121_controller/clk_gate_o_MPR121_INIT_SET_reg/latch
+             E       CK          -     -0.0040   -    0.0220   -         i l
+    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_reg_data_in_reg/latch
+             E       CK        0.2581    -     0.1226   -      -         i l
+    khu_sensor_top/mpr121_controller/clk_gate_r_i2c_reg_data_in_reg/latch
+             E       CK          -     0.0022    -    0.0327   -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_reg_0/latch
+             E       CK        0.2622    -     0.1567   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_reg_0/latch
+             E       CK          -     -0.0245   -    -0.0148  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_second_param_reg_0/latch
+             E       CK        0.2741    -     0.2062   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_second_param_reg_0/latch
+             E       CK          -     -0.0435   -    -0.0587  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_uart_clk_counter_reg/latch
+             E       CK        0.2372    -     0.1429   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_uart_clk_counter_reg/latch
+             E       CK          -     -0.0227   -    -0.0134  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_ch2_data_out_reg_0/latch
+             E       CK        0.2680    -     0.1811   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_ch2_data_out_reg_0/latch
+             E       CK          -     -0.0432   -    -0.0421  -         i l
+    khu_sensor_top/sensor_core/clk_gate_o_UART_DATA_TX_reg_0/latch
+             E       CK        0.3014    -     0.2451   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_o_UART_DATA_TX_reg_0/latch
+             E       CK          -     -0.0529   -    -0.0403  -         i l
+    khu_sensor_top/sensor_core/clk_gate_o_ADS1292_REG_ADDR_reg_0/latch
+             E       CK        0.2397    -     0.1477   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_o_ADS1292_REG_ADDR_reg_0/latch
+             E       CK          -     -0.0262   -    -0.0189  -         i l
+    khu_sensor_top/sensor_core/clk_gate_o_MPR121_REG_ADDR_reg_0/latch
+             E       CK        0.2677    -     0.1907   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_o_MPR121_REG_ADDR_reg_0/latch
+             E       CK          -     -0.0284   -    -0.0381  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_reg_addr_reg_0/latch
+             E       CK        0.2973    -     0.1877   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_reg_addr_reg_0/latch
+             E       CK          -     -0.0595   -    -0.0456  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_first_param_reg_0/latch
+             E       CK        0.2447    -     0.1555   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_first_param_reg_0/latch
+             E       CK          -     -0.0272   -    -0.0211  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_reg_addr_reg_0/latch
+             E       CK        0.3085    -     0.1823   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_reg_addr_reg_0/latch
+             E       CK          -     -0.0515   -    -0.0371  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_0_reg_0/latch
+             E       CK        0.2433    -     0.1413   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_0_reg_0/latch
+             E       CK          -     -0.0250   -    -0.0126  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_read_reg_done_reg/latch
+             E       CK        0.2987    -     0.2231   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_read_reg_done_reg/latch
+             E       CK          -     -0.0591   -    -0.0688  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_read_reg_done_reg/latch
+             E       CK        0.2618    -     0.1586   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_read_reg_done_reg/latch
+             E       CK          -     -0.0253   -    -0.0170  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_lstate_reg_0/latch
+             E       CK        0.2401    -     0.1479   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_lstate_reg_0/latch
+             E       CK          -     -0.0240   -    -0.0141  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_chip_set_done_reg/latch
+             E       CK        0.2374    -     0.1548   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_chip_set_done_reg/latch
+             E       CK          -     -0.0224   -    -0.0196  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_run_set_done_reg/latch
+             E       CK        0.2407    -     0.1484   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_ads_run_set_done_reg/latch
+             E       CK          -     -0.0219   -    -0.0158  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_lstate_reg_0/latch
+             E       CK        0.2399    -     0.1506   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_lstate_reg_0/latch
+             E       CK          -     -0.0262   -    -0.0203  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_1_reg_0/latch
+             E       CK        0.2446    -     0.1426   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_touch_status_1_reg_0/latch
+             E       CK          -     -0.0258   -    -0.0135  -         i l
+    khu_sensor_top/sensor_core/clk_gate_o_MPR121_DATA_IN_reg_0/latch
+             E       CK        0.2776    -     0.1923   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_o_MPR121_DATA_IN_reg_0/latch
+             E       CK          -     -0.0483   -    -0.0497  -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_second_param_reg_0/latch
+             E       CK        0.2387    -     0.1523   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_r_mpr_second_param_reg_0/latch
+             E       CK          -     -0.0237   -    -0.0211  -         i l
+    khu_sensor_top/sensor_core/clk_gate_o_ADS1292_DATA_IN_reg_0/latch
+             E       CK        0.2713    -     0.1611   -      -         i l
+    khu_sensor_top/sensor_core/clk_gate_o_ADS1292_DATA_IN_reg_0/latch
+             E       CK          -     -0.0395   -    -0.0237  -         i l
+    khu_sensor_top/uart_controller/clk_gate_o_UART_DATA_RX_reg_1/latch
+             E       CK        0.2755    -     0.1638   -      -         i l
+    khu_sensor_top/uart_controller/clk_gate_o_UART_DATA_RX_reg_1/latch
+             E       CK          -     -0.0466   -    -0.0288  -         i l
+    khu_sensor_top/uart_controller/clk_gate_o_UART_DATA_RX_reg_2/latch
+             E       CK        0.2600    -     0.1704   -      -         i l
+    khu_sensor_top/uart_controller/clk_gate_o_UART_DATA_RX_reg_2/latch
+             E       CK          -     -0.0376   -    -0.0341  -         i l
+    khu_sensor_top/uart_controller/clk_gate_r_uart_data_tx_valid_reg/latch
+             E       CK        0.2519    -     0.1620   -      -         i l
+    khu_sensor_top/uart_controller/clk_gate_r_uart_data_tx_valid_reg/latch
+             E       CK          -     -0.0329   -    -0.0278  -         i l
+    khu_sensor_top/uart_controller/clk_gate_r_uart_data_tx_shift_reg_0/latch
+             E       CK        0.2634    -     0.1807   -      -         i l
+    khu_sensor_top/uart_controller/clk_gate_r_uart_data_tx_shift_reg_0/latch
+             E       CK          -     -0.0405   -    -0.0409  -         i l
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_SPI_Clk_Edges_reg_0/latch
+             E       CK        0.2860    -     0.1454   -      -         i l
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_SPI_Clk_Edges_reg_0/latch
+             E       CK          -     -0.0090   -    0.0080   -         i l
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_o_RX_Byte_reg/latch
+             E       CK        0.2833    -     0.1981   -      -         i l
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_o_RX_Byte_reg/latch
+             E       CK          -     -0.0173   -    -0.0221  -         i l
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_SPI_Clk_Count_reg_0/latch
+             E       CK        0.2590    -     0.1393   -      -         i l
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_SPI_Clk_Count_reg_0/latch
+             E       CK          -     -0.0157   -    0.0058   -         i l
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_TX_Byte_reg_0/latch
+             E       CK        0.3139    -     0.2211   -      -         i l
+    khu_sensor_top/ads1292_controller/spi_master/clk_gate_r_TX_Byte_reg_0/latch
+             E       CK          -     -0.0354   -    -0.0411  -         i l
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_m_reg_1/latch
+             E       CK        0.3102    -     0.2068   -      -         i l
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_m_reg_1/latch
+             E       CK          -     -0.0381   -    -0.0136  -         i l
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_s_reg/latch
+             E       CK        0.2893    -     0.1636   -      -         i l
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_s_reg/latch
+             E       CK          -     -0.0402   -    -0.0146  -         i l
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_o_Z_reg_0/latch
+             E       CK        0.2797    -     0.1464   -      -         i l
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0274   -    0.0009   -         i l
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_z_reg_0/latch
+             E       CK        0.2469    -     0.1281   -      -         i l
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0076   -    0.0140   -         i l
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_reg_0/latch
+             E       CK        0.3008    -     0.1967   -      -         i l
+    khu_sensor_top/ads1292_filter/converter_f2i/clk_gate_a_reg_0/latch
+             E       CK          -     -0.0508   -    -0.0415  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_o_Y_DATA_reg_0/latch
+             E       CK        0.3082    -     0.2229   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_o_Y_DATA_reg_0/latch
+             E       CK          -     -0.0380   -    -0.0450  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_mult_B_reg/latch
+             E       CK        0.2734    -     0.1628   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_mult_B_reg/latch
+             E       CK          -     -0.0261   -    -0.0124  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_add_B_reg_0/latch
+             E       CK        0.2568    -     0.1444   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_add_B_reg_0/latch
+             E       CK          -     -0.0243   -    -0.0061  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_y_data_reg/latch
+             E       CK        0.2698    -     0.1643   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/clk_gate_r_y_data_reg/latch
+             E       CK          -     -0.0335   -    -0.0210  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_2_A_reg/latch
+             E       CK        0.2907    -     0.1785   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_2_A_reg/latch
+             E       CK          -     -0.0177   -    -0.0023  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_3_AB_STB_reg/latch
+             E       CK        0.2770    -     0.1703   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_3_AB_STB_reg/latch
+             E       CK          -     -0.0164   -    -0.0035  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_o_Y_DATA_reg_0/latch
+             E       CK        0.3102    -     0.2014   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_o_Y_DATA_reg_0/latch
+             E       CK          -     -0.0367   -    -0.0129  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_3_A_reg/latch
+             E       CK        0.3112    -     0.2139   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_mult_3_A_reg/latch
+             E       CK          -     -0.0373   -    -0.0389  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_add_1_A_reg/latch
+             E       CK        0.3119    -     0.2093   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_add_1_A_reg/latch
+             E       CK          -     -0.0436   -    -0.0332  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_add_2_A_reg_0/latch
+             E       CK        0.3197    -     0.2374   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_add_2_A_reg_0/latch
+             E       CK          -     -0.0378   -    -0.0569  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_x_data_reg_1/latch
+             E       CK        0.2926    -     0.2318   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_x_data_reg_1/latch
+             E       CK          -     -0.0778   -    -0.0965  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_y_data_reg_0/latch
+             E       CK        0.3113    -     0.1903   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_y_data_reg_0/latch
+             E       CK          -     -0.0358   -    -0.0241  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_y_data_reg_1/latch
+             E       CK        0.3113    -     0.1903   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/clk_gate_r_y_data_reg_1/latch
+             E       CK          -     -0.0358   -    -0.0240  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_o_Y_DATA_reg_0/latch
+             E       CK        0.3120    -     0.2238   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_o_Y_DATA_reg_0/latch
+             E       CK          -     -0.0400   -    -0.0373  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_add_B_reg/latch
+             E       CK        0.2630    -     0.1582   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_add_B_reg/latch
+             E       CK          -     -0.0229   -    -0.0108  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_y_data_reg_1/latch
+             E       CK        0.3034    -     0.2029   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_y_data_reg_1/latch
+             E       CK          -     -0.0466   -    -0.0430  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_y_data_reg_2/latch
+             E       CK        0.3034    -     0.2029   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_y_data_reg_2/latch
+             E       CK          -     -0.0466   -    -0.0430  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_mult_2_A_reg/latch
+             E       CK        0.2507    -     0.1407   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/clk_gate_r_mult_2_A_reg/latch
+             E       CK          -     -0.0160   -    0.0008   -         i l
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_a_reg_0/latch
+             E       CK        0.3010    -     0.1920   -      -         i l
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_a_reg_0/latch
+             E       CK          -     -0.0392   -    -0.0303  -         i l
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_value_reg_0/latch
+             E       CK        0.2554    -     0.1333   -      -         i l
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_value_reg_0/latch
+             E       CK          -     -0.0113   -    0.0111   -         i l
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_z_e_reg/latch
+             E       CK        0.2659    -     0.1472   -      -         i l
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_z_e_reg/latch
+             E       CK          -     -0.0004   -    0.0132   -         i l
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_o_Z_reg_0/latch
+             E       CK        0.3179    -     0.1709   -      -         i l
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0248   -    0.0015   -         i l
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_z_reg_0/latch
+             E       CK        0.3223    -     0.1520   -      -         i l
+    khu_sensor_top/ads1292_filter/converter_i2f/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0215   -    0.0162   -         i l
+    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_phy_rx_data_reg_reg/latch
+             E       CK        0.2949    -     0.2065   -      -         i l
+    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_phy_rx_data_reg_reg/latch
+             E       CK          -     -0.0186   -    -0.0243  -         i l
+    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_data_out_reg_reg_0/latch
+             E       CK        0.3309    -     0.1705   -      -         i l
+    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_data_out_reg_reg_0/latch
+             E       CK          -     -0.0148   -    0.0170   -         i l
+    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_last_reg_reg/latch
+             E       CK        0.3076    -     0.2011   -      -         i l
+    khu_sensor_top/mpr121_controller/i2c_master/clk_gate_last_reg_reg/latch
+             E       CK          -     -0.0146   -    0.0218   -         i l
+    khu_sensor_top/uart_controller/uart_rx/clk_gate_r_Bit_Index_reg/latch
+             E       CK        0.2680    -     0.1778   -      -         i l
+    khu_sensor_top/uart_controller/uart_rx/clk_gate_r_Bit_Index_reg/latch
+             E       CK          -     -0.0327   -    -0.0321  -         i l
+    khu_sensor_top/uart_controller/uart_tx/clk_gate_o_Tx_Serial_reg/latch
+             E       CK        0.2409    -     0.1489   -      -         i l
+    khu_sensor_top/uart_controller/uart_tx/clk_gate_o_Tx_Serial_reg/latch
+             E       CK          -     -0.0238   -    -0.0158  -         i l
+    khu_sensor_top/uart_controller/uart_tx/clk_gate_r_Tx_Data_reg_0/latch
+             E       CK        0.2469    -     0.1539   -      -         i l
+    khu_sensor_top/uart_controller/uart_tx/clk_gate_r_Tx_Data_reg_0/latch
+             E       CK          -     -0.0303   -    -0.0236  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_b_reg/latch
+             E       CK        0.2692    -     0.1459   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_b_reg/latch
+             E       CK          -     -0.0227   -    0.0034   -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_a_e_reg/latch
+             E       CK        0.2716    -     0.1548   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_a_e_reg/latch
+             E       CK          -     -0.0093   -    0.0107   -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_z_e_reg_0/latch
+             E       CK        0.3184    -     0.2021   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_z_e_reg_0/latch
+             E       CK          -     -0.0333   -    -0.0226  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_sticky_reg/latch
+             E       CK        0.3131    -     0.2077   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_sticky_reg/latch
+             E       CK          -     -0.0128   -    -0.0229  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_a_s_reg/latch
+             E       CK        0.3120    -     0.2125   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_a_s_reg/latch
+             E       CK          -     -0.0285   -    -0.0279  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_b_e_reg/latch
+             E       CK        0.2493    -     0.1371   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_b_e_reg/latch
+             E       CK          -     -0.0112   -    0.0072   -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_o_Z_reg_0/latch
+             E       CK        0.3119    -     0.1907   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0401   -    -0.0107  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_z_reg_0/latch
+             E       CK        0.3033    -     0.2130   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0381   -    -0.0457  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_z_s_reg/latch
+             E       CK        0.3185    -     0.1761   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/mult/clk_gate_z_s_reg/latch
+             E       CK          -     -0.0332   -    -0.0101  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_b_reg/latch
+             E       CK        0.3115    -     0.2343   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_b_reg/latch
+             E       CK          -     -0.0436   -    -0.0581  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_a_e_reg/latch
+             E       CK        0.2718    -     0.1533   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_a_e_reg/latch
+             E       CK          -     -0.0348   -    -0.0139  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_z_e_reg_0/latch
+             E       CK        0.2676    -     0.2007   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_z_e_reg_0/latch
+             E       CK          -     -0.0298   -    -0.0465  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_guard_reg/latch
+             E       CK        0.2544    -     0.1556   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_guard_reg/latch
+             E       CK          -     -0.0245   -    -0.0150  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_a_s_reg/latch
+             E       CK        0.3012    -     0.2094   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_a_s_reg/latch
+             E       CK          -     -0.0511   -    -0.0527  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_b_m_reg_0/latch
+             E       CK        0.2788    -     0.1793   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_b_m_reg_0/latch
+             E       CK          -     -0.0363   -    -0.0291  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_sum_reg_0/latch
+             E       CK        0.2922    -     0.1947   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_sum_reg_0/latch
+             E       CK          -     -0.0461   -    -0.0425  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_o_Z_reg_0/latch
+             E       CK        0.3027    -     0.1822   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0503   -    -0.0341  -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_z_reg_0/latch
+             E       CK        0.2675    -     0.1846   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_hpf/add/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0251   -    -0.0329  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_reg/latch
+             E       CK        0.2885    -     0.1686   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_reg/latch
+             E       CK          -     -0.0298   -    -0.0060  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_a_e_reg/latch
+             E       CK        0.3117    -     0.2256   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_a_e_reg/latch
+             E       CK          -     -0.0242   -    -0.0358  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_z_e_reg_0/latch
+             E       CK        0.3255    -     0.2031   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_z_e_reg_0/latch
+             E       CK          -     -0.0251   -    -0.0210  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_sticky_reg/latch
+             E       CK        0.3008    -     0.1933   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_sticky_reg/latch
+             E       CK          -     -0.0129   -    -0.0178  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_s_reg/latch
+             E       CK        0.2966    -     0.1860   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_s_reg/latch
+             E       CK          -     -0.0257   -    -0.0137  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_e_reg/latch
+             E       CK        0.2769    -     0.1695   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_b_e_reg/latch
+             E       CK          -     -0.0254   -    -0.0137  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_o_Z_reg_0/latch
+             E       CK        0.3253    -     0.1990   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0252   -    -0.0094  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_z_reg_0/latch
+             E       CK        0.3032    -     0.2291   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0255   -    -0.0392  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_z_s_reg/latch
+             E       CK        0.3131    -     0.1898   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_3/clk_gate_z_s_reg/latch
+             E       CK          -     -0.0350   -    -0.0275  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_reg/latch
+             E       CK        0.2565    -     0.1343   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_reg/latch
+             E       CK          -     -0.0116   -    0.0152   -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_a_e_reg/latch
+             E       CK        0.3131    -     0.2246   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_a_e_reg/latch
+             E       CK          -     -0.0226   -    -0.0322  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_z_e_reg_0/latch
+             E       CK        0.3197    -     0.1944   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_z_e_reg_0/latch
+             E       CK          -     -0.0294   -    -0.0113  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_sticky_reg/latch
+             E       CK        0.3108    -     0.2128   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_sticky_reg/latch
+             E       CK          -     -0.0182   -    -0.0328  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_s_reg/latch
+             E       CK        0.3112    -     0.2026   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_s_reg/latch
+             E       CK          -     -0.0258   -    -0.0187  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_e_reg/latch
+             E       CK        0.2651    -     0.1508   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_b_e_reg/latch
+             E       CK          -     -0.0156   -    0.0018   -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_o_Z_reg_0/latch
+             E       CK        0.3179    -     0.2040   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0308   -    -0.0167  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_z_reg_0/latch
+             E       CK        0.2969    -     0.2265   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0241   -    -0.0386  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_z_s_reg/latch
+             E       CK        0.2810    -     0.1424   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_2/clk_gate_z_s_reg/latch
+             E       CK          -     -0.0232   -    0.0083   -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_reg/latch
+             E       CK        0.2861    -     0.1598   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_reg/latch
+             E       CK          -     -0.0185   -    0.0045   -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_a_e_reg/latch
+             E       CK        0.2864    -     0.1821   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_a_e_reg/latch
+             E       CK          -     -0.0113   -    0.0010   -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_z_e_reg_0/latch
+             E       CK        0.3186    -     0.1983   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_z_e_reg_0/latch
+             E       CK          -     -0.0317   -    -0.0173  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_sticky_reg/latch
+             E       CK        0.2815    -     0.1684   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_sticky_reg/latch
+             E       CK          -     -0.0090   -    -0.0038  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_s_reg/latch
+             E       CK        0.3080    -     0.1993   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_s_reg/latch
+             E       CK          -     -0.0247   -    -0.0173  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_e_reg/latch
+             E       CK        0.2500    -     0.1224   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_b_e_reg/latch
+             E       CK          -     0.0007    -    0.0281   -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_o_Z_reg_0/latch
+             E       CK        0.3171    -     0.2046   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0329   -    -0.0227  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_z_reg_0/latch
+             E       CK        0.2921    -     0.2176   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0227   -    -0.0397  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_z_s_reg/latch
+             E       CK        0.3215    -     0.1743   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/mult_1/clk_gate_z_s_reg/latch
+             E       CK          -     -0.0296   -    -0.0090  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_b_reg/latch
+             E       CK        0.3044    -     0.1957   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_b_reg/latch
+             E       CK          -     -0.0495   -    -0.0388  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_e_reg/latch
+             E       CK        0.2779    -     0.1696   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_e_reg/latch
+             E       CK          -     -0.0208   -    -0.0134  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_e_reg_0/latch
+             E       CK        0.2515    -     0.1667   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_e_reg_0/latch
+             E       CK          -     -0.0221   -    -0.0202  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_guard_reg/latch
+             E       CK        0.2541    -     0.1560   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_guard_reg/latch
+             E       CK          -     -0.0250   -    -0.0158  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_s_reg/latch
+             E       CK        0.2973    -     0.2019   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_a_s_reg/latch
+             E       CK          -     -0.0477   -    -0.0475  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_b_m_reg_0/latch
+             E       CK        0.2920    -     0.1936   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_b_m_reg_0/latch
+             E       CK          -     -0.0431   -    -0.0404  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_s_reg/latch
+             E       CK        0.2915    -     0.1943   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_s_reg/latch
+             E       CK          -     -0.0465   -    -0.0428  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_o_Z_reg_0/latch
+             E       CK        0.2583    -     0.1442   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0278   -    -0.0085  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_reg_0/latch
+             E       CK        0.2673    -     0.2030   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_2/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0310   -    -0.0487  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_b_reg/latch
+             E       CK        0.3044    -     0.1947   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_b_reg/latch
+             E       CK          -     -0.0495   -    -0.0396  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_a_e_reg/latch
+             E       CK        0.2797    -     0.1617   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_a_e_reg/latch
+             E       CK          -     -0.0140   -    -0.0011  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_e_reg_0/latch
+             E       CK        0.2642    -     0.1546   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_e_reg_0/latch
+             E       CK          -     -0.0124   -    -0.0062  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_guard_reg/latch
+             E       CK        0.2424    -     0.1313   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_guard_reg/latch
+             E       CK          -     -0.0096   -    0.0085   -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_a_s_reg/latch
+             E       CK        0.2851    -     0.1859   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_a_s_reg/latch
+             E       CK          -     -0.0415   -    -0.0356  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_b_m_reg_0/latch
+             E       CK        0.2807    -     0.1804   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_b_m_reg_0/latch
+             E       CK          -     -0.0381   -    -0.0308  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_s_reg/latch
+             E       CK        0.2926    -     0.1861   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_s_reg/latch
+             E       CK          -     -0.0375   -    -0.0298  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_o_Z_reg_0/latch
+             E       CK        0.3074    -     0.1652   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0473   -    -0.0154  -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_reg_0/latch
+             E       CK        0.2690    -     0.1972   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_notch/add_1/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0297   -    -0.0446  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_b_reg/latch
+             E       CK        0.2767    -     0.1620   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_b_reg/latch
+             E       CK          -     -0.0358   -    -0.0152  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_a_e_reg/latch
+             E       CK        0.3109    -     0.2044   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_a_e_reg/latch
+             E       CK          -     -0.0107   -    -0.0080  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_z_e_reg_0/latch
+             E       CK        0.3217    -     0.1877   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_z_e_reg_0/latch
+             E       CK          -     -0.0241   -    -0.0017  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_sticky_reg/latch
+             E       CK        0.2848    -     0.1566   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_sticky_reg/latch
+             E       CK          -     -0.0001   -    0.0135   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_b_s_reg/latch
+             E       CK        0.2807    -     0.1477   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_b_s_reg/latch
+             E       CK          -     -0.0053   -    0.0204   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_b_e_reg/latch
+             E       CK        0.2619    -     0.1385   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_b_e_reg/latch
+             E       CK          -     -0.0068   -    0.0166   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_o_Z_reg_0/latch
+             E       CK        0.3110    -     0.1650   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0321   -    0.0219   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_z_reg_0/latch
+             E       CK        0.2819    -     0.1680   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0047   -    0.0002   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_z_s_reg/latch
+             E       CK        0.2630    -     0.1231   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_2/clk_gate_z_s_reg/latch
+             E       CK          -     -0.0082   -    0.0260   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_b_reg_0/latch
+             E       CK        0.2914    -     0.1763   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_b_reg_0/latch
+             E       CK          -     -0.0345   -    -0.0205  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_a_e_reg/latch
+             E       CK        0.3048    -     0.2118   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_a_e_reg/latch
+             E       CK          -     -0.0198   -    -0.0215  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_e_reg_0/latch
+             E       CK        0.3110    -     0.1795   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_e_reg_0/latch
+             E       CK          -     -0.0254   -    -0.0079  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_sticky_reg/latch
+             E       CK        0.2971    -     0.1912   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_sticky_reg/latch
+             E       CK          -     -0.0140   -    -0.0184  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_a_s_reg/latch
+             E       CK        0.2934    -     0.1775   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_a_s_reg/latch
+             E       CK          -     -0.0207   -    -0.0077  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_b_e_reg/latch
+             E       CK        0.2438    -     0.1295   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_b_e_reg/latch
+             E       CK          -     -0.0078   -    0.0125   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_o_Z_reg_0/latch
+             E       CK        0.3148    -     0.1959   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0380   -    -0.0132  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_reg_0/latch
+             E       CK        0.2954    -     0.2264   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0288   -    -0.0450  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_s_reg/latch
+             E       CK        0.3146    -     0.2023   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/mult_1/clk_gate_z_s_reg/latch
+             E       CK          -     -0.0362   -    -0.0394  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_b_reg/latch
+             E       CK        0.3001    -     0.1750   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_b_reg/latch
+             E       CK          -     -0.0439   -    -0.0189  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_a_e_reg/latch
+             E       CK        0.2826    -     0.1427   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_a_e_reg/latch
+             E       CK          -     0.0016    -    0.0277   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_e_reg_0/latch
+             E       CK        0.2698    -     0.1536   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_e_reg_0/latch
+             E       CK          -     -0.0014   -    0.0116   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_guard_reg/latch
+             E       CK        0.2541    -     0.1232   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_guard_reg/latch
+             E       CK          -     0.0017    -    0.0302   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_a_s_reg/latch
+             E       CK        0.3081    -     0.1808   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_a_s_reg/latch
+             E       CK          -     -0.0260   -    -0.0099  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_b_m_reg_0/latch
+             E       CK        0.2964    -     0.1657   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_b_m_reg_0/latch
+             E       CK          -     -0.0187   -    0.0018   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_s_reg/latch
+             E       CK        0.3116    -     0.1865   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_s_reg/latch
+             E       CK          -     -0.0293   -    -0.0137  -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_o_Z_reg_0/latch
+             E       CK        0.3037    -     0.1498   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_o_Z_reg_0/latch
+             E       CK          -     -0.0456   -    0.0011   -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_reg_0/latch
+             E       CK        0.2644    -     0.1825   -      -         i l
+    khu_sensor_top/ads1292_filter/iir_lpf/add/clk_gate_z_reg_0/latch
+             E       CK          -     -0.0217   -    -0.0283  -         i l
+Disabled:
+    None
+
+Attr: 
+i:auto inferred, p:power compiler inserted, l:library cell defined
+1
+ 
+****************************************
+Report : clock_gating
+        -structure
+Design : khu_sensor_pad
+Scenario(s): func1_wst
+Version: N-2017.09
+Date   : Thu Nov 19 19:55:01 2020
+****************************************
+
+
+
+                             Clock Gating Summary
+          ------------------------------------------------------------
+          |    Number of Clock gating elements    |        0         |
+          |                                       |                  |
+          |    Number of Gated registers          |     0 (0.00%)    |
+          |                                       |                  |
+          |    Number of Ungated registers        |  5229 (100.00%)  |
+          |                                       |                  |
+          |    Maximum number of stages           |        -         |
+          |                                       |                  |
+          |    Total number of registers          |     5229         |
+          ------------------------------------------------------------
+
+
+
+1

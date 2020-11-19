@@ -1,10 +1,8 @@
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
-Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
  
 ****************************************
 check_design summary:
 Version:     L-2016.03-SP5-5
-Date:        Tue Nov 17 01:40:18 2020
+Date:        Thu Nov 19 19:09:24 2020
 ****************************************
 
                    Name                                            Total

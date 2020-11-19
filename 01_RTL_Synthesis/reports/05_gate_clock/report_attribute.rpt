@@ -3,7 +3,7 @@
 Report : Attribute
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:42:42 2020
+Date   : Thu Nov 19 19:10:54 2020
 ****************************************
 
 Design          Object             Type      Attribute Name            Value
@@ -16,8 +16,8 @@ khu_sensor_pad  khu_sensor_pad     design    power_info_requested      true
 khu_sensor_pad  khu_sensor_pad     design    pwr_cg_design_has_clock_gating
                                                                        true
 khu_sensor_pad  khu_sensor_pad     design    compile_cpu_hostname      vlsi-dist.khu.ac.kr
-khu_sensor_pad  khu_sensor_pad     design    ice_canonical_xor2_delay  0.078731
-khu_sensor_pad  khu_sensor_pad     design    ice_canonical_nand2_delay 0.053246
+khu_sensor_pad  khu_sensor_pad     design    ice_canonical_xor2_delay  0.074994
+khu_sensor_pad  khu_sensor_pad     design    ice_canonical_nand2_delay 0.042549
 khu_sensor_pad  khu_sensor_pad     design    testdb_meth_sig_usage_option
                                                                        98307
 khu_sensor_pad  khu_sensor_pad     design    testdb_meth_sig_usage     106499
@@ -26,12 +26,12 @@ khu_sensor_pad  khu_sensor_pad     design    map_effort_option         3
 khu_sensor_pad  khu_sensor_pad     design    instance_name_suffix      
 khu_sensor_pad  khu_sensor_pad     design    leakage_power_model       4
 khu_sensor_pad  khu_sensor_pad     design    register_merging          17
-khu_sensor_pad  khu_sensor_pad     design    compile_tdrs_cpu_time     2.337769
-khu_sensor_pad  khu_sensor_pad     design    compile_lib_cpu_time      0.200958
-khu_sensor_pad  khu_sensor_pad     design    compile_tot_cpu_time      135.673370
-khu_sensor_pad  khu_sensor_pad     design    compile_rbo_cpu_time      26.456970
-khu_sensor_pad  khu_sensor_pad     design    compile_abo_cpu_time      4.082458
-khu_sensor_pad  khu_sensor_pad     design    compile_tot_wall_time     137.011978
+khu_sensor_pad  khu_sensor_pad     design    compile_tdrs_cpu_time     2.257629
+khu_sensor_pad  khu_sensor_pad     design    compile_lib_cpu_time      0.001007
+khu_sensor_pad  khu_sensor_pad     design    compile_tot_cpu_time      77.981140
+khu_sensor_pad  khu_sensor_pad     design    compile_rbo_cpu_time      19.081116
+khu_sensor_pad  khu_sensor_pad     design    compile_abo_cpu_time      4.090332
+khu_sensor_pad  khu_sensor_pad     design    compile_tot_wall_time     78.928078
 khu_sensor_pad  khu_sensor_pad     design    dynamic_power_opto        true
 khu_sensor_pad  khu_sensor_pad     design    max_area                  0.000000
 khu_sensor_pad  khu_sensor_pad     design    fix_multiple_port_nets    feedthroughs constants outputs buffer_constants

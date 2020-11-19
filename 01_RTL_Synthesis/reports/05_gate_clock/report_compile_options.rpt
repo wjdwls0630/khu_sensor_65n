@@ -3,7 +3,7 @@
 Report : compile_options
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:42:42 2020
+Date   : Thu Nov 19 19:10:54 2020
 ****************************************
 
 Design                                   Compile Option         Value
@@ -273,6 +273,11 @@ converter_i2f                            flatten                false
                                          structure_boolean      false
                                          structure_timing       true
 
+converter_i2f_DW01_inc_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
 converter_i2f_DW01_sub_0                 flatten                false
                                          structure              true
                                          structure_boolean      false
@@ -304,11 +309,6 @@ SNPS_CLOCK_GATE_HIGH_converter_i2f_3     flatten                false
                                          structure_timing       true
 
 SNPS_CLOCK_GATE_HIGH_converter_i2f_4     flatten                false
-                                         structure              true
-                                         structure_boolean      false
-                                         structure_timing       true
-
-converter_i2f_DW01_inc_3                 flatten                false
                                          structure              true
                                          structure_boolean      false
                                          structure_timing       true
@@ -433,7 +433,7 @@ float_multiplier_5_DP_OP_119_208_9725_0  flatten                false
                                          structure_boolean      false
                                          structure_timing       true
 
-float_multiplier_5_DW_mult_uns_1         flatten                false
+float_multiplier_5_DW_mult_uns_2         flatten                false
                                          structure              true
                                          structure_boolean      false
                                          structure_timing       true
@@ -503,7 +503,7 @@ float_multiplier_4_DP_OP_119_198_9179_0  flatten                false
                                          structure_boolean      false
                                          structure_timing       true
 
-float_multiplier_4_DW_mult_uns_1         flatten                false
+float_multiplier_4_DW_mult_uns_2         flatten                false
                                          structure              true
                                          structure_boolean      false
                                          structure_timing       true
@@ -788,7 +788,7 @@ float_multiplier_3_DP_OP_119_188_7833_0  flatten                false
                                          structure_boolean      false
                                          structure_timing       true
 
-float_multiplier_3_DW_mult_uns_1         flatten                false
+float_multiplier_3_DW_mult_uns_2         flatten                false
                                          structure              true
                                          structure_boolean      false
                                          structure_timing       true
@@ -858,7 +858,7 @@ float_multiplier_2_DP_OP_119_178_9062_0  flatten                false
                                          structure_boolean      false
                                          structure_timing       true
 
-float_multiplier_2_DW_mult_uns_1         flatten                false
+float_multiplier_2_DW_mult_uns_2         flatten                false
                                          structure              true
                                          structure_boolean      false
                                          structure_timing       true
@@ -933,7 +933,7 @@ float_multiplier_1_DP_OP_119_168_3191_0  flatten                false
                                          structure_boolean      false
                                          structure_timing       true
 
-float_multiplier_1_DW_mult_uns_1         flatten                false
+float_multiplier_1_DW_mult_uns_2         flatten                false
                                          structure              true
                                          structure_boolean      false
                                          structure_timing       true
@@ -1148,7 +1148,7 @@ float_multiplier_0_DP_OP_119_158_3501_0  flatten                false
                                          structure_boolean      false
                                          structure_timing       true
 
-float_multiplier_0_DW_mult_uns_1         flatten                false
+float_multiplier_0_DW_mult_uns_2         flatten                false
                                          structure              true
                                          structure_boolean      false
                                          structure_timing       true
@@ -1223,6 +1223,11 @@ converter_f2i                            flatten                false
                                          structure_boolean      false
                                          structure_timing       true
 
+converter_f2i_DW01_sub_0                 flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
 converter_f2i_DP_OP_16_126_4860_0        flatten                false
                                          structure              true
                                          structure_boolean      false
@@ -1254,11 +1259,6 @@ SNPS_CLOCK_GATE_HIGH_converter_f2i_3     flatten                false
                                          structure_timing       true
 
 SNPS_CLOCK_GATE_HIGH_converter_f2i_4     flatten                false
-                                         structure              true
-                                         structure_boolean      false
-                                         structure_timing       true
-
-converter_f2i_DW01_sub_3                 flatten                false
                                          structure              true
                                          structure_boolean      false
                                          structure_timing       true
@@ -1348,6 +1348,11 @@ SNPS_CLOCK_GATE_HIGH_spi_master_3        flatten                false
                                          structure_boolean      false
                                          structure_timing       true
 
+ads1292_controller_DW01_inc_0            flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+
 SNPS_CLOCK_GATE_HIGH_ads1292_controller_0 flatten               false
                                          structure              true
                                          structure_boolean      false
@@ -1389,11 +1394,6 @@ SNPS_CLOCK_GATE_HIGH_ads1292_controller_7 flatten               false
                                          structure_timing       true
 
 SNPS_CLOCK_GATE_HIGH_ads1292_controller_8 flatten               false
-                                         structure              true
-                                         structure_boolean      false
-                                         structure_timing       true
-
-ads1292_controller_DW01_inc_3            flatten                false
                                          structure              true
                                          structure_boolean      false
                                          structure_timing       true

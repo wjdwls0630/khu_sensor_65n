@@ -41,13 +41,13 @@ if { $ROUTE_SCN_READ_AGAIN } {
 	# Read scenario file
 	# After placement, delete max_delay constraints. It is only for placing
 	# clock gating cell and gated register in proximity.
-	sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
+	source $ICC_SDC_SETUP_FILE
 
 	source $ICC_MCMM_SCENARIOS_FILE
 } else {
 	# After placement, delete max_delay constraints. It is only for placing
 	# clock gating cell and gated register in proximity.
-	sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
+	source $ICC_SDC_SETUP_FILE
 }
 set_active_scenario $ROUTE_SCN
 
@@ -69,7 +69,7 @@ route_zrt_group -all_clock_nets -reuse_existing_global_route true
 set_route_zrt_detail_options -antenna false
 
 ## Initial Route
-route_opt -initial_route_only
+route_opt -initial_route_only -effort high
 
 # Use non-timing driven SnR and Duo. If not, runtime will be increased.
 set_route_zrt_global_options -timing_driven false

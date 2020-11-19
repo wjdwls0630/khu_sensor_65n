@@ -11,7 +11,7 @@ echo "***********************************************************************"
 set_route_mode_options -zroute true
 
 # common options
-set_route_zrt_common_options -connect_within_pins { {m1 via_wire_standard_cell_pins} }
+set_route_zrt_common_options -connect_within_pins { {M1 via_wire_standard_cell_pins} }
 set_route_zrt_common_options -wide_macro_pin_as_fat_wire true
 set_route_zrt_common_options -concurrent_redundant_via_mode reserve_space
 
@@ -97,4 +97,4 @@ set_separate_process_options -routing false
 set_separate_process_options -extraction false
 
 # Apply ocv margin
-source ./icc_scripts/user_scripts/130nm_ocv_margin.pnr.tcl
+source ./icc_scripts/user_scripts/65nm_ocv_margin.pnr.tcl

@@ -3,46 +3,24 @@
 # Edit at https://www.gitignore.io/?templates=qt,qtcreator,c++,clion,python,pycharm,visualstudio
 
 ### Directory ###
-/video
-/00_RTL_Design/Source/Filter_Test/Filter_Test_Verilog/Reference
 
 ### File ###
-/Reference/Vim/Vim_HotKey.jpg
-Reference/
+
 *.bak
-PLLJ_PLLSPE_INFO.txt
+
 ### intelliJ ###
 .idea
 .DS_Store
 venv
 
-### Quartus ###
-00_RTL_Design/output_files
-00_RTL_Design/db
-00_RTL_Design/incremental_db
-00_RTL_Design/simulation
-*.qws
-
-
-00_RTL_Design/Source/Filter_Test/Filter_Test_Verilog/IIR_LPF/*.rpt
-00_RTL_Design/Source/Filter_Test/Filter_Test_Verilog/IIR_LPF/output_files
-00_RTL_Design/Source/Filter_Test/Filter_Test_Verilog/IIR_LPF/db
-00_RTL_Design/Source/Filter_Test/Filter_Test_Verilog/IIR_LPF/incremental_db
-00_RTL_Design/Source/Filter_Test/Filter_Test_Verilog/IIR_LPF/simulation
 
 ### 01_RTL_Synthesis ###
 01_RTL_Synthesis/Design_Compiler/alib/alib-52
 
 ### 03_Physical_Synthesis ###
-03_Physical_Synthesis/MilkyWay
 03_Physical_Synthesis/mw_db
-03_Physical_Synthesis/TECH
-03_Physical_Synthesis/TLUP
-03_Physical_Synthesis/install/Astro_PHA_lib.v090803.tar.gz
-03_Physical_Synthesis/install/std150e_TLU+6M.tar
-03_Physical_Synthesis/padplace_ICC_200827_L13_68um.tdf
 03_Physical_Synthesis/:env
-03_Physical_Synthesis/std150e_prim713_antenna_200827.tcl
+03_Physical_Synthesis/virtuoso
 
 ### TEMP FILE ###
 *.swp

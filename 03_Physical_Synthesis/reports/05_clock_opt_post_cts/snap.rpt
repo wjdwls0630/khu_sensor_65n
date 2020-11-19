@@ -2,59 +2,63 @@
 Report          : create_qor_snapshot (05_clock_opt_post_cts)
 Design          : khu_sensor_pad
 Version         : N-2017.09
-Date            : Sat Sep 12 02:37:30 2020
+Date            : Thu Nov 19 19:41:23 2020
 Time unit       : 1.0e-09 Second(ns)
 Capacitance unit: 1.0e-12 Farad(pF)
 Voltage unit    : 1 Volt
 Power unit      : 1.0e-03 Watt(mW)
-Location        : /home/graduation_project3/2015103977/03_Physical_Synthesis/snapshot
+Location        : /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/03_Physical_Synthesis/snapshot
 ***********************************************
-No. of scenario = 1
+No. of scenario = 2
 s1 = func1_wst
---------------------------------------------------
-WNS of each timing group:                       s1 
---------------------------------------------------
-default                                    -1.6336 
---------------------------------------------------
-Setup WNS:                                 -1.6336 
-Setup TNS:                               -1316.5103
-Number of setup violations:                   2986  
-Hold WNS:                                   0.0000  
-Hold TNS:                                   0.0000  
-Number of hold violations:                       0  
-Number of max trans violations:               1141  
-Number of max cap violations:                  364  
-Number of min pulse width violations:            0  
-Route drc violations:                            0
---------------------------------------------------
-Area:                                        88155
-Cell count:                                  28161
-Buf/inv cell count:                           4504
-Std cell utilization:                       62.47%
-CPU/ELAPSE(hr):                          0.03/0.06
-Mem(Mb):                                      1047
-Host name:                               vlsi-dist.khu.ac.kr
---------------------------------------------------
-Histogram:             s1 
---------------------------------------------------
-Max violations:      2344 
-   above ~ -0.7  ---  447 
-    -0.6 ~ -0.7  ---  352 
-    -0.5 ~ -0.6  ---  173 
-    -0.4 ~ -0.5  ---  489 
-    -0.3 ~ -0.4  ---  770 
-    -0.2 ~ -0.3  ---    0 
-    -0.1 ~ -0.2  ---    0 
-       0 ~ -0.1  ---  113 
---------------------------------------------------
-Min violations:         0 
-  -0.06 ~ above  ---    0 
-  -0.05 ~ -0.06  ---    0 
-  -0.04 ~ -0.05  ---    0 
-  -0.03 ~ -0.04  ---    0 
-  -0.02 ~ -0.03  ---    0 
-  -0.01 ~ -0.02  ---    0 
-      0 ~ -0.01  ---    0 
---------------------------------------------------
-Snapshot report (snap.rpt) is created and can be viewed using file "/home/graduation_project3/2015103977/03_Physical_Synthesis/snapshot/snap.rpt.html"
+s2 = func1_bst
+------------------------------------------------------------------------
+WNS of each timing group:                       s1        s2 
+------------------------------------------------------------------------
+clk_half                                   -0.1571         - 
+**clock_gating_default**                   -2.3252         - 
+REGOUT                                     -0.6298         - 
+clk                                        -4.4021         - 
+------------------------------------------------------------------------
+Setup WNS:                                 -4.4021    1.7306     -4.4021 
+Setup TNS:                               -1647.6996       0.0  -1647.6996
+Number of setup violations:                   1431         0        1431 
+Hold WNS:                                  -0.1329   -0.0541     -0.1329 
+Hold TNS:                                  -5.3128   -1.6160     -5.4204 
+Number of hold violations:                     130       116         147 
+Number of max trans violations:                911       103        1014 
+Number of max cap violations:                  129        22         151 
+Number of min pulse width violations:            0         0           0 
+Route drc violations:                                                  0
+------------------------------------------------------------------------
+Area:                                                             130940
+Cell count:                                                        31703
+Buf/inv cell count:                                                 7008
+Std cell utilization:                                             12.24%
+CPU/ELAPSE(hr):                                                0.11/0.14
+Mem(Mb):                                                             906
+Host name:                                           vlsi-dist.khu.ac.kr
+------------------------------------------------------------------------
+Histogram:             s1   s2 
+------------------------------------------------------------------------
+Max violations:      1431    0 
+   above ~ -0.7  ---  829    0 
+    -0.6 ~ -0.7  ---  104    0 
+    -0.5 ~ -0.6  ---   81    0 
+    -0.4 ~ -0.5  ---   92    0 
+    -0.3 ~ -0.4  ---   98    0 
+    -0.2 ~ -0.3  ---   71    0 
+    -0.1 ~ -0.2  ---   81    0 
+       0 ~ -0.1  ---   75    0 
+------------------------------------------------------------------------
+Min violations:       130  116 
+  -0.06 ~ above  ---   29    0 
+  -0.05 ~ -0.06  ---   15    3 
+  -0.04 ~ -0.05  ---   16    3 
+  -0.03 ~ -0.04  ---   11    5 
+  -0.02 ~ -0.03  ---   20   15 
+  -0.01 ~ -0.02  ---   13   38 
+      0 ~ -0.01  ---   26   52 
+------------------------------------------------------------------------
+Snapshot report (snap.rpt) is created and can be viewed using file "/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/03_Physical_Synthesis/snapshot/snap.rpt.html"
 1

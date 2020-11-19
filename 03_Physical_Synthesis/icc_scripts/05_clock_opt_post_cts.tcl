@@ -34,19 +34,20 @@ open_mw_cel $TOP_MODULE
 link
 current_design $TOP_MODULE
 
-## Read scenario file
-sh sed -i 's/ ${STD_WST}/ ${STD_WST}.db:${STD_WST}/' $FUNC1_SDC
-# After placement, delete max_delay constraints. It is only for placing
-# clock gating cell and gated register in proximity.
-sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
 if { $CLOCK_OPT_PSYN_SCN_READ_AGAIN } {
 	remove_sdc
 	remove_scenario -all
+
+	## Read scenario file
+	# After placement, delete max_delay constraints. It is only for placing
+	# clock gating cell and gated register in proximity.
+	source $ICC_SDC_SETUP_FILE
+
 	source $ICC_MCMM_SCENARIOS_FILE
 } else {
 	# After placement, delete max_delay constraints. It is only for placing
 	# clock gating cell and gated register in proximity.
-	sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
+	source $ICC_SDC_SETUP_FILE
 }
 set_active_scenario $CLOCK_OPT_PSYN_SCN
 
@@ -146,7 +147,7 @@ derive_pg_connection -power_net $MW_R_POWER_NET -ground_net $MW_R_GROUND_NET -ti
 
 # Generate global zroute based congestion map
 if { $GEN_GL_CONG_MAP } {
-	route_zrt_global -congestion_map_only true
+	route_zrt_global -congestion_map_only true -effort ultra
 }
 
 # Running extraction and updating the timing

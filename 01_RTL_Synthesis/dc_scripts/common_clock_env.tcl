@@ -9,7 +9,7 @@ echo "***********************************************************************"
 # START_OF_USER_SPECIFICATION
 # ------------------------------------------------------------------------------
 
-set CLK_MAIN_PERIOD      7                       ;# Define the value as ns
+set CLK_MAIN_PERIOD      9                       ;# Define the value as ns
 set CLK_HALF_PERIOD  [expr {$CLK_MAIN_PERIOD*2}]   ;# Define the value as ns
 
 # MTTV : Max Transition Time Violation
@@ -24,7 +24,7 @@ set CLK_HALF_PERIOD  [expr {$CLK_MAIN_PERIOD*2}]   ;# Define the value as ns
 # In High speed IP, more aggressive rule should be applied. Some technical papers
 # propose 10% transition time of clock period rule.
 if { $CLK_MAIN_PERIOD >= 4 } {
-  set CLOCK_MAX_TRAN    0.5; # clock path max transtion time.
+  set CLOCK_MAX_TRAN    0.7; # clock path max transtion time.
 } elseif { $CLK_MAIN_PERIOD >= 2 } {
   set CLOCK_MAX_TRAN    [expr $CLK_MAIN_PERIOD * 0.2] ;# clock path max transtion time.
 } else {
@@ -42,7 +42,6 @@ set USER_SETUP_MARGIN     "0.04"   ;# Define the value as %.
                                    ;# Therefore, total margin will be 4% (200ps) in this example.
 
 # Define max transition time
-# Samsung 130nm default data path max_transition 1.5ns
 # If you do not define, dc apply max_transition automatically.
 
 
@@ -97,8 +96,8 @@ foreach_in_collection _clock [all_clocks] {
            set user_m   [expr $CLK_HALF_PERIOD * 0.6 * $USER_SETUP_MARGIN ]
            set uncert [expr $jitter_m + $user_m ]
 
-           if { $uncert > 4.0 } {
-		set uncert 4.0
+           if { $uncert > 4.6 } {
+		set uncert 4.6
 	   }
 
 	   set_clock_uncertainty -setup $uncert $clk
@@ -106,8 +105,8 @@ foreach_in_collection _clock [all_clocks] {
            set jitter_m [expr $CLK_MAIN_PERIOD * 0.6 * $JITTER_MARGIN ]
            set user_m   [expr $CLK_MAIN_PERIOD * 0.6 * $USER_SETUP_MARGIN ]
            set uncert [expr $jitter_m + $user_m ]
-           if { $uncert > 4.0 } {
-		set uncert 4.0
+           if { $uncert > 2.3 } {
+		set uncert 2.3
 	   }
 
 	   set_clock_uncertainty -setup $uncert $clk

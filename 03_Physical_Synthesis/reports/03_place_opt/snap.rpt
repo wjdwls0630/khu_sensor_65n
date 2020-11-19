@@ -2,59 +2,61 @@
 Report          : create_qor_snapshot (03_place_opt)
 Design          : khu_sensor_pad
 Version         : N-2017.09
-Date            : Sat Sep 12 02:30:18 2020
+Date            : Thu Nov 19 19:28:14 2020
 Time unit       : 1.0e-09 Second(ns)
 Capacitance unit: 1.0e-12 Farad(pF)
 Voltage unit    : 1 Volt
 Power unit      : 1.0e-03 Watt(mW)
-Location        : /home/graduation_project3/2015103977/03_Physical_Synthesis/snapshot
+Location        : /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/03_Physical_Synthesis/snapshot
 ***********************************************
 No. of scenario = 1
 s1 = func1_wst
 --------------------------------------------------
 WNS of each timing group:                       s1 
 --------------------------------------------------
-default                                    -1.6559 
+**clock_gating_default**                   -2.7125 
+default                                    -0.7963 
+clk                                        -0.5304 
 --------------------------------------------------
-Setup WNS:                                 -1.6559 
-Setup TNS:                               -1333.4374
-Number of setup violations:                   2986  
-Hold WNS:                                   0.0000  
-Hold TNS:                                   0.0000  
-Number of hold violations:                       0  
-Number of max trans violations:               1146  
-Number of max cap violations:                  367  
+Setup WNS:                                 -2.7125 
+Setup TNS:                               -833.0186
+Number of setup violations:                   4987  
+Hold WNS:                                  -0.0211  
+Hold TNS:                                  -0.0211  
+Number of hold violations:                       1  
+Number of max trans violations:               1101  
+Number of max cap violations:                  167  
 Number of min pulse width violations:            0  
 Route drc violations:                            0
 --------------------------------------------------
-Area:                                        87104
-Cell count:                                  27646
-Buf/inv cell count:                           3989
-Std cell utilization:                       61.72%
-CPU/ELAPSE(hr):                          0.09/0.12
-Mem(Mb):                                      1058
+Area:                                       100189
+Cell count:                                  27229
+Buf/inv cell count:                           3051
+Std cell utilization:                        9.37%
+CPU/ELAPSE(hr):                          0.11/0.14
+Mem(Mb):                                       925
 Host name:                               vlsi-dist.khu.ac.kr
 --------------------------------------------------
 Histogram:             s1 
 --------------------------------------------------
-Max violations:      2986 
-   above ~ -0.7  ---  438 
-    -0.6 ~ -0.7  ---  361 
-    -0.5 ~ -0.6  ---  173 
-    -0.4 ~ -0.5  ---  668 
-    -0.3 ~ -0.4  ---  589 
-    -0.2 ~ -0.3  ---    0 
-    -0.1 ~ -0.2  ---    0 
-       0 ~ -0.1  ---  757 
+Max violations:      4987 
+   above ~ -0.7  ---  172 
+    -0.6 ~ -0.7  ---  100 
+    -0.5 ~ -0.6  ---  550 
+    -0.4 ~ -0.5  ---  515 
+    -0.3 ~ -0.4  ---  139 
+    -0.2 ~ -0.3  ---   26 
+    -0.1 ~ -0.2  ---    8 
+       0 ~ -0.1  --- 3477 
 --------------------------------------------------
-Min violations:         0 
+Min violations:         1 
   -0.06 ~ above  ---    0 
   -0.05 ~ -0.06  ---    0 
   -0.04 ~ -0.05  ---    0 
   -0.03 ~ -0.04  ---    0 
-  -0.02 ~ -0.03  ---    0 
+  -0.02 ~ -0.03  ---    1 
   -0.01 ~ -0.02  ---    0 
       0 ~ -0.01  ---    0 
 --------------------------------------------------
-Snapshot report (snap.rpt) is created and can be viewed using file "/home/graduation_project3/2015103977/03_Physical_Synthesis/snapshot/snap.rpt.html"
+Snapshot report (snap.rpt) is created and can be viewed using file "/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/03_Physical_Synthesis/snapshot/snap.rpt.html"
 1

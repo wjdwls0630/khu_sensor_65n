@@ -27,9 +27,7 @@ set IO_LIB_DIR ${LIB_DIR}/IO
 #******************************************************************************
 set search_path ". $synopsys_root/libraries/syn \
 		    					 $PRIMITIVE_LIB_DIR/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys  \
-                   $PRIMITIVE_LIB_DIR/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys  \
                    $PRIMITIVE_LIB_DIR/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys \
-                   $PRIMITIVE_LIB_DIR/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys \
                    $IO_LIB_DIR/synopsys"
 
 #******************************************************************************
@@ -49,7 +47,7 @@ set PMK_RVT_SS scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm
 
 # HVT
 # SS (Worst)
-set PMK_HVT_SS scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm
+#set PMK_HVT_SS scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm
 
 # Normal
 
@@ -59,7 +57,7 @@ set NOM_RVT_SS scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
 
 # HVT
 # SS (Worst)
-set NOM_HVT_SS scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm
+#set NOM_HVT_SS scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm
 
 # IO
 
@@ -68,9 +66,7 @@ set IO_SS ss65lp3p3v_wst_108_300_p125
 
 set target_library [concat \
         $PMK_RVT_SS.db \
-        $PMK_HVT_SS.db \
         $NOM_RVT_SS.db \
-        $NOM_HVT_SS.db \
         $IO_SS.db
 ]
 
@@ -79,9 +75,7 @@ set target_library [concat \
 set link_library [concat \
         {*} \
 				$PMK_RVT_SS.db \
-        $PMK_HVT_SS.db \
         $NOM_RVT_SS.db \
-        $NOM_HVT_SS.db \
         $IO_SS.db
 ]
 

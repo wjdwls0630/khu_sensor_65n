@@ -3,21 +3,21 @@ Information: Scenario funccts_wst either not exists or is inactive. report_qor w
 ****************************************
 Report : qor
 Design : khu_sensor_pad
-Scenario(s): func1_wst funccts_wst
+Scenario(s): func1_wst func1_bst funccts_wst
 Version: N-2017.09
-Date   : Sat Sep 12 02:53:09 2020
+Date   : Thu Nov 19 20:19:42 2020
 ****************************************
 
 
   Scenario 'func1_wst'
   Timing Path Group '**clock_gating_default**'
   -----------------------------------
-  Levels of Logic:            14.0000
-  Critical Path Length:        6.3391
-  Critical Path Slack:         5.1725
-  Critical Path Clk Period:   12.0000
-  Total Negative Slack:        0.0000
-  No. of Violating Paths:      0.0000
+  Levels of Logic:            32.0000
+  Critical Path Length:        4.4295
+  Critical Path Slack:        -0.0055
+  Critical Path Clk Period:    5.4000
+  Total Negative Slack:       -0.0055
+  No. of Violating Paths:      1.0000
   Worst Hold Violation:        0.0000
   Total Hold Violation:        0.0000
   No. of Hold Violations:      0.0000
@@ -26,10 +26,10 @@ Date   : Sat Sep 12 02:53:09 2020
   Scenario 'func1_wst'
   Timing Path Group 'REGIN'
   -----------------------------------
-  Levels of Logic:             1.0000
-  Critical Path Length:        1.5860
-  Critical Path Slack:         9.8909
-  Critical Path Clk Period:   24.0000
+  Levels of Logic:             2.0000
+  Critical Path Length:        0.8481
+  Critical Path Slack:         4.2795
+  Critical Path Clk Period:   10.8000
   Total Negative Slack:        0.0000
   No. of Violating Paths:      0.0000
   Worst Hold Violation:        0.0000
@@ -40,12 +40,12 @@ Date   : Sat Sep 12 02:53:09 2020
   Scenario 'func1_wst'
   Timing Path Group 'REGOUT'
   -----------------------------------
-  Levels of Logic:             5.0000
-  Critical Path Length:        4.6506
-  Critical Path Slack:         4.2746
-  Critical Path Clk Period:   12.0000
-  Total Negative Slack:        0.0000
-  No. of Violating Paths:      0.0000
+  Levels of Logic:             3.0000
+  Critical Path Length:        3.0464
+  Critical Path Slack:        -0.3941
+  Critical Path Clk Period:    5.4000
+  Total Negative Slack:       -0.8641
+  No. of Violating Paths:      4.0000
   Worst Hold Violation:        0.0000
   Total Hold Violation:        0.0000
   No. of Hold Violations:      0.0000
@@ -54,24 +54,24 @@ Date   : Sat Sep 12 02:53:09 2020
   Scenario 'func1_wst'
   Timing Path Group 'clk'
   -----------------------------------
-  Levels of Logic:            32.0000
-  Critical Path Length:        9.0581
-  Critical Path Slack:         2.6817
-  Critical Path Clk Period:   12.0000
-  Total Negative Slack:        0.0000
-  No. of Violating Paths:      0.0000
-  Worst Hold Violation:        0.0000
-  Total Hold Violation:        0.0000
-  No. of Hold Violations:      0.0000
+  Levels of Logic:            42.0000
+  Critical Path Length:        5.2474
+  Critical Path Slack:        -0.2440
+  Critical Path Clk Period:    5.4000
+  Total Negative Slack:       -1.2934
+  No. of Violating Paths:     17.0000
+  Worst Hold Violation:       -0.0053
+  Total Hold Violation:       -0.0053
+  No. of Hold Violations:      1.0000
   -----------------------------------
 
   Scenario 'func1_wst'
   Timing Path Group 'clk_half'
   -----------------------------------
-  Levels of Logic:             3.0000
-  Critical Path Length:        2.6838
-  Critical Path Slack:         7.0425
-  Critical Path Clk Period:   24.0000
+  Levels of Logic:             5.0000
+  Critical Path Length:        2.1709
+  Critical Path Slack:         1.4846
+  Critical Path Clk Period:   10.8000
   Total Negative Slack:        0.0000
   No. of Violating Paths:      0.0000
   Worst Hold Violation:        0.0000
@@ -79,15 +79,72 @@ Date   : Sat Sep 12 02:53:09 2020
   No. of Hold Violations:      0.0000
   -----------------------------------
 
-  Scenario 'func1_wst'
-  Timing Path Group 'default'
+
+  Scenario 'func1_bst'
+  Timing Path Group '**clock_gating_default**'
+  -----------------------------------
+  Levels of Logic:            32.0000
+  Critical Path Length:        1.7245
+  Critical Path Slack:         3.1339
+  Critical Path Clk Period:    5.4000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_bst'
+  Timing Path Group 'REGIN'
   -----------------------------------
   Levels of Logic:             2.0000
-  Critical Path Length:        0.4035
-  Critical Path Slack:        -0.4035
-  Critical Path Clk Period:       n/a
-  Total Negative Slack:     -638.9922
-  No. of Violating Paths:   2969.0000
+  Critical Path Length:        0.4904
+  Critical Path Slack:         4.3033
+  Critical Path Clk Period:   10.8000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_bst'
+  Timing Path Group 'REGOUT'
+  -----------------------------------
+  Levels of Logic:             3.0000
+  Critical Path Length:        1.2511
+  Critical Path Slack:         2.4978
+  Critical Path Clk Period:    5.4000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+  Scenario 'func1_bst'
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:            42.0000
+  Critical Path Length:        2.1288
+  Critical Path Slack:         2.9539
+  Critical Path Clk Period:    5.4000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:       -0.0011
+  Total Hold Violation:       -0.0018
+  No. of Hold Violations:      3.0000
+  -----------------------------------
+
+  Scenario 'func1_bst'
+  Timing Path Group 'clk_half'
+  -----------------------------------
+  Levels of Logic:             5.0000
+  Critical Path Length:        0.7838
+  Critical Path Slack:         3.5399
+  Critical Path Clk Period:   10.8000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
   Worst Hold Violation:        0.0000
   Total Hold Violation:        0.0000
   No. of Hold Violations:      0.0000
@@ -96,42 +153,43 @@ Date   : Sat Sep 12 02:53:09 2020
 
   Cell Count
   -----------------------------------
-  Hierarchical Cell Count:        232
-  Hierarchical Port Count:       6201
-  Leaf Cell Count:              28171
-  Buf/Inv Cell Count:            4514
-  Buf Cell Count:                 162
-  Inv Cell Count:                4352
-  CT Buf/Inv Cell Count:          132
-  Combinational Cell Count:     22836
-  Sequential Cell Count:         5335
+  Hierarchical Cell Count:        294
+  Hierarchical Port Count:       6271
+  Leaf Cell Count:              31612
+  Buf/Inv Cell Count:            6917
+  Buf Cell Count:                2354
+  Inv Cell Count:                4563
+  CT Buf/Inv Cell Count:          267
+  Combinational Cell Count:     26208
+  Sequential Cell Count:         5404
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:      52175.6969
-  Noncombinational Area:   36013.9983
-  Buf/Inv Area:             4228.0095
-  Total Buffer Area:         230.9995
-  Total Inverter Area:      3997.0100
+  Combinational Area:      82427.8396
+  Noncombinational Area:   46412.1604
+  Buf/Inv Area:            12543.6800
+  Total Buffer Area:        4786.2400
+  Total Inverter Area:      7757.4400
   Macro/Black Box Area:        0.0000
-  Net Area:                  892.2321
-  Net XLength        :    484161.0938
-  Net YLength        :    540966.8125
+  Net Area:                    0.0000
+  Net XLength        :    655437.4375
+  Net YLength        :    558476.1875
   -----------------------------------
-  Cell Area:               88189.6952
-  Design Area:             89081.9272
-  Net Length        :    1025127.8750
+  Cell Area:              128840.0000
+  Design Area:            128840.0000
+  Net Length        :    1213913.6250
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:         30316
-  Nets With Violations:             0
+  Total Number of Nets:         34060
+  Nets With Violations:            19
   Max Trans Violations:             0
   Max Cap Violations:               0
+  Max Net Length Violations:       19
   -----------------------------------
 
 
@@ -141,19 +199,21 @@ Date   : Sat Sep 12 02:53:09 2020
   -----------------------------------------
   Resource Sharing:                  0.0000
   Logic Optimization:                0.0000
-  Mapping Optimization:            117.0402
+  Mapping Optimization:            442.4248
   -----------------------------------------
-  Overall Compile Time:            118.5290
-  Overall Compile Wall Clock Time: 118.8432
+  Overall Compile Time:            450.6486
+  Overall Compile Wall Clock Time: 453.4773
 
   --------------------------------------------------------------------
 
-  Scenario: func1_wst   WNS: 0.4035  TNS: 638.9922  Number of Violating Paths: 2969  (with Crosstalk delta delays)
-  Design  WNS: 0.4035  TNS: 638.9922  Number of Violating Paths: 2969  (with Crosstalk delta delays)
+  Scenario: func1_wst   WNS: 0.3941  TNS: 2.1630  Number of Violating Paths: 22  (with Crosstalk delta delays)
+  Scenario: func1_bst   WNS: 0.0000  TNS: 0.0000  Number of Violating Paths: 0  (with Crosstalk delta delays)
+  Design  WNS: 0.3941  TNS: 2.1630  Number of Violating Paths: 22  (with Crosstalk delta delays)
 
 
-  Scenario: func1_wst  (Hold)  WNS: 0.0000  TNS: 0.0000  Number of Violating Paths: 0  (with Crosstalk delta delays)
-  Design (Hold)  WNS: 0.0000  TNS: 0.0000  Number of Violating Paths: 0  (with Crosstalk delta delays)
+  Scenario: func1_wst  (Hold)  WNS: 0.0053  TNS: 0.0053  Number of Violating Paths: 1  (with Crosstalk delta delays)
+  Scenario: func1_bst  (Hold)  WNS: 0.0011  TNS: 0.0018  Number of Violating Paths: 3  (with Crosstalk delta delays)
+  Design (Hold)  WNS: 0.0053  TNS: 0.0066  Number of Violating Paths: 3  (with Crosstalk delta delays)
 
   --------------------------------------------------------------------
 

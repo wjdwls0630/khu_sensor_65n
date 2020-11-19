@@ -100,7 +100,7 @@ derive_pg_connection -power_net $MW_R_POWER_NET -ground_net $MW_R_GROUND_NET -ti
 
 # Generate global zroute based congestion map
 if { $GEN_GL_CONG_MAP } {
-	route_zrt_global -congestion_map_only true
+	route_zrt_global -congestion_map_only true -effort ultra
 }
 
 # Running extraction and updating the timing

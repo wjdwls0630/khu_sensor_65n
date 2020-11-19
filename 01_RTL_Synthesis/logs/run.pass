@@ -199,8 +199,8 @@ set IO_LIB_DIR ${LIB_DIR}/IO
 #******************************************************************************
 #**                Set 'search_path'                                         **
 #******************************************************************************
-set search_path ". $synopsys_root/libraries/syn 		    $PRIMITIVE_LIB_DIR/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys                      $PRIMITIVE_LIB_DIR/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys                      $PRIMITIVE_LIB_DIR/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys                     $PRIMITIVE_LIB_DIR/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys                     $IO_LIB_DIR/synopsys"
-. /Tools/Synopsys/DesignCompiler_2017/libraries/syn       /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys                      /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys                      /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys                     /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys                     /Tools/Library/samsung65_2016/CB_1502/IO/synopsys
+set search_path ". $synopsys_root/libraries/syn 		    					 $PRIMITIVE_LIB_DIR/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys                     $PRIMITIVE_LIB_DIR/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys                    $IO_LIB_DIR/synopsys"
+. /Tools/Synopsys/DesignCompiler_2017/libraries/syn             /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys                     /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys                    /Tools/Library/samsung65_2016/CB_1502/IO/synopsys
 #******************************************************************************
 #**                Set libraries                                             **
 #******************************************************************************
@@ -216,8 +216,7 @@ set PMK_RVT_SS scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm
 scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm
 # HVT
 # SS (Worst)
-set PMK_HVT_SS scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm
-scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm
+#set PMK_HVT_SS scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm
 # Normal
 # RVT
 # SS (Worst)
@@ -225,22 +224,21 @@ set NOM_RVT_SS scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
 scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
 # HVT
 # SS (Worst)
-set NOM_HVT_SS scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm
-scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm
+#set NOM_HVT_SS scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm
 # IO
 # SS (Worst)
 set IO_SS ss65lp3p3v_wst_108_300_p125
 ss65lp3p3v_wst_108_300_p125
-set target_library [concat         $PMK_RVT_SS.db         $PMK_HVT_SS.db         $NOM_RVT_SS.db         $NOM_HVT_SS.db         $IO_SS.db
+set target_library [concat         $PMK_RVT_SS.db         $NOM_RVT_SS.db         $IO_SS.db
 ]
-scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db ss65lp3p3v_wst_108_300_p125.db
+scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db ss65lp3p3v_wst_108_300_p125.db
 # * : all designs which are in dc_shell
 #set synthetic_library dw_foundation.sldb
-set link_library [concat         {*} 	$PMK_RVT_SS.db         $PMK_HVT_SS.db         $NOM_RVT_SS.db         $NOM_HVT_SS.db         $IO_SS.db
+set link_library [concat         {*} 				$PMK_RVT_SS.db         $NOM_RVT_SS.db         $IO_SS.db
 ]
-* scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db ss65lp3p3v_wst_108_300_p125.db
+* scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db ss65lp3p3v_wst_108_300_p125.db
 set link_path $link_library
-* scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db ss65lp3p3v_wst_108_300_p125.db
+* scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db ss65lp3p3v_wst_108_300_p125.db
 set_app_var alib_library_analysis_path $ALIB_DIR
 ./alib
 set_host_options -max_cores $DC_NUM_CPUS
@@ -265,7 +263,7 @@ false
 setenv TMPDIR [sh pwd]/TMP
 /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/TMP
 set back [sh date +%m%d_%H:%M:%S]
-1117_01:34:15
+1119_19:04:39
 #******************************************************************************
 set_svf $SVF_DIR/$TOP_MODULE.svf
 1
@@ -276,16 +274,12 @@ source ./dc_scripts/00_read_global_reset.tcl
                                                                        
 ***********************************************************************
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
 Loading db file '/Tools/Synopsys/DesignCompiler_2017/libraries/syn/gtech.db'
 Loading db file '/Tools/Synopsys/DesignCompiler_2017/libraries/syn/standard.sldb'
   Loading link library 'scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm'
-  Loading link library 'scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm'
   Loading link library 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm'
-  Loading link library 'scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm'
   Loading link library 'ss65lp3p3v_wst_108_300_p125'
   Loading link library 'gtech'
 Loading verilog file '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/Reset/async_rstn_synchronizer.v'
@@ -322,9 +316,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 
 
 Loaded alib file './alib/alib-52/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db.alib' (placeholder)
-Loaded alib file './alib/alib-52/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db.alib' (placeholder)
 Loaded alib file './alib/alib-52/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db.alib'
-Loaded alib file './alib/alib-52/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db.alib'
 Loaded alib file './alib/alib-52/ss65lp3p3v_wst_108_300_p125.db.alib' (placeholder)
 Information: State dependent leakage is now switched from on to off.
 
@@ -335,9 +327,7 @@ Information: State dependent leakage is now switched from on to off.
   Updating timing information
 Information: Updating design information... (UID-85)
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
 
 
@@ -381,9 +371,7 @@ Information: State dependent leakage is now switched from on to off.
   Updating timing information
 Information: Updating design information... (UID-85)
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
 
 
@@ -409,7 +397,7 @@ Current design is 'async_rstn_glitch_synchronizer'.
                     insert delay on or gate                            
                                                                        
 ***********************************************************************
-Warning: Library cell 'DLY4X1MTH' has dont_use attribute.  (NLE-033)
+Warning: Library cell 'DLY4X1MTR' has dont_use attribute.  (NLE-033)
 Information: Buffering net i_RSTN. (HFS-701)
 Disconnecting net 'i_RSTN' from pin '__tmp100/A'.
 Creating net 'eco_net' in design 'async_rstn_glitch_synchronizer'.
@@ -457,9 +445,7 @@ Information: State dependent leakage is now switched from on to off.
   Updating timing information
 Information: Updating design information... (UID-85)
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
 
 
@@ -1256,9 +1242,7 @@ Current design is 'khu_sensor_pad'.
   --------------------------------------------------------------------------
   * (22 designs)              /home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/Source/khu_sensor_pad.db, etc
   scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db
-  scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db
   scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db
-  scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm (library) /Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db
   ss65lp3p3v_wst_108_300_p125 (library) /Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db
 
 Information: Uniquified 4 instances of design 'float_adder'. (OPT-1056)
@@ -1283,7 +1267,7 @@ Warning: Design 'khu_sensor_pad' contains 19 high-fanout nets. A fanout number o
 Report : clocks
 Design : khu_sensor_pad
 Version: L-2016.03-SP5-5
-Date   : Tue Nov 17 01:35:44 2020
+Date   : Thu Nov 19 19:05:55 2020
 ****************************************
 
 Attributes:
@@ -1295,8 +1279,8 @@ Attributes:
 
 Clock          Period   Waveform            Attrs     Sources
 --------------------------------------------------------------------------------
-clk              4.20   {0 2.1}                       {i_CLK}
-clk_half         8.40   {0 4.2}             G         {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
+clk              5.40   {0 2.7}                       {i_CLK}
+clk_half        10.80   {0 5.4}             G         {khu_sensor_top/divider_by_2/o_CLK_DIV_2}
 --------------------------------------------------------------------------------
 
 Generated     Master         Generated      Master         Waveform
@@ -1344,31 +1328,17 @@ source ./dc_scripts/03_compile_ultra.tcl
                        03_compile_ultra.tcl                            
                                                                        
 ***********************************************************************
-Using operating conditions 'SS65LP3P3V_WST_108_300_P125' found in library 'ss65lp3p3v_wst_108_300_p125'.
-Using operating conditions 'SS65LP3P3V_WST_108_300_P125' found in library 'ss65lp3p3v_wst_108_300_p125'.
-Using operating conditions 'ss_1p08v_125c' found in library 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm'.
-Using operating conditions 'ss_1p08v_125c' found in library 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm'.
-SEC_INFO: Define user operating condtions
 Information: Performing power optimization. (PWR-850)
 Alib files are up-to-date.
 Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
-Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
 
 Information: There are 241 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
-Loaded alib file './alib/alib-52/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db.alib' (placeholder)
-Loaded alib file './alib/alib-52/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db.alib' (placeholder)
-Loaded alib file './alib/alib-52/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db.alib'
-Loaded alib file './alib/alib-52/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db.alib'
-Loaded alib file './alib/alib-52/ss65lp3p3v_wst_108_300_p125.db.alib' (placeholder)
 Information: State dependent leakage is now switched from on to off.
 
   Beginning Pass 1 Mapping  (Incremental)
   ------------------------
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
-Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
   Processing 'spi_master'
 Information: The register 'r_TX_DV_reg' will be removed. (OPT-1207)
 Information: Added key list 'DesignWare' to design 'spi_master'. (DDB-72)
@@ -1403,8 +1373,6 @@ Information: Added key list 'DesignWare' to design 'uart_tx'. (DDB-72)
 Information: Added key list 'DesignWare' to design 'uart_controller'. (DDB-72)
   Processing 'divider_by_2'
   Processing 'khu_sensor_pad'
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
-Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
 
   Updating timing information
 Information: Updating design information... (UID-85)
@@ -1717,8 +1685,8 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:48  126665.9     15.20    8121.9      47.0                              0.5645      0.00  
-    0:00:49  125363.5     14.86    8062.1      51.9                              0.5622      0.00  
+    0:00:36  126657.0      5.86    2399.3      24.0                              0.5877      0.00  
+    0:00:36  126657.0      5.86    2399.3      24.0                              0.5877      0.00  
 
   Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
   -------------------------------
@@ -1738,6 +1706,19 @@ Information: Added key list 'DesignWare' to design 'converter_i2f'. (DDB-72)
 
   Beginning Incremental Implementation Selection
   ----------------------------------------------
+  Selecting critical implementations
+  Mapping 'float_multiplier_4_DW_mult_uns_1'
+  Mapping 'float_multiplier_4_DW_mult_uns_2'
+  Mapping 'float_multiplier_3_DW_mult_uns_1'
+  Mapping 'float_multiplier_3_DW_mult_uns_2'
+  Mapping 'float_multiplier_2_DW_mult_uns_1'
+  Mapping 'float_multiplier_2_DW_mult_uns_2'
+  Mapping 'float_multiplier_1_DW_mult_uns_1'
+  Mapping 'float_multiplier_1_DW_mult_uns_2'
+  Mapping 'float_multiplier_0_DW_mult_uns_1'
+  Mapping 'float_multiplier_0_DW_mult_uns_2'
+  Mapping 'float_multiplier_5_DW_mult_uns_1'
+  Mapping 'float_multiplier_5_DW_mult_uns_2'
   Selecting implementations
   Mapping 'mpr121_controller_DW01_inc_2'
   Mapping 'mpr121_controller_DW01_inc_3'
@@ -1778,11 +1759,10 @@ Information: Added key list 'DesignWare' to design 'converter_i2f'. (DDB-72)
   Mapping 'float_adder_3_DP_OP_127_147_6903_1'
   Mapping 'float_adder_3_DW01_inc_2'
   Mapping 'float_adder_3_DW01_inc_3'
-  Selecting implementations
-  Mapping 'float_multiplier_5_DW_mult_uns_2'
-  Mapping 'float_multiplier_5_DW_mult_uns_3'
+  Mapping 'float_multiplier_5_DP_OP_119_208_9725_1'
   Mapping 'float_multiplier_5_DP_OP_102_206_7830_1'
   Mapping 'float_multiplier_5_DP_OP_105_203_3597_1'
+  Selecting implementations
   Mapping 'float_multiplier_5_DW01_inc_2'
   Mapping 'float_multiplier_5_DW01_inc_3'
   Selecting implementations
@@ -1809,47 +1789,42 @@ Information: Added key list 'DesignWare' to design 'converter_i2f'. (DDB-72)
   Mapping 'float_adder_0_DP_OP_127_129_7863_1'
   Mapping 'float_adder_0_DW01_inc_2'
   Mapping 'float_adder_0_DW01_inc_3'
-  Selecting implementations
-  Mapping 'float_multiplier_0_DW_mult_uns_2'
-  Mapping 'float_multiplier_0_DW_mult_uns_3'
+  Mapping 'float_multiplier_0_DP_OP_119_158_3501_1'
   Mapping 'float_multiplier_0_DP_OP_102_156_9202_1'
   Mapping 'float_multiplier_0_DP_OP_105_153_1967_1'
+  Selecting implementations
   Mapping 'float_multiplier_0_DW01_inc_2'
   Mapping 'float_multiplier_0_DW01_inc_3'
-  Selecting implementations
-  Mapping 'float_multiplier_1_DW_mult_uns_2'
-  Mapping 'float_multiplier_1_DW_mult_uns_3'
+  Mapping 'float_multiplier_1_DP_OP_119_168_3191_1'
   Mapping 'float_multiplier_1_DP_OP_102_166_8907_1'
   Mapping 'float_multiplier_1_DP_OP_105_163_6175_1'
+  Selecting implementations
   Mapping 'float_multiplier_1_DW01_inc_2'
   Mapping 'float_multiplier_1_DW01_inc_3'
-  Selecting implementations
-  Mapping 'float_multiplier_2_DW_mult_uns_2'
-  Mapping 'float_multiplier_2_DW_mult_uns_3'
+  Mapping 'float_multiplier_2_DP_OP_119_178_9062_1'
   Mapping 'float_multiplier_2_DP_OP_102_176_8923_1'
   Mapping 'float_multiplier_2_DP_OP_105_173_6191_1'
+  Selecting implementations
   Mapping 'float_multiplier_2_DW01_inc_2'
   Mapping 'float_multiplier_2_DW01_inc_3'
-  Selecting implementations
-  Mapping 'float_multiplier_3_DW_mult_uns_2'
-  Mapping 'float_multiplier_3_DW_mult_uns_3'
+  Mapping 'float_multiplier_3_DP_OP_119_188_7833_1'
   Mapping 'float_multiplier_3_DP_OP_102_186_8939_1'
   Mapping 'float_multiplier_3_DP_OP_105_183_6207_1'
+  Selecting implementations
   Mapping 'float_multiplier_3_DW01_inc_2'
   Mapping 'float_multiplier_3_DW01_inc_3'
-  Selecting implementations
-  Mapping 'float_multiplier_4_DW_mult_uns_2'
-  Mapping 'float_multiplier_4_DW_mult_uns_3'
+  Mapping 'float_multiplier_4_DP_OP_119_198_9179_1'
   Mapping 'float_multiplier_4_DP_OP_102_196_7782_1'
   Mapping 'float_multiplier_4_DP_OP_105_193_3549_1'
+  Selecting implementations
   Mapping 'float_multiplier_4_DW01_inc_2'
   Mapping 'float_multiplier_4_DW01_inc_3'
 Information: The register 'khu_sensor_top/mpr121_controller/i2c_master/bus_control_reg_reg' will be removed. (OPT-1207)
 Information: The register 'khu_sensor_top/ads1292_filter/converter_i2f/sticky_reg' will be removed. (OPT-1207)
-    0:01:20  211528.0      7.59    1696.7      28.1                              0.7755      0.00  
-    0:01:20  211528.0      7.59    1696.7      28.1                              0.7755      0.00  
-    0:01:20  211528.0      7.59    1696.7      28.1                              0.7755      0.00  
-    0:01:20  211527.7      7.59    1696.5      28.1                              0.7755      0.00  
+    0:01:00  188561.0      3.69     155.5      10.0                              0.7196      0.00  
+    0:01:00  188561.0      3.69     155.5      10.0                              0.7196      0.00  
+    0:01:00  188561.0      3.69     155.5      10.0                              0.7196      0.00  
+    0:01:00  188563.5      3.69     155.1      10.0                              0.7196      0.00  
   Global Optimization (Phase 1)
   Global Optimization (Phase 2)
   Global Optimization (Phase 3)
@@ -1866,42 +1841,42 @@ Information: The register 'khu_sensor_top/ads1292_filter/converter_i2f/sticky_re
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:01:28  205377.0      0.99     651.7      16.2                              0.7560      0.00  
-    0:01:28  205377.0      0.99     651.7      16.2                              0.7560      0.00  
-    0:01:35  186292.2      0.99     334.0       7.5                              0.7006      0.00  
-    0:01:36  186292.2      0.99     334.0       7.5                              0.7006      0.00  
-    0:01:36  186547.8      0.89     151.5       8.8                              0.7011      0.00  
-    0:01:36  186547.8      0.89     151.5       8.8                              0.7011      0.00  
-    0:01:43  187236.2      0.00       0.0       6.7                              0.7017      0.00  
+    0:01:05  186221.4      0.00       0.0       5.1                              0.7130      0.00  
+    0:01:05  186221.4      0.00       0.0       5.1                              0.7130      0.00  
+    0:01:14  167447.0      0.00       0.0       1.7                              0.6793      0.00  
+    0:01:14  167447.0      0.00       0.0       1.7                              0.6793      0.00  
+    0:01:14  167447.0      0.00       0.0       1.7                              0.6793      0.00  
+    0:01:14  167447.0      0.00       0.0       1.7                              0.6793      0.00  
+    0:01:14  167447.0      0.00       0.0       1.7                              0.6793      0.00  
 
   Beginning Delay Optimization
   ----------------------------
-    0:01:44  187236.2      0.00       0.0       6.7                              0.7017      0.00  
-    0:01:44  187236.2      0.00       0.0       6.7                              0.7017      0.00  
-    0:01:44  187236.2      0.00       0.0       6.7                              0.7017      0.00  
-    0:01:44  187236.2      0.00       0.0       6.7                              0.7017      0.00  
-    0:01:44  187236.2      0.00       0.0       6.7                              0.7017      0.00  
-    0:01:45  187031.4      0.03       0.2       6.7                              0.7012      0.00  
+    0:01:14  167447.0      0.00       0.0       1.7                              0.6793      0.00  
+    0:01:14  167447.0      0.00       0.0       1.7                              0.6793      0.00  
+    0:01:14  167447.0      0.00       0.0       1.7                              0.6793      0.00  
+    0:01:14  167447.0      0.00       0.0       1.7                              0.6793      0.00  
+    0:01:14  167447.0      0.00       0.0       1.7                              0.6793      0.00  
+    0:01:21  148152.6      0.00       0.0       1.7                              0.6423      0.00  
 
 
-  Beginning Design Rule Fixing  (min_path)  (max_transition)  (max_capacitance)
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
   ----------------------------
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:01:47  187031.4      0.03       0.2       6.7                              0.7012     -0.19  
-    0:01:48  186961.6      0.00       0.0       0.0                              0.7010     -0.19  
-    0:01:56  183578.2      0.02       0.0       0.0                              0.6873     -0.19  
-    0:01:56  183578.2      0.02       0.0       0.0                              0.6873     -0.19  
-    0:01:56  183570.2      0.00       0.0       0.0                              0.6873     -0.19  
-    0:01:56  183570.2      0.00       0.0       0.0                              0.6873     -0.19  
-    0:01:56  183570.2      0.00       0.0       0.0                              0.6873     -0.19  
-    0:01:56  183570.2      0.00       0.0       0.0                              0.6873     -0.19  
-    0:01:56  183570.2      0.00       0.0       0.0                              0.6873     -0.19  
-    0:01:56  183570.2      0.00       0.0       0.0                              0.6873     -0.19  
-    0:01:56  183570.2      0.00       0.0       0.0                              0.6873     -0.19  
+    0:01:23  148152.6      0.00       0.0       1.7                              0.6423      0.00  
+    0:01:24  148151.4      0.00       0.0       0.0                              0.6423      0.00  
+    0:01:31  145947.2      0.00       0.0       0.0                              0.6380      0.00  
+    0:01:31  145947.2      0.00       0.0       0.0                              0.6380      0.00  
+    0:01:31  145947.2      0.00       0.0       0.0                              0.6380      0.00  
+    0:01:31  145947.2      0.00       0.0       0.0                              0.6380      0.00  
+    0:01:31  145947.2      0.00       0.0       0.0                              0.6380      0.00  
+    0:01:31  145947.2      0.00       0.0       0.0                              0.6380      0.00  
+    0:01:31  145947.2      0.00       0.0       0.0                              0.6380      0.00  
+    0:01:31  145947.2      0.00       0.0       0.0                              0.6380      0.00  
+    0:01:31  145947.2      0.00       0.0       0.0                              0.6380      0.00  
 
 
   Beginning Power Optimization
@@ -1911,44 +1886,38 @@ Information: The register 'khu_sensor_top/ads1292_filter/converter_i2f/sticky_re
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:01:56  183570.2      0.00       0.0       0.0                              0.6873     -0.19  
-    0:02:00  183372.5      0.00       0.0       0.0                              0.6872     -0.19  
-    0:02:02  183357.1      0.00       0.0       0.0                              0.6872      0.00  
-    0:02:07  182540.5      0.00       0.0       0.0                              0.6859      0.00  
-    0:02:08  182540.5      0.00       0.0       0.0                              0.6859      0.00  
-    0:02:08  182532.8      0.00       0.0       0.0                              0.6859      0.00  
-    0:02:08  182532.8      0.00       0.0       0.0                              0.6859      0.00  
-    0:02:08  182532.8      0.00       0.0       0.0                              0.6859      0.00  
-    0:02:08  182532.8      0.00       0.0       0.0                              0.6859      0.00  
-    0:02:08  182532.8      0.00       0.0       0.0                              0.6859      0.00  
-    0:02:08  182532.8      0.00       0.0       0.0                              0.6859      0.00  
-    0:02:08  182532.8      0.00       0.0       0.0                              0.6859      0.00  
-    0:02:08  182532.8      0.00       0.0       0.0                              0.6859      0.00  
+    0:01:31  145947.2      0.00       0.0       0.0                              0.6380      0.00  
+    0:01:34  145464.3      0.00       0.0       0.0                              0.6369      0.00  
+Information: Complementing port 'MPR121_SCL_EN' in design 'khu_sensor_top'.
+	 The new name of the port is 'MPR121_SCL_EN_BAR'. (OPT-319)
+Information: Complementing port 'o_I2C_SCL_EN' in design 'mpr121_controller'.
+	 The new name of the port is 'o_I2C_SCL_EN_BAR'. (OPT-319)
+Information: Complementing port 'scl_t' in design 'i2c_master'.
+	 The new name of the port is 'scl_t_BAR'. (OPT-319)
+    0:01:34  145457.9      0.00       0.0       0.0                              0.6369      0.00  
+    0:01:39  144909.1      0.00       0.0       0.0                              0.6360      0.00  
+    0:01:39  144909.1      0.00       0.0       0.0                              0.6360      0.00  
+    0:01:39  144909.1      0.00       0.0       0.0                              0.6360      0.00  
+    0:01:39  144909.1      0.00       0.0       0.0                              0.6360      0.00  
+    0:01:39  144909.1      0.00       0.0       0.0                              0.6360      0.00  
+    0:01:39  144909.1      0.00       0.0       0.0                              0.6360      0.00  
+    0:01:39  144909.1      0.00       0.0       0.0                              0.6360      0.00  
+    0:01:39  144909.1      0.00       0.0       0.0                              0.6360      0.00  
+    0:01:39  144909.1      0.00       0.0       0.0                              0.6360      0.00  
+    0:01:40  144909.1      0.00       0.0       0.0                              0.6360      0.00  
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:02:08  182532.8      0.00       0.0       0.0                              0.6859      0.00  
-    0:02:13  182369.9      0.00       0.0       0.0                              0.6857      0.00  
-
-  Beginning Delay Optimization HSVT Pass
-  --------------------------------------
-    0:02:15  182369.9      0.00       0.0       0.0                              0.6857      0.00  
-    0:02:15  182369.9      0.00       0.0       0.0                              0.6857      0.00  
-    0:02:15  182369.9      0.00       0.0       0.0                              0.6857      0.00  
-    0:02:16  182367.7      0.00       0.0       0.0                              0.6857      0.00  
-    0:02:22  181016.6      0.00       0.0       0.0                              0.6819     -0.02  
-    0:02:27  179152.6      0.00       0.0       0.0                              0.6762     -0.02  
-    0:02:46  128906.6      0.04       0.1       0.0                              0.5586     -0.02  
-    0:02:47  128931.2      0.00       0.0       0.0                              0.5586     -0.02  
-    0:02:47  128931.2      0.00       0.0       0.0                              0.5586     -0.02  
-    0:02:47  128931.2      0.00       0.0       0.0                              0.5586     -0.02  
-    0:03:00  112629.8      0.00       0.0       0.0                              0.5181     -0.16  
+    0:01:40  144909.1      0.00       0.0       0.0                              0.6360      0.00  
+    0:01:43  144732.2      0.00       0.0       0.0                              0.6358      0.00  
+    0:01:48  141384.0      0.00       0.0       0.0                              0.6277      0.00  
+    0:02:07  108605.4      0.00       0.0       0.0                              0.5511      0.00  
+    0:02:07  108605.4      0.00       0.0       0.0                              0.5511      0.00  
+    0:02:14  107706.9      0.00       0.0       0.0                              0.5492      0.00  
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
 
 
@@ -1978,11 +1947,6 @@ source ./dc_scripts/04_retime.tcl
                              04_retime.tcl                             
                                                                        
 ***********************************************************************
-Using operating conditions 'SS65LP3P3V_WST_108_300_P125' found in library 'ss65lp3p3v_wst_108_300_p125'.
-Using operating conditions 'SS65LP3P3V_WST_108_300_P125' found in library 'ss65lp3p3v_wst_108_300_p125'.
-Using operating conditions 'ss_1p08v_125c' found in library 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm'.
-Using operating conditions 'ss_1p08v_125c' found in library 'scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm'.
-SEC_INFO: Define user operating condtions
 Information: Performing power optimization. (PWR-850)
 Alib files are up-to-date.
 Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
@@ -1995,10 +1959,6 @@ Information: State dependent leakage is now switched from on to off.
 
   Beginning Pass 1 Mapping  (Incremental)
   ------------------------
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
-Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
-Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
 
   Updating timing information
 Information: Updating design information... (UID-85)
@@ -2007,8 +1967,8 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:11  112629.8      0.00       0.0       0.0                              0.5181      0.00  
-    0:00:11  112629.8      0.00       0.0       0.0                              0.5181      0.00  
+    0:00:07  107706.9      0.00       0.0       0.0                              0.5492      0.00  
+    0:00:07  107706.9      0.00       0.0       0.0                              0.5492      0.00  
 
   Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
   -------------------------------
@@ -2058,19 +2018,17 @@ Information: Updating design information... (UID-85)
   Mapping 'float_adder_3_DP_OP_127_147_6903_0_0'
   Mapping 'float_adder_3_DW01_inc_1'
   Mapping 'float_adder_3_DW01_inc_2'
-  Selecting implementations
-  Mapping 'float_multiplier_5_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_5_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_5_DW_mult_uns_2_0'
   Mapping 'float_multiplier_5_DP_OP_119_208_9725_0_0'
   Mapping 'float_multiplier_5_DP_OP_102_206_7830_0_0'
   Mapping 'float_multiplier_5_DP_OP_105_203_3597_0_0'
+  Selecting implementations
   Mapping 'float_multiplier_5_DW01_inc_1'
   Mapping 'float_multiplier_5_DW01_inc_2'
-  Selecting implementations
-  Mapping 'float_multiplier_4_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_4_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_4_DW_mult_uns_2_0'
   Mapping 'float_multiplier_4_DP_OP_119_198_9179_0_0'
   Mapping 'float_multiplier_4_DP_OP_105_193_3549_0_0'
+  Selecting implementations
   Mapping 'float_multiplier_4_DW01_inc_1'
   Mapping 'float_multiplier_4_DW01_inc_2'
   Selecting implementations
@@ -2095,27 +2053,24 @@ Information: Updating design information... (UID-85)
   Mapping 'float_adder_1_DP_OP_127_135_5666_0_0'
   Mapping 'float_adder_1_DW01_inc_1'
   Mapping 'float_adder_1_DW01_inc_2'
-  Selecting implementations
-  Mapping 'float_multiplier_3_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_3_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_3_DW_mult_uns_2_0'
   Mapping 'float_multiplier_3_DP_OP_119_188_7833_0_0'
   Mapping 'float_multiplier_3_DP_OP_102_186_8939_0_0'
   Mapping 'float_multiplier_3_DP_OP_105_183_6207_0_0'
+  Selecting implementations
   Mapping 'float_multiplier_3_DW01_inc_1'
   Mapping 'float_multiplier_3_DW01_inc_2'
-  Selecting implementations
-  Mapping 'float_multiplier_2_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_2_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_2_DW_mult_uns_2_0'
   Mapping 'float_multiplier_2_DP_OP_119_178_9062_0_0'
   Mapping 'float_multiplier_2_DP_OP_105_173_6191_0_0'
+  Selecting implementations
   Mapping 'float_multiplier_2_DW01_inc_1'
   Mapping 'float_multiplier_2_DW01_inc_2'
-  Selecting implementations
-  Mapping 'float_multiplier_1_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_1_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_1_DW_mult_uns_2_0'
   Mapping 'float_multiplier_1_DP_OP_119_168_3191_0_0'
   Mapping 'float_multiplier_1_DP_OP_102_166_8907_0_0'
   Mapping 'float_multiplier_1_DP_OP_105_163_6175_0_0'
+  Selecting implementations
   Mapping 'float_multiplier_1_DW01_inc_1'
   Mapping 'float_multiplier_1_DW01_inc_2'
   Selecting implementations
@@ -2129,17 +2084,16 @@ Information: Updating design information... (UID-85)
   Mapping 'float_adder_0_DP_OP_127_129_7863_0_0'
   Mapping 'float_adder_0_DW01_inc_1'
   Mapping 'float_adder_0_DW01_inc_2'
-  Selecting implementations
-  Mapping 'float_multiplier_0_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_0_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_0_DW_mult_uns_2_0'
   Mapping 'float_multiplier_0_DP_OP_119_158_3501_0_0'
   Mapping 'float_multiplier_0_DP_OP_105_153_1967_0_0'
+  Selecting implementations
   Mapping 'float_multiplier_0_DW01_inc_1'
   Mapping 'float_multiplier_0_DW01_inc_2'
-    0:00:29  112619.2      0.00       0.0       0.0                              0.5182      0.00  
-    0:00:29  112619.2      0.00       0.0       0.0                              0.5182      0.00  
-    0:00:29  112619.2      0.00       0.0       0.0                              0.5182      0.00  
-    0:00:29  112619.2      0.00       0.0       0.0                              0.5182      0.00  
+    0:00:20  107706.2      0.00       0.0       0.0                              0.5493      0.00  
+    0:00:20  107706.2      0.00       0.0       0.0                              0.5493      0.00  
+    0:00:20  107706.2      0.00       0.0       0.0                              0.5493      0.00  
+    0:00:20  107706.2      0.00       0.0       0.0                              0.5493      0.00  
   Global Optimization (Phase 7)
   Global Optimization (Phase 8)
   Global Optimization (Phase 9)
@@ -2155,42 +2109,32 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:32  112694.4      0.00       0.0       0.0                              0.5183      0.00  
-    0:00:32  112694.4      0.00       0.0       0.0                              0.5183      0.00  
-    0:00:36  112715.8      0.00       0.0       0.0                              0.5178      0.00  
-    0:00:36  112715.8      0.00       0.0       0.0                              0.5178      0.00  
-    0:00:37  112715.2      0.00       0.0       0.0                              0.5178      0.00  
-    0:00:37  112715.2      0.00       0.0       0.0                              0.5178      0.00  
-    0:00:37  112715.2      0.00       0.0       0.0                              0.5178      0.00  
+    0:00:22  107653.8      0.00       0.0       0.0                              0.5492      0.00  
+    0:00:22  107653.8      0.00       0.0       0.0                              0.5492      0.00  
+    0:00:25  107572.2      0.00       0.0       0.0                              0.5490      0.00  
+    0:00:25  107572.2      0.00       0.0       0.0                              0.5490      0.00  
+    0:00:25  107572.2      0.00       0.0       0.0                              0.5490      0.00  
+    0:00:25  107572.2      0.00       0.0       0.0                              0.5490      0.00  
+    0:00:25  107572.2      0.00       0.0       0.0                              0.5490      0.00  
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:37  112715.2      0.00       0.0       0.0                              0.5178      0.00  
-    0:00:37  112715.2      0.00       0.0       0.0                              0.5178      0.00  
-    0:00:37  112715.2      0.00       0.0       0.0                              0.5178      0.00  
-    0:00:37  112715.2      0.00       0.0       0.0                              0.5178      0.00  
-    0:00:37  112715.2      0.00       0.0       0.0                              0.5178      0.00  
-    0:00:37  112718.1      0.00       0.0       0.0                              0.5176      0.00  
-
-
-  Beginning Design Rule Fixing  (min_path)
-  ----------------------------
-
-                                  TOTAL                                                            
-   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
-    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
-  --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:39  112718.1      0.00       0.0       0.0                              0.5176     -0.02  
-    0:00:39  112718.1      0.00       0.0       0.0                              0.5176     -0.02  
-    0:00:43  112724.8      0.00       0.0       0.0                              0.5175     -0.02  
-    0:00:43  112724.8      0.00       0.0       0.0                              0.5175     -0.02  
-    0:00:43  112724.8      0.00       0.0       0.0                              0.5175     -0.02  
-    0:00:43  112724.8      0.00       0.0       0.0                              0.5175     -0.02  
-    0:00:43  112724.8      0.00       0.0       0.0                              0.5175     -0.02  
-    0:00:43  112724.8      0.00       0.0       0.0                              0.5175     -0.02  
-    0:00:43  112724.8      0.00       0.0       0.0                              0.5175     -0.02  
-    0:00:43  112724.8      0.00       0.0       0.0                              0.5175     -0.02  
-    0:00:43  112724.8      0.00       0.0       0.0                              0.5175     -0.02  
+    0:00:25  107572.2      0.00       0.0       0.0                              0.5490      0.00  
+    0:00:25  107572.2      0.00       0.0       0.0                              0.5490      0.00  
+    0:00:25  107572.2      0.00       0.0       0.0                              0.5490      0.00  
+    0:00:25  107572.2      0.00       0.0       0.0                              0.5490      0.00  
+    0:00:25  107572.2      0.00       0.0       0.0                              0.5490      0.00  
+    0:00:28  106786.6      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:29  106786.6      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:33  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:33  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:33  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:33  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:33  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:33  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:33  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:33  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:33  106781.4      0.00       0.0       0.0                              0.5483      0.00  
 
 
   Beginning Power Optimization
@@ -2200,40 +2144,31 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:43  112724.8      0.00       0.0       0.0                              0.5175     -0.02  
-    0:00:45  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:49  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:49  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:49  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:49  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:49  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:49  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:49  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:49  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:49  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:50  112723.2      0.00       0.0       0.0                              0.5175      0.00  
+    0:00:33  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:34  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:50  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:53  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-
-  Beginning Delay Optimization HSVT Pass
-  --------------------------------------
-    0:00:56  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:56  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:56  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:00:56  112723.2      0.00       0.0       0.0                              0.5175      0.00  
-    0:01:03  112433.9      0.00       0.0       0.0                              0.5163      0.00  
-    0:01:11  109521.0      0.00       0.0       0.0                              0.5081      0.00  
-    0:01:11  109521.0      0.00       0.0       0.0                              0.5081      0.00  
-    0:01:14  109165.4      0.00       0.0       0.0                              0.5049      0.00  
+    0:00:38  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:41  106781.4      0.00       0.0       0.0                              0.5483      0.00  
+    0:00:47  106692.2      0.00       0.0       0.0                              0.5479      0.00  
+    0:00:50  106571.8      0.00       0.0       0.0                              0.5477      0.00  
+    0:00:50  106571.8      0.00       0.0       0.0                              0.5477      0.00  
+    0:00:54  106533.8      0.00       0.0       0.0                              0.5476      0.00  
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
 
 
@@ -2287,23 +2222,17 @@ Information: State dependent leakage is now switched from on to off.
 
   Beginning Pass 1 Mapping  (Incremental)
   ------------------------
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
-Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
-Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
 
   Updating timing information
 Information: Updating design information... (UID-85)
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
-Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
 Information: Performing global clock-gating on design khu_sensor_pad. (PWR-731)
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:01:01  107806.1      6.21    1328.3      13.9                              0.5115      0.00  
-    0:01:01  108282.9      4.68    1204.3      14.2                              0.5126      0.00  
+    0:00:34  105041.0      0.00       0.0       4.5                              0.5522      0.00  
+    0:00:34  105041.0      0.00       0.0       4.5                              0.5522      0.00  
 
   Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
   -------------------------------
@@ -2311,132 +2240,126 @@ Information: Performing global clock-gating on design khu_sensor_pad. (PWR-731)
   Beginning Incremental Implementation Selection
   ----------------------------------------------
   Selecting implementations
+  Mapping 'mpr121_controller_DW01_inc_1'
   Mapping 'mpr121_controller_DW01_inc_2'
-  Mapping 'mpr121_controller_DW01_inc_3'
   Selecting implementations
+  Mapping 'ads1292_filter_DW01_inc_1'
   Mapping 'ads1292_filter_DW01_inc_2'
-  Mapping 'ads1292_filter_DW01_inc_3'
   Selecting implementations
+  Mapping 'ads1292_controller_DW01_inc_1'
   Mapping 'ads1292_controller_DW01_inc_2'
-  Mapping 'ads1292_controller_DW01_inc_3'
   Selecting implementations
+  Mapping 'uart_tx_DW01_inc_1'
   Mapping 'uart_tx_DW01_inc_2'
-  Mapping 'uart_tx_DW01_inc_3'
   Selecting implementations
+  Mapping 'uart_rx_DW01_inc_1'
   Mapping 'uart_rx_DW01_inc_2'
-  Mapping 'uart_rx_DW01_inc_3'
   Selecting implementations
+  Mapping 'i2c_master_DW01_dec_1'
   Mapping 'i2c_master_DW01_dec_2'
-  Mapping 'i2c_master_DW01_dec_3'
-  Selecting implementations
-  Mapping 'converter_i2f_DW01_inc_2'
-  Mapping 'converter_i2f_DW01_inc_3'
   Mapping 'converter_i2f_DP_OP_47_122_1108_0_0'
-  Mapping 'converter_i2f_DW01_sub_2'
-  Mapping 'converter_i2f_DW01_sub_3'
   Selecting implementations
-  Mapping 'converter_f2i_DW01_sub_2'
-  Mapping 'converter_f2i_DW01_sub_3'
+  Mapping 'converter_i2f_DW01_sub_1'
+  Mapping 'converter_i2f_DW01_sub_2'
+  Mapping 'converter_i2f_DW01_inc_1'
+  Mapping 'converter_i2f_DW01_inc_2'
   Mapping 'converter_f2i_DP_OP_17_127_5628_0_0'
   Mapping 'converter_f2i_DP_OP_16_126_4860_0_0'
   Selecting implementations
-  Mapping 'spi_master_DW01_inc_2'
-  Mapping 'spi_master_DW01_inc_3'
+  Mapping 'converter_f2i_DW01_sub_1'
+  Mapping 'converter_f2i_DW01_sub_2'
   Selecting implementations
+  Mapping 'spi_master_DW01_inc_1'
+  Mapping 'spi_master_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_adder_3_DW_cmp_0'
   Mapping 'float_adder_3_DW_cmp_1'
-  Mapping 'float_adder_3_DW_cmp_2'
   Mapping 'float_adder_3_DP_OP_46_236_7011_0_0'
   Mapping 'float_adder_3_DP_OP_139_221_5626_0_0'
   Mapping 'float_adder_3_DP_OP_125_151_7074_0_0'
   Mapping 'float_adder_3_DP_OP_124_150_2670_0_0'
   Mapping 'float_adder_3_DP_OP_128_148_4319_0_0'
   Mapping 'float_adder_3_DP_OP_127_147_6903_0_0'
+  Mapping 'float_adder_3_DW01_inc_1'
   Mapping 'float_adder_3_DW01_inc_2'
-  Mapping 'float_adder_3_DW01_inc_3'
-  Selecting implementations
-  Mapping 'float_multiplier_5_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_5_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_5_DW_mult_uns_2_0'
   Mapping 'float_multiplier_5_DP_OP_119_208_9725_0_0'
   Mapping 'float_multiplier_5_DP_OP_102_206_7830_0_0'
   Mapping 'float_multiplier_5_DP_OP_105_203_3597_0_0'
-  Mapping 'float_multiplier_5_DW01_inc_2'
-  Mapping 'float_multiplier_5_DW01_inc_3'
   Selecting implementations
-  Mapping 'float_multiplier_4_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_4_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_5_DW01_inc_1'
+  Mapping 'float_multiplier_5_DW01_inc_2'
+  Mapping 'float_multiplier_4_DW_mult_uns_2_0'
   Mapping 'float_multiplier_4_DP_OP_119_198_9179_0_0'
   Mapping 'float_multiplier_4_DP_OP_105_193_3549_0_0'
-  Mapping 'float_multiplier_4_DW01_inc_2'
-  Mapping 'float_multiplier_4_DW01_inc_3'
   Selecting implementations
+  Mapping 'float_multiplier_4_DW01_inc_1'
+  Mapping 'float_multiplier_4_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_adder_2_DW_cmp_0'
   Mapping 'float_adder_2_DW_cmp_1'
-  Mapping 'float_adder_2_DW_cmp_2'
   Mapping 'float_adder_2_DP_OP_46_232_75_0_0'
   Mapping 'float_adder_2_DP_OP_139_218_18_0_0'
   Mapping 'float_adder_2_DP_OP_125_145_130_0_0'
   Mapping 'float_adder_2_DP_OP_124_144_2886_0_0'
   Mapping 'float_adder_2_DP_OP_128_142_1832_0_0'
   Mapping 'float_adder_2_DP_OP_127_141_5618_0_0'
+  Mapping 'float_adder_2_DW01_inc_1'
   Mapping 'float_adder_2_DW01_inc_2'
-  Mapping 'float_adder_2_DW01_inc_3'
   Selecting implementations
+  Mapping 'float_adder_1_DW_cmp_0'
   Mapping 'float_adder_1_DW_cmp_1'
-  Mapping 'float_adder_1_DW_cmp_2'
   Mapping 'float_adder_1_DP_OP_46_228_9786_0_0'
   Mapping 'float_adder_1_DP_OP_139_215_3862_0_0'
   Mapping 'float_adder_1_DP_OP_125_139_7776_0_0'
   Mapping 'float_adder_1_DP_OP_124_138_2934_0_0'
   Mapping 'float_adder_1_DP_OP_128_136_9478_0_0'
   Mapping 'float_adder_1_DP_OP_127_135_5666_0_0'
+  Mapping 'float_adder_1_DW01_inc_1'
   Mapping 'float_adder_1_DW01_inc_2'
-  Mapping 'float_adder_1_DW01_inc_3'
-  Selecting implementations
-  Mapping 'float_multiplier_3_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_3_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_3_DW_mult_uns_2_0'
   Mapping 'float_multiplier_3_DP_OP_119_188_7833_0_0'
   Mapping 'float_multiplier_3_DP_OP_102_186_8939_0_0'
   Mapping 'float_multiplier_3_DP_OP_105_183_6207_0_0'
-  Mapping 'float_multiplier_3_DW01_inc_2'
-  Mapping 'float_multiplier_3_DW01_inc_3'
   Selecting implementations
-  Mapping 'float_multiplier_2_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_2_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_3_DW01_inc_1'
+  Mapping 'float_multiplier_3_DW01_inc_2'
+  Mapping 'float_multiplier_2_DW_mult_uns_2_0'
   Mapping 'float_multiplier_2_DP_OP_119_178_9062_0_0'
   Mapping 'float_multiplier_2_DP_OP_105_173_6191_0_0'
-  Mapping 'float_multiplier_2_DW01_inc_2'
-  Mapping 'float_multiplier_2_DW01_inc_3'
   Selecting implementations
-  Mapping 'float_multiplier_1_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_1_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_2_DW01_inc_1'
+  Mapping 'float_multiplier_2_DW01_inc_2'
+  Mapping 'float_multiplier_1_DW_mult_uns_2_0'
   Mapping 'float_multiplier_1_DP_OP_119_168_3191_0_0'
   Mapping 'float_multiplier_1_DP_OP_102_166_8907_0_0'
   Mapping 'float_multiplier_1_DP_OP_105_163_6175_0_0'
-  Mapping 'float_multiplier_1_DW01_inc_2'
-  Mapping 'float_multiplier_1_DW01_inc_3'
   Selecting implementations
+  Mapping 'float_multiplier_1_DW01_inc_1'
+  Mapping 'float_multiplier_1_DW01_inc_2'
+  Selecting implementations
+  Mapping 'float_adder_0_DW_cmp_0'
   Mapping 'float_adder_0_DW_cmp_1'
-  Mapping 'float_adder_0_DW_cmp_2'
   Mapping 'float_adder_0_DP_OP_46_224_9810_0_0'
   Mapping 'float_adder_0_DP_OP_139_212_6578_0_0'
   Mapping 'float_adder_0_DP_OP_125_133_9258_0_0'
   Mapping 'float_adder_0_DP_OP_124_132_3630_0_0'
   Mapping 'float_adder_0_DP_OP_128_130_6503_0_0'
   Mapping 'float_adder_0_DP_OP_127_129_7863_0_0'
+  Mapping 'float_adder_0_DW01_inc_1'
   Mapping 'float_adder_0_DW01_inc_2'
-  Mapping 'float_adder_0_DW01_inc_3'
-  Selecting implementations
-  Mapping 'float_multiplier_0_DW_mult_uns_1_0'
-  Mapping 'float_multiplier_0_DW_mult_uns_1_0'
+  Mapping 'float_multiplier_0_DW_mult_uns_2_0'
   Mapping 'float_multiplier_0_DP_OP_119_158_3501_0_0'
   Mapping 'float_multiplier_0_DP_OP_105_153_1967_0_0'
+  Selecting implementations
+  Mapping 'float_multiplier_0_DW01_inc_1'
   Mapping 'float_multiplier_0_DW01_inc_2'
-  Mapping 'float_multiplier_0_DW01_inc_3'
-Information: In design 'khu_sensor_pad', the register 'khu_sensor_top/sensor_core/o_UART_DATA_TX_reg[48]' is removed because it is merged to 'khu_sensor_top/sensor_core/o_UART_DATA_TX_reg[54]'. (OPT-1215)
+Information: In design 'khu_sensor_pad', the register 'khu_sensor_top/ads1292_filter/iir_lpf/r_mult_2_A_reg[25]' is removed because it is merged to 'khu_sensor_top/ads1292_filter/iir_lpf/r_mult_2_A_reg[31]'. (OPT-1215)
 Note - message 'OPT-1215' limit (1) exceeded.  Remainder will be suppressed.
-    0:01:24  107964.8      1.02      12.5       1.9                              0.5156      0.00  
-    0:01:24  107964.8      1.02      12.5       1.9                              0.5156      0.00  
-    0:01:24  107964.8      1.02      12.5       1.9                              0.5156      0.00  
-    0:01:25  107966.1      0.98      11.1       1.9                              0.5157      0.00  
+    0:00:47  103621.8      0.00       0.0       3.5                              0.5513      0.00  
+    0:00:48  103621.8      0.00       0.0       3.5                              0.5513      0.00  
+    0:00:48  103621.8      0.00       0.0       3.5                              0.5513      0.00  
+    0:00:48  103621.8      0.00       0.0       3.5                              0.5513      0.00  
   Global Optimization (Phase 12)
   Global Optimization (Phase 13)
   Global Optimization (Phase 14)
@@ -2453,42 +2376,42 @@ Note - message 'OPT-1215' limit (1) exceeded.  Remainder will be suppressed.
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:01:28  106321.9      0.00       0.0       1.9                              0.5115      0.00  
-    0:01:28  106321.9      0.00       0.0       1.9                              0.5115      0.00  
-    0:01:32  105718.1      0.01       0.0       1.9                              0.5090      0.00  
-    0:01:33  105718.1      0.01       0.0       1.9                              0.5090      0.00  
-    0:01:33  105722.6      0.00       0.0       1.9                              0.5090      0.00  
-    0:01:33  105722.6      0.00       0.0       1.9                              0.5090      0.00  
-    0:01:33  105722.6      0.00       0.0       1.9                              0.5090      0.00  
+    0:00:49  101985.0      0.00       0.0       3.5                              0.5475      0.00  
+    0:00:49  101985.0      0.00       0.0       3.5                              0.5475      0.00  
+    0:00:53  101762.2      0.00       0.0       3.5                              0.5466      0.00  
+    0:00:53  101762.2      0.00       0.0       3.5                              0.5466      0.00  
+    0:00:53  101762.2      0.00       0.0       3.5                              0.5466      0.00  
+    0:00:53  101762.2      0.00       0.0       3.5                              0.5466      0.00  
+    0:00:53  101762.2      0.00       0.0       3.5                              0.5466      0.00  
 
   Beginning Delay Optimization
   ----------------------------
-    0:01:33  105722.6      0.00       0.0       1.9                              0.5090      0.00  
-    0:01:33  105722.6      0.00       0.0       1.9                              0.5090      0.00  
-    0:01:33  105722.6      0.00       0.0       1.9                              0.5090      0.00  
-    0:01:33  105722.6      0.00       0.0       1.9                              0.5090      0.00  
-    0:01:33  105722.6      0.00       0.0       1.9                              0.5090      0.00  
-    0:01:34  105683.2      0.17       4.5       1.9                              0.5089      0.00  
+    0:00:53  101762.2      0.00       0.0       3.5                              0.5466      0.00  
+    0:00:53  101762.2      0.00       0.0       3.5                              0.5466      0.00  
+    0:00:53  101762.2      0.00       0.0       3.5                              0.5466      0.00  
+    0:00:53  101762.2      0.00       0.0       3.5                              0.5466      0.00  
+    0:00:53  101762.2      0.00       0.0       3.5                              0.5466      0.00  
+    0:00:54  100872.6      0.00       0.0       3.5                              0.5451      0.00  
 
 
-  Beginning Design Rule Fixing  (min_path)  (max_transition)  (max_capacitance)
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
   ----------------------------
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:01:36  105683.2      0.17       4.5       1.9                              0.5089     -3.01  
-    0:01:36  105700.8      0.00       0.0       0.0                              0.5089     -3.01  
-    0:01:40  105639.7      0.00       0.0       0.0                              0.5088     -3.01  
-    0:01:40  105639.7      0.00       0.0       0.0                              0.5088     -3.01  
-    0:01:40  105639.7      0.00       0.0       0.0                              0.5088     -3.01  
-    0:01:40  105639.7      0.00       0.0       0.0                              0.5088     -3.01  
-    0:01:40  105639.7      0.00       0.0       0.0                              0.5088     -3.01  
-    0:01:40  105639.7      0.00       0.0       0.0                              0.5088     -3.01  
-    0:01:40  105639.7      0.00       0.0       0.0                              0.5088     -3.01  
-    0:01:40  105639.7      0.00       0.0       0.0                              0.5088     -3.01  
-    0:01:40  105639.7      0.00       0.0       0.0                              0.5088     -3.01  
+    0:00:55  100872.6      0.00       0.0       3.5                              0.5451      0.00  
+    0:00:55  100875.8      0.00       0.0       0.0                              0.5451      0.00  
+    0:00:58  100875.8      0.00       0.0       0.0                              0.5451      0.00  
+    0:00:58  100875.8      0.00       0.0       0.0                              0.5451      0.00  
+    0:00:58  100875.8      0.00       0.0       0.0                              0.5451      0.00  
+    0:00:58  100875.8      0.00       0.0       0.0                              0.5451      0.00  
+    0:00:58  100875.8      0.00       0.0       0.0                              0.5451      0.00  
+    0:00:58  100875.8      0.00       0.0       0.0                              0.5451      0.00  
+    0:00:58  100875.8      0.00       0.0       0.0                              0.5451      0.00  
+    0:00:58  100875.8      0.00       0.0       0.0                              0.5451      0.00  
+    0:00:58  100875.8      0.00       0.0       0.0                              0.5451      0.00  
 
 
   Beginning Power Optimization
@@ -2498,41 +2421,30 @@ Note - message 'OPT-1215' limit (1) exceeded.  Remainder will be suppressed.
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:01:40  105639.7      0.00       0.0       0.0                              0.5088     -3.01  
-    0:01:43  105517.4      0.00       0.0       0.0 khu_sensor_top/sensor_core/r_mpr_lstate_reg[0]/D    0.5087     -2.94  
-    0:01:44  105591.7      0.00       0.0       0.0                              0.5088      0.00  
-    0:01:47  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:47  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:47  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:47  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:47  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:47  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:47  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:47  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:47  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:48  105584.0      0.00       0.0       0.0                              0.5087      0.00  
+    0:00:58  100875.8      0.00       0.0       0.0                              0.5451      0.00  
+    0:01:01  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:03  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:03  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:03  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:03  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:03  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:04  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:04  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:04  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:04  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:04  100776.3      0.00       0.0       0.0                              0.5450      0.00  
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:01:48  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:51  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-
-  Beginning Delay Optimization HSVT Pass
-  --------------------------------------
-    0:01:53  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:53  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:53  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:01:53  105584.0      0.00       0.0       0.0                              0.5087      0.00  
-    0:02:01  104876.5      0.00       0.0       0.0                              0.5069     -0.07  
-    0:02:09  102978.9      0.00       0.0       0.0                              0.4999      0.00  
-    0:02:09  102978.9      0.00       0.0       0.0                              0.4999      0.00  
-    0:02:11  102900.8      0.00       0.0       0.0                              0.4998      0.00  
+    0:01:04  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:07  100776.3      0.00       0.0       0.0                              0.5450      0.00  
+    0:01:13  100444.5      0.00       0.0       0.0                              0.5442      0.00  
+    0:01:13  100444.5      0.00       0.0       0.0                              0.5442      0.00  
+    0:01:14  100437.1      0.00       0.0       0.0                              0.5442      0.00  
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0026_SS65LP_PMK_RVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0028_SS65LP_PMK_HVT_PMK_FE_Common_N/synopsys/scmetropmk_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db'
-Loading db file '/Tools/Library/samsung65_2016/CB_1502/PRIMITIVE/sec100226_0043_SS65LP_Normal_HVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm.db'
 Loading db file '/Tools/Library/samsung65_2016/CB_1502/IO/synopsys/ss65lp3p3v_wst_108_300_p125.db'
 
 
@@ -2555,9 +2467,25 @@ source ./dc_scripts/06_design_finish.tcl
                         06_design_finish.tcl                           
                                                                        
 ***********************************************************************
+***********************************************************************
+                                                                       
+                   Remove nets connected to CLTCH                      
+                                                                       
+***********************************************************************
+Removing net 'net2114' in design 'khu_sensor_pad'.
+Removing net 'net2113' in design 'khu_sensor_pad'.
+Removing net 'net2112' in design 'khu_sensor_pad'.
+Removing net 'net2111' in design 'khu_sensor_pad'.
+Removing net 'net2110' in design 'khu_sensor_pad'.
+Removing net 'net2109' in design 'khu_sensor_pad'.
+Removing net 'net2108' in design 'khu_sensor_pad'.
+Removing net 'net2107' in design 'khu_sensor_pad'.
+Removing net 'net2106' in design 'khu_sensor_pad'.
+Removing net 'net2105' in design 'khu_sensor_pad'.
+Removing net 'net2104' in design 'khu_sensor_pad'.
+Removing net 'net2103' in design 'khu_sensor_pad'.
+Removing net 'net2102' in design 'khu_sensor_pad'.
 Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
-Information: Apply operating condition old:ss_1p08v_125c -> new:SS65LP3P3V_WST_108_300_P125 (voltage = [vdd:1.08 vddh:3.00 vss:0.00], process = 1.000000, temperature = 125.000000) to cell pad56 (ss65lp3p3v_wst_108_300_p125:pvhbsudtart).   (LIBSETUP-751)
-Information: A total of 1 operating conditions have been inferred.  (LIBSETUP-754)
 Writing verilog file '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/outputs/khu_sensor_pad.vg'.
 Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
 Information: Writing timing information to file '/home/VLSI_graduated_2020/2015104027/khu_sensor_65n/01_RTL_Synthesis/outputs/khu_sensor_pad.sdf'. (WT-3)
@@ -2571,8 +2499,6 @@ start_gui
 Current design is 'khu_sensor_pad'.
 4.1
 #exit
-dc_shell> dc_shell> Loading db file '/Tools/Synopsys/DesignCompiler_2017/libraries/syn/generic.sdb'
-Current design is 'khu_sensor_pad'.
-exit
+dc_shell> dc_shell> dc_shell> exit
 
 Thank you...

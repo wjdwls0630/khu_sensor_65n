@@ -68,13 +68,13 @@ derive_pg_connection \
 	-ground_net VSS \
 	-ground_pin VSSIP
 
-derive_pg_connection \
+#derive_pg_connection \
 	-power_net VDD \
 	-power_pin VDDCE \
 	-ground_net VSS \
 	-ground_pin VSSE
 
-derive_pg_connection \
+#derive_pg_connection \
 	-power_net VDD \
 	-power_pin VDDPE
 
@@ -215,7 +215,7 @@ set_pnet_options -partial "M2 M3 M4 B1 B2 EA OA LB"
 # To resolve cell placement conflicts after doing initial placement, such as violating Standard(STD)
 # cells away from the power straps, overlaps, legalize placement.
 # command "legalize_fp_placement" is obsolete
-legalize_placement
+legalize_placement -effort high
 
 
 # Perform actual global routing to make sure the congestion

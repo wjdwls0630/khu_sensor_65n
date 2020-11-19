@@ -72,7 +72,7 @@ set NOM_RVT_FF scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm
 #set NOM_HVT_SS scmetro_cmos10lp_hvt_ss_1p08v_125c_sadhm
 
 # FF (Best)
-#set NOM_HVT_SS scmetro_cmos10lp_hvt_ff_1p32v_m40c_sadhm
+#set NOM_HVT_FF scmetro_cmos10lp_hvt_ff_1p32v_m40c_sadhm
 
 # IO
 

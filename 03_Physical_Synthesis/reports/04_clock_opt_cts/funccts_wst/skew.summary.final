@@ -4,7 +4,7 @@ Report : clock tree
 Design : khu_sensor_pad
 Scenario(s): funccts_wst
 Version: N-2017.09
-Date   : Sat Sep 12 02:33:41 2020
+Date   : Thu Nov 19 19:32:44 2020
 ****************************************
 
 =============================Report for scenario (funccts_wst)=============================
@@ -13,6 +13,6 @@ Information: Float pin scale factor for the 'max' operating condition of scenari
 ======================= Clock Tree Summary ========================
 Clock                Sinks     CTBuffers ClkCells  Skew      LongestPath TotalDRC   BufferArea
 -----------------------------------------------------------------------------------------------
-clk                  2226      132       256       2.6637    2.7400      0           2005.3436
-clk_half             421       14        14        0.0316    0.5050      0            209.0880
+clk                  5228      124       444       1.7858    2.0097      0            270.7199
+clk_half             413       23        56        0.2388    0.7144      0             39.6800
 1

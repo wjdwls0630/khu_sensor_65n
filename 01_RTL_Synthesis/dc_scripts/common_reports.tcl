@@ -32,4 +32,4 @@ report_timing -delay max -nworst 10 > ${REPORTS_DIR}/${step}/report_timing_delay
 report_timing -delay min -nworst 10 > ${REPORTS_DIR}/${step}/report_timing_delay_min.rpt
 report_timing_requirements > ${REPORTS_DIR}/${step}/report_timing_requirements.rpt
 report_qor > ${REPORTS_DIR}/${step}/report_QoR.rpt
-report_power > ${REPORTS_DIR}/${step}/report_power.rpt
+report_power -analysis_effort high -verbose > ${REPORTS_DIR}/${step}/report_power.rpt

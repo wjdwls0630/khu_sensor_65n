@@ -34,10 +34,6 @@ open_mw_cel $TOP_MODULE
 link
 current_design $TOP_MODULE
 
-## Read scenario file
-# After placement, delete max_delay constraints. It is only for placing
-# clock gating cell and gated register in proximity.
-sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
 if { $ROUTE_OPT_SCN_READ_AGAIN } {
 	remove_sdc
 	remove_scenario -all
@@ -45,13 +41,13 @@ if { $ROUTE_OPT_SCN_READ_AGAIN } {
 	## Read scenario file
 	# After placement, delete max_delay constraints. It is only for placing
 	# clock gating cell and gated register in proximity.
-	sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
+	source $ICC_SDC_SETUP_FILE
 
 	source $ICC_MCMM_SCENARIOS_FILE
 } else {
 	# After placement, delete max_delay constraints. It is only for placing
 	# clock gating cell and gated register in proximity.
-	sh sed -i '/set_max_delay/,+1 d' $FUNC1_SDC
+	source $ICC_SDC_SETUP_FILE
 }
 
 set_active_scenario $ROUTE_OPT_SCN
@@ -117,14 +113,14 @@ route_opt \
 	-xtalk_reduction
 
 # incremental route optimization
-route_opt -incremental
+route_opt -incremental -effort high
 
 # Intermediate Save
 save_mw_cel -as 01_before_shield
 puts "SEC_INFO: CEL was saved. You can open CEL with read_only !!"
 
 # Shielding
-create_zrt_shield -with ground $MW_R_GROUND_NET -ignore_shielding_net_pins true
+create_zrt_shield -with $MW_R_GROUND_NET -ignore_shielding_net_pins true
 set_route_zrt_common_options -reshield_modified_nets reshield
 
 # Set variable after shielding
@@ -135,7 +131,7 @@ verify_zrt_route
 route_zrt_detail -inc true -initial_drc_from_input true
 
 # incremental route optimization 2
-route_opt -incremental -size_only
+route_opt -incremental -size_only -effort high
 
 # Use non-timing driven Duo. If not, runtime will be increased.
 set_route_zrt_global_options -timing_driven false
@@ -146,6 +142,12 @@ set_route_zrt_detail_options -timing_driven false
 insert_zrt_redundant_vias
 
 # To fix antenna violations
+# This "ANTENNAMTR" cell must be manually inserted during P&R
+# The cell is an diode on the net close to input gates, which do not meet the antenna effect.
+# Actually, the library specifies a maximum wire length for antenna rule.
+# However, the route may connect longer wires to the input gates of cells than maximum wire length.
+# If this is the case, the "ANTENNAMTR" cells are added to meet the antenna rule.
+# Antenna cell connects to a diode, reverse biased to ground.
 set_route_zrt_detail_options -antenna true -insert_diodes_during_routing true \
 	-diode_libcell_names ANTENNAMTR
 
@@ -202,6 +204,7 @@ redirect -file $REPORTS_STEP_DIR/min_timing.rpt {
 	-max_paths 20 -nets -input_pins \
 	-physical -attributes -nosplit -crosstalk_delta -derate -path full_clock_expanded
 }
+report_zrt_shield -with_ground $MW_R_GROUND_NET -output $REPORTS_STEP_DIR/shield_ratio.rpt 
 report_clock_gating -style > $REPORTS_STEP_DIR/clock_gating.rpt
 report_clock_gating_check -significant_digits 4 >> $REPORTS_STEP_DIR/clock_gating.rpt
 report_clock_gating -structure >> $REPORTS_STEP_DIR/clock_gating.rpt
